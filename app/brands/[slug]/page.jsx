@@ -1,11 +1,14 @@
-import { useParams, Link } from 'react-router-dom';
-import Navbar from '../../../components/feature/Navbar';
-import Footer from '../../../components/feature/Footer';
+"use client";
+import GlobalCTA from "../../components/GlobalCTA";
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
+import { useTranslation } from "react-i18next";
 
 export default function BrandDetailPage() {
+  const { t } = useTranslation();
   const { slug } = useParams();
 
-  const brandsData: Record<string, any> = {
+  const brandsData = {
     'pinar': {
       name: 'PINAR',
       logo: 'https://readdy.ai/api/search-image?query=PINAR%20Turkish%20food%20brand%20logo%20clean%20white%20background%20professional%20product%20branding&width=300&height=180&seq=brand-pinar-detail-logo&orientation=landscape',
@@ -76,7 +79,7 @@ export default function BrandDetailPage() {
 
         <div className="pt-32 pb-20 text-center">
           <h1 className="text-4xl font-bold text-brand-jet mb-4">Brand Not Found</h1>
-          <Link to="/brands" className="text-brand-teal hover:underline">
+          <Link href="/brands" className="text-brand-teal hover:underline">
             Back to Brands
           </Link>
         </div>
@@ -93,8 +96,8 @@ export default function BrandDetailPage() {
       <section className="relative pt-32 pb-20 bg-gradient-to-br from-brand-paleblue to-white">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <Link
-            to="/brands"
-            className="inline-flex items-center space-x-2 text-brand-charcoal hover:text-brand-teal transition-colors mb-8 cursor-pointer"
+            href="/brands"
+            className="inline-flex items-center space-x-2 text-brand-charcoal hover:text-black transition-colors mb-8 cursor-pointer"
           >
             <i className="ri-arrow-left-line text-xl"></i>
             <span className="font-medium">Back to Brands</span>
@@ -103,28 +106,28 @@ export default function BrandDetailPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-center space-x-4 mb-6">
-                <span className="px-4 py-2 bg-brand-coral text-white text-sm font-semibold rounded-full">
+                <span className="px-4 py-2 bg-brand-yellow text-[#101010] text-sm font-semibold rounded-full">
                   {brand.origin}
                 </span>
-                <span className="px-4 py-2 bg-brand-teal text-white text-sm font-semibold rounded-full">
+                <span className="px-4 py-2 bg-brand-charcoal text-white text-sm font-semibold rounded-full">
                   {brand.category}
                 </span>
               </div>
               <h1 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-6">{brand.name}</h1>
-              <p className="text-xl text-brand-charcoal leading-relaxed mb-8">
+              <p className="text-xl font-normal text-brand-charcoal leading-relaxed mb-8">
                 {brand.description}
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
                   href="/contact"
-                  className="inline-flex items-center space-x-2 px-8 py-4 bg-brand-coral text-white rounded-full font-semibold hover:brightness-110 transition-all whitespace-nowrap cursor-pointer"
+                  className="inline-flex items-center space-x-2 px-8 py-4 bg-brand-yellow text-[#101010] rounded-full font-semibold hover:brightness-110 duration-300 transition-all whitespace-nowrap cursor-pointer"
                 >
                   <span>Contact for Orders</span>
                   <i className="ri-arrow-right-line"></i>
                 </a>
                 <a
                   href="/become-a-partner"
-                  className="inline-flex items-center space-x-2 px-8 py-4 border-2 border-brand-charcoal text-brand-charcoal rounded-full font-semibold hover:bg-brand-charcoal hover:text-white transition-all whitespace-nowrap cursor-pointer"
+                  className="inline-flex items-center space-x-2 px-8 py-4 border-2 border-brand-charcoal text-brand-charcoal rounded-full font-semibold duration-300 hover:bg-brand-charcoal hover:text-white transition-all whitespace-nowrap cursor-pointer"
                 >
                   <span>Become a Partner</span>
                 </a>
@@ -154,10 +157,10 @@ export default function BrandDetailPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {brand.products.map((product: any) => (
+            {brand.products.map((product) => (
               <div
                 key={product.id}
-                className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-brand-coral"
+                className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 "
               >
                 <div className="relative w-full h-64 bg-brand-paleblue overflow-hidden">
                   <img
@@ -191,25 +194,11 @@ export default function BrandDetailPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-brand-charcoal to-brand-jet">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Interested in {brand.name} Products?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Contact us for detailed product information, pricing, and availability
-          </p>
-          <a
-            href="/contact"
-            className="inline-flex items-center space-x-3 px-10 py-4 bg-brand-coral text-white rounded-full font-semibold text-lg hover:brightness-110 transition-all shadow-xl hover:shadow-2xl whitespace-nowrap cursor-pointer"
-          >
-            <span>Contact Us</span>
-            <i className="ri-arrow-right-line text-xl"></i>
-          </a>
-        </div>
-      </section>
-
-
+      <GlobalCTA
+        title={`${t("Interested_in")} ${brand.name} ${t("Products")}?`}
+        subtitle={`Contact us for detailed product information, pricing, and availability`}
+        btnText="contact_us"
+      />
     </div>
   );
 }

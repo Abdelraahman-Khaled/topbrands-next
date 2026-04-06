@@ -22,14 +22,14 @@ const HeroSection = ({ subtitle, title, description1, yellowText, description2, 
                     </span>
                     <div className="h-px w-16 bg-brand-yellow"></div>
                 </div>
-                <h1 className="text-6xl lg:text-7xl font-bold text-white mb-6">
+                <h1 className="text-6xl lg:text-7xl font-bold  text-white mb-6">
                     {title}
-                    <span className="text-brand-yellow">{yellowTitle}</span>
+                    <span className="text-brand-yellow"> {yellowTitle}</span>
                 </h1>
-                <p className="text-2xl lg:text-3xl text-gray-200 leading-relaxed max-w-4xl font-light">
+                <p className="text-3xl lg:text-3xl text-gray-200 leading-relaxed max-w-4xl font-light">
                     {description1}
                     <strong className="font-bold text-brand-yellow font-almarai">
-                        {yellowText}
+                        {" "} {yellowText} {" "}
                     </strong>
                     {description2}
                 </p>

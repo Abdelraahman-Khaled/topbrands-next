@@ -8,7 +8,7 @@ import Ledaership from "./components/Ledaership";
 import OurEdgeSection from "./components/OurEdgeSection";
 import AboutCertifications from "./components/AboutCertifications";
 import GrowthDirection from "./components/GrowthDirection";
-import AboutCTA from "./components/AboutCTA";
+import GlobalCTA from "../components/GlobalCTA";
 
 export default function AboutPage() {
   const { t } = useTranslation();
@@ -72,10 +72,10 @@ export default function AboutPage() {
       </section> */}
 
       {/* Growth Direction Section */}
-     <GrowthDirection/>
+      <GrowthDirection />
 
       {/* CTA Section */}
-     <AboutCTA/>
+      <GlobalCTA title={t("ready_to_partner")} subtitle={t("join_growing_portfolio")} contact={false} />
     </div>
   );
 }

@@ -2,11 +2,11 @@ export default {
   // navbar
   home: "Home",
   about: "About Us",
-  services: "Our Services",
-  brands: "Our Brands",
+  services: "Services",
+  brands: "Brands",
   coverage: "Market Coverage",
   blog: "Blog",
-  contact: "Contact",
+  contact: "Contact Us",
   //end of navbar
   // {Home}
   // hero
@@ -616,4 +616,90 @@ export default {
   contact_send_message_btn: "Send Message",
   why_partner_with_us: "Why Partner With Us",
   become_a_partner: "Become a Partner",
+  Integrated_FMCG: "Integrated FMCG",
+  services_hero_desc_1: "Growing Together Syria delivers",
+  services_hero_desc_2: "integrated FMCG distribution solutions",
+  services_hero_desc_3:
+    "designed to maximize brand reach, visibility, and sales performance across the Syrian market.",
+  service1_title: "FMCG Distribution in Syria",
+  service1_desc:
+    "Top Brands Syria provides fully integrated, end-to-end FMCG distribution solutions across Syria. We support international and regional brands with reliable, scalable, and performance-driven distribution models that ensure efficient product movement from warehouse to point of sale.",
+  service1_p1: "End-to-end distribution",
+  service1_p2: "Scalable solutions",
+  service1_p3: "Performance-driven models",
+  service1_p4: "Warehouse to POS efficiency",
+
+  service2_title: "Comprehensive Retail & Trade Coverage",
+  service2_desc:
+    "We deliver extensive coverage across traditional retail, modern trade, and wholesale channels. Our multi-channel distribution approach ensures brand presence in neighborhood stores, supermarkets, hypermarkets, and wholesale markets nationwide.",
+  service2_p1: "Traditional retail coverage",
+  service2_p2: "Modern trade channels",
+  service2_p3: "Wholesale distribution",
+  service2_p4: "Nationwide presence",
+
+  service3_title: "Brand Representation & Market Entry",
+  service3_desc:
+    "Top Brands acts as a strategic local partner for brand owners seeking market entry or expansion in Syria. We manage brand positioning, pricing strategy, channel rollout, and ongoing market development while minimizing commercial and operational risks.",
+  service3_p1: "Strategic partnership",
+  service3_p2: "Market entry support",
+  service3_p3: "Brand positioning",
+  service3_p4: "Risk minimization",
+
+  service4_title: "Direct Delivery & Sales Execution",
+  service4_desc:
+    "Our direct delivery capabilities ensure fast order fulfillment and consistent replenishment. Supported by trained sales teams and optimized delivery routes, we maintain high service levels and reduced lead times across all markets.",
+  service4_p1: "Fast fulfillment",
+  service4_p2: "Consistent replenishment",
+  service4_p3: "Trained sales teams",
+  service4_p4: "Optimized routes",
+
+  service5_title: "Nationwide Market Coverage",
+  service5_desc:
+    "With a strong distribution infrastructure covering major cities and regional markets, Top Brands Syria provides consistent, reliable nationwide FMCG distribution.",
+  service5_p1: "Major cities coverage",
+  service5_p2: "Regional markets",
+  service5_p3: "Strong infrastructure",
+  service5_p4: "Reliable distribution",
+
+  service6_title: "Merchandising & In-Store Visibility",
+  service6_desc:
+    "Dedicated merchandising teams focus on planogram execution, product placement, promotional compliance, and brand visibility at the point of sale to drive sell-out performance.",
+  service6_p1: "Planogram execution",
+  service6_p2: "Product placement",
+  service6_p3: "Promotional compliance",
+  service6_p4: "Brand visibility",
+
+  service7_title: "Importing & Trading of Consumer Goods",
+  service7_desc:
+    "Top Brands Syria manages sourcing, logistics coordination, and regulatory compliance for imported FMCG products, ensuring quality, continuity, and cost efficiency from origin to shelf.",
+  service7_p1: "Sourcing management",
+  service7_p2: "Logistics coordination",
+  service7_p3: "Regulatory compliance",
+  service7_p4: "Quality assurance",
+  excellence_title: "Service Excellence",
+  excellence_subtitle:
+    "Why brands choose Top Brands Syria for FMCG distribution",
+  feat1_title: "Nationwide",
+  feat1_desc: "Complete coverage across all Syrian regions",
+  feat2_title: "Experienced",
+  feat2_desc: "Professional sales and merchandising teams",
+  feat3_title: "Fast",
+  feat3_desc: "Optimized delivery and quick response times",
+  feat4_title: "Competitive",
+  feat4_desc: "Cost-effective solutions with flexible terms",
+  services_cta_title: "Need FMCG Distribution Services?",
+  services_cta_desc:
+    "Let's discuss how Top Brands Syria can support your brand growth.",
+  brand_portfolio_desc_1:
+    "Growing Together distributes a growing portfolio of ",
+  brand_portfolio_desc_2: "trusted FMCG brands",
+  brand_portfolio_desc_3:
+    " across food and non-food categories, focusing on long-term market development and brand visibility.",
+  Interested_in: "Interested in",
+  distribution_partnership: "Distribution Partnership",
+  brand_representation: "Brand Representation",
+  general_inquiry: "General Inquiry",
+  logistics_importing: "Logistics & Importing",
+  other: "Other",
+  Products: "Products",
 };
