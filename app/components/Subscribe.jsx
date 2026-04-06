@@ -1,8 +1,9 @@
 import React from 'react';
 import { Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import Link from 'next/link';
 
-const Subscribe = ({title}) => {
+const Subscribe = ({ title, becomePartner = false }) => {
     const { t } = useTranslation();
     return (
         <section className="relative w-full bg-[#0B1411] py-24 px-6 overflow-hidden">
@@ -26,29 +27,52 @@ const Subscribe = ({title}) => {
 
                 {/* Text Content */}
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-                   {title}
+                    {title}
                 </h2>
                 <p className="text-white/90 text-lg mb-10 max-w-2xl">
                     {t("newsletter_desc")}
                 </p>
 
                 {/* Form */}
-                <form
-                    onSubmit={(e) => e.preventDefault()}
-                    className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-2xl"
-                >
-                    <input
-                        type="email"
-                        placeholder={t("newsletter_placeholder")}
-                        className="w-full flex-1 bg-white/5 border border-white/20 rounded-lg px-6 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#F7E326]/50 transition-colors"
-                    />
-                    <button
-                        type="submit"
-                        className="w-full sm:w-auto bg-[#F7E326] hover:bg-[#e5d120] text-black font-bold px-10 py-4 rounded-lg transition-all duration-200 whitespace-nowrap"
-                    >
-                        {t("newsletter_btn")}
-                    </button>
-                </form>
+                {
+                    becomePartner ?
+                        <div className='flex gap-4'>
+                            <Link
+                                href={'/become-a-partner'}
+                                className="inline-flex ms-2 items-center gap-3 px-10 py-4 bg-brand-yellow text-brand-charcoal rounded-full font-bold text-lg hover:brightness-110 transition-all shadow-xl hover:shadow-2xl whitespace-nowrap cursor-pointer"
+                            >
+                                <span>{t("become_a_partner")}</span>
+                                <i className="ri-arrow-right-line text-xl rtl:rotate-180"></i>
+                            </Link>
+
+                            <Link
+                                href={"/services"}
+                                className="inline-flex ms-2 items-center gap-3 px-10 py-4 bg-inherit text-brand-white border-2 border-brand-white rounded-full font-bold text-lg hover:brightness-110 transition-all shadow-xl hover:shadow-2xl whitespace-nowrap cursor-pointer hover:bg-white duration-300 hover:text-brand-charcoal"
+                            >
+                                <span>{t("btn_services")}</span>
+                                <i className="ri-arrow-right-line text-xl rtl:rotate-180"></i>
+                            </Link>
+
+                        </div>
+                        :
+                        <form
+                            onSubmit={(e) => e.preventDefault()}
+                            className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-2xl"
+                        >
+                            <input
+                                type="email"
+                                placeholder={t("newsletter_placeholder")}
+                                className="w-full flex-1 bg-white/5 border border-white/20 rounded-lg px-6 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#F7E326]/50 transition-colors"
+                            />
+                            <button
+                                type="submit"
+                                className="w-full sm:w-auto bg-[#F7E326] hover:bg-[#e5d120] text-black font-bold px-10 py-4 rounded-lg transition-all duration-200 whitespace-nowrap"
+                            >
+                                {t("newsletter_btn")}
+                            </button>
+                        </form>
+                }
+
 
             </div>
         </section>

@@ -1,13 +1,8 @@
 import { useState } from 'react';
 
-interface FAQItem {
-  id: number;
-  question: string;
-  answer: string;
-  category: string;
-}
 
-const faqs: FAQItem[] = [
+
+const faqs = [
   {
     id: 1,
     question: 'What areas does B2B Distribution cover in Syria?',
@@ -110,7 +105,7 @@ export default function FAQ() {
     ? faqs
     : faqs.filter(faq => faq.category === selectedCategory);
 
-  const toggleFAQ = (id: number) => {
+  const toggleFAQ = (id) => {
     setOpenId(openId === id ? null : id);
   };
 

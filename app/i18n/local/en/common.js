@@ -761,4 +761,52 @@ export default {
   contact_phone: "Phone",
   contact_location: "Location",
   city_syria: "Damascus, Syria",
+  // national distribution
+  dist_hero_title: "Nationwide Distribution",
+  dist_hero_yellow: "Network",
+  dist_hero_desc:
+    "Strong coverage across traditional retail, modern trade, and wholesale channels throughout Syria. We ensure your products reach every corner of the market.",
+
+  stat1_val: "14",
+  stat1_label: "Governorates Covered",
+  stat2_val: "5000+",
+  stat2_label: "Retail Points",
+  stat3_val: "98%",
+  stat3_label: "Delivery Success Rate",
+  stat4_val: "24h",
+  stat4_label: "Average Delivery Time",
+
+  channels_title: "Distribution Channels",
+  channels_subtitle:
+    "Multi-channel distribution approach ensuring maximum market penetration",
+  channel1_title: "Traditional Retail",
+  channel1_desc:
+    "Deep penetration in neighborhood stores, grocers, and local shops across all Syrian regions.",
+  channel2_title: "Modern Trade",
+  channel2_desc:
+    "Strong presence in supermarkets, hypermarkets, and chain stores with dedicated account management.",
+  channel3_title: "Wholesale Channels",
+  channel3_desc:
+    "Efficient wholesale network to reach smaller retailers and far-flung rural areas.",
+  channel4_title: "Geographic Coverage",
+  channel4_desc:
+    "Comprehensive coverage of major cities, regional centers, and rural market settlements.",
+
+  how_title: "How We Distribute",
+  how_subtitle:
+    "Our distribution process is designed for efficiency, reliability, and maximum market coverage. From warehouse to shelf, we ensure your products are always available.",
+  step1_title: "Order Processing",
+  step1_desc: "Efficient order management and inventory allocation.",
+  step2_title: "Route Optimization",
+  step2_desc: "Smart routing for faster delivery times.",
+  step3_title: "Delivery Execution",
+  step3_desc: "Professional delivery with real-time tracking.",
+  step4_title: "Confirmation & Reporting",
+  step4_desc: "Delivery confirmation and performance analytics.",
+
+  cta_title: "Ready to Expand Your Distribution?",
+  cta_subtitle:
+    "Get the latest insights and market updates delivered directly to your inbox",
+  btn_partner: "Become a Partner",
+  btn_services: "All Services",
 };
