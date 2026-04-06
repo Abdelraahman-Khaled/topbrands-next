@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useTranslation } from "next-i18next";
+import { "use client";
+import { useTranslation } from "react-i18next"; } from "next-i18next";
 
 interface Testimonial {
   id: number;
@@ -13,7 +14,8 @@ interface Testimonial {
 }
 
 export default function Testimonials() {
-  const { t } = useTranslation();
+  const { t } = "use client";
+  import { useTranslation } from "react-i18next"; ();
   const [activeIndex, setActiveIndex] = useState(0);
 
   const testimonials: Testimonial[] = [

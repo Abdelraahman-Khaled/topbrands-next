@@ -1,7 +1,9 @@
-import { useTranslation } from "next-i18next";
+import { "use client";
+import { useTranslation } from "react-i18next"; } from "next-i18next";
 
 export default function WhyChooseUs() {
-  const { t } = useTranslation();
+  const { t } = "use client";
+  import { useTranslation } from "react-i18next"; ();
 
   const services = [
     {
