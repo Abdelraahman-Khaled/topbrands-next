@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import HeroSection from "../components/HeroSection";
 
 export default function ContactPage() {
   const { t } = useTranslation();
@@ -14,9 +15,7 @@ export default function ContactPage() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState <
-    "idle" | "success" | "error"
-    > ("idle");
+  const [submitStatus, setSubmitStatus] = useState("idle");
 
   const handleChange = (
 
@@ -74,78 +73,56 @@ export default function ContactPage() {
 
 
       {/* Hero Section with Image */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://readdy.ai/api/search-image?query=professional%20customer%20service%20team%20modern%20office%20environment%20friendly%20business%20communication%20contact%20center%20bright%20contemporary%20workspace%20Syria%20Damascus%20corporate%20setting&width=1920&height=600&seq=contact-hero-main&orientation=landscape"
-            alt="Contact Us"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="flex items-center space-x-4 rtl:space-x-reverse mb-8">
-            <span className="text-sm font-semibold text-brand-teal tracking-widest uppercase">
-              {t("contact_nav")}
-            </span>
-            <div className="h-px w-16 bg-brand-teal"></div>
-          </div>
-          <h1 className="text-6xl lg:text-7xl font-bold text-white mb-6">
-            {t("contact_us_title")}
-            <br />
-            <span className="text-brand-yellow">Top Brands Syria</span>
-          </h1>
-          <p className="text-2xl lg:text-3xl text-gray-200 leading-relaxed max-w-4xl font-light">
-            {t("contact_hero_desc_1")}
-            <strong className="font-semibold text-brand-yellow">
-              {t("contact_hero_desc_2")}
-            </strong>
-            {t("contact_hero_desc_3")}
-          </p>
-        </div>
-      </section>
+      <HeroSection
+        img="https://readdy.ai/api/search-image?query=professional%20customer%20service%20team%20modern%20office%20environment%20friendly%20business%20communication%20contact%20center%20bright%20contemporary%20workspace%20Syria%20Damascus%20corporate%20setting&width=1920&height=600&seq=contact-hero-main&orientation=landscape"
+        title={t("contact_us_title")}
+        yellowTitle={t("growing_together")}
+        subtitle={t("contact_nav")}
+        description1={t("contact_hero_desc_1")}
+        yellowText={t("contact_hero_desc_2")}
+        description2={t("contact_hero_desc_3")}
+      />
 
       {/* Contact Information Cards */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="grid md:grid-cols-3 gap-8 mb-20">
-            <div className="bg-brand-paleblue rounded-3xl p-10 hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-brand-teal">
-              <div className="w-16 h-16 flex items-center justify-center bg-brand-teal rounded-2xl mb-6">
+            <div className="bg-brand-paleblue rounded-3xl p-10 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-gray-200">
+              <div className="w-16 h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6">
                 <i className="ri-phone-line text-3xl text-white"></i>
               </div>
-              <h3 className="text-2xl font-bold text-brand-jet mb-3">
+              <h3 className="text-2xl font-bold text-black mb-3">
                 {t("contact_phone")}
               </h3>
               <a
                 href="tel:+963116022"
-                className="text-lg text-brand-charcoal hover:text-brand-teal transition-colors"
+                className="text-lg text-brand-charcoal hover:text-brand-charcoal transition-colors"
                 dir="ltr"
               >
                 +963 11 6022
               </a>
             </div>
 
-            <div className="bg-brand-paleblue rounded-3xl p-10 hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-brand-coral">
-              <div className="w-16 h-16 flex items-center justify-center bg-brand-coral rounded-2xl mb-6">
-                <i className="ri-mail-line text-3xl text-white"></i>
+            <div className="bg-brand-paleblue rounded-3xl p-10 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-gray-200">
+              <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-6">
+                <i className="ri-mail-line text-3xl text-black"></i>
               </div>
-              <h3 className="text-2xl font-bold text-brand-jet mb-3">
+              <h3 className="text-2xl font-bold text-black mb-3">
                 {t("email_us")}
               </h3>
               <a
                 href="mailto:info@topbrands-sy.com"
-                className="text-lg text-brand-charcoal hover:text-brand-coral transition-colors break-all"
+                className="text-lg text-brand-charcoal hover:text-black transition-colors break-all"
               >
                 info@topbrands-sy.com
               </a>
             </div>
 
-            <div className="bg-brand-paleblue rounded-3xl p-10 hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-brand-teal">
-              <div className="w-16 h-16 flex items-center justify-center bg-brand-teal rounded-2xl mb-6">
+            <div className="bg-brand-paleblue rounded-3xl p-10 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-gray-200">
+              <div className="w-16 h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6">
                 <i className="ri-map-pin-line text-3xl text-white"></i>
               </div>
-              <h3 className="text-2xl font-bold text-brand-jet mb-3">
+              <h3 className="text-2xl font-bold text-black mb-3">
                 {t("contact_location")}
               </h3>
               <p className="text-lg text-brand-charcoal">
@@ -156,7 +133,7 @@ export default function ContactPage() {
 
           {/* Map Section */}
           <div className="mb-20">
-            <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-8 text-center">
+            <h2 className="text-4xl lg:text-5xl font-bold text-black mb-8 text-center">
               {t("our_location")}
             </h2>
             <div className="rounded-3xl overflow-hidden shadow-2xl h-[500px]">
@@ -176,7 +153,7 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div className="bg-brand-paleblue rounded-3xl p-10 lg:p-12 shadow-2xl max-w-4xl mx-auto">
             <div className="text-center mb-10">
-              <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-4">
+              <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4">
                 {t("contact_send_message_title")}
               </h2>
               <p className="text-xl text-brand-charcoal">
@@ -200,7 +177,7 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent bg-white text-left rtl:text-right"
+                    className="w-full  px-4 py-3 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent bg-white text-left rtl:text-right"
                     placeholder={t("your_full_name")}
                   />
                 </div>
@@ -219,7 +196,7 @@ export default function ContactPage() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent bg-white text-left rtl:text-right"
+                    className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent bg-white text-left rtl:text-right"
                     placeholder={t("your_email")}
                     dir="ltr"
                   />
@@ -240,7 +217,7 @@ export default function ContactPage() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent bg-white text-left"
+                    className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent bg-white text-left"
                     placeholder={t("your_phone_placeholder")}
                     dir="ltr"
                   />
@@ -259,7 +236,7 @@ export default function ContactPage() {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent bg-white text-left rtl:text-right"
+                    className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent bg-white text-left rtl:text-right"
                     placeholder={t("your_company")}
                   />
                 </div>
@@ -278,7 +255,7 @@ export default function ContactPage() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent bg-white text-left rtl:text-right"
+                  className="w-full px-4 py-3 text-black text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent bg-white text-left rtl:text-right"
                 >
                   <option value="">{t("select_subject")}</option>
                   <option value="Distribution Partnership">
@@ -310,7 +287,7 @@ export default function ContactPage() {
                   required
                   rows={6}
                   maxLength={500}
-                  className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent resize-none bg-white text-left rtl:text-right"
+                  className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent resize-none bg-white text-left rtl:text-right"
                   placeholder={t("message_placeholder")}
                 ></textarea>
                 <p className="text-xs text-brand-charcoal mt-2 flex justify-end rtl:justify-start">
@@ -339,7 +316,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-8 py-4 bg-brand-coral text-white rounded-xl font-bold text-lg hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                className="w-full px-8 py-4 bg-brand-yellow text-black duration-300 rounded-xl font-bold text-lg hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
               >
                 {isSubmitting ? t("sending") : t("contact_send_message_btn")}
               </button>

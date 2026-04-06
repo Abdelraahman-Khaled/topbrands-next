@@ -413,8 +413,7 @@ export default {
   service_excellence: "Service Excellence",
   what_makes_stand_out: "What makes our distribution services stand out",
   fast_delivery: "Fast Delivery",
-  optimized_routes:
-    "Optimized routes and efficient logistics ensure 24-48 hour delivery across all regions.",
+  optimized_routes: "Optimized routes",
   quality_assurance_desc_detailed:
     "Refrigerated warehouses and vans, dedicated team for marketing insight, and dedicated CRM team ensure product integrity.",
   real_time_sales:
@@ -702,4 +701,64 @@ export default {
   logistics_importing: "Logistics & Importing",
   other: "Other",
   Products: "Products",
+  newsletter_title: "Subscribe to Our Newsletter",
+  newsletter_desc:
+    "Get the latest insights and market updates delivered directly to your inbox",
+  newsletter_placeholder: "Enter your email address",
+  newsletter_btn: "Subscribe Now",
+  Never_Miss_an_Update: "Never Miss an Update",
+  growing_supports_partner: "Growing Together supports FMCG brands through ​",
+  strategic_market_entry_partner: "strategic market entry",
+  national_become_partner:
+    "nationwide distribution, and scalable growth solutions driven by long-term collaboration and local expertise.",
+  expand_brand: "Expand Your Brand's",
+  presence_syria: "Presence in Syria",
+  partner_nav: "Become a Partner",
+  growing_supports:
+    "Join a growing network of international brands. Top Brands Syria supports your market entry with expertise and reliability.",
+  strategic_market_entry: "Strategic Market Entry & Distribution",
+
+  benefits_title: "Partnership Benefits",
+  benefits_subtitle: "Why leading FMCG brands choose Top Brands Syria",
+  benefit1_title: "Strong Local Market Knowledge",
+  benefit1_desc:
+    "Deep understanding of Syrian consumer preferences, regional dynamics, and market trends",
+  benefit2_title: "Professional Sales & Merchandising",
+  benefit2_desc:
+    "Experienced teams ensuring optimal product placement, visibility, and sell-out performance",
+  benefit3_title: "Scalable Growth Opportunities",
+  benefit3_desc:
+    "Flexible distribution models supporting brand expansion across all Syrian regions",
+  benefit4_title: "Reliable & Transparent Operations",
+  benefit4_desc:
+    "Consistent service delivery with clear communication and performance tracking",
+
+  form_title: "Start Your Partnership",
+  form_subtitle:
+    "Fill out the form below and our team will contact you within 24 hours",
+  label_company: "Company Name *",
+  placeholder_company: "Your company name",
+  label_contact: "Contact Person *",
+  placeholder_contact: "Your full name",
+  label_email: "Email Address *",
+  placeholder_email: "your@email.com",
+  label_phone: "Phone Number *",
+  placeholder_phone: "+963 XXX XXX XXX",
+  label_brand: "Brand Name *",
+  placeholder_brand: "Brand you represent",
+  label_category: "Product Category *",
+  select_category: "Select category",
+  label_message: "Message",
+  placeholder_message:
+    "Tell us about your brand and partnership goals (max 500 characters)",
+  btn_submit: "Submit Partnership Request",
+  btn_submitting: "Submitting...",
+  msg_success: "Thank you! We'll contact you within 24 hours.",
+  msg_error: "Something went wrong. Please try again.",
+
+  direct_contact_title: "Or Contact Us Directly",
+  contact_email: "Email",
+  contact_phone: "Phone",
+  contact_location: "Location",
+  city_syria: "Damascus, Syria",
 };
