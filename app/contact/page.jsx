@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { useTranslation } from "next-i18next";
-import Navbar from "../../components/feature/Navbar";
-import Footer from "../../components/feature/Footer";
+import { useTranslation } from "react-i18next";
 
 export default function ContactPage() {
   const { t } = useTranslation();

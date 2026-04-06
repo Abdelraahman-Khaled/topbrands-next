@@ -1,7 +1,5 @@
+import { useTranslation } from "react-i18next";
 import { useSearchParams, Link } from "react-router-dom";
-import { useTranslation } from "next-i18next";
-import Navbar from "../../components/feature/Navbar";
-import Footer from "../../components/feature/Footer";
 
 export default function BrandsPage() {
   const { t } = useTranslation();

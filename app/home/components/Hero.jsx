@@ -1,7 +1,9 @@
-import { useTranslation } from "next-i18next";
+"use client";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
+
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -15,7 +17,7 @@ export default function Hero() {
             className="w-full h-full"
           />
           {/* Overlay gradient over the image */}
-          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-black/30 to-black/40"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-transparent via-black/30 to-black/40"></div>
         </div>
       </div>
 
@@ -31,7 +33,7 @@ export default function Hero() {
         className="absolute top-0 right-[25%] z-0 w-[4px] h-full" // Adjust width and height as needed
         style={{
           background:
-            "linear-gradient(to 135deg, #F7E32600 0%, #F7E32699 60%, #F7E32600 100%)",
+            "linear-gradient(135deg, #F7E32600 0%, #F7E32699 60%, #F7E32600 100%)",
           transform: "translateX(-50%) rotate(15deg)", // هنا الزاوية (rotate) عشان تخليه مايل
         }}
       ></div>

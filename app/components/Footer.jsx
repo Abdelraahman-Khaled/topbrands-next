@@ -1,10 +1,11 @@
-import { useTranslation } from "next-i18next";
+"use client";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className=" text-[#4B4F54] relative overflow-hidden">
+    <footer className="bg-white text-[#4B4F54] relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0"
@@ -215,25 +216,25 @@ export default function Footer() {
         <div className="flex justify-center space-x-4 rtl:space-x-reverse mt-12 pt-8 border-t border-gray-500">
           <a
             href="#"
-            className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
+            className="w-10 border-[#4B4F54] border-2 h-10 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
           >
             <i className="ri-linkedin-fill text-lg"></i>
           </a>
           <a
             href="#"
-            className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
+            className="w-10 h-10 border-[#4B4F54] border-2 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
           >
             <i className="ri-facebook-fill text-lg"></i>
           </a>
           <a
             href="#"
-            className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
+            className="w-10 h-10 border-[#4B4F54] border-2 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
           >
             <i className="ri-instagram-line text-lg"></i>
           </a>
           <a
             href="#"
-            className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
+            className="w-10 h-10 border-[#4B4F54] border-2 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
           >
             <i className="ri-whatsapp-line text-lg"></i>
           </a>

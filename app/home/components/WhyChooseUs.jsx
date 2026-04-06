@@ -1,9 +1,8 @@
-import { "use client";
-import { useTranslation } from "react-i18next"; } from "next-i18next";
+"use client";
+import { useTranslation } from "react-i18next";
 
 export default function WhyChooseUs() {
-  const { t } = "use client";
-  import { useTranslation } from "react-i18next"; ();
+  const { t } = useTranslation();
 
   const services = [
     {
@@ -98,7 +97,7 @@ export default function WhyChooseUs() {
       className="py-[120px] bg-white relative overflow-hidden"
     >
       {/* Decorative vectors from DIV-230/DIV-231 */}
-      <div className="absolute top-0 left-[88%] w-[690px] h-full bg-[#DEE3EB] rounded-full opacity-1 pointer-events-none"></div>
+      <div className="absolute top-0 left-[88%] w-[690px] h-full bg-[#DEE3EB] rounded-full opacity-70 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6   relative z-10">
         {/* Header Section (DIV-213) */}
@@ -107,7 +106,7 @@ export default function WhyChooseUs() {
             <h2 className="text-5xl font-bold text-black leading-tight mb-4">
               {t("why_choose_us") || "Why Choose Growing Together"}
             </h2>
-            <p className="text-[20px] text-[#black] font-medium max-w-[800px] mx-auto">
+            <p className="text-[20px] text-[#4B4F54] font-medium max-w-[800px] mx-auto">
               {t("your_trusted_fmcg_distribution_partner") ||
                 "Your Trusted FMCG Distribution Partner"}
             </p>

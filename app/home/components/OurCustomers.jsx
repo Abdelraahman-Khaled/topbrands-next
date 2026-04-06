@@ -1,11 +1,10 @@
 "use client"
 import { useState, useEffect } from "react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next"
 import { Store, MapPin, Truck, Heart } from "lucide-react";
 export default function OurCustomers() {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const customers = [
     {
       name: "Union Coop",
@@ -106,7 +105,7 @@ export default function OurCustomers() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="flex justify-center items-center  mb-4">
-            <span className="flex gap-3 items-center justify-center px-5 py-3 bg-gradient-to-r from-[#14B8A61A] to-[#0D94881A]  rounded-full text-sm font-bold uppercase tracking-wider">
+            <span className="flex gap-3 items-center justify-center px-5 py-3 text-[#4B4F54] bg-linear-to-r from-[#14B8A61A] to-[#0D94881A]  rounded-full text-sm font-bold uppercase tracking-wider">
               <svg
                 width="16"
                 height="15"
@@ -125,7 +124,7 @@ export default function OurCustomers() {
           <h2 className="text-5xl font-bold text-[#000000] mb-6">
             {t("our_customers")}
           </h2>
-          <p className="text-xl text-[#4B4F54] max-w-3xl mx-auto font-medium">
+          <p className="text-xl text-[#4B5563] max-w-3xl mx-auto font-medium">
             {t("Trusted_Partners_desc")}
           </p>
         </div>

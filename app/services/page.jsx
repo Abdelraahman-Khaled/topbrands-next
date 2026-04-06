@@ -1,4 +1,5 @@
-import { useTranslation } from "next-i18next";
+"use client";
+import { useTranslation } from "react-i18next";
 import Navbar from "../../components/feature/Navbar";
 import Footer from "../../components/feature/Footer";
 

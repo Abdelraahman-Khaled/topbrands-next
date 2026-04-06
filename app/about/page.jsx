@@ -1,4 +1,5 @@
-import { useTranslation } from "next-i18next";
+"use client";
+import { useTranslation } from "react-i18next";
 
 export default function AboutPage() {
   const { t } = useTranslation();
@@ -121,7 +122,7 @@ export default function AboutPage() {
                 alt={t("contact_accent")}
                 className="w-full h-full object-cover object-top"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent"></div>
             </div>
 
             <div className="space-y-8">

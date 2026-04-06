@@ -1,8 +1,7 @@
-import { useTranslation } from "next-i18next";
-
+"use client";
+import { useTranslation } from "react-i18next";
 export default function Contact() {
-  const { t } = useTranslation();
-
+const {t} = useTranslation()
   const contactInfo = [
     {
       icon: "ri-phone-line",

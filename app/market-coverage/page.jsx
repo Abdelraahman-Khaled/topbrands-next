@@ -1,4 +1,5 @@
-import { useTranslation } from "next-i18next";
+"use client";
+import { useTranslation } from "react-i18next";
 import Navbar from "../../components/feature/Navbar";
 import Footer from "../../components/feature/Footer";
 
@@ -141,7 +142,7 @@ export default function MarketCoveragePage() {
                 alt="Syria Market Coverage Map"
                 className="w-full h-full object-cover object-top"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8">
                 <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6">
                   <p className="text-sm text-brand-charcoal font-medium mb-2">
@@ -335,7 +336,7 @@ export default function MarketCoveragePage() {
                 alt="Logistics Infrastructure"
                 className="w-full h-full object-cover object-top"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent"></div>
             </div>
           </div>
         </div>

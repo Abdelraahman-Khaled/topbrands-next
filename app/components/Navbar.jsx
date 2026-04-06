@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
-import { useTranslation } from "next-i18next";
+"use client"
+import { useState, useEffect } from "react"
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { t, i18n } = useTranslation();
-
+const{t,i18n} = useTranslation()
   const toggleLanguage = () => {
     const newLang = i18n.language === "en" ? "ar" : "en";
     i18n.changeLanguage(newLang);
@@ -37,8 +37,8 @@ export default function Navbar() {
             <a
               href="/"
               className={`text-base font-medium transition-colors whitespace-nowrap cursor-pointer ${isScrolled
-                  ? "text-brand-charcoal hover:text-brand-yellow"
-                  : "text-white hover:text-brand-yellow"
+                ? "text-brand-charcoal hover:text-brand-yellow"
+                : "text-white hover:text-brand-yellow"
                 }`}
             >
               {t("home")}
@@ -46,8 +46,8 @@ export default function Navbar() {
             <a
               href="/about"
               className={`text-base font-medium transition-colors whitespace-nowrap cursor-pointer ${isScrolled
-                  ? "text-brand-charcoal hover:text-brand-yellow"
-                  : "text-white hover:text-brand-yellow"
+                ? "text-brand-charcoal hover:text-brand-yellow"
+                : "text-white hover:text-brand-yellow"
                 }`}
             >
               {t("about")}
@@ -55,8 +55,8 @@ export default function Navbar() {
             <a
               href="/services"
               className={`text-base font-medium transition-colors whitespace-nowrap cursor-pointer ${isScrolled
-                  ? "text-brand-charcoal hover:text-brand-yellow"
-                  : "text-white hover:text-brand-yellow"
+                ? "text-brand-charcoal hover:text-brand-yellow"
+                : "text-white hover:text-brand-yellow"
                 }`}
             >
               {t("services")}
@@ -64,8 +64,8 @@ export default function Navbar() {
             <a
               href="/brands"
               className={`text-base font-medium transition-colors whitespace-nowrap cursor-pointer ${isScrolled
-                  ? "text-brand-charcoal hover:text-brand-yellow"
-                  : "text-white hover:text-brand-yellow"
+                ? "text-brand-charcoal hover:text-brand-yellow"
+                : "text-white hover:text-brand-yellow"
                 }`}
             >
               {t("brands")}
@@ -73,8 +73,8 @@ export default function Navbar() {
             <a
               href="/market-coverage"
               className={`text-base font-medium transition-colors whitespace-nowrap cursor-pointer ${isScrolled
-                  ? "text-brand-charcoal hover:text-brand-yellow"
-                  : "text-white hover:text-brand-yellow"
+                ? "text-brand-charcoal hover:text-brand-yellow"
+                : "text-white hover:text-brand-yellow"
                 }`}
             >
               {t("coverage")}
@@ -82,8 +82,8 @@ export default function Navbar() {
             <a
               href="/blog"
               className={`text-base font-medium transition-colors whitespace-nowrap cursor-pointer ${isScrolled
-                  ? "text-brand-charcoal hover:text-brand-yellow"
-                  : "text-white hover:text-brand-yellow"
+                ? "text-brand-charcoal hover:text-brand-yellow"
+                : "text-white hover:text-brand-yellow"
                 }`}
             >
               {t("blog")}
@@ -91,8 +91,8 @@ export default function Navbar() {
             <a
               href="/contact"
               className={`text-base font-medium transition-colors whitespace-nowrap cursor-pointer ${isScrolled
-                  ? "text-brand-charcoal hover:text-brand-yellow"
-                  : "text-white hover:text-brand-yellow"
+                ? "text-brand-charcoal hover:text-brand-yellow"
+                : "text-white hover:text-brand-yellow"
                 }`}
             >
               {t("contact")}
@@ -103,8 +103,8 @@ export default function Navbar() {
             <button
               onClick={toggleLanguage}
               className={`px-3 py-1.5 rounded-md font-bold transition-all flex items-center gap-2 ${isScrolled
-                  ? "text-brand-charcoal hover:bg-gray-100"
-                  : "text-white hover:bg-white/10"
+                ? "text-brand-charcoal hover:bg-gray-100"
+                : "text-white hover:bg-white/10"
                 }`}
             >
               <i className="ri-global-line"></i>
@@ -113,8 +113,8 @@ export default function Navbar() {
             <a
               href="/become-a-partner"
               className={`px-6 py-2.5 rounded-lg border-2 font-semibold transition-all whitespace-nowrap cursor-pointer ${isScrolled
-                  ? "border-brand-charcoal text-brand-charcoal hover:bg-brand-charcoal hover:text-white"
-                  : "border-white text-white hover:bg-white hover:text-brand-jet"
+                ? "border-brand-charcoal text-brand-charcoal hover:bg-brand-charcoal hover:text-white"
+                : "border-white text-white hover:bg-white hover:text-brand-jet"
                 }`}
             >
               {t("become_partner")}

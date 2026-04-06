@@ -1,9 +1,9 @@
-import Link from "next/link"
-import { useTranslation } from "next-i18next";
+"use client";
+import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 export default function ProductsBrands() {
-  const { t } = useTranslation();
-
+  const { t } = useTranslation()
   const internationalBrands = [
     {
       name: "PINAR",
@@ -82,7 +82,7 @@ export default function ProductsBrands() {
 
         <div className="grid lg:grid-cols-2 gap-8">
           <Link
-            to="/brands"
+            href="/brands"
             className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300  group cursor-pointer h-[720px] block"
           >
             <img
@@ -90,7 +90,7 @@ export default function ProductsBrands() {
               alt={t("our_brands")}
               className="w-full h-full object-cover object-top"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent"></div>
             <div className="absolute bottom-8 left-8 right-8 rtl:left-8 rtl:right-8">
               <div className="bg-black/70 backdrop-blur-sm rounded-xl p-6">
                 <p className="text-sm text-white uppercase tracking-widest mb-2">
@@ -109,7 +109,7 @@ export default function ProductsBrands() {
 
           <div className="space-y-8">
             <Link
-              to="/brands?type=international"
+              href="/brands?type=international"
               className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300  group cursor-pointer bg-white h-[344px] block"
             >
               <div className="p-8 h-full flex flex-col justify-between">
@@ -144,7 +144,7 @@ export default function ProductsBrands() {
             </Link>
 
             <Link
-              to="/brands?type=regional"
+              href="/brands?type=regional"
               className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300  group cursor-pointer bg-white h-[344px] block"
             >
               <div className="p-8 h-full flex flex-col justify-between">

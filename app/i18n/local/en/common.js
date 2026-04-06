@@ -614,4 +614,6 @@ export default {
   error_msg: "Something went wrong. Please try again.",
   sending: "Sending...",
   contact_send_message_btn: "Send Message",
+  why_partner_with_us: "Why Partner With Us",
+  become_a_partner:"Become a Partner"
 };

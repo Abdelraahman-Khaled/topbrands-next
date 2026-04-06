@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 
 
 
@@ -302,7 +302,7 @@ export default function Blog() {
                       alt={t(post.titleKey)}
                       className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute top-4 left-4 rtl:left-auto rtl:right-4">
                       <span
                         className="bg-[#F7E326] text-[#000000] px-4 py-2 rounded-full text-sm font-bold shadow-lg"
