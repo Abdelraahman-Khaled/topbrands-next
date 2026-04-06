@@ -38,7 +38,7 @@ export default function Hero() {
         }}
       ></div>
       {/* Content */}
-      <div className="relative flex z-10 max-w-7xl mx-auto px-6 py-32 text-start w-full mt-12 md:mt-24 mb-12">
+      <div className="relative flex z-10 max-w-7xl mx-auto px-8 py-32 text-start w-full mt-12 md:mt-24 mb-12">
         <div className="w-3/4"></div>
         <div className="space-y-8  flex flex-col items-start w-full">
           {/* Badge */}

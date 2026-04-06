@@ -97,7 +97,7 @@ export default function Stats() {
         <div className="w-[800px] h-[800px] absolute -top-40 pl-[10%] bg-[#F7E326] rounded-full blur-[160px] opacity-20 transform -translate-x-1/2"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6  ">
+      <div className="relative z-10 max-w-7xl mx-auto px-8  ">
         <div className="mb-16 text-center">
           <h2 className="text-3xl lg:text-5xl font-bold text-white mb-4">
             {t("our_impact_in_numbers") || "Our Impact in Numbers"}

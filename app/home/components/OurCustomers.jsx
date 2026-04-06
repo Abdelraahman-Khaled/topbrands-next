@@ -101,7 +101,7 @@ export default function OurCustomers() {
       <div className="absolute top-20 left-10 w-96 h-96 bg-[#14B8A6]/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#F7E326]/5 rounded-full blur-3xl"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="flex justify-center items-center  mb-4">
@@ -169,7 +169,7 @@ export default function OurCustomers() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat) => (
             <div

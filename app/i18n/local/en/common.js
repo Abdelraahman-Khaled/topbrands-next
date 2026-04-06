@@ -263,7 +263,7 @@ export default {
   established_2025:
     "Established in 2025, Top Brands Syria operates under the Al Barengi Group, leveraging over 30 years of market experience to deliver food and non-food consumer products nationwide.",
   group_heritage: "Group Heritage",
-  years_market: "30+ YEARS VIA AL BARENGI GROUP",
+  years_market: "30+ Years ",
   coverage_label: "Coverage",
   nationwide: "Nationwide",
   vision: "Vision",
@@ -615,5 +615,5 @@ export default {
   sending: "Sending...",
   contact_send_message_btn: "Send Message",
   why_partner_with_us: "Why Partner With Us",
-  become_a_partner:"Become a Partner"
+  become_a_partner: "Become a Partner",
 };

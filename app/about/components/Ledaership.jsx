@@ -1,0 +1,72 @@
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+const Ledaership = () => {
+    const { t } = useTranslation();
+    const leadership = [
+        {
+            name: t("leader_1_name"),
+            position: t("leader_1_pos"),
+            image:
+                "https://readdy.ai/api/search-image?query=professional%20middle%20eastern%20business%20executive%20CEO%20in%20formal%20suit%20confident%20leadership%20portrait%20office%20background%20professional%20corporate%20photography&width=400&height=500&seq=leader1&orientation=portrait",
+            bio: t("leader_1_bio"),
+        },
+        {
+            name: t("leader_2_name"),
+            position: t("leader_2_pos"),
+            image:
+                "https://readdy.ai/api/search-image?query=professional%20middle%20eastern%20businesswoman%20executive%20in%20formal%20business%20attire%20confident%20leadership%20portrait%20modern%20office%20background%20corporate%20photography&width=400&height=500&seq=leader2&orientation=portrait",
+            bio: t("leader_2_bio"),
+        },
+        {
+            name: t("leader_3_name"),
+            position: t("leader_3_pos"),
+            image:
+                "https://readdy.ai/api/search-image?query=professional%20middle%20eastern%20male%20business%20executive%20in%20navy%20suit%20sales%20director%20confident%20portrait%20modern%20office%20setting%20corporate%20photography&width=400&height=500&seq=leader3&orientation=portrait",
+            bio: t("leader_3_bio"),
+        },
+    ];
+    return (
+        <section className="py-20  bg-brand-paleblue">
+            <div className="max-w-7xl mx-auto px-8 ">
+                <div className="text-center mb-16">
+                    <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-4">
+                        {t("leadership_team")}
+                    </h2>
+                    <p className="text-xl text-brand-charcoal max-w-3xl mx-auto font-medium">
+                        {t("leadership_team_subtitle")}
+                    </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {leadership.map((leader, index) => (
+                        <div
+                            key={index}
+                            className="group bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
+                        >
+                            <div className="relative h-80 overflow-hidden">
+                                <img
+                                    src={leader.image}
+                                    alt={leader.name}
+                                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-all duration-300"
+                                />
+                            </div>
+                            <div className="p-6">
+                                <h3 className="text-2xl font-bold text-brand-jet mb-2">
+                                    {leader.name}
+                                </h3>
+                                <p className="text-brand-yellow font-bold mb-4">
+                                    {leader.position}
+                                </p>
+                                <p className="text-brand-charcoal leading-relaxed font-medium">
+                                    {leader.bio}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default Ledaership

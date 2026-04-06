@@ -99,7 +99,7 @@ export default function WhyChooseUs() {
       {/* Decorative vectors from DIV-230/DIV-231 */}
       <div className="absolute top-0 left-[88%] w-[690px] h-full bg-[#DEE3EB] rounded-full opacity-70 pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6   relative z-10">
+      <div className="max-w-7xl mx-auto px-8   relative z-10">
         {/* Header Section (DIV-213) */}
         <div className="flex flex-col items-center  justify-between gap-1  mb-16">
           <div className="mx-auto text-center">

@@ -17,7 +17,7 @@ export default function About() {
       <div className="absolute top-20 right-10 w-[400px] h-[400px] bg-[#F7E326] opacity-[0.25] rounded-full blur-[100px] pointer-events-none"></div>
       <div className="absolute bottom-20 left-10 w-[300px] h-[300px] bg-[#F7E326] opacity-[0.10] rounded-full blur-[80px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6  relative z-10">
+      <div className="max-w-7xl mx-auto px-8  relative z-10">
         <div className="grid lg:grid-cols-2 gap-[64px] items-center">
           {/* Left Content */}
           <div className="space-y-6">
