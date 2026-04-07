@@ -18,7 +18,7 @@ const HeroSection = ({ subtitle, title, description1, yellowText, description2, 
             <div className="relative max-w-7xl mx-auto px-8 ">
                 <div className="flex items-center space-x-4 rtl:space-x-reverse mb-8">
                     <span className="text-sm font-semibold text-brand-yellow tracking-widest uppercase">
-                        {subtitle}
+                      /  {subtitle}
                     </span>
                     <div className="h-px w-16 bg-brand-yellow"></div>
                 </div>

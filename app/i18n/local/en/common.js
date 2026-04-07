@@ -10,6 +10,7 @@ export default {
   //end of navbar
   // {Home}
   // hero
+  years_group: "30+ YEARS VIA AL BARENGI GROUP",
   contact_syria: "Contact Top Brands Syria",
   become_partner: "Become a Distribution Partner",
   Distribution_Partner: "Distribution Partner",
@@ -75,7 +76,7 @@ export default {
   //2
   Advanced_Logistics: "Advanced Logistics",
   Advanced_Logistics_desc:
-    "Efficient warehousing, optimized delivery routes, and temperature-controlled transportation when required for product quality.",
+    "Efficient warehousing, optimized delivery routes, and temperature-controlled transportation when required. Your products handled with care and precision.",
   //3
   Experienced_Sales_Force: "Experienced Sales Force",
   Experienced_Sales_Force_desc:
@@ -252,7 +253,7 @@ export default {
   name_required: "Full Name *",
   email_required: "Email Address *",
   message_required: "Message *",
-  about_us_nav: "/ ABOUT US",
+  about_us_nav: "ABOUT US",
   who_we_are: "Who We Are",
   who_we_are_subtitle1: "Top Brands Syria is a specialized ",
   who_we_are_subtitle2: "FMCG distribution company",
@@ -440,7 +441,7 @@ export default {
   ready_optimize: "Ready to Optimize Your Distribution?",
   partner_reliable_efficient:
     "Partner with Top Brands Syria for reliable, efficient FMCG distribution across Syria",
-  brand_portfolio_nav: "/ BRAND PORTFOLIO",
+  brand_portfolio_nav: "BRAND PORTFOLIO",
   trusted_fmcg_brands: "Trusted FMCG Brands",
   brand_portfolio_desc_1:
     "Top Brands Syria distributes a growing portfolio of ",
@@ -493,7 +494,7 @@ export default {
   one_hundred_plus: "100+",
   professionals: "Professionals",
   all_major_cities: "All major cities",
-  market_coverage_nav: "/ MARKET COVERAGE",
+  market_coverage_nav: "MARKET COVERAGE",
   nationwide_fmcg: "Nationwide FMCG",
   distribution_network: "Distribution Network",
   market_penetration_desc_1: "Top Brands Syria provides ",
@@ -577,7 +578,7 @@ export default {
   partnership_team: "Partnership Team",
   digital_innovation_team: "Digital Innovation Team",
   quality_assurance_team: "Quality Assurance Team",
-  contact_nav: "/ CONTACT",
+  contact_nav: "CONTACT",
   contact_us_title: "Contact",
   contact_hero_desc_1: "For ",
   contact_hero_desc_2: "distribution partnerships",
@@ -809,4 +810,68 @@ export default {
     "Get the latest insights and market updates delivered directly to your inbox",
   btn_partner: "Become a Partner",
   btn_services: "All Services",
+  // logistics
+  log_hero_title: "Advanced Logistics",
+  log_hero_yellow: "& Warehousing",
+  log_hero_desc:
+    "Efficient warehousing and logistics solutions with state-of-the-art facilities, real-time tracking, and specialized cold chain operations.",
+
+  log_solutions_title: "Logistics Solutions",
+  log_solutions_subtitle:
+    "Comprehensive logistics infrastructure designed for FMCG excellence",
+
+  log_card1_title: "Modern Warehousing",
+  log_card1_desc:
+    "State-of-the-art warehouse facilities with organized storage systems and inventory management.",
+  log_card2_title: "Temperature Control",
+  log_card2_desc:
+    "Climate-controlled storage and transportation for temperature-sensitive FMCG products.",
+  log_card3_title: "Route Optimization",
+  log_card3_desc:
+    "Advanced route planning for fast delivery and reduced carbon footprint.",
+  log_card4_title: "Inventory Management",
+  log_card4_desc:
+    "Real-time inventory tracking and automated stock replenishment systems.",
+
+  wh_excellence_title: "Warehouse Excellence",
+  wh_excellence_desc:
+    "Our warehousing facilities are designed to handle the unique requirements of FMCG products, ensuring product integrity and efficient order fulfillment.",
+  wh_point1: "Organized storage zones by product category",
+  wh_point2: "FIFO inventory management system",
+  wh_point3: "Quality inspection at receiving and dispatch",
+  wh_point4: "Secure facility with 24/7 monitoring",
+
+  fleet_title: "Fleet & Transportation",
+  fleet_desc:
+    "Our diverse fleet of vehicles ensures timely delivery across all market segments, from urban retail to regional wholesale.",
+  fleet_cat1_title: "Heavy Trucks",
+  fleet_cat1_desc: "Bulk distribution",
+  fleet_cat2_title: "Vans",
+  fleet_cat2_desc: "Last-mile delivery",
+  fleet_cat3_title: "Refrigerated",
+  fleet_cat3_desc: "Cold chain",
+  fleet_cat4_title: "Express",
+  fleet_cat4_desc: "Fast tracking",
+  log_cta_title: "Need Logistics Support?",
+  log_cta_subtitle:
+    "Get in touch with our logistics experts to reach every corner of the market",
+  btn_partner: "Become a Partner",
+  btn_all_services: "All Services",
+  why_partner_title: "Why Partner With Top Brands Syria?",
+  why_partner_subtitle:
+    "Combining market expertise, robust logistics, and performance-driven execution to ensure your brand's success across Syria.",
+  feat1_title: "Nationwide",
+  feat1_desc: "Complete coverage across all Syrian regions",
+  feat2_title: "Experienced",
+  feat2_desc: "Professional sales and merchandising teams",
+  feat3_title: "Fast",
+  feat3_desc: "Optimized delivery and quick response times",
+  feat4_title: "Competitive",
+  feat4_desc: "Cost-effective solutions with flexible terms",
+  ribbon_fleet: "Fleet Management",
+  ribbon_bulk: "Bulk Storage",
+  ribbon_sameday: "Same-Day Delivery",
+  ribbon_qc: "Quality Control",
+  ribbon_doc: "Documentation",
+  ribbon_support: "24/7 Support",
 };

@@ -3,7 +3,7 @@ import { Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 
-const Subscribe = ({ title, becomePartner = false }) => {
+const Subscribe = ({ title, becomePartner = false, mail = false }) => {
     const { t } = useTranslation();
     return (
         <section className="relative w-full bg-[#0B1411] py-24 px-6 overflow-hidden">
@@ -21,9 +21,13 @@ const Subscribe = ({ title, becomePartner = false }) => {
             <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center">
 
                 {/* Mail Icon */}
-                <div className="mb-8 text-white">
-                    <Mail size={48} strokeWidth={1.5} />
-                </div>
+                {
+                     mail && (
+                        <div className="mb-8 text-white">
+                            <Mail size={48} strokeWidth={1.5} />
+                        </div>
+                    )
+                }
 
                 {/* Text Content */}
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">

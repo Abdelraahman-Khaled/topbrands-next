@@ -363,7 +363,7 @@ export default function Blog() {
       </section>
 
       {/* Newsletter Subscription */}
-      <Subscribe title={t("newsletter_title")} />
+      <Subscribe title={t("newsletter_title")} mail={true} />
 
 
     </div>

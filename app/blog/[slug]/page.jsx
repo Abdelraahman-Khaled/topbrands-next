@@ -581,7 +581,7 @@ export default function BlogArticle() {
       </section>
 
       {/* Newsletter CTA */}
-      <Subscribe title={t("Never_Miss_an_Update")} />
+      <Subscribe title={t("Never_Miss_an_Update")} mail={true} />
 
 
 

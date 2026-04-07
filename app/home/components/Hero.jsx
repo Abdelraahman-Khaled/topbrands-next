@@ -44,7 +44,7 @@ export default function Hero() {
           {/* Badge */}
           <div className="inline-flex animate-fade-in mb-4">
             <span className="px-[18px] py-[8px] text-white rounded-full text-base font-bold uppercase tracking-wider border border-2 border-[#FFFFFF66]">
-              {t("years_market")}
+              {t("years_group")}
             </span>
           </div>
 
