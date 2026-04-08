@@ -27,7 +27,7 @@ const{t,i18n} = useTranslation()
         <div className="flex items-center justify-between h-20">
           <a href="/" className="flex items-center cursor-pointer">
             <img
-              src="https://static.readdy.ai/image/33ae949e9bb8604989b852dfb93165e8/f5682646b37da99c847f4d571dfb20bd.png"
+              src="/images/logo.png"
               alt="Top Brands Syria"
               className="h-12 w-auto"
             />

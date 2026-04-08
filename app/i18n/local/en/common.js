@@ -352,7 +352,7 @@ export default {
     ", strengthening operational capabilities, and developing new importing and trading initiatives.",
   growth_long_term:
     "Our long-term direction focuses on sustainable growth, deeper market penetration, and building a stronger footprint across key FMCG sectors in Syria.",
-  partnership_nav: "/ PARTNERSHIP",
+  partnership_nav: "PARTNERSHIP",
   expand_brand: "Expand Your Brand",
   presence_syria: "Presence in Syria",
   partner_hero_desc:
@@ -874,4 +874,113 @@ export default {
   ribbon_qc: "Quality Control",
   ribbon_doc: "Documentation",
   ribbon_support: "24/7 Support",
+  professional_sales: "Professional Sales",
+  sales_hero_yellow: "& Merchandising",
+  professional_sales_desc:
+    "Experienced sales teams with deep local market knowledge and strong customer relationships. We ensure your brand stands out at every point of sale.",
+  pill_placement: "Product placement optimization",
+  pill_shelf: "Shelf space management",
+  pill_pos: "POS material installation",
+  pill_stock: "Stock rotation (FIFO)",
+  pill_competitor: "Competitor monitoring",
+  pill_photo: "Photo reporting",
+  pill_promo: "Promotional setup",
+  pill_inventory: "Inventory checks",
+  merch_title: "Merchandising Services",
+  merch_subtitle:
+    "Comprehensive in-store execution to drive brand visibility and sales performance.",
+  merch1_t: "Planogram Execution",
+  merch1_d:
+    "Precise implementation of shelf layouts to maximize product visibility.",
+  merch2_t: "In-store Visibility",
+  merch2_d:
+    "Strategic placement of promotional materials to drive impulse purchases.",
+  merch3_t: "Promotional Compliance",
+  merch3_d:
+    "Ensuring all regional promotions are active and visible at the point of sale.",
+  merch4_t: "Performance Tracking",
+  merch4_d:
+    "Real-time reporting on shelf share, out-of-stocks, and brand performance.",
+  expert_title: "Expert Sales Team",
+  expert_subtitle:
+    "Our dedicated sales force combines deep market knowledge with professional execution to build strong retailer relationships and drive consistent sell-through.",
+  exp1_t: "Trained Professionals",
+  exp1_d: "Skilled in sales techniques and product knowledge.",
+  exp2_t: "Local Market Expertise",
+  exp2_d: "Deep understanding of regional consumer preferences.",
+  exp3_t: "Relationship Builders",
+  exp3_d: "Strong connections with retailers and wholesalers.",
+  results_title: "Driving Results",
+  results_desc:
+    "Our merchandising efforts translate directly into improved brand performance and increased sales at the point of purchase.",
+  stat1_v: "95%",
+  stat1_l: "Shelf Availability",
+  stat2_v: "100%",
+  stat2_l: "Planogram Compliance",
+  stat3_v: "Weekly",
+  stat3_l: "Store Visits",
+  stat4_v: "Real-time",
+  stat4_l: "Reporting",
+  sales_cta_t: "Boost Your In-Store Presence",
+  mkt_hero_title: "360 Marketing",
+  mkt_hero_yellow: "Solutions",
+  mkt_hero_desc:
+    "Complete marketing solutions with data-driven market insights, driving growth and comprehensive brand awareness across all channels.",
+  mkt_stat2_v: "50+",
+  mkt_stat2_l: "Brand Partners",
+  mkt_stat1_v: "500+",
+  mkt_stat1_l: "Campaigns Executed",
+  mkt_stat3_v: "95%",
+  mkt_stat3_l: "Client Satisfaction",
+  mkt_stat4_v: "3x",
+  mkt_stat4_l: "ROI Average",
+  mkt_services_t: "Our Marketing Services",
+  mkt_services_s:
+    "Comprehensive marketing solutions tailored to drive your brand's success",
+  mkt_s1_t: "Market Research & Analysis",
+  mkt_s1_d:
+    "Deep dive into market trends and consumer behavior to identify brand growth opportunities.",
+  mkt_s2_t: "Brand Activation",
+  mkt_s2_d:
+    "Creative brand activation campaigns that engage consumers and drive brand loyalty.",
+  mkt_s3_t: "Digital Marketing",
+  mkt_s3_d:
+    "Targeted multi-channel digital strategies including social media, search, and display advertising.",
+  mkt_s4_t: "Trade Marketing",
+  mkt_s4_d:
+    "Strategic in-store marketing activities that enhance product visibility and sales growth.",
+  mkt_s5_t: "Promoter Management",
+  mkt_s5_d:
+    "Professional, well-trained brand ambassadors for in-store trials and demonstrations.",
+  mkt_s6_t: "Analytics & Reporting",
+  mkt_s6_d:
+    "Real-time analysis and comprehensive reporting on campaign performance and ROI.",
+  mkt_why_t: "Why Choose Our Marketing Solutions?",
+  mkt_why_p1_t: "Strategic Planning",
+  mkt_why_p1_d:
+    "Customized marketing roadmap focused on long-term brand equity.",
+  mkt_why_p2_t: "Consumer Insights",
+  mkt_why_p2_d:
+    "Data-driven understanding of what resonates with your target audience.",
+  mkt_why_p3_t: "Campaign Execution",
+  mkt_why_p3_d:
+    "Flawless implementation across all traditional and digital touchpoints.",
+  mkt_why_p4_t: "Performance Tracking",
+  mkt_why_p4_d:
+    "Continuous monitoring and optimization to ensure maximum impact.",
+  mkt_app_t: "Our Approach",
+  mkt_app_s: "A systematic approach to delivering results for your brand",
+  mkt_step1_t: "Discovery",
+  mkt_step1_d: "Understanding your brand vision and market positioning.",
+  mkt_step2_t: "Strategy",
+  mkt_step2_d: "Developing data-driven marketing and growth plans.",
+  mkt_step3_t: "Execution",
+  mkt_step3_d: "Implementing multi-channel campaigns with precision.",
+  mkt_step4_t: "Optimization",
+  mkt_step4_d: "Monitoring performance and refining for better results.",
+  mkt_cta_t: "Ready to Elevate Your Brand?",
+  mkt_cta_s:
+    "Get the latest insights and market updates delivered directly to your inbox",
+  btn_get_started: "Get Started",
+  btn_all_services: "All Services",
 };

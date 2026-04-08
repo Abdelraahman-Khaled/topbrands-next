@@ -15,14 +15,14 @@ const HeroSection = ({ subtitle, title, description1, yellowText, description2, 
                 <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/50 to-transparent rtl:bg-gradient-to-l rtl:from-black/70 rtl:via-black/50 rtl:to-transparent"></div>
             </div>
 
-            <div className="relative max-w-7xl mx-auto px-8 ">
+            <div className="relative max-w-7xl mx-auto px-6">
                 <div className="flex items-center space-x-4 rtl:space-x-reverse mb-8">
                     <span className="text-sm font-semibold text-brand-yellow tracking-widest uppercase">
                       /  {subtitle}
                     </span>
                     <div className="h-px w-16 bg-brand-yellow"></div>
                 </div>
-                <h1 className="text-6xl lg:text-7xl font-bold  text-white mb-6">
+                <h1 className="text-6xl lg:text-7xl font-bold w-full  text-white mb-6">
                     {title}
                     <span className="text-brand-yellow"> {yellowTitle}</span>
                 </h1>
