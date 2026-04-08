@@ -35,14 +35,14 @@ export default function FAQ() {
             alt="FAQ"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-linear-to-r from-[#DEE3EB] to-[#FFFFFF]"></div>
         </div>
 
         <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl lg:text-5xl font-bold text-black mb-6">
             {t('faq_hero_title')}
           </h1>
-          <p className="text-xl lg:text-2xl text-gray-200 font-medium">
+          <p className="text-lg lg:text-xl text-brand-charcoal font-medium">
             {t('faq_hero_subtitle')}
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function FAQ() {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full font-bold transition-all whitespace-nowrap ${selectedCategory === category
+                className={`px-6 py-2 cursor-pointer rounded-full font-bold transition-all whitespace-nowrap ${selectedCategory === category
                   ? 'bg-[#F7E326] text-black shadow-md' // Changed to Yellow
                   : 'bg-gray-100 text-gray-600 hover:bg-[#F7E326] hover:text-black'
                   }`}
@@ -90,7 +90,7 @@ export default function FAQ() {
                     </h3>
                   </div>
                   <div className="ml-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 group-hover:bg-[#F7E326]">
-                    <i className={`ri-${openId === faq.id ? 'subtract' : 'add'}-line text-xl ${openId === faq.id ? 'text-black' : 'text-gray-400'}`}></i>
+                    <i className={`ri-${openId === faq.id ? 'subtract' : 'add'}-line text-xl cursor-pointer ${openId === faq.id ? 'text-black' : 'text-brand-yellow'}`}></i>
                   </div>
                 </button>
                 {openId === faq.id && (
