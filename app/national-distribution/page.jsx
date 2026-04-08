@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import HeroSection from '../components/HeroSection';
 import GlobalCTA from '../components/GlobalCTA';
 import Subscribe from '../components/Subscribe';
+import HeroCounter from '../components/HeroCounter';
 
 
 // SECTION: Channels
@@ -76,6 +77,12 @@ const ProcessSection = () => {
 
 export default function DistributionPage() {
     const { t } = useTranslation()
+    const statData = [
+        { title: t('stat1_val'), subtitle: t('stat1_label') },
+        { title: t('stat2_val'), subtitle: t('stat2_label') },
+        { title: t('stat3_val'), subtitle: t('stat3_label') },
+        { title: t('stat4_val'), subtitle: t('stat4_label') },
+    ];
     return (
         <main>
             <HeroSection
@@ -88,7 +95,10 @@ export default function DistributionPage() {
                 buttonLink="/contact"
             />
             {/* Stats Bar */}
-            <div className="bg-[#F7E326] py-10">
+            <HeroCounter
+                stats={statData}
+            />
+            {/* <div className="bg-[#F7E326] py-10">
                 <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 px-6">
                     {[1, 2, 3, 4].map((i) => (
                         <div key={i} className="text-center border-r last:border-none border-black/10">
@@ -97,7 +107,7 @@ export default function DistributionPage() {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
             <ChannelsGrid />
             <ProcessSection />
             <Subscribe

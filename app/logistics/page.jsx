@@ -154,9 +154,9 @@ export default function LogisticsPage() {
             <LogisticsSolutions />
             <WarehouseExcellence />
             <FleetSection />
-            <Subscribe 
-            title={t("log_cta_title")}
-            becomePartner={true} 
+            <Subscribe
+                title={t("log_cta_title")}
+                becomePartner={true}
 
             />
             {/* Newsletter/CTA can be placed here */}

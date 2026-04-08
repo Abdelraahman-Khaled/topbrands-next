@@ -939,45 +939,46 @@ export default {
     "Comprehensive marketing solutions tailored to drive your brand's success",
   mkt_s1_t: "Market Research & Analysis",
   mkt_s1_d:
-    "Deep dive into market trends and consumer behavior to identify brand growth opportunities.",
+    "In-depth market research and consumer behavior analysis to identify opportunities and optimize strategies.",
   mkt_s2_t: "Brand Activation",
   mkt_s2_d:
-    "Creative brand activation campaigns that engage consumers and drive brand loyalty.",
+    "Creative brand activation campaigns that engage consumers and drive brand awareness across all touchpoints.",
   mkt_s3_t: "Digital Marketing",
   mkt_s3_d:
-    "Targeted multi-channel digital strategies including social media, search, and display advertising.",
+    "Comprehensive digital marketing strategies including social media, content marketing, and online advertising.",
   mkt_s4_t: "Trade Marketing",
   mkt_s4_d:
-    "Strategic in-store marketing activities that enhance product visibility and sales growth.",
+    "Strategic trade marketing initiatives to boost product visibility and sales at retail points.",
   mkt_s5_t: "Promoter Management",
   mkt_s5_d:
-    "Professional, well-trained brand ambassadors for in-store trials and demonstrations.",
+    "Professional promoter teams trained to represent your brand and drive in-store conversions.",
   mkt_s6_t: "Analytics & Reporting",
   mkt_s6_d:
-    "Real-time analysis and comprehensive reporting on campaign performance and ROI.",
+    "Real-time analytics and comprehensive reporting to measure campaign performance and ROI.",
   mkt_why_t: "Why Choose Our Marketing Solutions?",
+  mkt_why_d:
+    "Our dedicated marketing team combines local market expertise with global best practices to deliver results-driven campaigns that resonate with your target audience.",
   mkt_why_p1_t: "Strategic Planning",
   mkt_why_p1_d:
-    "Customized marketing roadmap focused on long-term brand equity.",
+    "Data-driven marketing strategies aligned with your business objectives.",
   mkt_why_p2_t: "Consumer Insights",
   mkt_why_p2_d:
-    "Data-driven understanding of what resonates with your target audience.",
+    "Deep understanding of local consumer preferences and behaviors.",
   mkt_why_p3_t: "Campaign Execution",
   mkt_why_p3_d:
-    "Flawless implementation across all traditional and digital touchpoints.",
+    "Flawless execution of marketing campaigns across all channels.",
   mkt_why_p4_t: "Performance Tracking",
-  mkt_why_p4_d:
-    "Continuous monitoring and optimization to ensure maximum impact.",
+  mkt_why_p4_d: "Continuous monitoring and optimization for maximum results.",
   mkt_app_t: "Our Approach",
-  mkt_app_s: "A systematic approach to delivering results for your brand",
+  mkt_app_s: "A systematic approach to delivering marketing excellence",
   mkt_step1_t: "Discovery",
-  mkt_step1_d: "Understanding your brand vision and market positioning.",
+  mkt_step1_d: "Understanding your brand, goals,and target audience.",
   mkt_step2_t: "Strategy",
-  mkt_step2_d: "Developing data-driven marketing and growth plans.",
+  mkt_step2_d: "Developing data-driven marketing strategies.",
   mkt_step3_t: "Execution",
-  mkt_step3_d: "Implementing multi-channel campaigns with precision.",
+  mkt_step3_d: "Implementing campaigns across all channels.",
   mkt_step4_t: "Optimization",
-  mkt_step4_d: "Monitoring performance and refining for better results.",
+  mkt_step4_d: "Continuous improvement based on performance data.",
   mkt_cta_t: "Ready to Elevate Your Brand?",
   mkt_cta_s:
     "Get the latest insights and market updates delivered directly to your inbox",
