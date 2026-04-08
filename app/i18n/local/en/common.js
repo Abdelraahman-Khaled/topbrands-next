@@ -127,7 +127,128 @@ export default {
   faq: "FAQ",
   legal: "Legal",
   privacy_policy: "Privacy Policy",
+  privacy_policy: "Privacy Policy",
+  last_updated: "Last Updated: January 2026",
+  privacy_s1_title: "1. Information We Collect",
+  privacy_s1_desc:
+    "B2B Distribution collects information necessary to provide our services and maintain business relationships. This includes:",
+  pri_s1_item1:
+    "Business contact information (company name, contact person, email, phone number)",
+  pri_s1_item2: "Business registration details and tax information",
+  pri_s1_item3: "Order and transaction history",
+  pri_s1_item4: "Delivery addresses and logistics information",
+  pri_s1_item5: "Payment and billing information",
+  pri_s1_item6: "Communication records and correspondence",
+  privacy_s2_title: "2. How We Use Your Information",
+  privacy_s2_desc:
+    "We use the collected information for the following purposes:",
+  pri_s2_item1: "Processing and fulfilling orders and deliveries",
+  pri_s2_item2: "Managing business relationships and partnerships",
+  pri_s2_item3: "Providing customer support and responding to inquiries",
+  pri_s2_item4: "Improving our services and operations",
+  pri_s2_item5: "Sending business communications and updates",
+  pri_s2_item6: "Complying with legal and regulatory requirements",
+  privacy_s3_title: "3. Information Sharing and Disclosure",
+  privacy_s3_desc:
+    "B2B Distribution does not sell or rent your business information to third parties. We may share information with:",
+  pri_s3_item1: "Al Barengi Group companies for operational purposes",
+  pri_s3_item2:
+    "Service providers who assist in our operations (logistics, payment processing)",
+  pri_s3_item3:
+    "Legal authorities when required by law or to protect our rights",
+  pri_s3_item4: "Business partners with your explicit consent",
+  privacy_s4_title: "4. Data Security",
+  privacy_s4_desc:
+    "We implement appropriate technical and organizational measures to protect your information against unauthorized access, alteration, disclosure, or destruction. This includes secure servers, encrypted communications, access controls, and regular security assessments.",
+  privacy_s5_title: "5. Data Retention",
+  privacy_s5_desc:
+    "We retain business information for as long as necessary to fulfill the purposes outlined in this policy, comply with legal obligations, resolve disputes, and enforce our agreements. Transaction records are maintained according to applicable tax and commercial laws.",
+  privacy_s6_title: "6. Your Rights",
+  privacy_s6_desc: "As a business partner, you have the right to:",
+  pri_s6_item1: "Access and review your business information",
+  pri_s6_item2: "Request corrections to inaccurate information",
+  pri_s6_item3:
+    "Request deletion of information (subject to legal requirements)",
+  pri_s6_item4: "Opt-out of marketing communications",
+  pri_s6_item5: "Receive information about how your data is processed",
+  privacy_s7_title: "7. Cookies and Tracking",
+  privacy_s7_desc:
+    "Our website uses cookies and similar technologies to improve user experience, analyze website traffic, and personalize content. You can control cookie preferences through your browser settings. For more details, please see our Cookie Policy.",
+  privacy_s8_title: "8. Changes to This Policy",
+  privacy_s8_desc:
+    "We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify business partners of significant changes through email or website announcements.",
+  privacy_s9_title: "9. Contact Us",
+  privacy_s9_desc:
+    "If you have questions or concerns about this Privacy Policy or our data practices, please contact us:",
+  privacy_company_name: "B2B Distribution",
+  privacy_location: "Damascus, Syria",
   terms_conditions: "Terms & Conditions",
+  terms_conditions: "Terms & Conditions",
+  last_updated: "Last Updated: January 2026",
+  agreement_title: "1. Agreement to Terms",
+  agreement_desc:
+    "By accessing and using B2B Distribution services, you agree to be bound by these Terms and Conditions. These terms apply to all business partners, retailers, distributors, and users of our services. If you do not agree with any part of these terms, you may not use our services.",
+  requirements_title: "2. Business Partnership Requirements",
+  requirements_desc:
+    "To become a business partner with B2B Distribution, you must:",
+  req_item1: "Be a legally registered business entity in Syria",
+  req_item2: "Provide valid business registration and tax documentation",
+  req_item3:
+    "Maintain appropriate licenses for retail or distribution activities",
+  req_item4: "Meet our credit and financial requirements",
+  req_item5: "Comply with all applicable laws and regulations",
+  req_item6: "Maintain professional business standards and ethics",
+  orders_title: "3. Orders and Delivery",
+  orders_desc: "Order processing and delivery terms:",
+  ord_item1: "All orders are subject to product availability and acceptance",
+  ord_item2: "Minimum order quantities may apply for certain products",
+  ord_item3: "Delivery schedules are estimates and may vary based on location",
+  ord_item4:
+    "Partners must inspect deliveries upon receipt and report issues within 24 hours",
+  ord_item5: "B2B Distribution reserves the right to modify delivery routes",
+  ord_item6: "Special handling requirements must be communicated in advance",
+  pricing_title: "4. Pricing and Payment",
+  pricing_desc: "Payment terms and conditions:",
+  prc_item1: "Prices are subject to change without prior notice",
+  prc_item2: "Payment terms are established based on creditworthiness",
+  prc_item3: "Late payments may incur additional charges",
+  prc_item4: "All prices are exclusive of applicable taxes unless stated",
+  prc_item5: "Promotional pricing subject to specific terms",
+  prc_item6: "Currency fluctuations may affect pricing for imported products",
+  quality_title: "5. Product Quality and Returns",
+  quality_desc: "Quality assurance and return policies:",
+  qlt_item1: "All products meet applicable quality and safety standards",
+  qlt_item2: "Damaged products must be reported within 24 hours",
+  qlt_item3: "Returns accepted only for valid quality issues",
+  qlt_item4: "Expired products due to partner storage not eligible for return",
+  qlt_item5: "Return authorization must be obtained before returning",
+  qlt_item6: "Partners responsible for proper storage and handling",
+  ip_title: "6. Intellectual Property",
+  ip_desc:
+    "All brand names, trademarks, logos, and intellectual property associated with the products distributed by B2B Distribution remain the property of their respective owners. Partners may not use these marks without proper authorization. B2B Distribution's own trademarks and business materials are protected and may not be used without written permission.",
+  confidentiality_title: "7. Confidentiality",
+  confidentiality_desc:
+    "Partners agree to maintain confidentiality of all business information, pricing structures, customer data, and proprietary information shared during the course of the business relationship. This obligation continues even after the termination of the partnership.",
+  liability_title: "8. Limitation of Liability",
+  liability_desc:
+    "B2B Distribution's liability is limited to the value of the specific transaction in question. We are not liable for indirect, consequential, or incidental damages. Partners are responsible for their own business operations, customer relationships, and compliance with applicable laws.",
+  termination_title: "9. Termination",
+  termination_desc:
+    "Either party may terminate the business relationship with appropriate notice as specified in partnership agreements. B2B Distribution reserves the right to immediately terminate partnerships in cases of breach of terms, non-payment, or unethical business practices. Outstanding obligations must be settled upon termination.",
+  law_title: "10. Governing Law",
+  law_desc:
+    "These Terms and Conditions are governed by the laws of the Syrian Arab Republic. Any disputes arising from these terms or business relationships shall be resolved through negotiation or, if necessary, through the appropriate courts in Damascus, Syria.",
+  changes_title: "11. Changes to Terms",
+  changes_desc:
+    "B2B Distribution reserves the right to modify these Terms and Conditions at any time. Partners will be notified of significant changes through email or official communications. Continued use of our services after changes constitutes acceptance of the modified terms.",
+  contact_title: "12. Contact Information",
+  contact_desc:
+    "For questions about these Terms and Conditions, please contact:",
+  company_name: "B2B Distribution",
+  company_email: "legal@b2bdistribution.sy",
+  company_phone: "+963 11 123 4567",
+  company_address: "Damascus, Syria",
+  last_updated: "Last Updated: March 2025",
   cookie_policy: "Cookie Policy",
   quality_products: "Quality Products",
   reliable_distribution: "Reliable Distribution",
@@ -984,4 +1105,117 @@ export default {
     "Get the latest insights and market updates delivered directly to your inbox",
   btn_get_started: "Get Started",
   btn_all_services: "All Services",
+  cookie_policy: "Cookie Policy",
+  website_cookies: "Website Cookies",
+  last_updated_cookie: "Last Updated: March 2025",
+  cookie_s1_title: "1. What Are Cookies?",
+  cookie_s1_desc:
+    "Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and provide information to website owners. Cookies help us understand how you use our website and improve your browsing experience.",
+  cookie_s2_title: "2. How We Use Cookies",
+  cookie_s2_desc: "B2B Distribution uses cookies for the following purposes:",
+  ck_s2_item1: "To remember your preferences and settings",
+  ck_s2_item2: "To understand how you use our website",
+  ck_s2_item3: "To analyze website traffic and user behavior",
+  ck_s2_item4: "To provide personalized content and recommendations",
+  ck_s2_item5: "To maintain security and prevent fraud",
+  ck_s2_item6: "To enable essential website features and services",
+  cookie_s3_title: "3. Types of Cookies We Use",
+  ck_s3_cat1_t: "Essential Cookies",
+  ck_s3_cat1_d:
+    "These cookies are necessary for the website to function properly. They enable basic features like page navigation, access to secure areas, and form submissions. The website cannot function properly without these cookies..",
+  ck_s3_cat2_t: "Performance Cookies",
+  ck_s3_cat2_d:
+    "These cookies collect information about how visitors use our website, such as which pages are visited most often and if users receive error messages. This helps us improve website performance and user experience.",
+  ck_s3_cat3_t: "Functionality Cookies",
+  ck_s3_cat3_d:
+    "These cookies allow the website to remember choices you make (such as language preferences or region) and provide enhanced, personalized features. They may also be used to provide services you have requested.",
+  ck_s3_cat4_t: "Analytics Cookies",
+  ck_s3_cat4_d:
+    "We use analytics cookies to understand how visitors interact with our website. This information helps us analyze data about webpage traffic and improve our website to better serve our business partners.",
+  cookie_s4_title: "4. Third-Party Cookies",
+  cookie_s4_desc:
+    "In addition to our own cookies, we may use third-party cookies from trusted partners:",
+  ck_s4_item1: "Google Analytics for website traffic analysis",
+  ck_s4_item2: "Social media platforms for content sharing features",
+  ck_s4_item3:
+    "Marketing partners for targeted advertising (with your consent)",
+  ck_s4_item4: "Service providers that help us operate our website",
+  cookie_s5_title: "5. Managing Your Cookie Preferences",
+  cookie_s5_desc:
+    "You have the right to decide whether to accept or reject cookies. You can manage your cookie preferences through:",
+  ck_s5_opt1:
+    "Browser Settings: Most web browsers allow you to control cookies through their settings.",
+  ck_s5_opt2:
+    "Cookie Banner: Choose which types of cookies to accept through our consent banner.",
+  ck_s5_opt3:
+    "Opt-Out Tools: Opt out of third-party cookies through industry opt-out programs.",
+  ck_s5_note:
+    "Please note that blocking or deleting cookies may impact your experience on our website and limit certain features.",
+  cookie_s6_title: "6. Browser-Specific Cookie Management",
+  cookie_s6_desc: "Here's how to manage cookies in popular browsers:",
+  cookie_s7_title: "7. Cookie Duration",
+  cookie_s7_desc:
+    "Cookies may be either 'session' cookies or 'persistent' cookies. Session cookies are temporary and are deleted when you close your browser. Persistent cookies remain on your device until they expire or you delete them. The duration of persistent cookies varies depending on their purpose.",
+  cookie_s8_title: "8. Updates to This Policy",
+  cookie_s8_desc:
+    "We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our business practices. We encourage you to review this policy periodically to stay informed about how we use cookies.",
+  cookie_s9_title: "9. Contact Us",
+  cookie_s9_desc:
+    "If you have questions about our use of cookies, please contact us:",
+  cookie_company_name: "B2B Distribution",
+  cookie_location: "Damascus, Syria",
+  faq_hero_title: "Frequently Asked Questions",
+  faq_hero_subtitle:
+    "Find answers to common questions about our services, partnerships, and operations",
+  faq_all: "All",
+  faq_still_questions: "Still Have Questions?",
+  faq_team_help:
+    "Our team is here to help. Contact us for personalized assistance.",
+  faq_contact_btn: "Contact Us",
+  faq_partner_btn: "Become a Partner",
+  faq_q1: "What areas does B2B Distribution cover in Syria?",
+  faq_a1:
+    "We provide comprehensive coverage across all major Syrian cities including Damascus, Aleppo, Homs, Latakia, Hama, and Tartus. Our distribution network reaches both urban centers and regional markets, ensuring your products are available wherever your customers are.",
+  faq_q2: "What types of products do you distribute?",
+  faq_a2:
+    "We specialize in FMCG products across multiple categories including Food & Beverages, Snacks & Confectionery, Dairy Products, and Non-Food FMCG items. We work with both international and regional brands to provide a diverse product portfolio.",
+  faq_q3: "How can I become a distribution partner?",
+  faq_a3:
+    "To become a partner, you need to be a legally registered business in Syria with appropriate retail or distribution licenses. Visit our 'Become a Partner' page to submit your application. Our team will review your request and contact you to discuss partnership opportunities.",
+  faq_q4: "What are your minimum order requirements?",
+  faq_a4:
+    "Minimum order quantities vary by product category and brand. Our sales team will provide specific MOQ information based on your business needs and location. We strive to accommodate businesses of all sizes.",
+  faq_q5: "What are your delivery schedules?",
+  faq_a5:
+    "We operate regular delivery routes to all covered areas. Delivery frequency depends on your location and order volume. Major cities typically receive deliveries 2-3 times per week, while regional areas have scheduled weekly deliveries.",
+  faq_q6: "Do you offer credit terms?",
+  faq_a6:
+    "Yes, we offer flexible payment terms to qualified business partners. Credit terms are determined based on business history, creditworthiness, and order volume. New partners typically start with cash-on-delivery terms before transitioning to credit arrangements.",
+  faq_q7: "How do you ensure product quality during distribution?",
+  faq_a7:
+    "We maintain strict quality control throughout our supply chain. Our warehouses are equipped with temperature-controlled storage for sensitive products. We follow FIFO (First In, First Out) principles and conduct regular quality checks.",
+  faq_q8: "What happens if I receive damaged products?",
+  faq_a8:
+    "Any damaged or defective products must be reported within 24 hours of delivery. Our team will investigate the issue and arrange for replacement or credit as appropriate. We require photographic evidence and proper documentation.",
+  faq_q9: "Do you provide merchandising support?",
+  faq_a9:
+    "Yes, we offer comprehensive merchandising services including planogram execution, shelf management, promotional display setup, and in-store visibility optimization. Our professional sales team works closely with retailers.",
+  faq_q10: "Can I track my orders?",
+  faq_a10:
+    "Yes, we provide order tracking capabilities for our partners. Once your order is confirmed, you will receive updates on its status. Our customer service team is also available to provide real-time information.",
+  faq_q11: "What certifications does B2B Distribution hold?",
+  faq_a11:
+    "We maintain all necessary certifications for FMCG distribution including food safety certifications, quality management standards, and compliance with Syrian regulatory requirements.",
+  faq_q12: "How do you handle product returns and exchanges?",
+  faq_a12:
+    "Returns are accepted for valid quality issues, damaged products, or incorrect deliveries. Return authorization must be obtained before returning any products. Products must be in original condition.",
+  faq_q13: "Do you offer exclusive distribution rights?",
+  faq_a13:
+    "Exclusive distribution arrangements are negotiated on a case-by-case basis depending on the brand, territory, and business commitment. Contact our partnership team to discuss opportunities.",
+  faq_q14: "What is your relationship with Al Barengi Group?",
+  faq_a14:
+    "B2B Distribution operates under the Al Barengi Group umbrella, benefiting from over 30 years of experience in the Syrian market. This provides us with strong financial backing and market knowledge.",
+  faq_q15: "How can I contact customer support?",
+  faq_a15:
+    "Our customer support team is available via phone at +963 11 123 4567 or email at info@b2bdistribution.sy. We respond to all inquiries within 24 hours during business days.",
 };
