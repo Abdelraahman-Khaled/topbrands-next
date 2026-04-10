@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import ScrollReveal from "../../components/ScrollReveal";
 
 export default function ProductsBrands() {
   const { t } = useTranslation()
@@ -71,20 +72,23 @@ export default function ProductsBrands() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-8 ">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-2">
-            {t("our_products")}
-          </h2>
-          <h2 className="text-5xl lg:text-6xl font-bold text-brand-charcoal">
-            {t("our_portfolio")}
-          </h2>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-2">
+              {t("our_products")}
+            </h2>
+            <h2 className="text-5xl lg:text-6xl font-bold text-brand-charcoal">
+              {t("our_portfolio")}
+            </h2>
+          </div>
+        </ScrollReveal>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          <Link
-            href="/brands"
-            className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300  group cursor-pointer h-[720px] block"
-          >
+          <ScrollReveal>
+            <Link
+              href="/brands"
+              className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300  group cursor-pointer h-[720px] block"
+            >
             <img
               src="https://readdy.ai/api/search-image?query=artistic%20flat%20lay%20composition%20of%20diverse%20FMCG%20products%20including%20packaged%20foods%20beverages%20snacks%20and%20household%20items%20arranged%20aesthetically%20on%20clean%20white%20surface%20professional%20product%20photography%20bright%20even%20lighting%20top%20down%20view%20colorful%20packaging&width=620&height=720&seq=products-montage-001&orientation=portrait"
               alt={t("our_brands")}
@@ -105,10 +109,12 @@ export default function ProductsBrands() {
                 </span>
               </div>
             </div>
-          </Link>
+            </Link>
+          </ScrollReveal>
 
-          <div className="space-y-8">
-            <Link
+          <ScrollReveal delay={0.2}>
+            <div className="space-y-8">
+              <Link
               href="/brands?type=international"
               className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300  group cursor-pointer bg-white h-[344px] block"
             >
@@ -176,8 +182,9 @@ export default function ProductsBrands() {
                   </span>
                 </div>
               </div>
-            </Link>
-          </div>
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

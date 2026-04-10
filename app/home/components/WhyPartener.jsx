@@ -10,6 +10,9 @@ import {
   ArrowRight,
   Phone,
 } from "lucide-react";
+import ScrollReveal from "../../components/ScrollReveal";
+import StaggerContainer from "../../components/StaggerContainer";
+import StaggerItem from "../../components/StaggerItem";
 
 export default function WhyPartener() {
   const { t } = useTranslation();
@@ -61,20 +64,22 @@ export default function WhyPartener() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4">
-            <span className="px-5 py-2 bg-gradient-to-r from-[#F7E326] to-[#E5D324] text-black rounded-full text-sm font-bold tracking-wider">
-              {t("why_partner_with_us")}
-            </span>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <div className="inline-block mb-4">
+              <span className="px-5 py-2 bg-gradient-to-r from-[#F7E326] to-[#E5D324] text-black rounded-full text-sm font-bold tracking-wider">
+                {t("why_partner_with_us")}
+              </span>
+            </div>
+            <h2 className="text-5xl font-bold text-white mb-6">
+              {t("Your_Trusted")}
+              <span className="text-[#F7E326]"> {t("Distribution_Partner")}</span>
+            </h2>
+            <p className="text-xl text-[#D1D5DB] max-w-3xl mx-auto font-medium">
+              {t("why_choose_desc")}
+            </p>
           </div>
-          <h2 className="text-5xl font-bold text-white mb-6">
-            {t("Your_Trusted")}
-            <span className="text-[#F7E326]"> {t("Distribution_Partner")}</span>
-          </h2>
-          <p className="text-xl text-[#D1D5DB] max-w-3xl mx-auto font-medium">
-            {t("why_choose_desc")}
-          </p>
-        </div>
+        </ScrollReveal>
 
         {/* Features Grid */}
         <div className="relative py-20 bg-inherit  overflow-hidden">
@@ -84,9 +89,9 @@ export default function WhyPartener() {
           </div>
 
           <div className="container mx-auto px-6 relative z-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((item, index) => (
-                <div
+                <StaggerItem
                   key={index}
                   className="group p-10 rounded-[32px] transition-all duration-300 flex flex-col items-start
                          border border-white/5 hover:border-white/10
@@ -107,49 +112,51 @@ export default function WhyPartener() {
                   <p className="text-[#D1D5DB] text-base leading-relaxed font-light">
                     {item.desc}
                   </p>
-                </div>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
         </div>
 
         {/* CTA Section */}
-        <section className="py-20 px-6">
-          <div
-            className="max-w-6xl mx-auto rounded-2xl p-12 md:p-20 text-center relative overflow-hidden border border-white/10"
-            style={{
-              background:
-                "linear-gradient(135deg, #1C1C1C 0%, #000000 50%, #1C1C1C 100%)",
-            }}
-          >
-            {/* تأثير توهج خفيف في الزاوية */}
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#F7E326]/10 blur-[100px] rounded-full"></div>
+        <ScrollReveal delay={0.2}>
+          <section className="py-20 px-6">
+            <div
+              className="max-w-6xl mx-auto rounded-2xl p-12 md:p-20 text-center relative overflow-hidden border border-white/10"
+              style={{
+                background:
+                  "linear-gradient(135deg, #1C1C1C 0%, #000000 50%, #1C1C1C 100%)",
+              }}
+            >
+              {/* تأثير توهج خفيف في الزاوية */}
+              <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#F7E326]/10 blur-[100px] rounded-full"></div>
 
-            <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl max-w-2xl mx-auto font-normal text-white mb-6 leading-tight">
-                {t("cta_title")}
-              </h2>
+              <div className="relative z-10">
+                <h2 className="text-4xl md:text-5xl max-w-2xl mx-auto font-normal text-white mb-6 leading-tight">
+                  {t("cta_title")}
+                </h2>
 
-              <p className="text-[#D1D5DB] text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light">
-                {t("cta_desc")}
-              </p>
+                <p className="text-[#D1D5DB] text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light">
+                  {t("cta_desc")}
+                </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                {/* زر Become a Partner */}
-                <button className="w-full sm:w-auto px-8 py-4 bg-[#F7E326] hover:bg-[#e5d222] text-black font-bold rounded-lg flex items-center justify-center gap-2 transition-all group">
-                  {t("become_a_partner")}
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  {/* زر Become a Partner */}
+                  <button className="w-full sm:w-auto px-8 py-4 bg-[#F7E326] hover:bg-[#e5d222] text-black font-bold rounded-lg flex items-center justify-center gap-2 transition-all group">
+                    {t("become_a_partner")}
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
 
-                {/* زر Contact Us */}
-                <button className="w-full sm:w-auto px-8 py-4 bg-[#2A2A2A] hover:bg-[#333333] text-white font-medium rounded-lg border border-white/20 flex items-center justify-center gap-2 transition-all">
-                  {t("contact_us")}
-                  <Phone className="w-5 h-5 text-gray-300" />
-                </button>
+                  {/* زر Contact Us */}
+                  <button className="w-full sm:w-auto px-8 py-4 bg-[#2A2A2A] hover:bg-[#333333] text-white font-medium rounded-lg border border-white/20 flex items-center justify-center gap-2 transition-all">
+                    {t("contact_us")}
+                    <Phone className="w-5 h-5 text-gray-300" />
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </ScrollReveal>
       </div>
     </section>
   );

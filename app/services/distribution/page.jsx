@@ -1,5 +1,11 @@
+import { useTranslation } from "react-i18next";
+import ScrollReveal from "../../components/ScrollReveal";
+import StaggerContainer from "../../components/StaggerContainer";
+import StaggerItem from "../../components/StaggerItem";
+import AnimatedCard from "../../components/AnimatedCard";
 
 export default function DistributionPage() {
+  const { t } = useTranslation();
   const features = [
     {
       icon: 'ri-store-3-line',
@@ -62,95 +68,90 @@ export default function DistributionPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-brand-yellow">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-5xl lg:text-6xl font-bold text-brand-jet mb-2">{stat.value}</div>
-                <div className="text-base text-brand-charcoal font-medium">{stat.label}</div>
-              </div>
-            ))}
+      <ScrollReveal>
+        <section className="py-16 bg-brand-yellow">
+          <div className="max-w-7xl mx-auto px-8 lg:px-16">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-5xl lg:text-6xl font-bold text-brand-jet mb-2">{stat.value}</div>
+                  <div className="text-base text-brand-charcoal font-medium">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* Features Section */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-4">Distribution Channels</h2>
-            <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">
-              Multi-channel distribution approach ensuring maximum market penetration
-            </p>
+      <ScrollReveal>
+        <section className="py-20 lg:py-28 bg-white">
+          <div className="max-w-7xl mx-auto px-8 lg:px-16">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-4">Distribution Channels</h2>
+              <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">
+                Multi-channel distribution approach ensuring maximum market penetration
+              </p>
+            </div>
+ 
+            <StaggerContainer className="grid md:grid-cols-2 gap-8">
+              {features.map((feature, index) => (
+                <StaggerItem key={index}>
+                  <AnimatedCard className="h-full bg-brand-paleblue rounded-3xl p-10 border border-transparent hover:border-brand-yellow group">
+                    <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <i className={`${feature.icon} text-3xl text-brand-jet`}></i>
+                    </div>
+                    <h3 className="text-2xl font-bold text-brand-jet mb-4">{feature.title}</h3>
+                    <p className="text-base text-brand-charcoal leading-relaxed">{feature.description}</p>
+                  </AnimatedCard>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className="group bg-brand-paleblue rounded-3xl p-10 hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-brand-yellow">
-                <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <i className={`${feature.icon} text-3xl text-brand-jet`}></i>
-                </div>
-                <h3 className="text-2xl font-bold text-brand-jet mb-4">{feature.title}</h3>
-                <p className="text-base text-brand-charcoal leading-relaxed">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* Process Section */}
-      <section className="py-20 lg:py-28 bg-brand-paleblue">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-6">How We Distribute</h2>
-              <p className="text-lg text-brand-charcoal mb-8 leading-relaxed">
-                Our distribution process is designed for efficiency, reliability, and maximum market coverage. From warehouse to shelf, we ensure your products are always available.
-              </p>
-
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 flex items-center justify-center bg-brand-yellow rounded-full text-brand-jet font-bold flex-shrink-0">1</div>
-                  <div>
-                    <h4 className="text-lg font-bold text-brand-jet mb-1">Order Processing</h4>
-                    <p className="text-brand-charcoal">Efficient order management and inventory allocation</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 flex items-center justify-center bg-brand-yellow rounded-full text-brand-jet font-bold flex-shrink-0">2</div>
-                  <div>
-                    <h4 className="text-lg font-bold text-brand-jet mb-1">Route Optimization</h4>
-                    <p className="text-brand-charcoal">Smart routing for fastest delivery times</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 flex items-center justify-center bg-brand-yellow rounded-full text-brand-jet font-bold flex-shrink-0">3</div>
-                  <div>
-                    <h4 className="text-lg font-bold text-brand-jet mb-1">Delivery Execution</h4>
-                    <p className="text-brand-charcoal">Professional delivery with real-time tracking</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 flex items-center justify-center bg-brand-yellow rounded-full text-brand-jet font-bold flex-shrink-0">4</div>
-                  <div>
-                    <h4 className="text-lg font-bold text-brand-jet mb-1">Confirmation & Reporting</h4>
-                    <p className="text-brand-charcoal">Delivery confirmation and performance analytics</p>
-                  </div>
-                </div>
+      <ScrollReveal>
+        <section className="py-20 lg:py-28 bg-brand-paleblue">
+          <div className="max-w-7xl mx-auto px-8 lg:px-16">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-6">How We Distribute</h2>
+                <p className="text-lg text-brand-charcoal mb-8 leading-relaxed">
+                  Our distribution process is designed for efficiency, reliability, and maximum market coverage. From warehouse to shelf, we ensure your products are always available.
+                </p>
+ 
+                <StaggerContainer className="space-y-6">
+                  {[1, 2, 3, 4].map((i) => (
+                    <StaggerItem key={i} className="flex items-start space-x-4">
+                      <div className="w-10 h-10 flex items-center justify-center bg-brand-yellow rounded-full text-brand-jet font-bold flex-shrink-0">
+                        {i}
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-brand-jet mb-1">
+                          {t(`dist_step_${i}_title`) || i === 1 ? "Order Processing" : i === 2 ? "Route Optimization" : i === 3 ? "Delivery Execution" : "Confirmation & Reporting"}
+                        </h4>
+                        <p className="text-brand-charcoal">
+                          {t(`dist_step_${i}_desc`) || i === 1 ? "Efficient order management and inventory allocation" : i === 2 ? "Smart routing for fastest delivery times" : i === 3 ? "Professional delivery with real-time tracking" : "Delivery confirmation and performance analytics"}
+                        </p>
+                      </div>
+                    </StaggerItem>
+                  ))}
+                </StaggerContainer>
+              </div>
+ 
+              <div className="relative">
+                <img
+                  src="https://readdy.ai/api/search-image?query=delivery%20truck%20driver%20handing%20package%20to%20store%20owner%20retail%20delivery%20professional%20service%20friendly%20interaction%20bright%20daylight%20commercial%20photography&width=600&height=500&seq=distribution-process-001&orientation=portrait"
+                  alt="Distribution Process"
+                  className="w-full h-[500px] object-cover object-center rounded-3xl shadow-2xl"
+                />
               </div>
             </div>
-
-            <div className="relative">
-              <img
-                src="https://readdy.ai/api/search-image?query=delivery%20truck%20driver%20handing%20package%20to%20store%20owner%20retail%20delivery%20professional%20service%20friendly%20interaction%20bright%20daylight%20commercial%20photography&width=600&height=500&seq=distribution-process-001&orientation=portrait"
-                alt="Distribution Process"
-                className="w-full h-[500px] object-cover object-center rounded-3xl shadow-2xl"
-              />
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* CTA Section */}
       <section className="py-20 bg-brand-charcoal">

@@ -1,6 +1,8 @@
 "use client";
 import { useTranslation } from "react-i18next";
-
+import ScrollReveal from "../../components/ScrollReveal";
+import StaggerContainer from "../../components/StaggerContainer";
+import StaggerItem from "../../components/StaggerItem";
 export default function About() {
   const { t } = useTranslation();
 
@@ -21,31 +23,33 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-[64px] items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <h2 className="text-5xl  font-bold text-black leading-tight">
-              {t("leading_fmcg_distribution") ||
-                "Leading FMCG Distribution in Syria"}
-            </h2>
+            <ScrollReveal>
+              <h2 className="text-5xl  font-bold text-black leading-tight">
+                {t("leading_fmcg_distribution") ||
+                  "Leading FMCG Distribution in Syria"}
+              </h2>
 
-            <div className="inline-block">
-              <span className="px-[20px] py-[8px] bg-[#4B4F54] text-sm text-white rounded-full font-bold tracking-wider">
-                {t("about_top_brands_syria") || "About Top Brands Syria"}
-              </span>
-            </div>
-            <div className="space-y-6">
-              <p className="text-[18px] text-[#4B4F54] leading-relaxed">
-                {t("about_desc_1") ||
-                  "Growing Together is a fast-growing FMCG distributor specializing in food and non-food products. As part of the Al Barengi Group with over 30 years of experience, we represent exclusive brands and provide comprehensive distribution services across Syria."}
-              </p>
-              <p className="text-[18px] text-[#4B4F54] leading-relaxed">
-                {t("about_desc_2") ||
-                  "Our mission is to connect quality brands with retailers nationwide, ensuring efficient distribution, merchandising excellence, and market growth for our partners."}
-              </p>
-            </div>
+              <div className="inline-block mt-6">
+                <span className="px-[20px] py-[8px] bg-[#4B4F54] text-sm text-white rounded-full font-bold tracking-wider">
+                  {t("about_top_brands_syria") || "About Top Brands Syria"}
+                </span>
+              </div>
+              <div className="space-y-6 mt-6">
+                <p className="text-[18px] text-[#4B4F54] leading-relaxed">
+                  {t("about_desc_1") ||
+                    "Growing Together is a fast-growing FMCG distributor specializing in food and non-food products. As part of the Al Barengi Group with over 30 years of experience, we represent exclusive brands and provide comprehensive distribution services across Syria."}
+                </p>
+                <p className="text-[18px] text-[#4B4F54] leading-relaxed">
+                  {t("about_desc_2") ||
+                    "Our mission is to connect quality brands with retailers nationwide, ensuring efficient distribution, merchandising excellence, and market growth for our partners."}
+                </p>
+              </div>
+            </ScrollReveal>
 
             {/* Feature Cards Grid (DIV-143) */}
-            <div className="grid md:grid-cols-2 gap-4 pt-4">
+            <StaggerContainer className="grid md:grid-cols-2 gap-4 pt-4">
               {/* Card 1: Trusted Partner */}
-              <div className="flex items-center gap-3 p-[18px] bg-white rounded-xl hover:border hover:border-[#4B4F54] transform hover:-translate-y-1 duration-300 shadow-sm">
+              <StaggerItem className="flex items-center gap-3 p-[18px] bg-white rounded-xl hover:border hover:border-[#4B4F54] transform hover:-translate-y-1 duration-300 shadow-sm">
                 <div className="w-12 h-12 flex items-center justify-center bg-[#4B4F54] rounded-lg flex-shrink-0 shadow-md">
                   <svg
                     width="18"
@@ -68,10 +72,10 @@ export default function About() {
                     {t("years_excellence") || "30+ years of excellence"}
                   </p>
                 </div>
-              </div>
+              </StaggerItem>
 
               {/* Card 2: Wide Coverage */}
-              <div className="flex items-center gap-3 p-[16px] bg-white rounded-xl hover:border hover:border-[#F7E326] transform hover:-translate-y-1 duration-300 shadow-sm">
+              <StaggerItem className="flex items-center gap-3 p-[16px] bg-white rounded-xl hover:border hover:border-[#F7E326] transform hover:-translate-y-1 duration-300 shadow-sm">
                 <div className="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-[#F7E326] to-[#E5D223] rounded-lg flex-shrink-0 shadow-md">
                   <svg
                     width="18"
@@ -94,10 +98,10 @@ export default function About() {
                     {t("governorates_served") || "14 governorates served"}
                   </p>
                 </div>
-              </div>
+              </StaggerItem>
 
               {/* Card 3: Retail Network */}
-              <div className="flex items-center gap-3 p-[16px] bg-white rounded-xl hover:border hover:border-[#F7E326] transform hover:-translate-y-1 duration-300 shadow-sm">
+              <StaggerItem className="flex items-center gap-3 p-[16px] bg-white rounded-xl hover:border hover:border-[#F7E326] transform hover:-translate-y-1 duration-300 shadow-sm">
                 <div className="w-12 h-12 flex items-center justify-center bg-[#F7E326] rounded-lg flex-shrink-0 shadow-md">
                   <svg
                     width="20"
@@ -120,10 +124,10 @@ export default function About() {
                     {t("retail_partners") || "15,000+ retail partners"}
                   </p>
                 </div>
-              </div>
+              </StaggerItem>
 
               {/* Card 4: Product Range */}
-              <div className="flex items-center gap-3 p-[16px] bg-white rounded-xl hover:border hover:border-[#4B4F54] transform hover:-translate-y-1 duration-300 shadow-sm">
+              <StaggerItem className="flex items-center gap-3 p-[16px] bg-white rounded-xl hover:border hover:border-[#4B4F54] transform hover:-translate-y-1 duration-300 shadow-sm">
                 <div className="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-[#4B4F54] to-[#3B3E42] rounded-lg flex-shrink-0 shadow-md">
                   <svg
                     width="19"
@@ -146,10 +150,10 @@ export default function About() {
                     {t("product_lines_count") || "150+ product lines"}
                   </p>
                 </div>
-              </div>
-            </div>
+              </StaggerItem>
+            </StaggerContainer>
 
-            <div className="pt-8">
+            <ScrollReveal delay={0.1} className="pt-8">
               <a
                 href="/about"
                 className="inline-flex items-center gap-3 px-[32px] py-[16px] bg-[#4B4F54] text-white rounded-lg font-bold text-base hover:bg-black transition-all hover:-translate-y-1 shadow-lg"
@@ -168,11 +172,11 @@ export default function About() {
                   />
                 </svg>
               </a>
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* Right Area (Image Placeholder) */}
-          <div className="relative group">
+          <ScrollReveal delay={0.2} className="relative group">
             <div className="relative rounded-[16px] overflow-hidden shadow-2xl border-[1px] border-white/20 aspect-[4/5] bg-[#E5E7EB]">
               {/* This space is for the image 63:202. Using a placeholder as requested. */}
               <div className="absolute inset-0 flex items-center justify-center text-gray-400">
@@ -183,7 +187,7 @@ export default function About() {
                 />
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

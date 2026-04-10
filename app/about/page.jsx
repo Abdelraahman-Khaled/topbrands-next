@@ -1,6 +1,7 @@
 "use client";
 import { useTranslation } from "react-i18next";
 import HeroSection from "../components/HeroSection";
+import ScrollReveal from "../components/ScrollReveal";
 import WhoWeAre from "./components/WhoWeAre";
 import AboutMission from "./components/AboutMission";
 import CoreValues from "./components/CoreValues";
@@ -24,22 +25,34 @@ export default function AboutPage() {
         description2={t("who_we_are_subtitle3")} />
 
       {/* Who We Are Section */}
-      <WhoWeAre />
+      <ScrollReveal>
+        <WhoWeAre />
+      </ScrollReveal>
 
       {/* Vision & Mission Section */}
-      <AboutMission />
+      <ScrollReveal>
+        <AboutMission />
+      </ScrollReveal>
 
       {/* Core Values Section */}
-      <CoreValues />
+      <ScrollReveal>
+        <CoreValues />
+      </ScrollReveal>
 
       {/* Leadership Team Section */}
-      <Ledaership />
+      <ScrollReveal>
+        <Ledaership />
+      </ScrollReveal>
 
       {/* Our Edge Section */}
-      <OurEdgeSection />
+      <ScrollReveal>
+        <OurEdgeSection />
+      </ScrollReveal>
 
       {/* Certifications Section */}
-      <AboutCertifications />
+      <ScrollReveal>
+        <AboutCertifications />
+      </ScrollReveal>
 
       {/* Al Barengi Group Section */}
       {/* <section className="py-20  bg-white">
@@ -72,10 +85,14 @@ export default function AboutPage() {
       </section> */}
 
       {/* Growth Direction Section */}
-      <GrowthDirection />
+      <ScrollReveal delay={0.2}>
+        <GrowthDirection />
+      </ScrollReveal>
 
       {/* CTA Section */}
-      <GlobalCTA title={t("ready_to_partner")} subtitle={t("join_growing_portfolio")} contact={false} />
+      <ScrollReveal delay={0.3}>
+        <GlobalCTA title={t("ready_to_partner")} subtitle={t("join_growing_portfolio")} contact={false} />
+      </ScrollReveal>
     </div>
   );
 }

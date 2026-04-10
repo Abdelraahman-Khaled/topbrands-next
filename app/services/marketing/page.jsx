@@ -1,6 +1,11 @@
-
+import { useTranslation } from "react-i18next";
+import ScrollReveal from "../../components/ScrollReveal";
+import StaggerContainer from "../../components/StaggerContainer";
+import StaggerItem from "../../components/StaggerItem";
+import AnimatedCard from "../../components/AnimatedCard";
 
 export default function MarketingPage() {
+  const { t } = useTranslation();
   const services = [
     {
       icon: 'ri-bar-chart-box-line',
@@ -98,38 +103,42 @@ export default function MarketingPage() {
       {/* Stats Section */}
       <section className="py-16 bg-brand-yellow">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
+              <StaggerItem key={index} className="text-center">
                 <div className="text-5xl lg:text-6xl font-bold text-brand-jet mb-2">{stat.value}</div>
                 <div className="text-base text-brand-charcoal font-medium">{stat.label}</div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Services Grid */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-4">Our Marketing Services</h2>
-            <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">
-              Comprehensive marketing solutions tailored to drive your brand's success
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-4">Our Marketing Services</h2>
+              <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">
+                Comprehensive marketing solutions tailored to drive your brand's success
+              </p>
+            </div>
+          </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="group bg-brand-paleblue rounded-3xl p-10 hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-brand-yellow">
-                <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <i className={`${service.icon} text-3xl text-brand-jet`}></i>
-                </div>
-                <h3 className="text-2xl font-bold text-brand-jet mb-4">{service.title}</h3>
-                <p className="text-base text-brand-charcoal leading-relaxed">{service.description}</p>
-              </div>
+              <StaggerItem key={index}>
+                <AnimatedCard className="h-full bg-brand-paleblue rounded-3xl p-10 border border-transparent hover:border-brand-yellow group block">
+                  <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i className={`${service.icon} text-3xl text-brand-jet`}></i>
+                  </div>
+                  <h3 className="text-2xl font-bold text-brand-jet mb-4">{service.title}</h3>
+                  <p className="text-base text-brand-charcoal leading-relaxed">{service.description}</p>
+                </AnimatedCard>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -137,34 +146,36 @@ export default function MarketingPage() {
       <section className="py-20 lg:py-28 bg-brand-paleblue">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-6">Why Choose Our Marketing Solutions?</h2>
-              <p className="text-lg text-brand-charcoal mb-8 leading-relaxed">
-                Our dedicated marketing team combines local market expertise with global best practices to deliver results-driven campaigns that resonate with your target audience.
-              </p>
+            <ScrollReveal>
+              <div>
+                <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-6">Why Choose Our Marketing Solutions?</h2>
+                <p className="text-lg text-brand-charcoal mb-8 leading-relaxed">
+                  Our dedicated marketing team combines local market expertise with global best practices to deliver results-driven campaigns that resonate with your target audience.
+                </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {capabilities.map((cap, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="w-12 h-12 flex items-center justify-center bg-brand-yellow rounded-xl flex-shrink-0">
-                      <i className={`${cap.icon} text-2xl text-brand-jet`}></i>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-bold text-brand-jet mb-1">{cap.title}</h4>
-                      <p className="text-sm text-brand-charcoal">{cap.description}</p>
-                    </div>
-                  </div>
-                ))}
+                <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {capabilities.map((cap, index) => (
+                    <StaggerItem key={index} className="flex items-start space-x-4">
+                      <div className="w-12 h-12 flex items-center justify-center bg-brand-yellow rounded-xl flex-shrink-0">
+                        <i className={`${cap.icon} text-2xl text-brand-jet`}></i>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-brand-jet mb-1">{cap.title}</h4>
+                        <p className="text-sm text-brand-charcoal">{cap.description}</p>
+                      </div>
+                    </StaggerItem>
+                  ))}
+                </StaggerContainer>
               </div>
-            </div>
+            </ScrollReveal>
 
-            <div className="relative">
+            <ScrollReveal delay={0.2} className="relative">
               <img
                 src="https://readdy.ai/api/search-image?query=marketing%20team%20analyzing%20data%20on%20large%20screen%20dashboard%20showing%20growth%20charts%20social%20media%20metrics%20brand%20performance%20analytics%20modern%20office%20environment%20professional%20business%20setting%20bright%20lighting&width=600&height=500&seq=marketing-capabilities-001&orientation=portrait"
                 alt="Marketing Capabilities"
                 className="w-full h-[500px] object-cover object-center rounded-3xl shadow-2xl"
               />
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -172,49 +183,37 @@ export default function MarketingPage() {
       {/* Process Section */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-4">Our Approach</h2>
-            <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">
-              A systematic approach to delivering marketing excellence
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-4">Our Approach</h2>
+              <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">
+                A systematic approach to delivering marketing excellence
+              </p>
+            </div>
+          </ScrollReveal>
 
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center group">
-              <div className="w-20 h-20 flex items-center justify-center bg-brand-yellow rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <span className="text-3xl font-bold text-brand-jet">1</span>
-              </div>
-              <h3 className="text-xl font-bold text-brand-jet mb-3">Discovery</h3>
-              <p className="text-brand-charcoal">Understanding your brand, goals, and target audience</p>
-            </div>
-            <div className="text-center group">
-              <div className="w-20 h-20 flex items-center justify-center bg-brand-yellow rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <span className="text-3xl font-bold text-brand-jet">2</span>
-              </div>
-              <h3 className="text-xl font-bold text-brand-jet mb-3">Strategy</h3>
-              <p className="text-brand-charcoal">Developing data-driven marketing strategies</p>
-            </div>
-            <div className="text-center group">
-              <div className="w-20 h-20 flex items-center justify-center bg-brand-yellow rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <span className="text-3xl font-bold text-brand-jet">3</span>
-              </div>
-              <h3 className="text-xl font-bold text-brand-jet mb-3">Execution</h3>
-              <p className="text-brand-charcoal">Implementing campaigns across all channels</p>
-            </div>
-            <div className="text-center group">
-              <div className="w-20 h-20 flex items-center justify-center bg-brand-yellow rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <span className="text-3xl font-bold text-brand-jet">4</span>
-              </div>
-              <h3 className="text-xl font-bold text-brand-jet mb-3">Optimization</h3>
-              <p className="text-brand-charcoal">Continuous improvement based on performance data</p>
-            </div>
-          </div>
+          <StaggerContainer className="grid md:grid-cols-4 gap-8">
+            {[
+              { id: 1, title: 'Discovery', desc: 'Understanding your brand, goals, and target audience' },
+              { id: 2, title: 'Strategy', desc: 'Developing data-driven marketing strategies' },
+              { id: 3, title: 'Execution', desc: 'Implementing campaigns across all channels' },
+              { id: 4, title: 'Optimization', desc: 'Continuous improvement based on performance data' }
+            ].map((step) => (
+              <StaggerItem key={step.id} className="text-center group">
+                <div className="w-20 h-20 flex items-center justify-center bg-brand-yellow rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-3xl font-bold text-brand-jet">{step.id}</span>
+                </div>
+                <h3 className="text-xl font-bold text-brand-jet mb-3">{step.title}</h3>
+                <p className="text-brand-charcoal">{step.desc}</p>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-brand-charcoal">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 text-center">
+        <ScrollReveal className="max-w-7xl mx-auto px-8 lg:px-16 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Ready to Elevate Your Brand?
           </h2>
@@ -237,7 +236,7 @@ export default function MarketingPage() {
               <i className="ri-arrow-left-line text-xl"></i>
             </a>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
 

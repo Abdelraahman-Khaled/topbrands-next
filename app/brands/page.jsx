@@ -6,6 +6,10 @@ import Link from "next/link";
 import HeroSection from "../components/HeroSection";
 import GlobalCTA from "../components/GlobalCTA";
 import { Suspense } from "react";
+import StaggerContainer from "../components/StaggerContainer";
+import StaggerItem from "../components/StaggerItem";
+import AnimatedCard from "../components/AnimatedCard";
+import ScrollReveal from "../components/ScrollReveal";
 
 function BrandsContent() {
   const { t } = useTranslation();
@@ -226,127 +230,136 @@ function BrandsContent() {
 
 
       {/* Brand Type Filter */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-8 ">
-          <div className="flex flex-wrap items-center gap-4">
-            <a
-              href="/brands"
-              className={`px-6 py-3 rounded-full font-semibold transition-all whitespace-nowrap cursor-pointer ${!typeParam && !categoryParam
-                ? "bg-brand-yellow text-black  text-base"
-                : "bg-white text-brand-charcoal hover:bg-brand-yellow hover:text-black"
-                }`}
-            >
-              {t("all_brands")}
-            </a>
-            <a
-              href="/brands?type=international"
-              className={`px-6 py-3 rounded-full font-semibold transition-all whitespace-nowrap cursor-pointer flex items-center space-x-2 rtl:space-x-reverse ${typeParam === "international" && !categoryParam
-                ? "bg-brand-yellow text-black  text-base"
-                : "bg-white text-brand-charcoal hover:bg-brand-yellow hover:text-black"
-                }`}
-            >
-              <div className="w-5 h-5 flex items-center justify-center">
-                <i className="ri-global-line text-lg"></i>
-              </div>
-              <span>{t("international_brands")}</span>
-            </a>
-            <a
-              href="/brands?type=regional"
-              className={`px-6 py-3 rounded-full font-semibold transition-all whitespace-nowrap cursor-pointer flex items-center space-x-2 rtl:space-x-reverse ${typeParam === "regional" && !categoryParam
-                ? "bg-brand-yellow text-black  text-base"
-                : "bg-white text-brand-charcoal hover:bg-brand-yellow hover:text-black"
-                }`}
-            >
-              <div className="w-5 h-5 flex items-center justify-center">
-                <i className="ri-map-pin-line text-lg"></i>
-              </div>
-              <span>{t("regional_brands")}</span>
-            </a>
+      <ScrollReveal delay={0.1}>
+        <section className="py-12">
+          <div className="max-w-7xl mx-auto px-8 ">
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href="/brands"
+                className={`px-6 py-3 rounded-full font-semibold transition-all whitespace-nowrap cursor-pointer ${!typeParam && !categoryParam
+                  ? "bg-brand-yellow text-black  text-base"
+                  : "bg-white text-brand-charcoal hover:bg-brand-yellow hover:text-black"
+                  }`}
+              >
+                {t("all_brands")}
+              </a>
+              <a
+                href="/brands?type=international"
+                className={`px-6 py-3 rounded-full font-semibold transition-all whitespace-nowrap cursor-pointer flex items-center space-x-2 rtl:space-x-reverse ${typeParam === "international" && !categoryParam
+                  ? "bg-brand-yellow text-black  text-base"
+                  : "bg-white text-brand-charcoal hover:bg-brand-yellow hover:text-black"
+                  }`}
+              >
+                <div className="w-5 h-5 flex items-center justify-center">
+                  <i className="ri-global-line text-lg"></i>
+                </div>
+                <span>{t("international_brands")}</span>
+              </a>
+              <a
+                href="/brands?type=regional"
+                className={`px-6 py-3 rounded-full font-semibold transition-all whitespace-nowrap cursor-pointer flex items-center space-x-2 rtl:space-x-reverse ${typeParam === "regional" && !categoryParam
+                  ? "bg-brand-yellow text-black  text-base"
+                  : "bg-white text-brand-charcoal hover:bg-brand-yellow hover:text-black"
+                  }`}
+              >
+                <div className="w-5 h-5 flex items-center justify-center">
+                  <i className="ri-map-pin-line text-lg"></i>
+                </div>
+                <span>{t("regional_brands")}</span>
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* Brands Grid */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-8 ">
-          <div className="flex items-center justify-between mb-12">
-            <p className="text-lg text-brand-charcoal">
-              {t("showing")}{" "}
-              <strong className="text-brand-jet">
-                {filteredBrands.length}
-              </strong>
-              {t("brands_word")}
-              {(typeParam || categoryParam) && (
-                <span>
-                  {t("in_word")}
-                  <strong className="text-brand-jet">
-                    {currentCategory
-                      ? currentCategory.name
-                      : typeParam === "international"
-                        ? t("international_brands")
-                        : t("regional_brands")}
-                  </strong>
-                  {t("category_word")}
-                </span>
-              )}
-            </p>
-          </div>
+      <ScrollReveal delay={0.2}>
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-8 ">
+            <div className="flex items-center justify-between mb-12">
+              <p className="text-lg text-brand-charcoal">
+                {t("showing")}{" "}
+                <strong className="text-brand-jet">
+                  {filteredBrands.length}
+                </strong>
+                {t("brands_word")}
+                {(typeParam || categoryParam) && (
+                  <span>
+                    {t("in_word")}
+                    <strong className="text-brand-jet">
+                      {currentCategory
+                        ? currentCategory.name
+                        : typeParam === "international"
+                          ? t("international_brands")
+                          : t("regional_brands")}
+                    </strong>
+                    {t("category_word")}
+                  </span>
+                )}
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredBrands.map((brand) => (
-              <Link
-                key={brand.id}
-                href={`/brands/${brand.slug}`}
-                className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-transparent cursor-pointer block"
-              >
-                <div className="w-full h-40 flex items-center justify-center bg-white p-6">
-                  <img
-                    src={brand.logo}
-                    alt={brand.name}
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs text-brand-charcoal font-medium uppercase tracking-wider">
-                      {t(brand.category.replace("-", "_"))}
-                    </span>
-                    <span className="px-3 py-1 bg-brand-coral text-white text-xs font-semibold rounded-full">
-                      {brand.origin}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-brand-jet mb-3 transition-colors">
-                    {brand.name}
-                  </h3>
-                  <p className="text-sm text-brand-charcoal leading-relaxed mb-4">
-                    {brand.description}
-                  </p>
-                  <div className="border-t border-gray-100 pt-4">
-                    <p className="text-xs text-brand-charcoal font-semibold mb-2 uppercase tracking-wider">
-                      {t("key_products")}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {brand.products.map((product, idx) => (
-                        <span
-                          key={idx}
-                          className="px-3 py-1 bg-brand-paleblue text-brand-jet text-xs rounded-full"
-                        >
-                          {product}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
+            <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredBrands.map((brand) => (
+                <StaggerItem key={brand.id}>
+                  <Link
+                    href={`/brands/${brand.slug}`}
+                    className="block h-full group bg-white rounded-2xl overflow-hidden border-2 border-transparent cursor-pointer"
+                  >
+                    <AnimatedCard className="h-full">
+                      <div className="w-full h-40 flex items-center justify-center bg-white p-6">
+                        <img
+                          src={brand.logo}
+                          alt={brand.name}
+                          className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                        />
+                      </div>
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-3">
+                          <span className="text-xs text-brand-charcoal font-medium uppercase tracking-wider">
+                            {t(brand.category.replace("-", "_"))}
+                          </span>
+                          <span className="px-3 py-1 bg-brand-coral text-white text-xs font-semibold rounded-full">
+                            {brand.origin}
+                          </span>
+                        </div>
+                        <h3 className="text-2xl font-bold text-brand-jet mb-3 transition-colors">
+                          {brand.name}
+                        </h3>
+                        <p className="text-sm text-brand-charcoal leading-relaxed mb-4">
+                          {brand.description}
+                        </p>
+                        <div className="border-t border-gray-100 pt-4">
+                          <p className="text-xs text-brand-charcoal font-semibold mb-2 uppercase tracking-wider">
+                            {t("key_products")}
+                          </p>
+                          <div className="flex flex-wrap gap-2">
+                            {brand.products.map((product, idx) => (
+                              <span
+                                key={idx}
+                                className="px-3 py-1 bg-brand-paleblue text-brand-jet text-xs rounded-full"
+                              >
+                                {product}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </AnimatedCard>
+                  </Link>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* CTA Section */}
-      <GlobalCTA title={t("want_your_brand_distributed")}
-        subtitle={t("join_growing_portfolio")}
-      />
+      <ScrollReveal delay={0.1}>
+        <GlobalCTA title={t("want_your_brand_distributed")}
+          subtitle={t("join_growing_portfolio")}
+        />
+      </ScrollReveal>
     </>
   );
 }

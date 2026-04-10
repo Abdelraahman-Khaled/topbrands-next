@@ -6,6 +6,9 @@ import ExcellenceSection from "./components/ServiceExellence";
 import GlobalCTA from "../components/GlobalCTA";
 
 
+
+import ScrollReveal from "../components/ScrollReveal";
+
 export default function ServicesPage() {
   const { t } = useTranslation();
 
@@ -79,12 +82,15 @@ export default function ServicesPage() {
         yellowText={t("services_hero_desc_2")}
         description2={t("services_hero_desc_3")}
       />
-      <ServicesGrid />
-      <ExcellenceSection />
-      <GlobalCTA title={t("services_cta_title")} subtitle={t("services_cta_desc")} contact={true} />
-
-
-
+      <ScrollReveal delay={0.1}>
+        <ServicesGrid />
+      </ScrollReveal>
+      <ScrollReveal delay={0.2}>
+        <ExcellenceSection />
+      </ScrollReveal>
+      <ScrollReveal delay={0.1}>
+        <GlobalCTA title={t("services_cta_title")} subtitle={t("services_cta_desc")} contact={true} />
+      </ScrollReveal>
     </div>
   );
 }

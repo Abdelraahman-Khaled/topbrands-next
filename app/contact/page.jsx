@@ -1,7 +1,12 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion"; // Added
 import HeroSection from "../components/HeroSection";
+import ScrollReveal from "../components/ScrollReveal";
+import StaggerContainer from "../components/StaggerContainer";
+import StaggerItem from "../components/StaggerItem";
+import AnimatedCard from "../components/AnimatedCard";
 
 export default function ContactPage() {
   const { t } = useTranslation();
@@ -17,9 +22,8 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("idle");
 
-  const handleChange = (
-
-  ) => {
+  // Fixed: Added 'e' parameter
+  const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -37,27 +41,15 @@ export default function ContactPage() {
         formBody.append(key, value);
       });
 
-      const response = await fetch(
-        "https://readdy.ai/api/form/d5v1ot5r44f5krorl03g",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: formBody.toString(),
-        },
-      );
+      const response = await fetch("https://readdy.ai/api/form/d5v1ot5r44f5krorl03g", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formBody.toString(),
+      });
 
       if (response.ok) {
         setSubmitStatus("success");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          company: "",
-          subject: "",
-          message: "",
-        });
+        setFormData({ name: "", email: "", phone: "", company: "", subject: "", message: "" });
       } else {
         setSubmitStatus("error");
       }
@@ -70,11 +62,8 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white">
-
-
-      {/* Hero Section with Image */}
       <HeroSection
-        img="https://readdy.ai/api/search-image?query=professional%20customer%20service%20team%20modern%20office%20environment%20friendly%20business%20communication%20contact%20center%20bright%20contemporary%20workspace%20Syria%20Damascus%20corporate%20setting&width=1920&height=600&seq=contact-hero-main&orientation=landscape"
+        img="/images/contact/hero-img.jpg"
         title={t("contact_us_title")}
         yellowTitle={t("growing_together")}
         subtitle={t("contact_nav")}
@@ -83,249 +72,154 @@ export default function ContactPage() {
         description2={t("contact_hero_desc_3")}
       />
 
-      {/* Contact Information Cards */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
-            <div className="bg-brand-paleblue rounded-3xl p-10 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-gray-200">
-              <div className="w-16 h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6">
-                <i className="ri-phone-line text-3xl text-white"></i>
-              </div>
-              <h3 className="text-2xl font-bold text-black mb-3">
-                {t("contact_phone")}
-              </h3>
-              <a
-                href="tel:+963116022"
-                className="text-lg text-brand-charcoal hover:text-brand-charcoal transition-colors"
-                dir="ltr"
+      <ScrollReveal delay={0.1}>
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-8 lg:px-16">
+            <StaggerContainer className="grid md:grid-cols-3 gap-8 mb-20">
+              {/* Phone Card */}
+              <StaggerItem>
+                <AnimatedCard className="bg-brand-paleblue rounded-3xl p-10 h-full">
+                  <div className="w-16 h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6">
+                    <i className="ri-phone-line text-3xl text-white"></i>
+                  </div>
+                  <h3 className="text-2xl font-bold text-black mb-3">{t("contact_phone")}</h3>
+                  <a href="tel:+963116022" className="text-lg text-brand-charcoal" dir="ltr">+963 11 6022</a>
+                </AnimatedCard>
+              </StaggerItem>
+
+              {/* Email Card */}
+              <StaggerItem>
+                <AnimatedCard className="bg-brand-paleblue rounded-3xl p-10 h-full">
+                  <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-6">
+                    <i className="ri-mail-line text-3xl text-black"></i>
+                  </div>
+                  <h3 className="text-2xl font-bold text-black mb-3">{t("email_us")}</h3>
+                  <a href="mailto:info@topbrands-sy.com" className="text-lg text-brand-charcoal break-all">info@topbrands-sy.com</a>
+                </AnimatedCard>
+              </StaggerItem>
+
+              {/* Location Card */}
+              <StaggerItem>
+                <AnimatedCard className="bg-brand-paleblue rounded-3xl p-10 h-full">
+                  <div className="w-16 h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6">
+                    <i className="ri-map-pin-line text-3xl text-white"></i>
+                  </div>
+                  <h3 className="text-2xl font-bold text-black mb-3">{t("contact_location")}</h3>
+                  <p className="text-lg text-brand-charcoal">{t("contact_damascus_syria")}</p>
+                </AnimatedCard>
+              </StaggerItem>
+            </StaggerContainer>
+
+            {/* Form Section */}
+            <div className="max-w-4xl mx-auto bg-brand-paleblue p-8 lg:p-12 rounded-[40px] shadow-sm">
+              <motion.form
+                onSubmit={handleSubmit}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
               >
-                +963 11 6022
-              </a>
-            </div>
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t("contact_full_name")}</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white"
+                      placeholder={t("your_full_name")}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t("contact_email_address")}</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white"
+                      placeholder={t("your_email")}
+                    />
+                  </div>
+                </div>
 
-            <div className="bg-brand-paleblue rounded-3xl p-10 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-gray-200">
-              <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-6">
-                <i className="ri-mail-line text-3xl text-black"></i>
-              </div>
-              <h3 className="text-2xl font-bold text-black mb-3">
-                {t("email_us")}
-              </h3>
-              <a
-                href="mailto:info@topbrands-sy.com"
-                className="text-lg text-brand-charcoal hover:text-black transition-colors break-all"
-              >
-                info@topbrands-sy.com
-              </a>
-            </div>
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t("contact_phone_number")}</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white"
+                      placeholder={t("your_phone_placeholder")}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t("contact_company_name")}</label>
+                    <input
+                      type="text"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white"
+                      placeholder={t("your_company")}
+                    />
+                  </div>
+                </div>
 
-            <div className="bg-brand-paleblue rounded-3xl p-10 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-gray-200">
-              <div className="w-16 h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6">
-                <i className="ri-map-pin-line text-3xl text-white"></i>
-              </div>
-              <h3 className="text-2xl font-bold text-black mb-3">
-                {t("contact_location")}
-              </h3>
-              <p className="text-lg text-brand-charcoal">
-                {t("contact_damascus_syria")}
-              </p>
-            </div>
-          </div>
-
-          {/* Map Section */}
-          <div className="mb-20">
-            <h2 className="text-4xl lg:text-5xl font-bold text-black mb-8 text-center">
-              {t("our_location")}
-            </h2>
-            <div className="rounded-3xl overflow-hidden shadow-2xl h-[500px]">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106494.46362736486!2d36.24806!3d33.5138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e6dc413cc6a7%3A0x6b9f66ebd1e394f2!2sDamascus%2C%20Syria!5e0!3m2!1sen!2s!4v1234567890"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Top Brands Syria Location"
-              ></iframe>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="bg-brand-paleblue rounded-3xl p-10 lg:p-12 shadow-2xl max-w-4xl mx-auto">
-            <div className="text-center mb-10">
-              <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4">
-                {t("contact_send_message_title")}
-              </h2>
-              <p className="text-xl text-brand-charcoal">
-                {t("contact_fill_form_desc")}
-              </p>
-            </div>
-
-            <form onSubmit={handleSubmit} data-readdy-form id="contact-form">
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-semibold text-brand-charcoal mb-2"
-                  >
-                    {t("contact_full_name")}
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
+                <div className="mb-6">
+                  <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t("subject")}</label>
+                  <select
+                    name="subject"
+                    value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full  px-4 py-3 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent bg-white text-left rtl:text-right"
-                    placeholder={t("your_full_name")}
-                  />
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white text-black"
+                  >
+                    <option value="">{t("select_subject")}</option>
+                    <option value="Partnership">{t("dist_partnership")}</option>
+                    <option value="General">{t("general_inquiry")}</option>
+                  </select>
                 </div>
 
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-semibold text-brand-charcoal mb-2"
-                  >
-                    {t("contact_email_address")}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
+                <div className="mb-6">
+                  <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t("contact_message")}</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent bg-white text-left rtl:text-right"
-                    placeholder={t("your_email")}
-                    dir="ltr"
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-semibold text-brand-charcoal mb-2"
-                  >
-                    {t("contact_phone_number")}
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent bg-white text-left"
-                    placeholder={t("your_phone_placeholder")}
-                    dir="ltr"
-                  />
+                    rows={5}
+                    maxLength={500}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white resize-none"
+                    placeholder={t("message_placeholder")}
+                  ></textarea>
+                  <p className="text-xs text-right mt-1">{formData.message.length}/500</p>
                 </div>
 
-                <div>
-                  <label
-                    htmlFor="company"
-                    className="block text-sm font-semibold text-brand-charcoal mb-2"
-                  >
-                    {t("contact_company_name")}
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent bg-white text-left rtl:text-right"
-                    placeholder={t("your_company")}
-                  />
-                </div>
-              </div>
-
-              <div className="mb-6">
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-semibold text-brand-charcoal mb-2"
-                >
-                  {t("subject")}
-                </label>
-                <select
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 text-black text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent bg-white text-left rtl:text-right"
-                >
-                  <option value="">{t("select_subject")}</option>
-                  <option value="Distribution Partnership">
-                    {t("dist_partnership")}
-                  </option>
-                  <option value="Brand Representation">{t("brand_rep")}</option>
-                  <option value="General Inquiry">
-                    {t("general_inquiry")}
-                  </option>
-                  <option value="Logistics & Importing">
-                    {t("logistics_importing")}
-                  </option>
-                  <option value="Other">{t("other")}</option>
-                </select>
-              </div>
-
-              <div className="mb-6">
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-semibold text-brand-charcoal mb-2"
-                >
-                  {t("contact_message")}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  maxLength={500}
-                  className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-200 focus:border-transparent resize-none bg-white text-left rtl:text-right"
-                  placeholder={t("message_placeholder")}
-                ></textarea>
-                <p className="text-xs text-brand-charcoal mt-2 flex justify-end rtl:justify-start">
-                  {formData.message.length}/500 {t("characters")}
-                </p>
-              </div>
-
-              {submitStatus === "success" && (
-                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl">
-                  <p className="text-sm text-green-800 flex items-center rtl:flex-row-reverse rtl:justify-end">
-                    <i className="ri-check-line text-xl mr-2 rtl:mr-0 rtl:ml-2"></i>
+                {submitStatus === "success" && (
+                  <div className="mb-6 p-4 bg-green-50 text-green-800 rounded-xl border border-green-200">
                     {t("thank_you_msg")}
-                  </p>
-                </div>
-              )}
+                  </div>
+                )}
 
-              {submitStatus === "error" && (
-                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl">
-                  <p className="text-sm text-red-800 flex items-center rtl:flex-row-reverse rtl:justify-end">
-                    <i className="ri-error-warning-line text-xl mr-2 rtl:mr-0 rtl:ml-2"></i>
-                    {t("error_msg")}
-                  </p>
-                </div>
-              )}
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full px-8 py-4 bg-brand-yellow text-black duration-300 rounded-xl font-bold text-lg hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
-              >
-                {isSubmitting ? t("sending") : t("contact_send_message_btn")}
-              </button>
-            </form>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full py-4 bg-brand-yellow text-black rounded-xl font-bold text-lg disabled:opacity-50"
+                >
+                  {isSubmitting ? t("sending") : t("contact_send_message_btn")}
+                </motion.button>
+              </motion.form>
+            </div>
           </div>
-        </div>
-      </section>
-
-
+        </section>
+      </ScrollReveal>
     </div>
   );
 }

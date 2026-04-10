@@ -3,6 +3,9 @@ import GlobalCTA from "../../components/GlobalCTA";
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useTranslation } from "react-i18next";
+import ScrollReveal from "../../components/ScrollReveal";
+import StaggerContainer from "../../components/StaggerContainer";
+import StaggerItem from "../../components/StaggerItem";
 
 export default function BrandDetailPage() {
   const { t } = useTranslation();
@@ -145,60 +148,65 @@ export default function BrandDetailPage() {
       </section>
 
       {/* Products Section */}
-      <section className="py-20 bg-white" data-product-shop>
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-4">
-              {brand.name} Products
-            </h2>
-            <p className="text-xl text-brand-charcoal">
-              Explore our complete range of {brand.name} products
-            </p>
-          </div>
+      <ScrollReveal delay={0.1}>
+        <section className="py-20 bg-white" data-product-shop>
+          <div className="max-w-7xl mx-auto px-8 lg:px-16">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-4">
+                {brand.name} Products
+              </h2>
+              <p className="text-xl text-brand-charcoal">
+                Explore our complete range of {brand.name} products
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {brand.products.map((product) => (
-              <div
-                key={product.id}
-                className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 "
-              >
-                <div className="relative w-full h-64 bg-brand-paleblue overflow-hidden">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 right-4">
-                    <span className="px-3 py-1 bg-brand-teal text-white text-sm font-semibold rounded-full">
-                      {product.size}
-                    </span>
+            <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {brand.products.map((product) => (
+                <StaggerItem key={product.id}>
+                  <div
+                    className="group h-full bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 "
+                  >
+                    <div className="relative w-full h-64 bg-brand-paleblue overflow-hidden">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute top-4 right-4 rtl:left-4 rtl:right-auto">
+                        <span className="px-3 py-1 bg-brand-teal text-white text-sm font-semibold rounded-full">
+                          {product.size}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-6 flex flex-col h-[calc(100%-16rem)]">
+                      <h3 className="text-xl font-bold text-brand-jet mb-2 group-hover:text-brand-teal transition-colors">
+                        {product.name}
+                      </h3>
+                      <p className="text-sm text-brand-charcoal leading-relaxed mb-4 flex-grow">
+                        {product.description}
+                      </p>
+                      <div className="flex items-center justify-between mt-auto">
+                        <span className="text-xs text-brand-charcoal font-medium uppercase tracking-wider">
+                          Size: {product.size}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-brand-jet mb-2 group-hover:text-brand-teal transition-colors">
-                    {product.name}
-                  </h3>
-                  <p className="text-sm text-brand-charcoal leading-relaxed mb-4">
-                    {product.description}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-brand-charcoal font-medium uppercase tracking-wider">
-                      Size: {product.size}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* CTA Section */}
-      <GlobalCTA
-        title={`${t("Interested_in")} ${brand.name} ${t("Products")}?`}
-        subtitle={`Contact us for detailed product information, pricing, and availability`}
-        btnText="contact_us"
-      />
+      <ScrollReveal delay={0.2}>
+        <GlobalCTA
+          title={`${t("Interested_in")} ${brand.name} ${t("Products")}?`}
+          subtitle={`Contact us for detailed product information, pricing, and availability`}
+          btnText="contact_us"
+        />
+      </ScrollReveal>
     </div>
   );
 }

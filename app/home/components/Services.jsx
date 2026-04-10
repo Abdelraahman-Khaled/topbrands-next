@@ -1,5 +1,9 @@
 "use client";
 import { useTranslation } from "react-i18next";
+import AnimatedCard from "../../components/AnimatedCard";
+import ScrollReveal from "../../components/ScrollReveal";
+import StaggerContainer from "../../components/StaggerContainer";
+import StaggerItem from "../../components/StaggerItem";
 
 export default function Services() {
   const { t } = useTranslation()
@@ -105,97 +109,102 @@ export default function Services() {
 
       <div className="max-w-7xl mx-auto px-8   relative z-10">
         {/* Header Section (DIV-213) */}
-        <div className="flex flex-col items-center  justify-between gap-1  mb-16">
-          <span className="px-[20px] py-[8px] bg-[#4B4F54] text-sm text-white rounded-full font-bold tracking-wider ">
-            {t("our_services")}
-          </span>
-          <div className="mx-auto text-center">
-            <h2 className="text-5xl font-bold text-black leading-tight mb-4">
-              {t("comprehensive") || "Our Distribution Solutions"}
-              <span className="text-[#4B4F54]">
-                {" " + t("distribution_solutions_title")}
-              </span>
-            </h2>
-            <p className="text-[20px] text-[#4B4F54] font-medium max-w-[800px] mx-auto">
-              {t("services_desc") ||
-                "Comprehensive services designed to optimize your brand's presence and performance in the Syrian market."}
-            </p>
+        <ScrollReveal>
+          <div className="flex flex-col items-center  justify-between gap-1  mb-16">
+            <span className="px-[20px] py-[8px] bg-[#4B4F54] text-sm text-white rounded-full font-bold tracking-wider ">
+              {t("our_services")}
+            </span>
+            <div className="mx-auto text-center">
+              <h2 className="text-5xl font-bold text-black leading-tight mb-4">
+                {t("comprehensive") || "Our Distribution Solutions"}
+                <span className="text-[#4B4F54]">
+                  {" " + t("distribution_solutions_title")}
+                </span>
+              </h2>
+              <p className="text-[20px] text-[#4B4F54] font-medium max-w-[800px] mx-auto">
+                {t("services_desc") ||
+                  "Comprehensive services designed to optimize your brand's presence and performance in the Syrian market."}
+              </p>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Services Grid (DIV-233) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white border-2 border-[#DEE3EB] p-8 rounded-2xl hover:border-[#F7E326] transition-all hover:shadow-xl group"
-            >
-              <div
-                className={`w-14 h-14 flex items-center justify-center rounded-xl mb-6 ${service.iconBg}`}
+            <StaggerItem key={index}>
+              <AnimatedCard
+                className="bg-white border-2 border-[#DEE3EB] p-8 rounded-2xl hover:border-[#F7E326] transition-all group h-full block"
               >
-                {service.icon}
-              </div>
-              <h3 className="text-[24px] font-bold text-black mb-4">
-                {service.title}
-              </h3>
-              <p className="text-base text-[#4B4F54] leading-relaxed mb-6">
-                {service.desc}
-              </p>
-              <a
-                href={`/services#${service.title.toLowerCase()}`}
-                className="inline-flex items-center gap-2 text-black font-bold group-hover:text-[#4B4F54]"
-              >
-                {t("learn_more") || "Learn More"}
-                <svg
-                  className="group-hover:translate-x-1 transition-transform"
-                  width="11"
-                  height="11"
-                  viewBox="0 0 11 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  className={`w-14 h-14 flex items-center justify-center rounded-xl mb-6 ${service.iconBg}`}
                 >
-                  <path
-                    d="M8.26615 4.79303L4.61493 1.00382L5.57863 -4.44968e-05L10.8587 5.49998L5.57863 11L4.61493 9.99614L8.26615 6.20692H0V4.79303H8.26615Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </a>
-            </div>
+                  {service.icon}
+                </div>
+                <h3 className="text-[24px] font-bold text-black mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-base text-[#4B4F54] leading-relaxed mb-6">
+                  {service.desc}
+                </p>
+                <a
+                  href={`/services#${service.title.toLowerCase()}`}
+                  className="inline-flex items-center gap-2 text-black font-bold group-hover:text-[#4B4F54]"
+                >
+                  {t("learn_more") || "Learn More"}
+                  <svg
+                    className="group-hover:translate-x-1 transition-transform"
+                    width="11"
+                    height="11"
+                    viewBox="0 0 11 11"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.26615 4.79303L4.61493 1.00382L5.57863 -4.44968e-05L10.8587 5.49998L5.57863 11L4.61493 9.99614L8.26615 6.20692H0V4.79303H8.26615Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </a>
+              </AnimatedCard>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         {/* Custom Solution Banner (DIV-273) */}
-        <div className="mt-16 bg-[#000000] rounded-[32px] p-8 md:p-12 flex flex-col justify-between items-center gap-8">
-          <div className="text-white">
-            <h3 className="text-[30px] font-bold mb-2">
-              {t("need_custom_solution") ||
-                "Need a Custom Distribution Solution?"}
-            </h3>
-            <p className="text-[20px] text-white/80 max-w-xl">
-              {t("need_custom_solution_desc") ||
-                "We tailor our services to meet your specific business needs"}
-            </p>
-          </div>
-          <a
-            href="/contact"
-            className="flex items-center gap-3 px-[34px] py-[18px] bg-[#F7E326] text-black rounded-lg font-bold text-[16px] hover:shadow-2xl hover:gap-4 transition-all   whitespace-nowrap"
-          >
-            {t("contact_our_team") || "Contact Our Team"}
-            <svg
-              width="11"
-              height="11"
-              viewBox="0 0 11 11"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="transition-all duration-300"
+        <ScrollReveal delay={0.2}>
+          <div className="mt-16 bg-[#000000] rounded-[32px] p-8 md:p-12 flex flex-col justify-between items-center gap-8">
+            <div className="text-white">
+              <h3 className="text-[30px] font-bold mb-2">
+                {t("need_custom_solution") ||
+                  "Need a Custom Distribution Solution?"}
+              </h3>
+              <p className="text-[20px] text-white/80 max-w-xl">
+                {t("need_custom_solution_desc") ||
+                  "We tailor our services to meet your specific business needs"}
+              </p>
+            </div>
+            <a
+              href="/contact"
+              className="flex items-center gap-3 px-[34px] py-[18px] bg-[#F7E326] text-black rounded-lg font-bold text-[16px] hover:shadow-2xl hover:gap-4 transition-all   whitespace-nowrap"
             >
-              <path
-                d="M8.26615 4.79303L4.61493 1.00382L5.57863 -4.44968e-05L10.8587 5.49998L5.57863 11L4.61493 9.99614L8.26615 6.20692H0V4.79303H8.26615Z"
-                fill="black"
-              />
-            </svg>
-          </a>
-        </div>
+              {t("contact_our_team") || "Contact Our Team"}
+              <svg
+                width="11"
+                height="11"
+                viewBox="0 0 11 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="transition-all duration-300"
+              >
+                <path
+                  d="M8.26615 4.79303L4.61493 1.00382L5.57863 -4.44968e-05L10.8587 5.49998L5.57863 11L4.61493 9.99614L8.26615 6.20692H0V4.79303H8.26615Z"
+                  fill="black"
+                />
+              </svg>
+            </a>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
