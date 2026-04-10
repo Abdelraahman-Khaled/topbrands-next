@@ -3,6 +3,9 @@ import { useSearchParams } from "next/navigation";
 
 
 import { Suspense } from "react";
+import StaggerContainer from "../components/StaggerContainer";
+import StaggerItem from "../components/StaggerItem";
+import AnimatedCard from "../components/AnimatedCard";
 
 function ProductsContent() {
   const searchParams = useSearchParams();
@@ -131,38 +134,37 @@ function ProductsContent() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredProducts.map((product) => (
-              <div
-                key={product.id}
-                className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-brand-coral cursor-pointer"
-              >
-                <div className="relative w-full h-56 bg-brand-paleblue overflow-hidden">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-brand-teal text-white text-xs font-semibold rounded-full">
-                      {product.brand}
-                    </span>
+              <StaggerItem key={product.id}>
+                <AnimatedCard className="h-full bg-white rounded-2xl overflow-hidden border-2 border-gray-100 cursor-pointer">
+                  <div className="relative w-full h-56 bg-brand-paleblue overflow-hidden">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-brand-teal text-white text-xs font-semibold rounded-full">
+                        {product.brand}
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <span className="text-xs text-brand-charcoal font-medium uppercase tracking-wider">
-                    {getCategoryName(product.category)}
-                  </span>
-                  <h3 className="text-lg font-bold text-brand-jet mt-2 mb-2 group-hover:text-brand-teal transition-colors">
-                    {product.name}
-                  </h3>
-                  <p className="text-sm text-brand-charcoal leading-relaxed">
-                    {product.description}
-                  </p>
-                </div>
-              </div>
+                  <div className="p-6">
+                    <span className="text-xs text-brand-charcoal font-medium uppercase tracking-wider">
+                      {getCategoryName(product.category)}
+                    </span>
+                    <h3 className="text-lg font-bold text-brand-jet mt-2 mb-2 group-hover:text-brand-teal transition-colors">
+                      {product.name}
+                    </h3>
+                    <p className="text-sm text-brand-charcoal leading-relaxed">
+                      {product.description}
+                    </p>
+                  </div>
+                </AnimatedCard>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 

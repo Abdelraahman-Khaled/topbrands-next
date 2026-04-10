@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Subscribe from '../../components/Subscribe';
+import ScrollReveal from '../../components/ScrollReveal';
 import { useTranslation } from 'react-i18next';
 const blogPosts = [
   {
@@ -387,201 +388,207 @@ export default function BlogArticle() {
       </section>
 
       {/* Article Content */}
-      <section className="py-16">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="flex gap-12">
-            {/* Sidebar - Social Share */}
-            <div className="hidden lg:block w-16 flex-shrink-0">
-              <div className="sticky top-32 space-y-4">
-                <div className="relative">
-                  <button
-                    onClick={() => setShowShareMenu(!showShareMenu)}
-                    className="w-12 h-12 flex items-center justify-center bg-brand-yellow text-black rounded-full hover:bg-black hover:text-white duration-300 transition-all shadow-lg cursor-pointer"
-                  >
-                    <i className="ri-share-line text-xl"></i>
-                  </button>
-                  {showShareMenu && (
-                    <div className="absolute left-16 top-0 bg-white rounded-xl shadow-2xl p-4 space-y-2 border-2 border-[#DEE3EB] z-50">
-                      <button
-                        onClick={() => handleShare('facebook')}
-                        className="w-12 h-12 flex items-center justify-center bg-[#1877F2] text-white rounded-lg hover:scale-110 transition-all cursor-pointer"
-                      >
-                        <i className="ri-facebook-fill text-xl"></i>
-                      </button>
-                      <button
-                        onClick={() => handleShare('twitter')}
-                        className="w-12 h-12 flex items-center justify-center bg-[#1DA1F2] text-white rounded-lg hover:scale-110 transition-all cursor-pointer"
-                      >
-                        <i className="ri-twitter-fill text-xl"></i>
-                      </button>
-                      <button
-                        onClick={() => handleShare('linkedin')}
-                        className="w-12 h-12 flex items-center justify-center bg-[#0A66C2] text-white rounded-lg hover:scale-110 transition-all cursor-pointer"
-                      >
-                        <i className="ri-linkedin-fill text-xl"></i>
-                      </button>
-                      <button
-                        onClick={() => handleShare('whatsapp')}
-                        className="w-12 h-12 flex items-center justify-center bg-[#25D366] text-white rounded-lg hover:scale-110 transition-all cursor-pointer"
-                      >
-                        <i className="ri-whatsapp-fill text-xl"></i>
-                      </button>
-                      <button
-                        onClick={copyLink}
-                        className="w-12 h-12 flex items-center justify-center bg-[#4B4F54] text-white rounded-lg hover:scale-110 transition-all cursor-pointer"
-                      >
-                        <i className="ri-link text-xl"></i>
-                      </button>
-                    </div>
-                  )}
-                </div>
-                {/* <button className="w-12 h-12 flex items-center justify-center bg-[#FF6B6B] text-white rounded-full hover:bg-[#FF5252] transition-all shadow-lg cursor-pointer">
-                  <i className="ri-heart-line text-xl"></i>
-                </button>
-                <button className="w-12 h-12 flex items-center justify-center bg-[#F7E326] text-[#000000] rounded-full hover:bg-[#E5D324] transition-all shadow-lg cursor-pointer">
-                  <i className="ri-bookmark-line text-xl"></i>
-                </button> */}
-              </div>
-            </div>
-
-            {/* Main Content */}
-            <div className="flex-1">
-              <article
-                className="prose prose-lg max-w-none"
-                style={{ fontFamily: 'Quicksand' }}
-                dangerouslySetInnerHTML={{ __html: article.content }}
-              />
-
-              {/* Tags */}
-              {/* <div className="mt-12 pt-8 border-t-2 border-[#DEE3EB]">
-                <h3 className="text-xl font-bold text-[#000000] mb-4" style={{ fontFamily: 'Quicksand' }}>
-                  Tags
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {article.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="px-4 py-2 bg-[#DEE3EB] text-[#4B4F54] rounded-full text-sm font-semibold hover:bg-[#14B8A6] hover:text-white transition-all cursor-pointer"
-                      style={{ fontFamily: 'Quicksand' }}
+      <ScrollReveal delay={0.1}>
+        <section className="py-16">
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="flex gap-12">
+              {/* Sidebar - Social Share */}
+              <div className="hidden lg:block w-16 flex-shrink-0">
+                <div className="sticky top-32 space-y-4">
+                  <div className="relative">
+                    <button
+                      onClick={() => setShowShareMenu(!showShareMenu)}
+                      className="w-12 h-12 flex items-center justify-center bg-brand-yellow text-black rounded-full hover:bg-black hover:text-white duration-300 transition-all shadow-lg cursor-pointer"
                     >
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-              </div> */}
-
-              {/* Author Bio */}
-              {/* <div className="mt-12 p-8 bg-gradient-to-br from-[#DEE3EB]/50 to-white rounded-2xl border-2 border-[#DEE3EB]">
-                <div className="flex items-start gap-6">
-                  <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-[#14B8A6] flex-shrink-0">
-                    <img src={article.authorImage} alt={article.author} className="w-full h-full object-cover object-top" />
+                      <i className="ri-share-line text-xl"></i>
+                    </button>
+                    {showShareMenu && (
+                      <div className="absolute left-16 top-0 bg-white rounded-xl shadow-2xl p-4 space-y-2 border-2 border-[#DEE3EB] z-50">
+                        <button
+                          onClick={() => handleShare('facebook')}
+                          className="w-12 h-12 flex items-center justify-center bg-[#1877F2] text-white rounded-lg hover:scale-110 transition-all cursor-pointer"
+                        >
+                          <i className="ri-facebook-fill text-xl"></i>
+                        </button>
+                        <button
+                          onClick={() => handleShare('twitter')}
+                          className="w-12 h-12 flex items-center justify-center bg-[#1DA1F2] text-white rounded-lg hover:scale-110 transition-all cursor-pointer"
+                        >
+                          <i className="ri-twitter-fill text-xl"></i>
+                        </button>
+                        <button
+                          onClick={() => handleShare('linkedin')}
+                          className="w-12 h-12 flex items-center justify-center bg-[#0A66C2] text-white rounded-lg hover:scale-110 transition-all cursor-pointer"
+                        >
+                          <i className="ri-linkedin-fill text-xl"></i>
+                        </button>
+                        <button
+                          onClick={() => handleShare('whatsapp')}
+                          className="w-12 h-12 flex items-center justify-center bg-[#25D366] text-white rounded-lg hover:scale-110 transition-all cursor-pointer"
+                        >
+                          <i className="ri-whatsapp-fill text-xl"></i>
+                        </button>
+                        <button
+                          onClick={copyLink}
+                          className="w-12 h-12 flex items-center justify-center bg-[#4B4F54] text-white rounded-lg hover:scale-110 transition-all cursor-pointer"
+                        >
+                          <i className="ri-link text-xl"></i>
+                        </button>
+                      </div>
+                    )}
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-[#000000] mb-2" style={{ fontFamily: 'Quicksand' }}>
-                      {article.author}
-                    </h3>
-                    <p className="text-[#4B4F54] font-medium leading-relaxed" style={{ fontFamily: 'Quicksand' }}>
-                      Our team consists of experienced analysts and industry experts dedicated to providing valuable insights into the Syrian FMCG market. With years of combined experience in market analysis, consumer behavior research, and distribution strategy, the team delivers actionable intelligence to help businesses thrive in this dynamic market.
-                    </p>
-                  </div>
+                  {/* <button className="w-12 h-12 flex items-center justify-center bg-[#FF6B6B] text-white rounded-full hover:bg-[#FF5252] transition-all shadow-lg cursor-pointer">
+                    <i className="ri-heart-line text-xl"></i>
+                  </button>
+                  <button className="w-12 h-12 flex items-center justify-center bg-[#F7E326] text-[#000000] rounded-full hover:bg-[#E5D324] transition-all shadow-lg cursor-pointer">
+                    <i className="ri-bookmark-line text-xl"></i>
+                  </button> */}
                 </div>
-              </div> */}
+              </div>
 
-              {/* Mobile Share Buttons */}
-              <div className="lg:hidden mt-8 flex justify-center gap-4">
-                <button
-                  onClick={() => handleShare('facebook')}
-                  className="w-12 h-12 flex items-center justify-center bg-[#1877F2] text-white rounded-full hover:scale-110 transition-all cursor-pointer"
-                >
-                  <i className="ri-facebook-fill text-xl"></i>
-                </button>
-                <button
-                  onClick={() => handleShare('twitter')}
-                  className="w-12 h-12 flex items-center justify-center bg-[#1DA1F2] text-white rounded-full hover:scale-110 transition-all cursor-pointer"
-                >
-                  <i className="ri-twitter-fill text-xl"></i>
-                </button>
-                <button
-                  onClick={() => handleShare('linkedin')}
-                  className="w-12 h-12 flex items-center justify-center bg-[#0A66C2] text-white rounded-full hover:scale-110 transition-all cursor-pointer"
-                >
-                  <i className="ri-linkedin-fill text-xl"></i>
-                </button>
-                <button
-                  onClick={() => handleShare('whatsapp')}
-                  className="w-12 h-12 flex items-center justify-center bg-[#25D366] text-white rounded-full hover:scale-110 transition-all cursor-pointer"
-                >
-                  <i className="ri-whatsapp-fill text-xl"></i>
-                </button>
-                <button
-                  onClick={copyLink}
-                  className="w-12 h-12 flex items-center justify-center bg-[#4B4F54] text-white rounded-full hover:scale-110 transition-all cursor-pointer"
-                >
-                  <i className="ri-link text-xl"></i>
-                </button>
+              {/* Main Content */}
+              <div className="flex-1">
+                <article
+                  className="prose prose-lg max-w-none"
+                  style={{ fontFamily: 'Quicksand' }}
+                  dangerouslySetInnerHTML={{ __html: article.content }}
+                />
+
+                {/* Tags */}
+                {/* <div className="mt-12 pt-8 border-t-2 border-[#DEE3EB]">
+                  <h3 className="text-xl font-bold text-[#000000] mb-4" style={{ fontFamily: 'Quicksand' }}>
+                    Tags
+                  </h3>
+                  <div className="flex flex-wrap gap-3">
+                    {article.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="px-4 py-2 bg-[#DEE3EB] text-[#4B4F54] rounded-full text-sm font-semibold hover:bg-[#14B8A6] hover:text-white transition-all cursor-pointer"
+                        style={{ fontFamily: 'Quicksand' }}
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                </div> */}
+
+                {/* Author Bio */}
+                {/* <div className="mt-12 p-8 bg-gradient-to-br from-[#DEE3EB]/50 to-white rounded-2xl border-2 border-[#DEE3EB]">
+                  <div className="flex items-start gap-6">
+                    <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-[#14B8A6] flex-shrink-0">
+                      <img src={article.authorImage} alt={article.author} className="w-full h-full object-cover object-top" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#000000] mb-2" style={{ fontFamily: 'Quicksand' }}>
+                        {article.author}
+                      </h3>
+                      <p className="text-[#4B4F54] font-medium leading-relaxed" style={{ fontFamily: 'Quicksand' }}>
+                        Our team consists of experienced analysts and industry experts dedicated to providing valuable insights into the Syrian FMCG market. With years of combined experience in market analysis, consumer behavior research, and distribution strategy, the team delivers actionable intelligence to help businesses thrive in this dynamic market.
+                      </p>
+                    </div>
+                  </div>
+                </div> */}
+
+                {/* Mobile Share Buttons */}
+                <div className="lg:hidden mt-8 flex justify-center gap-4">
+                  <button
+                    onClick={() => handleShare('facebook')}
+                    className="w-12 h-12 flex items-center justify-center bg-[#1877F2] text-white rounded-full hover:scale-110 transition-all cursor-pointer"
+                  >
+                    <i className="ri-facebook-fill text-xl"></i>
+                  </button>
+                  <button
+                    onClick={() => handleShare('twitter')}
+                    className="w-12 h-12 flex items-center justify-center bg-[#1DA1F2] text-white rounded-full hover:scale-110 transition-all cursor-pointer"
+                  >
+                    <i className="ri-twitter-fill text-xl"></i>
+                  </button>
+                  <button
+                    onClick={() => handleShare('linkedin')}
+                    className="w-12 h-12 flex items-center justify-center bg-[#0A66C2] text-white rounded-full hover:scale-110 transition-all cursor-pointer"
+                  >
+                    <i className="ri-linkedin-fill text-xl"></i>
+                  </button>
+                  <button
+                    onClick={() => handleShare('whatsapp')}
+                    className="w-12 h-12 flex items-center justify-center bg-[#25D366] text-white rounded-full hover:scale-110 transition-all cursor-pointer"
+                  >
+                    <i className="ri-whatsapp-fill text-xl"></i>
+                  </button>
+                  <button
+                    onClick={copyLink}
+                    className="w-12 h-12 flex items-center justify-center bg-[#4B4F54] text-white rounded-full hover:scale-110 transition-all cursor-pointer"
+                  >
+                    <i className="ri-link text-xl"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* Related Articles */}
-      <section className="py-20 bg-gradient-to-br from-[#DEE3EB]/30 to-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-12">
-            <h2 className="text-4xl font-bold text-[#000000] mb-3" style={{ fontFamily: 'Quicksand' }}>
-              Related Articles
-            </h2>
-            <p className="text-lg text-[#4B4F54] font-medium" style={{ fontFamily: 'Quicksand' }}>
-              Continue exploring insights from the Syrian FMCG market
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {relatedArticles.map((relatedArticle) => (
-              <Link
-                href={`/blog/${relatedArticle.id}`}
-                key={relatedArticle.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group border-2 border-transparent hover:border-brand-yellow block"
-              >
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={relatedArticle.image}
-                    alt={relatedArticle.title}
-                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-[#F7E326] text-[#000000] px-4 py-2 rounded-full text-sm font-bold shadow-lg" style={{ fontFamily: 'Quicksand' }}>
-                      {relatedArticle.category}
+      <ScrollReveal delay={0.2}>
+        <section className="py-20 bg-gradient-to-br from-[#DEE3EB]/30 to-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="mb-12">
+              <h2 className="text-4xl font-bold text-[#000000] mb-3" style={{ fontFamily: 'Quicksand' }}>
+                Related Articles
+              </h2>
+              <p className="text-lg text-[#4B4F54] font-medium" style={{ fontFamily: 'Quicksand' }}>
+                Continue exploring insights from the Syrian FMCG market
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {relatedArticles.map((relatedArticle) => (
+                <Link
+                  href={`/blog/${relatedArticle.id}`}
+                  key={relatedArticle.id}
+                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group border-2 border-transparent hover:border-brand-yellow block"
+                >
+                  <div className="relative h-56 overflow-hidden">
+                    <img
+                      src={relatedArticle.image}
+                      alt={relatedArticle.title}
+                      className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-[#F7E326] text-[#000000] px-4 py-2 rounded-full text-sm font-bold shadow-lg" style={{ fontFamily: 'Quicksand' }}>
+                        {relatedArticle.category}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-4 text-sm text-[#4B4F54] mb-3" style={{ fontFamily: 'Quicksand' }}>
+                      <span className="flex items-center gap-1">
+                        <i className="ri-calendar-line text-brand-charcoal"></i>
+                        {relatedArticle.date}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <i className="ri-time-line text-brand-charcoal"></i>
+                        {relatedArticle.readTime}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold text-[#000000] mb-3 transition-colors line-clamp-2" style={{ fontFamily: 'Quicksand' }}>
+                      {relatedArticle.title}
+                    </h3>
+                    <span className="text-brand-charcoal font-bold flex items-center gap-2 group-hover:gap-3 transition-all whitespace-nowrap" style={{ fontFamily: 'Quicksand' }}>
+                      Read More
+                      <i className="ri-arrow-right-line"></i>
                     </span>
                   </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-[#4B4F54] mb-3" style={{ fontFamily: 'Quicksand' }}>
-                    <span className="flex items-center gap-1">
-                      <i className="ri-calendar-line text-brand-charcoal"></i>
-                      {relatedArticle.date}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <i className="ri-time-line text-brand-charcoal"></i>
-                      {relatedArticle.readTime}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-bold text-[#000000] mb-3 transition-colors line-clamp-2" style={{ fontFamily: 'Quicksand' }}>
-                    {relatedArticle.title}
-                  </h3>
-                  <span className="text-brand-charcoal font-bold flex items-center gap-2 group-hover:gap-3 transition-all whitespace-nowrap" style={{ fontFamily: 'Quicksand' }}>
-                    Read More
-                    <i className="ri-arrow-right-line"></i>
-                  </span>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* Newsletter CTA */}
-      <Subscribe title={t("Never_Miss_an_Update")} mail={true} />
+      <ScrollReveal>
+        <Subscribe title={t("Never_Miss_an_Update")} mail={true} />
+      </ScrollReveal>
 
 
 

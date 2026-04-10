@@ -1,5 +1,7 @@
 "use client";
 import { useTranslation } from "react-i18next";
+import StaggerContainer from "../../components/StaggerContainer";
+import StaggerItem from "../../components/StaggerItem";
 
 export default function Stats() {
   const { t } = useTranslation();
@@ -108,9 +110,9 @@ export default function Stats() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
-            <div
+            <StaggerItem
               key={index}
               className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors duration-300"
             >
@@ -133,9 +135,9 @@ export default function Stats() {
               <div className="text-base text-[#D1D5DB] font-medium">
                 {stat.label}
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

@@ -1,11 +1,13 @@
 import React from 'react';
 import { Truck, Store, Award, FastForward, Map, ShoppingCart, Ship } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import StaggerContainer from '../../components/StaggerContainer';
+import StaggerItem from '../../components/StaggerItem';
 
 const ServiceCard = ({ icon: Icon, id, isYellow }) => {
     const { t } = useTranslation()
     return (
-        <div className="flex flex-col gap-5 p-8 md:p-12 rounded-3xl border-2 border-gray-200 bg-white ">
+        <StaggerItem className="flex flex-col gap-5 p-8 md:p-12 rounded-3xl border-2 border-gray-200 bg-white h-full block">
             {/* Icon with dynamic background */}
             <div className={`w-16 h-16 flex items-center justify-center rounded-2xl shadow-sm ${isYellow ? 'bg-[#F7E326] text-black' : 'bg-[#4B4B4B] text-white'}`}>
                 <Icon size={30} strokeWidth={2.5} />
@@ -30,7 +32,7 @@ const ServiceCard = ({ icon: Icon, id, isYellow }) => {
                     </li>
                 ))}
             </ul>
-        </div>
+        </StaggerItem>
     );
 };
 
@@ -47,7 +49,7 @@ const ServicesGrid = ({ t }) => {
 
     return (
         <section className="w-full bg-[#DEE3EB] py-16 px-6">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-20">
+            <StaggerContainer className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-20">
                 {services.map((service) => (
                     <ServiceCard
                         key={service.id}
@@ -55,7 +57,7 @@ const ServicesGrid = ({ t }) => {
                         t={t}
                     />
                 ))}
-            </div>
+            </StaggerContainer>
         </section>
     );
 };

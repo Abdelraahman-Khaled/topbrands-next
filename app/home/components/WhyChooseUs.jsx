@@ -1,5 +1,6 @@
 "use client";
 import { useTranslation } from "react-i18next";
+import AnimatedCard from "../../components/AnimatedCard";
 
 export default function WhyChooseUs() {
   const { t } = useTranslation();
@@ -113,27 +114,26 @@ export default function WhyChooseUs() {
           </div>
         </div>
 
-        {/* Services Grid (DIV-233) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <div
+            <AnimatedCard
               key={index}
-              className="relative rounded-2xl group hover:-translate-y-2 transition-all duration-300 pr-8 
-             after:content-[''] after:absolute after:right-0 after:top-1/3 after:-translate-y-1/2 
-             after:w-[1px] after:h-[40%] after:bg-[#4B4F54]/20 last:after:hidden"
+              className="relative rounded-2xl pr-8 h-full
+               after:content-[''] after:absolute after:right-0 after:top-1/3 after:-translate-y-1/2 
+               after:w-[1px] after:h-[40%] after:bg-[#4B4F54]/20 last:after:hidden group"
             >
               <div
-                className={`w-14 h-14 flex items-center justify-center rounded-xl mb-6 ${service.iconBg} group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}
+                className={`w-14 h-14 flex items-center justify-center rounded-xl mb-6 ${service.iconBg}`}
               >
                 {service.icon}
               </div>
-              <h3 className="text-[20px] font-bold text-black mb-4  transition-colors duration-300">
+              <h3 className="text-[20px] font-bold text-black mb-4">
                 {service.title}
               </h3>
               <p className="text-base text-[#4B4F54] leading-relaxed mb-6">
                 {service.desc}
               </p>
-            </div>
+            </AnimatedCard>
           ))}
         </div>
       </div>

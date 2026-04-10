@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import I18nProvider from "./components/I18nProvider";
+import PageTransitionWrapper from "./components/PageTransitionWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,9 +44,11 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-full flex flex-col">
         <I18nProvider>
-          <Navbar />
-          {children}
-          <Footer />
+          <PageTransitionWrapper>
+            <Navbar />
+            {children}
+            <Footer />
+          </PageTransitionWrapper>
         </I18nProvider>
       </body>
     </html>

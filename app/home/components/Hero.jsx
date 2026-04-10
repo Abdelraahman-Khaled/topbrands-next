@@ -1,5 +1,7 @@
 "use client";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import { headlineRevealVariants, hoverCardVariants, tapButtonVariants } from "../../lib/animations";
 
 export default function Hero() {
   const { t } = useTranslation()
@@ -49,40 +51,64 @@ export default function Hero() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-[64px] md:text-[72px] font-bold text-white leading-tight animate-fade-in-up">
-            {t("hero_title")}
-            <br />
-            <span className="text-[#E5E7EB] text-5xl font-semibold">
-              {t("hero_title_accent")}
-            </span>
-          </h1>
+          <motion.h1
+            initial="hidden"
+            animate="visible"
+            className="text-[64px] md:text-[72px] font-bold text-white leading-tight"
+          >
+            <div className="overflow-hidden">
+              <motion.span
+                variants={headlineRevealVariants}
+                className="block"
+              >
+                {t("hero_title")}
+              </motion.span>
+            </div>
+            <div className="overflow-hidden">
+              <motion.span
+                variants={headlineRevealVariants}
+                transition={{ delay: 0.2 }}
+                className="text-[#E5E7EB] text-5xl font-semibold block"
+              >
+                {t("hero_title_accent")}
+              </motion.span>
+            </div>
+          </motion.h1>
 
           {/* Subheading */}
-          <p
-            className="text-[18px] md:text-[20px] text-[#F3F4F6] max-w-4xl  leading-relaxed font-normal animate-fade-in-up mt-8 color-[#F3F4F6]"
-            style={{ animationDelay: "0.2s" }}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-[18px] md:text-[20px] text-[#F3F4F6] max-w-4xl  leading-relaxed font-normal mt-8 color-[#F3F4F6]"
           >
             {t("hero_subtitle")}
-          </p>
+          </motion.p>
 
           {/* CTA Buttons */}
-          <div
-            className="flex flex-col sm:flex-row gap-5 justify-center items-center pt-8 animate-fade-in-up"
-            style={{ animationDelay: "0.4s" }}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-5 justify-center items-center pt-8"
           >
-            <a
+            <motion.a
+              whileHover={hoverCardVariants}
+              whileTap={tapButtonVariants}
               href="/become-a-partner"
               className="px-[32px] py-[16px] bg-[#F7E326] text-black rounded-lg font-semibold text-base  transition-all whitespace-nowrap cursor-pointer flex items-center justify-center"
             >
               {t("become_partner")}
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              whileHover={hoverCardVariants}
+              whileTap={tapButtonVariants}
               href="/contact"
               className="px-[34px] py-[18px] bg-transparent text-white border border-white rounded-lg font-semibold text-base hover:bg-white/10 transition-all whitespace-nowrap cursor-pointer flex items-center justify-center"
             >
               {t("contact_syria")}
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
         </div>
       </div>
 

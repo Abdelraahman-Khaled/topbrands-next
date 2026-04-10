@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import ScrollReveal from './ScrollReveal';
+
 const GlobalCTA = ({ title, subtitle, contact = false, btnText = "become_a_partner", btnLink = "/become-a-partner" }) => {
     const { t } = useTranslation();
     return (
         <section className="py-20 bg-linear-to-br from-brand-charcoal to-brand-jet">
-            <div className="max-w-7xl mx-auto px-8  text-center">
+            <ScrollReveal className="max-w-7xl mx-auto px-8  text-center">
                 <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
                     {t(title)}
                 </h2>
@@ -30,7 +32,7 @@ const GlobalCTA = ({ title, subtitle, contact = false, btnText = "become_a_partn
                         </Link>
                     )
                 }
-            </div>
+            </ScrollReveal>
         </section>
     )
 }

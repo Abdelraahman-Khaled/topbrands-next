@@ -3,6 +3,9 @@ import { useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import Subscribe from "../components/Subscribe";
+import ScrollReveal from "../components/ScrollReveal";
+import StaggerContainer from "../components/StaggerContainer";
+import StaggerItem from "../components/StaggerItem";
 
 
 
@@ -173,107 +176,111 @@ export default function Blog() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 bg-white border-[#DEE3EB]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap gap-3 justify-center">
-            {categoryKeys.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full font-semibold transition-all whitespace-nowrap cursor-pointer ${selectedCategory === category
-                  ? "bg-gradient-to-r from-[#F7E326] to-[#E5D324] text-[#000000] shadow-lg transform scale-105"
-                  : "bg-white text-[#4B4F54] hover:bg-[#F7E326]/20 border-2 border-[#DEE3EB] hover:border-[#F7E326]"
-                  }`}
-                style={{ fontFamily: "Quicksand" }}
-              >
-                {t(category)}
-              </button>
-            ))}
+      <ScrollReveal>
+        <section className="py-8 bg-white border-[#DEE3EB]">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-wrap gap-3 justify-center">
+              {categoryKeys.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-6 py-3 rounded-full font-semibold transition-all whitespace-nowrap cursor-pointer ${selectedCategory === category
+                    ? "bg-gradient-to-r from-[#F7E326] to-[#E5D324] text-[#000000] shadow-lg transform scale-105"
+                    : "bg-white text-[#4B4F54] hover:bg-[#F7E326]/20 border-2 border-[#DEE3EB] hover:border-[#F7E326]"
+                    }`}
+                  style={{ fontFamily: "Quicksand" }}
+                >
+                  {t(category)}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* Featured Post */}
       {selectedCategory === "all" && (
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-8">
-              <h2
-                className="text-3xl font-bold text-[#000000] flex items-center gap-3"
-                style={{ fontFamily: "Quicksand" }}
-              >
-                <i className="ri-fire-fill text-brand-yellow text-4xl"></i>
-                {t("featured_article")}
-              </h2>
-            </div>
-            <Link
-              href={`/blog/${blogPosts[0].id}`}
-              className="block bg-gradient-to-br from-[#000000] to-[#1a1a1a] rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 cursor-pointer group"
-            >
-              <div className="grid md:grid-cols-2 gap-0">
-                <div className="relative h-96 md:h-auto overflow-hidden">
-                  <img
-                    src={blogPosts[0].image}
-                    alt={t(blogPosts[0].titleKey)}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-6 left-6 rtl:left-auto rtl:right-6">
-                    <span
-                      className="bg-[#F7E326] text-[#000000] px-6 py-2 rounded-full text-sm font-bold flex items-center gap-2"
-                      style={{ fontFamily: "Quicksand" }}
-                    >
-                      <i className="ri-star-fill"></i>
-                      {t(blogPosts[0].categoryKey)}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-12 flex flex-col justify-center">
-                  <div
-                    className="flex items-center gap-4 text-sm text-gray-400 mb-4"
-                    style={{ fontFamily: "Quicksand" }}
-                  >
-                    <span className="flex items-center gap-2 rtl:flex-row-reverse bg-white/10 px-4 py-2 rounded-full">
-                      <i className="ri-calendar-line text-brand-charcoal"></i>
-                      {blogPosts[0].date}
-                    </span>
-                    <span className="flex items-center gap-2 rtl:flex-row-reverse bg-white/10 px-4 py-2 rounded-full">
-                      <i className="ri-time-line text-brand-yellow"></i>
-                      {blogPosts[0].readTime}
-                    </span>
-                  </div>
-                  <h3
-                    className="text-4xl font-bold text-white mb-4 group-hover:text-[#F7E326] duration-300 transition-colors"
-                    style={{ fontFamily: "Quicksand" }}
-                  >
-                    {t(blogPosts[0].titleKey)}
-                  </h3>
-                  <p
-                    className="text-gray-300 mb-6 text-lg font-medium leading-relaxed"
-                    style={{ fontFamily: "Quicksand" }}
-                  >
-                    {t(blogPosts[0].excerptKey)}
-                  </p>
-                  <div className="flex items-center justify-between pt-6 border-t border-white/20">
-                    <span
-                      className="text-sm text-gray-400 font-semibold flex items-center gap-2 rtl:flex-row-reverse"
-                      style={{ fontFamily: "Quicksand" }}
-                    >
-                      <i className="ri-user-line text-brand-charcoal"></i>
-                      {t(blogPosts[0].authorKey)}
-                    </span>
-                    <span
-                      className="bg-[#F7E326] text-[#000000] px-6 py-3 duration-300 rounded-lg font-bold flex items-center gap-2 rtl:flex-row-reverse group-hover:bg-white transition-all whitespace-nowrap"
-                      style={{ fontFamily: "Quicksand" }}
-                    >
-                      {t("read_article")}
-                      <i className="ri-arrow-right-line rtl:rotate-180"></i>
-                    </span>
-                  </div>
-                </div>
+        <ScrollReveal>
+          <section className="py-16 bg-white">
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="mb-8">
+                <h2
+                  className="text-3xl font-bold text-[#000000] flex items-center gap-3"
+                  style={{ fontFamily: "Quicksand" }}
+                >
+                  <i className="ri-fire-fill text-brand-yellow text-4xl"></i>
+                  {t("featured_article")}
+                </h2>
               </div>
-            </Link>
-          </div>
-        </section>
+              <Link
+                href={`/blog/${blogPosts[0].id}`}
+                className="block bg-gradient-to-br from-[#000000] to-[#1a1a1a] rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 cursor-pointer group"
+              >
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="relative h-96 md:h-auto overflow-hidden">
+                    <img
+                      src={blogPosts[0].image}
+                      alt={t(blogPosts[0].titleKey)}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-6 left-6 rtl:left-auto rtl:right-6">
+                      <span
+                        className="bg-[#F7E326] text-[#000000] px-6 py-2 rounded-full text-sm font-bold flex items-center gap-2"
+                        style={{ fontFamily: "Quicksand" }}
+                      >
+                        <i className="ri-star-fill"></i>
+                        {t(blogPosts[0].categoryKey)}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-12 flex flex-col justify-center">
+                    <div
+                      className="flex items-center gap-4 text-sm text-gray-400 mb-4"
+                      style={{ fontFamily: "Quicksand" }}
+                    >
+                      <span className="flex items-center gap-2 rtl:flex-row-reverse bg-white/10 px-4 py-2 rounded-full">
+                        <i className="ri-calendar-line text-brand-charcoal"></i>
+                        {blogPosts[0].date}
+                      </span>
+                      <span className="flex items-center gap-2 rtl:flex-row-reverse bg-white/10 px-4 py-2 rounded-full">
+                        <i className="ri-time-line text-brand-yellow"></i>
+                        {blogPosts[0].readTime}
+                      </span>
+                    </div>
+                    <h3
+                      className="text-4xl font-bold text-white mb-4 group-hover:text-[#F7E326] duration-300 transition-colors"
+                      style={{ fontFamily: "Quicksand" }}
+                    >
+                      {t(blogPosts[0].titleKey)}
+                    </h3>
+                    <p
+                      className="text-gray-300 mb-6 text-lg font-medium leading-relaxed"
+                      style={{ fontFamily: "Quicksand" }}
+                    >
+                      {t(blogPosts[0].excerptKey)}
+                    </p>
+                    <div className="flex items-center justify-between pt-6 border-t border-white/20">
+                      <span
+                        className="text-sm text-gray-400 font-semibold flex items-center gap-2 rtl:flex-row-reverse"
+                        style={{ fontFamily: "Quicksand" }}
+                      >
+                        <i className="ri-user-line text-brand-charcoal"></i>
+                        {t(blogPosts[0].authorKey)}
+                      </span>
+                      <span
+                        className="bg-[#F7E326] text-[#000000] px-6 py-3 duration-300 rounded-lg font-bold flex items-center gap-2 rtl:flex-row-reverse group-hover:bg-white transition-all whitespace-nowrap"
+                        style={{ fontFamily: "Quicksand" }}
+                      >
+                        {t("read_article")}
+                        <i className="ri-arrow-right-line rtl:rotate-180"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </section>
+        </ScrollReveal>
       )}
 
       {/* Blog Posts Grid */}
@@ -289,76 +296,77 @@ export default function Blog() {
                 : `${t(selectedCategory)} ${t("articles")}`}
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts
               .slice(selectedCategory === "all" ? 1 : 0)
               .map((post) => (
-                <Link
-                  href={`/blog/${post.id}`}
-                  key={post.id}
-                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group border-2 border-transparent hover:border-gray-200 block"
-                >
-                  <div className="relative h-56 overflow-hidden">
-                    <img
-                      src={post.image}
-                      alt={t(post.titleKey)}
-                      className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute top-4 left-4 rtl:left-auto rtl:right-4">
-                      <span
-                        className="bg-[#F7E326] text-[#000000] px-4 py-2 rounded-full text-sm font-bold shadow-lg"
+                <StaggerItem key={post.id}>
+                  <Link
+                    href={`/blog/${post.id}`}
+                    className="h-full bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group border-2 border-transparent hover:border-gray-200 block"
+                  >
+                    <div className="relative h-56 overflow-hidden">
+                      <img
+                        src={post.image}
+                        alt={t(post.titleKey)}
+                        className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute top-4 left-4 rtl:left-auto rtl:right-4">
+                        <span
+                          className="bg-[#F7E326] text-[#000000] px-4 py-2 rounded-full text-sm font-bold shadow-lg"
+                          style={{ fontFamily: "Quicksand" }}
+                        >
+                          {t(post.categoryKey)}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <div
+                        className="flex items-center gap-4 text-sm text-[#4B4F54] mb-3"
                         style={{ fontFamily: "Quicksand" }}
                       >
-                        {t(post.categoryKey)}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <div
-                      className="flex items-center gap-4 text-sm text-[#4B4F54] mb-3"
-                      style={{ fontFamily: "Quicksand" }}
-                    >
-                      <span className="flex items-center gap-1 rtl:flex-row-reverse">
-                        <i className="ri-calendar-line text-brand-charcoal"></i>
-                        {post.date}
-                      </span>
-                      <span className="flex items-center gap-1 rtl:flex-row-reverse">
-                        <i className="ri-time-line text-brand-yellow"></i>
-                        {post.readTime}
-                      </span>
-                    </div>
-                    <h3
-                      className="text-xl font-bold text-[#000000] mb-3 group-hover:text-black transition-colors line-clamp-2"
-                      style={{ fontFamily: "Quicksand" }}
-                    >
-                      {t(post.titleKey)}
-                    </h3>
-                    <p
-                      className="text-[#4B4F54] mb-4 font-medium leading-relaxed line-clamp-3"
-                      style={{ fontFamily: "Quicksand" }}
-                    >
-                      {t(post.excerptKey)}
-                    </p>
-                    <div className="flex items-center justify-between pt-4 border-t border-[#DEE3EB]">
-                      <span
-                        className="text-sm text-[#4B4F54] font-semibold"
+                        <span className="flex items-center gap-1 rtl:flex-row-reverse">
+                          <i className="ri-calendar-line text-brand-charcoal"></i>
+                          {post.date}
+                        </span>
+                        <span className="flex items-center gap-1 rtl:flex-row-reverse">
+                          <i className="ri-time-line text-brand-yellow"></i>
+                          {post.readTime}
+                        </span>
+                      </div>
+                      <h3
+                        className="text-xl font-bold text-[#000000] mb-3 group-hover:text-black transition-colors line-clamp-2"
                         style={{ fontFamily: "Quicksand" }}
                       >
-                        {t(post.authorKey)}
-                      </span>
-                      <span
-                        className="text-brand-charcoal font-bold flex items-center gap-2 rtl:flex-row-reverse group-hover:gap-3 transition-all whitespace-nowrap"
+                        {t(post.titleKey)}
+                      </h3>
+                      <p
+                        className="text-[#4B4F54] mb-4 font-medium leading-relaxed line-clamp-3"
                         style={{ fontFamily: "Quicksand" }}
                       >
-                        {t("read_more")}
-                        <i className="ri-arrow-right-line rtl:rotate-180"></i>
-                      </span>
+                        {t(post.excerptKey)}
+                      </p>
+                      <div className="flex items-center justify-between pt-4 border-t border-[#DEE3EB]">
+                        <span
+                          className="text-sm text-[#4B4F54] font-semibold"
+                          style={{ fontFamily: "Quicksand" }}
+                        >
+                          {t(post.authorKey)}
+                        </span>
+                        <span
+                          className="text-brand-charcoal font-bold flex items-center gap-2 rtl:flex-row-reverse group-hover:gap-3 transition-all whitespace-nowrap"
+                          style={{ fontFamily: "Quicksand" }}
+                        >
+                          {t("read_more")}
+                          <i className="ri-arrow-right-line rtl:rotate-180"></i>
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </StaggerItem>
               ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
