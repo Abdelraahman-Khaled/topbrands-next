@@ -1,3 +1,4 @@
+"use client";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "../../components/ScrollReveal";
 import StaggerContainer from "../../components/StaggerContainer";
@@ -42,8 +43,6 @@ export default function MerchandisingPage() {
 
   return (
     <div className="min-h-screen bg-white">
-
-
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
