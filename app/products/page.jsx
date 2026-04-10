@@ -2,7 +2,9 @@
 import { useSearchParams } from "next/navigation";
 
 
-export default function ProductsPage() {
+import { Suspense } from "react";
+
+function ProductsContent() {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get('category');
 
@@ -58,7 +60,7 @@ export default function ProductsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
       {/* Hero Section with Image */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
@@ -191,8 +193,16 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
+    </>
+  );
+}
 
-
+export default function ProductsPage() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Suspense fallback={<div>Loading Products...</div>}>
+        <ProductsContent />
+      </Suspense>
     </div>
   );
 }

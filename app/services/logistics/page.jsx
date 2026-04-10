@@ -1,7 +1,4 @@
 
-import Navbar from '../../../components/feature/Navbar';
-import Footer from '../../../components/feature/Footer';
-
 export default function LogisticsPage() {
   const features = [
     {

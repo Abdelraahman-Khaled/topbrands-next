@@ -1,11 +1,13 @@
 "use client"
+export const dynamic = 'force-dynamic';
 import { useTranslation } from "react-i18next";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import HeroSection from "../components/HeroSection";
 import GlobalCTA from "../components/GlobalCTA";
+import { Suspense } from "react";
 
-export default function BrandsPage() {
+function BrandsContent() {
   const { t } = useTranslation();
   const searchParams = useSearchParams();
   const typeParam = searchParams.get("type");
@@ -212,9 +214,7 @@ export default function BrandsPage() {
   const currentCategory = categories.find((c) => c.id === categoryParam);
 
   return (
-    <div className="min-h-screen bg-[#DEE3EB]">
-
-
+    <>
       {/* Hero Section with Image */}
       <HeroSection
         title={t("trusted_fmcg_brands")}
@@ -347,6 +347,16 @@ export default function BrandsPage() {
       <GlobalCTA title={t("want_your_brand_distributed")}
         subtitle={t("join_growing_portfolio")}
       />
+    </>
+  );
+}
+
+export default function BrandsPage() {
+  return (
+    <div className="min-h-screen bg-[#DEE3EB]">
+      <Suspense fallback={<div>Loading Brands...</div>}>
+        <BrandsContent />
+      </Suspense>
     </div>
   );
 }
