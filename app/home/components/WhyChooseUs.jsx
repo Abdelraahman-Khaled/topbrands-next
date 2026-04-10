@@ -95,19 +95,19 @@ export default function WhyChooseUs() {
   return (
     <section
       id="services"
-      className="py-[120px] bg-white relative overflow-hidden"
+      className="py-16 sm:py-24 lg:py-[120px] bg-white relative overflow-hidden"
     >
       {/* Decorative vectors from DIV-230/DIV-231 */}
-      <div className="absolute top-0 left-[88%] w-[690px] h-full bg-[#DEE3EB] rounded-full opacity-70 pointer-events-none"></div>
+      <div className="absolute top-0 left-[70%] sm:left-[88%] w-[400px] sm:w-[690px] h-full bg-[#DEE3EB] rounded-full opacity-70 pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-8   relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8   relative z-10">
         {/* Header Section (DIV-213) */}
-        <div className="flex flex-col items-center  justify-between gap-1  mb-16">
+        <div className="flex flex-col items-center justify-between gap-1 mb-10 sm:mb-16">
           <div className="mx-auto text-center">
-            <h2 className="text-5xl font-bold text-black leading-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black leading-tight mb-4">
               {t("why_choose_us") || "Why Choose Growing Together"}
             </h2>
-            <p className="text-[20px] text-[#4B4F54] font-medium max-w-[800px] mx-auto">
+            <p className="text-lg sm:text-[20px] text-[#4B4F54] font-medium max-w-[800px] mx-auto">
               {t("your_trusted_fmcg_distribution_partner") ||
                 "Your Trusted FMCG Distribution Partner"}
             </p>
@@ -118,9 +118,9 @@ export default function WhyChooseUs() {
           {services.map((service, index) => (
             <AnimatedCard
               key={index}
-              className="relative rounded-2xl pr-8 h-full
-               after:content-[''] after:absolute after:right-0 after:top-1/3 after:-translate-y-1/2 
-               after:w-[1px] after:h-[40%] after:bg-[#4B4F54]/20 last:after:hidden group"
+              className="relative rounded-2xl pr-0 sm:pr-8 h-full
+               sm:after:content-[''] sm:after:absolute sm:after:right-0 sm:after:top-1/3 sm:after:-translate-y-1/2 
+               sm:after:w-[1px] sm:after:h-[40%] sm:after:bg-[#4B4F54]/20 sm:last:after:hidden"
             >
               <div
                 className={`w-14 h-14 flex items-center justify-center rounded-xl mb-6 ${service.iconBg}`}

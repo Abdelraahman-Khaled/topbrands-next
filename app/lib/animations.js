@@ -29,10 +29,9 @@ export const headlineRevealVariants = {
 
 // 3. Interactive Element States (Magnetic & Spring)
 export const hoverCardVariants = {
-  scale: 1.02,
+  scale: 1.01,
   y: -8,
   filter: "brightness(1.05)",
-  boxShadow: "0px 25px 50px rgba(0,0,0,0.12)",
   transition: {
     type: "spring",
     stiffness: 300,

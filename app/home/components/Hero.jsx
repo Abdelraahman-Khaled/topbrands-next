@@ -40,12 +40,11 @@ export default function Hero() {
         }}
       ></div>
       {/* Content */}
-      <div className="relative flex z-10 max-w-7xl mx-auto px-8 py-32 text-start w-full mt-12 md:mt-24 mb-12">
-        <div className="w-3/4"></div>
-        <div className="space-y-8  flex flex-col items-start w-full">
+      <div className="relative flex z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-24 sm:py-32 text-start w-full mt-8 sm:mt-12 md:mt-24 mb-12">
+        <div className="space-y-6 sm:space-y-8 flex flex-col items-start w-full">
           {/* Badge */}
-          <div className="inline-flex animate-fade-in mb-4">
-            <span className="px-[18px] py-[8px] text-white rounded-full text-base font-bold uppercase tracking-wider border border-2 border-[#FFFFFF66]">
+          <div className="inline-flex animate-fade-in mb-2 sm:mb-4">
+            <span className="px-[14px] sm:px-[18px] py-[6px] sm:py-[8px] text-white rounded-full text-sm sm:text-base font-bold uppercase tracking-wider border border-2 border-[#FFFFFF66]">
               {t("years_group")}
             </span>
           </div>
@@ -54,7 +53,7 @@ export default function Hero() {
           <motion.h1
             initial="hidden"
             animate="visible"
-            className="text-[64px] md:text-[72px] font-bold text-white leading-tight"
+            className="text-[36px] sm:text-[52px] md:text-[64px] lg:text-[72px] font-bold text-white leading-tight"
           >
             <div className="overflow-hidden">
               <motion.span
@@ -80,7 +79,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-[18px] md:text-[20px] text-[#F3F4F6] max-w-4xl  leading-relaxed font-normal mt-8 color-[#F3F4F6]"
+            className="text-base sm:text-[18px] md:text-[20px] text-[#F3F4F6] max-w-4xl leading-relaxed font-normal mt-6 sm:mt-8 color-[#F3F4F6]"
           >
             {t("hero_subtitle")}
           </motion.p>
@@ -90,7 +89,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-5 justify-center items-center pt-8"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-start items-start sm:items-center pt-6 sm:pt-8"
           >
             <motion.a
               whileHover={hoverCardVariants}

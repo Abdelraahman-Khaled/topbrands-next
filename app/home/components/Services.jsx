@@ -97,7 +97,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-[120px]  relative overflow-hidden"
+      className="py-16 sm:py-24 lg:py-[120px] relative overflow-hidden"
       style={{
         background: "rgba(247, 227, 38, 0.08) "
       }}
@@ -107,21 +107,21 @@ export default function Services() {
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#F7E326] opacity-[0.2] rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#F7E326] opacity-[0.2] rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-8   relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8   relative z-10">
         {/* Header Section (DIV-213) */}
         <ScrollReveal>
-          <div className="flex flex-col items-center  justify-between gap-1  mb-16">
-            <span className="px-[20px] py-[8px] bg-[#4B4F54] text-sm text-white rounded-full font-bold tracking-wider ">
+          <div className="flex flex-col items-center justify-center gap-4 mb-12 sm:mb-16">
+            <span className="px-[20px] py-[8px] bg-[#4B4F54] text-sm text-white rounded-full font-bold tracking-wider inline-block">
               {t("our_services")}
             </span>
             <div className="mx-auto text-center">
-              <h2 className="text-5xl font-bold text-black leading-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black leading-tight mb-4 text-center">
                 {t("comprehensive") || "Our Distribution Solutions"}
                 <span className="text-[#4B4F54]">
                   {" " + t("distribution_solutions_title")}
                 </span>
               </h2>
-              <p className="text-[20px] text-[#4B4F54] font-medium max-w-[800px] mx-auto">
+              <p className="text-base sm:text-lg lg:text-[20px] text-[#4B4F54] font-medium max-w-[800px] mx-auto text-center">
                 {t("services_desc") ||
                   "Comprehensive services designed to optimize your brand's presence and performance in the Syrian market."}
               </p>
@@ -173,20 +173,20 @@ export default function Services() {
 
         {/* Custom Solution Banner (DIV-273) */}
         <ScrollReveal delay={0.2}>
-          <div className="mt-16 bg-[#000000] rounded-[32px] p-8 md:p-12 flex flex-col justify-between items-center gap-8">
-            <div className="text-white">
-              <h3 className="text-[30px] font-bold mb-2">
+          <div className="mt-12 sm:mt-16 bg-[#000000] rounded-[24px] sm:rounded-[32px] p-6 sm:p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-start">
+            <div className="text-white w-full">
+              <h3 className="text-2xl sm:text-[30px] font-bold mb-2">
                 {t("need_custom_solution") ||
                   "Need a Custom Distribution Solution?"}
               </h3>
-              <p className="text-[20px] text-white/80 max-w-xl">
+              <p className="text-lg sm:text-[20px] text-white/80 max-w-xl mx-auto md:mx-0">
                 {t("need_custom_solution_desc") ||
                   "We tailor our services to meet your specific business needs"}
               </p>
             </div>
             <a
               href="/contact"
-              className="flex items-center gap-3 px-[34px] py-[18px] bg-[#F7E326] text-black rounded-lg font-bold text-[16px] hover:shadow-2xl hover:gap-4 transition-all   whitespace-nowrap"
+              className="flex items-center gap-3 px-[28px] sm:px-[34px] py-[14px] sm:py-[18px] bg-[#F7E326] text-black rounded-lg font-bold text-sm sm:text-base hover:shadow-2xl hover:gap-4 transition-all whitespace-nowrap"
             >
               {t("contact_our_team") || "Contact Our Team"}
               <svg

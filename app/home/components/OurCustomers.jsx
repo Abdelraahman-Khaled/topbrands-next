@@ -91,7 +91,7 @@ export default function OurCustomers() {
 
   return (
     <section
-      className="py-24 relative overflow-hidden"
+      className="py-12 sm:py-24 relative overflow-hidden"
       style={{
         background: "rgba(247, 227, 38, 0.08) ",
       }}
@@ -104,7 +104,7 @@ export default function OurCustomers() {
       <div className="absolute top-20 left-10 w-96 h-96 bg-[#14B8A6]/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#F7E326]/5 rounded-full blur-3xl"></div>
 
-      <div className="max-w-7xl mx-auto px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-16">
@@ -125,18 +125,18 @@ export default function OurCustomers() {
                 {t("Trusted_Partners")}
               </span>
             </div>
-            <h2 className="text-5xl font-bold text-[#000000] mb-6">
+            <h2 className="text-3xl sm:text-5xl font-bold text-[#000000] mb-6">
               {t("our_customers")}
             </h2>
-            <p className="text-xl text-[#4B5563] max-w-3xl mx-auto font-medium">
+            <p className="text-lg sm:text-xl text-[#4B5563] max-w-3xl mx-auto font-medium">
               {t("Trusted_Partners_desc")}
             </p>
           </div>
         </ScrollReveal>
 
         {/* Customers Carousel */}
-        <div className="relative mb-16">
-          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="relative mb-12 sm:mb-16">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {customers
               .slice(currentIndex, currentIndex + 8)
               .map((customer, index) => (
@@ -176,7 +176,7 @@ export default function OurCustomers() {
           </ScrollReveal>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat) => (
             <StaggerItem
