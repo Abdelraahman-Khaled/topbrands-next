@@ -2,14 +2,15 @@ export default {
   // navbar
   home: "Home",
   about: "About Us",
-  services: "Our Services",
-  brands: "Our Brands",
+  services: "Services",
+  brands: "Brands",
   coverage: "Market Coverage",
   blog: "Blog",
-  contact: "Contact",
+  contact: "Contact Us",
   //end of navbar
   // {Home}
   // hero
+  years_group: "30+ YEARS VIA AL BARENGI GROUP",
   contact_syria: "Contact Top Brands Syria",
   become_partner: "Become a Distribution Partner",
   Distribution_Partner: "Distribution Partner",
@@ -75,7 +76,7 @@ export default {
   //2
   Advanced_Logistics: "Advanced Logistics",
   Advanced_Logistics_desc:
-    "Efficient warehousing, optimized delivery routes, and temperature-controlled transportation when required for product quality.",
+    "Efficient warehousing, optimized delivery routes, and temperature-controlled transportation when required. Your products handled with care and precision.",
   //3
   Experienced_Sales_Force: "Experienced Sales Force",
   Experienced_Sales_Force_desc:
@@ -126,7 +127,128 @@ export default {
   faq: "FAQ",
   legal: "Legal",
   privacy_policy: "Privacy Policy",
+  privacy_policy: "Privacy Policy",
+  last_updated: "Last Updated: January 2026",
+  privacy_s1_title: "1. Information We Collect",
+  privacy_s1_desc:
+    "B2B Distribution collects information necessary to provide our services and maintain business relationships. This includes:",
+  pri_s1_item1:
+    "Business contact information (company name, contact person, email, phone number)",
+  pri_s1_item2: "Business registration details and tax information",
+  pri_s1_item3: "Order and transaction history",
+  pri_s1_item4: "Delivery addresses and logistics information",
+  pri_s1_item5: "Payment and billing information",
+  pri_s1_item6: "Communication records and correspondence",
+  privacy_s2_title: "2. How We Use Your Information",
+  privacy_s2_desc:
+    "We use the collected information for the following purposes:",
+  pri_s2_item1: "Processing and fulfilling orders and deliveries",
+  pri_s2_item2: "Managing business relationships and partnerships",
+  pri_s2_item3: "Providing customer support and responding to inquiries",
+  pri_s2_item4: "Improving our services and operations",
+  pri_s2_item5: "Sending business communications and updates",
+  pri_s2_item6: "Complying with legal and regulatory requirements",
+  privacy_s3_title: "3. Information Sharing and Disclosure",
+  privacy_s3_desc:
+    "B2B Distribution does not sell or rent your business information to third parties. We may share information with:",
+  pri_s3_item1: "Al Barengi Group companies for operational purposes",
+  pri_s3_item2:
+    "Service providers who assist in our operations (logistics, payment processing)",
+  pri_s3_item3:
+    "Legal authorities when required by law or to protect our rights",
+  pri_s3_item4: "Business partners with your explicit consent",
+  privacy_s4_title: "4. Data Security",
+  privacy_s4_desc:
+    "We implement appropriate technical and organizational measures to protect your information against unauthorized access, alteration, disclosure, or destruction. This includes secure servers, encrypted communications, access controls, and regular security assessments.",
+  privacy_s5_title: "5. Data Retention",
+  privacy_s5_desc:
+    "We retain business information for as long as necessary to fulfill the purposes outlined in this policy, comply with legal obligations, resolve disputes, and enforce our agreements. Transaction records are maintained according to applicable tax and commercial laws.",
+  privacy_s6_title: "6. Your Rights",
+  privacy_s6_desc: "As a business partner, you have the right to:",
+  pri_s6_item1: "Access and review your business information",
+  pri_s6_item2: "Request corrections to inaccurate information",
+  pri_s6_item3:
+    "Request deletion of information (subject to legal requirements)",
+  pri_s6_item4: "Opt-out of marketing communications",
+  pri_s6_item5: "Receive information about how your data is processed",
+  privacy_s7_title: "7. Cookies and Tracking",
+  privacy_s7_desc:
+    "Our website uses cookies and similar technologies to improve user experience, analyze website traffic, and personalize content. You can control cookie preferences through your browser settings. For more details, please see our Cookie Policy.",
+  privacy_s8_title: "8. Changes to This Policy",
+  privacy_s8_desc:
+    "We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify business partners of significant changes through email or website announcements.",
+  privacy_s9_title: "9. Contact Us",
+  privacy_s9_desc:
+    "If you have questions or concerns about this Privacy Policy or our data practices, please contact us:",
+  privacy_company_name: "B2B Distribution",
+  privacy_location: "Damascus, Syria",
   terms_conditions: "Terms & Conditions",
+  terms_conditions: "Terms & Conditions",
+  last_updated: "Last Updated: January 2026",
+  agreement_title: "1. Agreement to Terms",
+  agreement_desc:
+    "By accessing and using B2B Distribution services, you agree to be bound by these Terms and Conditions. These terms apply to all business partners, retailers, distributors, and users of our services. If you do not agree with any part of these terms, you may not use our services.",
+  requirements_title: "2. Business Partnership Requirements",
+  requirements_desc:
+    "To become a business partner with B2B Distribution, you must:",
+  req_item1: "Be a legally registered business entity in Syria",
+  req_item2: "Provide valid business registration and tax documentation",
+  req_item3:
+    "Maintain appropriate licenses for retail or distribution activities",
+  req_item4: "Meet our credit and financial requirements",
+  req_item5: "Comply with all applicable laws and regulations",
+  req_item6: "Maintain professional business standards and ethics",
+  orders_title: "3. Orders and Delivery",
+  orders_desc: "Order processing and delivery terms:",
+  ord_item1: "All orders are subject to product availability and acceptance",
+  ord_item2: "Minimum order quantities may apply for certain products",
+  ord_item3: "Delivery schedules are estimates and may vary based on location",
+  ord_item4:
+    "Partners must inspect deliveries upon receipt and report issues within 24 hours",
+  ord_item5: "B2B Distribution reserves the right to modify delivery routes",
+  ord_item6: "Special handling requirements must be communicated in advance",
+  pricing_title: "4. Pricing and Payment",
+  pricing_desc: "Payment terms and conditions:",
+  prc_item1: "Prices are subject to change without prior notice",
+  prc_item2: "Payment terms are established based on creditworthiness",
+  prc_item3: "Late payments may incur additional charges",
+  prc_item4: "All prices are exclusive of applicable taxes unless stated",
+  prc_item5: "Promotional pricing subject to specific terms",
+  prc_item6: "Currency fluctuations may affect pricing for imported products",
+  quality_title: "5. Product Quality and Returns",
+  quality_desc: "Quality assurance and return policies:",
+  qlt_item1: "All products meet applicable quality and safety standards",
+  qlt_item2: "Damaged products must be reported within 24 hours",
+  qlt_item3: "Returns accepted only for valid quality issues",
+  qlt_item4: "Expired products due to partner storage not eligible for return",
+  qlt_item5: "Return authorization must be obtained before returning",
+  qlt_item6: "Partners responsible for proper storage and handling",
+  ip_title: "6. Intellectual Property",
+  ip_desc:
+    "All brand names, trademarks, logos, and intellectual property associated with the products distributed by B2B Distribution remain the property of their respective owners. Partners may not use these marks without proper authorization. B2B Distribution's own trademarks and business materials are protected and may not be used without written permission.",
+  confidentiality_title: "7. Confidentiality",
+  confidentiality_desc:
+    "Partners agree to maintain confidentiality of all business information, pricing structures, customer data, and proprietary information shared during the course of the business relationship. This obligation continues even after the termination of the partnership.",
+  liability_title: "8. Limitation of Liability",
+  liability_desc:
+    "B2B Distribution's liability is limited to the value of the specific transaction in question. We are not liable for indirect, consequential, or incidental damages. Partners are responsible for their own business operations, customer relationships, and compliance with applicable laws.",
+  termination_title: "9. Termination",
+  termination_desc:
+    "Either party may terminate the business relationship with appropriate notice as specified in partnership agreements. B2B Distribution reserves the right to immediately terminate partnerships in cases of breach of terms, non-payment, or unethical business practices. Outstanding obligations must be settled upon termination.",
+  law_title: "10. Governing Law",
+  law_desc:
+    "These Terms and Conditions are governed by the laws of the Syrian Arab Republic. Any disputes arising from these terms or business relationships shall be resolved through negotiation or, if necessary, through the appropriate courts in Damascus, Syria.",
+  changes_title: "11. Changes to Terms",
+  changes_desc:
+    "B2B Distribution reserves the right to modify these Terms and Conditions at any time. Partners will be notified of significant changes through email or official communications. Continued use of our services after changes constitutes acceptance of the modified terms.",
+  contact_title: "12. Contact Information",
+  contact_desc:
+    "For questions about these Terms and Conditions, please contact:",
+  company_name: "B2B Distribution",
+  company_email: "legal@b2bdistribution.sy",
+  company_phone: "+963 11 123 4567",
+  company_address: "Damascus, Syria",
+  last_updated: "Last Updated: March 2025",
   cookie_policy: "Cookie Policy",
   quality_products: "Quality Products",
   reliable_distribution: "Reliable Distribution",
@@ -252,7 +374,7 @@ export default {
   name_required: "Full Name *",
   email_required: "Email Address *",
   message_required: "Message *",
-  about_us_nav: "/ ABOUT US",
+  about_us_nav: "ABOUT US",
   who_we_are: "Who We Are",
   who_we_are_subtitle1: "Top Brands Syria is a specialized ",
   who_we_are_subtitle2: "FMCG distribution company",
@@ -263,7 +385,7 @@ export default {
   established_2025:
     "Established in 2025, Top Brands Syria operates under the Al Barengi Group, leveraging over 30 years of market experience to deliver food and non-food consumer products nationwide.",
   group_heritage: "Group Heritage",
-  years_market: "30+ YEARS VIA AL BARENGI GROUP",
+  years_market: "30+ Years ",
   coverage_label: "Coverage",
   nationwide: "Nationwide",
   vision: "Vision",
@@ -351,7 +473,7 @@ export default {
     ", strengthening operational capabilities, and developing new importing and trading initiatives.",
   growth_long_term:
     "Our long-term direction focuses on sustainable growth, deeper market penetration, and building a stronger footprint across key FMCG sectors in Syria.",
-  partnership_nav: "/ PARTNERSHIP",
+  partnership_nav: "PARTNERSHIP",
   expand_brand: "Expand Your Brand",
   presence_syria: "Presence in Syria",
   partner_hero_desc:
@@ -413,8 +535,7 @@ export default {
   service_excellence: "Service Excellence",
   what_makes_stand_out: "What makes our distribution services stand out",
   fast_delivery: "Fast Delivery",
-  optimized_routes:
-    "Optimized routes and efficient logistics ensure 24-48 hour delivery across all regions.",
+  optimized_routes: "Optimized routes",
   quality_assurance_desc_detailed:
     "Refrigerated warehouses and vans, dedicated team for marketing insight, and dedicated CRM team ensure product integrity.",
   real_time_sales:
@@ -441,7 +562,7 @@ export default {
   ready_optimize: "Ready to Optimize Your Distribution?",
   partner_reliable_efficient:
     "Partner with Top Brands Syria for reliable, efficient FMCG distribution across Syria",
-  brand_portfolio_nav: "/ BRAND PORTFOLIO",
+  brand_portfolio_nav: "BRAND PORTFOLIO",
   trusted_fmcg_brands: "Trusted FMCG Brands",
   brand_portfolio_desc_1:
     "Top Brands Syria distributes a growing portfolio of ",
@@ -494,7 +615,7 @@ export default {
   one_hundred_plus: "100+",
   professionals: "Professionals",
   all_major_cities: "All major cities",
-  market_coverage_nav: "/ MARKET COVERAGE",
+  market_coverage_nav: "MARKET COVERAGE",
   nationwide_fmcg: "Nationwide FMCG",
   distribution_network: "Distribution Network",
   market_penetration_desc_1: "Top Brands Syria provides ",
@@ -578,7 +699,7 @@ export default {
   partnership_team: "Partnership Team",
   digital_innovation_team: "Digital Innovation Team",
   quality_assurance_team: "Quality Assurance Team",
-  contact_nav: "/ CONTACT",
+  contact_nav: "CONTACT",
   contact_us_title: "Contact",
   contact_hero_desc_1: "For ",
   contact_hero_desc_2: "distribution partnerships",
@@ -614,4 +735,487 @@ export default {
   error_msg: "Something went wrong. Please try again.",
   sending: "Sending...",
   contact_send_message_btn: "Send Message",
+  why_partner_with_us: "Why Partner With Us",
+  become_a_partner: "Become a Partner",
+  Integrated_FMCG: "Integrated FMCG",
+  services_hero_desc_1: "Growing Together Syria delivers",
+  services_hero_desc_2: "integrated FMCG distribution solutions",
+  services_hero_desc_3:
+    "designed to maximize brand reach, visibility, and sales performance across the Syrian market.",
+  service1_title: "FMCG Distribution in Syria",
+  service1_desc:
+    "Top Brands Syria provides fully integrated, end-to-end FMCG distribution solutions across Syria. We support international and regional brands with reliable, scalable, and performance-driven distribution models that ensure efficient product movement from warehouse to point of sale.",
+  service1_p1: "End-to-end distribution",
+  service1_p2: "Scalable solutions",
+  service1_p3: "Performance-driven models",
+  service1_p4: "Warehouse to POS efficiency",
+
+  service2_title: "Comprehensive Retail & Trade Coverage",
+  service2_desc:
+    "We deliver extensive coverage across traditional retail, modern trade, and wholesale channels. Our multi-channel distribution approach ensures brand presence in neighborhood stores, supermarkets, hypermarkets, and wholesale markets nationwide.",
+  service2_p1: "Traditional retail coverage",
+  service2_p2: "Modern trade channels",
+  service2_p3: "Wholesale distribution",
+  service2_p4: "Nationwide presence",
+
+  service3_title: "Brand Representation & Market Entry",
+  service3_desc:
+    "Top Brands acts as a strategic local partner for brand owners seeking market entry or expansion in Syria. We manage brand positioning, pricing strategy, channel rollout, and ongoing market development while minimizing commercial and operational risks.",
+  service3_p1: "Strategic partnership",
+  service3_p2: "Market entry support",
+  service3_p3: "Brand positioning",
+  service3_p4: "Risk minimization",
+
+  service4_title: "Direct Delivery & Sales Execution",
+  service4_desc:
+    "Our direct delivery capabilities ensure fast order fulfillment and consistent replenishment. Supported by trained sales teams and optimized delivery routes, we maintain high service levels and reduced lead times across all markets.",
+  service4_p1: "Fast fulfillment",
+  service4_p2: "Consistent replenishment",
+  service4_p3: "Trained sales teams",
+  service4_p4: "Optimized routes",
+
+  service5_title: "Nationwide Market Coverage",
+  service5_desc:
+    "With a strong distribution infrastructure covering major cities and regional markets, Top Brands Syria provides consistent, reliable nationwide FMCG distribution.",
+  service5_p1: "Major cities coverage",
+  service5_p2: "Regional markets",
+  service5_p3: "Strong infrastructure",
+  service5_p4: "Reliable distribution",
+
+  service6_title: "Merchandising & In-Store Visibility",
+  service6_desc:
+    "Dedicated merchandising teams focus on planogram execution, product placement, promotional compliance, and brand visibility at the point of sale to drive sell-out performance.",
+  service6_p1: "Planogram execution",
+  service6_p2: "Product placement",
+  service6_p3: "Promotional compliance",
+  service6_p4: "Brand visibility",
+
+  service7_title: "Importing & Trading of Consumer Goods",
+  service7_desc:
+    "Top Brands Syria manages sourcing, logistics coordination, and regulatory compliance for imported FMCG products, ensuring quality, continuity, and cost efficiency from origin to shelf.",
+  service7_p1: "Sourcing management",
+  service7_p2: "Logistics coordination",
+  service7_p3: "Regulatory compliance",
+  service7_p4: "Quality assurance",
+  excellence_title: "Service Excellence",
+  excellence_subtitle:
+    "Why brands choose Top Brands Syria for FMCG distribution",
+  feat1_title: "Nationwide",
+  feat1_desc: "Complete coverage across all Syrian regions",
+  feat2_title: "Experienced",
+  feat2_desc: "Professional sales and merchandising teams",
+  feat3_title: "Fast",
+  feat3_desc: "Optimized delivery and quick response times",
+  feat4_title: "Competitive",
+  feat4_desc: "Cost-effective solutions with flexible terms",
+  services_cta_title: "Need FMCG Distribution Services?",
+  services_cta_desc:
+    "Let's discuss how Top Brands Syria can support your brand growth.",
+  brand_portfolio_desc_1:
+    "Growing Together distributes a growing portfolio of ",
+  brand_portfolio_desc_2: "trusted FMCG brands",
+  brand_portfolio_desc_3:
+    " across food and non-food categories, focusing on long-term market development and brand visibility.",
+  Interested_in: "Interested in",
+  distribution_partnership: "Distribution Partnership",
+  brand_representation: "Brand Representation",
+  general_inquiry: "General Inquiry",
+  logistics_importing: "Logistics & Importing",
+  other: "Other",
+  Products: "Products",
+  newsletter_title: "Subscribe to Our Newsletter",
+  newsletter_desc:
+    "Get the latest insights and market updates delivered directly to your inbox",
+  newsletter_placeholder: "Enter your email address",
+  newsletter_btn: "Subscribe Now",
+  Never_Miss_an_Update: "Never Miss an Update",
+  growing_supports_partner: "Growing Together supports FMCG brands through ​",
+  strategic_market_entry_partner: "strategic market entry",
+  national_become_partner:
+    "nationwide distribution, and scalable growth solutions driven by long-term collaboration and local expertise.",
+  expand_brand: "Expand Your Brand's",
+  presence_syria: "Presence in Syria",
+  partner_nav: "Become a Partner",
+  growing_supports:
+    "Join a growing network of international brands. Top Brands Syria supports your market entry with expertise and reliability.",
+  strategic_market_entry: "Strategic Market Entry & Distribution",
+
+  benefits_title: "Partnership Benefits",
+  benefits_subtitle: "Why leading FMCG brands choose Top Brands Syria",
+  benefit1_title: "Strong Local Market Knowledge",
+  benefit1_desc:
+    "Deep understanding of Syrian consumer preferences, regional dynamics, and market trends",
+  benefit2_title: "Professional Sales & Merchandising",
+  benefit2_desc:
+    "Experienced teams ensuring optimal product placement, visibility, and sell-out performance",
+  benefit3_title: "Scalable Growth Opportunities",
+  benefit3_desc:
+    "Flexible distribution models supporting brand expansion across all Syrian regions",
+  benefit4_title: "Reliable & Transparent Operations",
+  benefit4_desc:
+    "Consistent service delivery with clear communication and performance tracking",
+
+  form_title: "Start Your Partnership",
+  form_subtitle:
+    "Fill out the form below and our team will contact you within 24 hours",
+  label_company: "Company Name *",
+  placeholder_company: "Your company name",
+  label_contact: "Contact Person *",
+  placeholder_contact: "Your full name",
+  label_email: "Email Address *",
+  placeholder_email: "your@email.com",
+  label_phone: "Phone Number *",
+  placeholder_phone: "+963 XXX XXX XXX",
+  label_brand: "Brand Name *",
+  placeholder_brand: "Brand you represent",
+  label_category: "Product Category *",
+  select_category: "Select category",
+  label_message: "Message",
+  placeholder_message:
+    "Tell us about your brand and partnership goals (max 500 characters)",
+  btn_submit: "Submit Partnership Request",
+  btn_submitting: "Submitting...",
+  msg_success: "Thank you! We'll contact you within 24 hours.",
+  msg_error: "Something went wrong. Please try again.",
+
+  direct_contact_title: "Or Contact Us Directly",
+  contact_email: "Email",
+  contact_phone: "Phone",
+  contact_location: "Location",
+  city_syria: "Damascus, Syria",
+  // national distribution
+  dist_hero_title: "Nationwide Distribution",
+  dist_hero_yellow: "Network",
+  dist_hero_desc:
+    "Strong coverage across traditional retail, modern trade, and wholesale channels throughout Syria. We ensure your products reach every corner of the market.",
+
+  stat1_val: "14",
+  stat1_label: "Governorates Covered",
+  stat2_val: "5000+",
+  stat2_label: "Retail Points",
+  stat3_val: "98%",
+  stat3_label: "Delivery Success Rate",
+  stat4_val: "24h",
+  stat4_label: "Average Delivery Time",
+
+  channels_title: "Distribution Channels",
+  channels_subtitle:
+    "Multi-channel distribution approach ensuring maximum market penetration",
+  channel1_title: "Traditional Retail",
+  channel1_desc:
+    "Deep penetration in neighborhood stores, grocers, and local shops across all Syrian regions.",
+  channel2_title: "Modern Trade",
+  channel2_desc:
+    "Strong presence in supermarkets, hypermarkets, and chain stores with dedicated account management.",
+  channel3_title: "Wholesale Channels",
+  channel3_desc:
+    "Efficient wholesale network to reach smaller retailers and far-flung rural areas.",
+  channel4_title: "Geographic Coverage",
+  channel4_desc:
+    "Comprehensive coverage of major cities, regional centers, and rural market settlements.",
+
+  how_title: "How We Distribute",
+  how_subtitle:
+    "Our distribution process is designed for efficiency, reliability, and maximum market coverage. From warehouse to shelf, we ensure your products are always available.",
+  step1_title: "Order Processing",
+  step1_desc: "Efficient order management and inventory allocation.",
+  step2_title: "Route Optimization",
+  step2_desc: "Smart routing for faster delivery times.",
+  step3_title: "Delivery Execution",
+  step3_desc: "Professional delivery with real-time tracking.",
+  step4_title: "Confirmation & Reporting",
+  step4_desc: "Delivery confirmation and performance analytics.",
+
+  cta_title: "Ready to Expand Your Distribution?",
+  cta_subtitle:
+    "Get the latest insights and market updates delivered directly to your inbox",
+  btn_partner: "Become a Partner",
+  btn_services: "All Services",
+  // logistics
+  log_hero_title: "Advanced Logistics",
+  log_hero_yellow: "& Warehousing",
+  log_hero_desc:
+    "Efficient warehousing and logistics solutions with state-of-the-art facilities, real-time tracking, and specialized cold chain operations.",
+
+  log_solutions_title: "Logistics Solutions",
+  log_solutions_subtitle:
+    "Comprehensive logistics infrastructure designed for FMCG excellence",
+
+  log_card1_title: "Modern Warehousing",
+  log_card1_desc:
+    "State-of-the-art warehouse facilities with organized storage systems and inventory management.",
+  log_card2_title: "Temperature Control",
+  log_card2_desc:
+    "Climate-controlled storage and transportation for temperature-sensitive FMCG products.",
+  log_card3_title: "Route Optimization",
+  log_card3_desc:
+    "Advanced route planning for fast delivery and reduced carbon footprint.",
+  log_card4_title: "Inventory Management",
+  log_card4_desc:
+    "Real-time inventory tracking and automated stock replenishment systems.",
+
+  wh_excellence_title: "Warehouse Excellence",
+  wh_excellence_desc:
+    "Our warehousing facilities are designed to handle the unique requirements of FMCG products, ensuring product integrity and efficient order fulfillment.",
+  wh_point1: "Organized storage zones by product category",
+  wh_point2: "FIFO inventory management system",
+  wh_point3: "Quality inspection at receiving and dispatch",
+  wh_point4: "Secure facility with 24/7 monitoring",
+
+  fleet_title: "Fleet & Transportation",
+  fleet_desc:
+    "Our diverse fleet of vehicles ensures timely delivery across all market segments, from urban retail to regional wholesale.",
+  fleet_cat1_title: "Heavy Trucks",
+  fleet_cat1_desc: "Bulk distribution",
+  fleet_cat2_title: "Vans",
+  fleet_cat2_desc: "Last-mile delivery",
+  fleet_cat3_title: "Refrigerated",
+  fleet_cat3_desc: "Cold chain",
+  fleet_cat4_title: "Express",
+  fleet_cat4_desc: "Fast tracking",
+  log_cta_title: "Need Logistics Support?",
+  log_cta_subtitle:
+    "Get in touch with our logistics experts to reach every corner of the market",
+  btn_partner: "Become a Partner",
+  btn_all_services: "All Services",
+  why_partner_title: "Why Partner With Top Brands Syria?",
+  why_partner_subtitle:
+    "Combining market expertise, robust logistics, and performance-driven execution to ensure your brand's success across Syria.",
+  feat1_title: "Nationwide",
+  feat1_desc: "Complete coverage across all Syrian regions",
+  feat2_title: "Experienced",
+  feat2_desc: "Professional sales and merchandising teams",
+  feat3_title: "Fast",
+  feat3_desc: "Optimized delivery and quick response times",
+  feat4_title: "Competitive",
+  feat4_desc: "Cost-effective solutions with flexible terms",
+  ribbon_fleet: "Fleet Management",
+  ribbon_bulk: "Bulk Storage",
+  ribbon_sameday: "Same-Day Delivery",
+  ribbon_qc: "Quality Control",
+  ribbon_doc: "Documentation",
+  ribbon_support: "24/7 Support",
+  professional_sales: "Professional Sales",
+  sales_hero_yellow: "& Merchandising",
+  professional_sales_desc:
+    "Experienced sales teams with deep local market knowledge and strong customer relationships. We ensure your brand stands out at every point of sale.",
+  pill_placement: "Product placement optimization",
+  pill_shelf: "Shelf space management",
+  pill_pos: "POS material installation",
+  pill_stock: "Stock rotation (FIFO)",
+  pill_competitor: "Competitor monitoring",
+  pill_photo: "Photo reporting",
+  pill_promo: "Promotional setup",
+  pill_inventory: "Inventory checks",
+  merch_title: "Merchandising Services",
+  merch_subtitle:
+    "Comprehensive in-store execution to drive brand visibility and sales performance.",
+  merch1_t: "Planogram Execution",
+  merch1_d:
+    "Precise implementation of shelf layouts to maximize product visibility.",
+  merch2_t: "In-store Visibility",
+  merch2_d:
+    "Strategic placement of promotional materials to drive impulse purchases.",
+  merch3_t: "Promotional Compliance",
+  merch3_d:
+    "Ensuring all regional promotions are active and visible at the point of sale.",
+  merch4_t: "Performance Tracking",
+  merch4_d:
+    "Real-time reporting on shelf share, out-of-stocks, and brand performance.",
+  expert_title: "Expert Sales Team",
+  expert_subtitle:
+    "Our dedicated sales force combines deep market knowledge with professional execution to build strong retailer relationships and drive consistent sell-through.",
+  exp1_t: "Trained Professionals",
+  exp1_d: "Skilled in sales techniques and product knowledge.",
+  exp2_t: "Local Market Expertise",
+  exp2_d: "Deep understanding of regional consumer preferences.",
+  exp3_t: "Relationship Builders",
+  exp3_d: "Strong connections with retailers and wholesalers.",
+  results_title: "Driving Results",
+  results_desc:
+    "Our merchandising efforts translate directly into improved brand performance and increased sales at the point of purchase.",
+  stat1_v: "95%",
+  stat1_l: "Shelf Availability",
+  stat2_v: "100%",
+  stat2_l: "Planogram Compliance",
+  stat3_v: "Weekly",
+  stat3_l: "Store Visits",
+  stat4_v: "Real-time",
+  stat4_l: "Reporting",
+  sales_cta_t: "Boost Your In-Store Presence",
+  mkt_hero_title: "360 Marketing",
+  mkt_hero_yellow: "Solutions",
+  mkt_hero_desc:
+    "Complete marketing solutions with data-driven market insights, driving growth and comprehensive brand awareness across all channels.",
+  mkt_stat2_v: "50+",
+  mkt_stat2_l: "Brand Partners",
+  mkt_stat1_v: "500+",
+  mkt_stat1_l: "Campaigns Executed",
+  mkt_stat3_v: "95%",
+  mkt_stat3_l: "Client Satisfaction",
+  mkt_stat4_v: "3x",
+  mkt_stat4_l: "ROI Average",
+  mkt_services_t: "Our Marketing Services",
+  mkt_services_s:
+    "Comprehensive marketing solutions tailored to drive your brand's success",
+  mkt_s1_t: "Market Research & Analysis",
+  mkt_s1_d:
+    "In-depth market research and consumer behavior analysis to identify opportunities and optimize strategies.",
+  mkt_s2_t: "Brand Activation",
+  mkt_s2_d:
+    "Creative brand activation campaigns that engage consumers and drive brand awareness across all touchpoints.",
+  mkt_s3_t: "Digital Marketing",
+  mkt_s3_d:
+    "Comprehensive digital marketing strategies including social media, content marketing, and online advertising.",
+  mkt_s4_t: "Trade Marketing",
+  mkt_s4_d:
+    "Strategic trade marketing initiatives to boost product visibility and sales at retail points.",
+  mkt_s5_t: "Promoter Management",
+  mkt_s5_d:
+    "Professional promoter teams trained to represent your brand and drive in-store conversions.",
+  mkt_s6_t: "Analytics & Reporting",
+  mkt_s6_d:
+    "Real-time analytics and comprehensive reporting to measure campaign performance and ROI.",
+  mkt_why_t: "Why Choose Our Marketing Solutions?",
+  mkt_why_d:
+    "Our dedicated marketing team combines local market expertise with global best practices to deliver results-driven campaigns that resonate with your target audience.",
+  mkt_why_p1_t: "Strategic Planning",
+  mkt_why_p1_d:
+    "Data-driven marketing strategies aligned with your business objectives.",
+  mkt_why_p2_t: "Consumer Insights",
+  mkt_why_p2_d:
+    "Deep understanding of local consumer preferences and behaviors.",
+  mkt_why_p3_t: "Campaign Execution",
+  mkt_why_p3_d:
+    "Flawless execution of marketing campaigns across all channels.",
+  mkt_why_p4_t: "Performance Tracking",
+  mkt_why_p4_d: "Continuous monitoring and optimization for maximum results.",
+  mkt_app_t: "Our Approach",
+  mkt_app_s: "A systematic approach to delivering marketing excellence",
+  mkt_step1_t: "Discovery",
+  mkt_step1_d: "Understanding your brand, goals,and target audience.",
+  mkt_step2_t: "Strategy",
+  mkt_step2_d: "Developing data-driven marketing strategies.",
+  mkt_step3_t: "Execution",
+  mkt_step3_d: "Implementing campaigns across all channels.",
+  mkt_step4_t: "Optimization",
+  mkt_step4_d: "Continuous improvement based on performance data.",
+  mkt_cta_t: "Ready to Elevate Your Brand?",
+  mkt_cta_s:
+    "Get the latest insights and market updates delivered directly to your inbox",
+  btn_get_started: "Get Started",
+  btn_all_services: "All Services",
+  cookie_policy: "Cookie Policy",
+  website_cookies: "Website Cookies",
+  last_updated_cookie: "Last Updated: March 2025",
+  cookie_s1_title: "1. What Are Cookies?",
+  cookie_s1_desc:
+    "Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and provide information to website owners. Cookies help us understand how you use our website and improve your browsing experience.",
+  cookie_s2_title: "2. How We Use Cookies",
+  cookie_s2_desc: "B2B Distribution uses cookies for the following purposes:",
+  ck_s2_item1: "To remember your preferences and settings",
+  ck_s2_item2: "To understand how you use our website",
+  ck_s2_item3: "To analyze website traffic and user behavior",
+  ck_s2_item4: "To provide personalized content and recommendations",
+  ck_s2_item5: "To maintain security and prevent fraud",
+  ck_s2_item6: "To enable essential website features and services",
+  cookie_s3_title: "3. Types of Cookies We Use",
+  ck_s3_cat1_t: "Essential Cookies",
+  ck_s3_cat1_d:
+    "These cookies are necessary for the website to function properly. They enable basic features like page navigation, access to secure areas, and form submissions. The website cannot function properly without these cookies..",
+  ck_s3_cat2_t: "Performance Cookies",
+  ck_s3_cat2_d:
+    "These cookies collect information about how visitors use our website, such as which pages are visited most often and if users receive error messages. This helps us improve website performance and user experience.",
+  ck_s3_cat3_t: "Functionality Cookies",
+  ck_s3_cat3_d:
+    "These cookies allow the website to remember choices you make (such as language preferences or region) and provide enhanced, personalized features. They may also be used to provide services you have requested.",
+  ck_s3_cat4_t: "Analytics Cookies",
+  ck_s3_cat4_d:
+    "We use analytics cookies to understand how visitors interact with our website. This information helps us analyze data about webpage traffic and improve our website to better serve our business partners.",
+  cookie_s4_title: "4. Third-Party Cookies",
+  cookie_s4_desc:
+    "In addition to our own cookies, we may use third-party cookies from trusted partners:",
+  ck_s4_item1: "Google Analytics for website traffic analysis",
+  ck_s4_item2: "Social media platforms for content sharing features",
+  ck_s4_item3:
+    "Marketing partners for targeted advertising (with your consent)",
+  ck_s4_item4: "Service providers that help us operate our website",
+  cookie_s5_title: "5. Managing Your Cookie Preferences",
+  cookie_s5_desc:
+    "You have the right to decide whether to accept or reject cookies. You can manage your cookie preferences through:",
+  ck_s5_opt1:
+    "Browser Settings: Most web browsers allow you to control cookies through their settings.",
+  ck_s5_opt2:
+    "Cookie Banner: Choose which types of cookies to accept through our consent banner.",
+  ck_s5_opt3:
+    "Opt-Out Tools: Opt out of third-party cookies through industry opt-out programs.",
+  ck_s5_note:
+    "Please note that blocking or deleting cookies may impact your experience on our website and limit certain features.",
+  cookie_s6_title: "6. Browser-Specific Cookie Management",
+  cookie_s6_desc: "Here's how to manage cookies in popular browsers:",
+  cookie_s7_title: "7. Cookie Duration",
+  cookie_s7_desc:
+    "Cookies may be either 'session' cookies or 'persistent' cookies. Session cookies are temporary and are deleted when you close your browser. Persistent cookies remain on your device until they expire or you delete them. The duration of persistent cookies varies depending on their purpose.",
+  cookie_s8_title: "8. Updates to This Policy",
+  cookie_s8_desc:
+    "We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our business practices. We encourage you to review this policy periodically to stay informed about how we use cookies.",
+  cookie_s9_title: "9. Contact Us",
+  cookie_s9_desc:
+    "If you have questions about our use of cookies, please contact us:",
+  cookie_company_name: "B2B Distribution",
+  cookie_location: "Damascus, Syria",
+  faq_hero_title: "Frequently Asked Questions",
+  faq_hero_subtitle:
+    "Find answers to common questions about our services, partnerships, and operations",
+  faq_all: "All",
+  faq_still_questions: "Still Have Questions?",
+  faq_team_help:
+    "Our team is here to help. Contact us for personalized assistance.",
+  faq_contact_btn: "Contact Us",
+  faq_partner_btn: "Become a Partner",
+  faq_q1: "What areas does B2B Distribution cover in Syria?",
+  faq_a1:
+    "We provide comprehensive coverage across all major Syrian cities including Damascus, Aleppo, Homs, Latakia, Hama, and Tartus. Our distribution network reaches both urban centers and regional markets, ensuring your products are available wherever your customers are.",
+  faq_q2: "What types of products do you distribute?",
+  faq_a2:
+    "We specialize in FMCG products across multiple categories including Food & Beverages, Snacks & Confectionery, Dairy Products, and Non-Food FMCG items. We work with both international and regional brands to provide a diverse product portfolio.",
+  faq_q3: "How can I become a distribution partner?",
+  faq_a3:
+    "To become a partner, you need to be a legally registered business in Syria with appropriate retail or distribution licenses. Visit our 'Become a Partner' page to submit your application. Our team will review your request and contact you to discuss partnership opportunities.",
+  faq_q4: "What are your minimum order requirements?",
+  faq_a4:
+    "Minimum order quantities vary by product category and brand. Our sales team will provide specific MOQ information based on your business needs and location. We strive to accommodate businesses of all sizes.",
+  faq_q5: "What are your delivery schedules?",
+  faq_a5:
+    "We operate regular delivery routes to all covered areas. Delivery frequency depends on your location and order volume. Major cities typically receive deliveries 2-3 times per week, while regional areas have scheduled weekly deliveries.",
+  faq_q6: "Do you offer credit terms?",
+  faq_a6:
+    "Yes, we offer flexible payment terms to qualified business partners. Credit terms are determined based on business history, creditworthiness, and order volume. New partners typically start with cash-on-delivery terms before transitioning to credit arrangements.",
+  faq_q7: "How do you ensure product quality during distribution?",
+  faq_a7:
+    "We maintain strict quality control throughout our supply chain. Our warehouses are equipped with temperature-controlled storage for sensitive products. We follow FIFO (First In, First Out) principles and conduct regular quality checks.",
+  faq_q8: "What happens if I receive damaged products?",
+  faq_a8:
+    "Any damaged or defective products must be reported within 24 hours of delivery. Our team will investigate the issue and arrange for replacement or credit as appropriate. We require photographic evidence and proper documentation.",
+  faq_q9: "Do you provide merchandising support?",
+  faq_a9:
+    "Yes, we offer comprehensive merchandising services including planogram execution, shelf management, promotional display setup, and in-store visibility optimization. Our professional sales team works closely with retailers.",
+  faq_q10: "Can I track my orders?",
+  faq_a10:
+    "Yes, we provide order tracking capabilities for our partners. Once your order is confirmed, you will receive updates on its status. Our customer service team is also available to provide real-time information.",
+  faq_q11: "What certifications does B2B Distribution hold?",
+  faq_a11:
+    "We maintain all necessary certifications for FMCG distribution including food safety certifications, quality management standards, and compliance with Syrian regulatory requirements.",
+  faq_q12: "How do you handle product returns and exchanges?",
+  faq_a12:
+    "Returns are accepted for valid quality issues, damaged products, or incorrect deliveries. Return authorization must be obtained before returning any products. Products must be in original condition.",
+  faq_q13: "Do you offer exclusive distribution rights?",
+  faq_a13:
+    "Exclusive distribution arrangements are negotiated on a case-by-case basis depending on the brand, territory, and business commitment. Contact our partnership team to discuss opportunities.",
+  faq_q14: "What is your relationship with Al Barengi Group?",
+  faq_a14:
+    "B2B Distribution operates under the Al Barengi Group umbrella, benefiting from over 30 years of experience in the Syrian market. This provides us with strong financial backing and market knowledge.",
+  faq_q15: "How can I contact customer support?",
+  faq_a15:
+    "Our customer support team is available via phone at +963 11 123 4567 or email at info@b2bdistribution.sy. We respond to all inquiries within 24 hours during business days.",
 };

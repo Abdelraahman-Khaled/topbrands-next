@@ -1,11 +1,10 @@
 "use client"
 import { useState, useEffect } from "react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next"
 import { Store, MapPin, Truck, Heart } from "lucide-react";
 export default function OurCustomers() {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const customers = [
     {
       name: "Union Coop",
@@ -102,11 +101,11 @@ export default function OurCustomers() {
       <div className="absolute top-20 left-10 w-96 h-96 bg-[#14B8A6]/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#F7E326]/5 rounded-full blur-3xl"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="flex justify-center items-center  mb-4">
-            <span className="flex gap-3 items-center justify-center px-5 py-3 bg-gradient-to-r from-[#14B8A61A] to-[#0D94881A]  rounded-full text-sm font-bold uppercase tracking-wider">
+            <span className="flex gap-3 items-center justify-center px-5 py-3 text-[#4B4F54] bg-linear-to-r from-[#14B8A61A] to-[#0D94881A]  rounded-full text-sm font-bold uppercase tracking-wider">
               <svg
                 width="16"
                 height="15"
@@ -125,7 +124,7 @@ export default function OurCustomers() {
           <h2 className="text-5xl font-bold text-[#000000] mb-6">
             {t("our_customers")}
           </h2>
-          <p className="text-xl text-[#4B4F54] max-w-3xl mx-auto font-medium">
+          <p className="text-xl text-[#4B5563] max-w-3xl mx-auto font-medium">
             {t("Trusted_Partners_desc")}
           </p>
         </div>
@@ -170,7 +169,7 @@ export default function OurCustomers() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat) => (
             <div

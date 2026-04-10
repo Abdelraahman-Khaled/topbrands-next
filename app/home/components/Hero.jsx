@@ -1,7 +1,9 @@
-import { useTranslation } from "next-i18next";
+"use client";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
+
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -15,7 +17,7 @@ export default function Hero() {
             className="w-full h-full"
           />
           {/* Overlay gradient over the image */}
-          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-black/30 to-black/40"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-transparent via-black/30 to-black/40"></div>
         </div>
       </div>
 
@@ -31,18 +33,18 @@ export default function Hero() {
         className="absolute top-0 right-[25%] z-0 w-[4px] h-full" // Adjust width and height as needed
         style={{
           background:
-            "linear-gradient(to 135deg, #F7E32600 0%, #F7E32699 60%, #F7E32600 100%)",
+            "linear-gradient(135deg, #F7E32600 0%, #F7E32699 60%, #F7E32600 100%)",
           transform: "translateX(-50%) rotate(15deg)", // هنا الزاوية (rotate) عشان تخليه مايل
         }}
       ></div>
       {/* Content */}
-      <div className="relative flex z-10 max-w-7xl mx-auto px-6 py-32 text-start w-full mt-12 md:mt-24 mb-12">
+      <div className="relative flex z-10 max-w-7xl mx-auto px-8 py-32 text-start w-full mt-12 md:mt-24 mb-12">
         <div className="w-3/4"></div>
         <div className="space-y-8  flex flex-col items-start w-full">
           {/* Badge */}
           <div className="inline-flex animate-fade-in mb-4">
             <span className="px-[18px] py-[8px] text-white rounded-full text-base font-bold uppercase tracking-wider border border-2 border-[#FFFFFF66]">
-              {t("years_market")}
+              {t("years_group")}
             </span>
           </div>
 

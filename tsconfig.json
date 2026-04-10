@@ -30,7 +30,7 @@
     "**/*.mts",
     "**/*.ts",
     "**/*.tsx"
-, "app/i18n/local/en/common.js"  ],
+, "app/i18n/local/en/common.js", "tailwind.config.js"  ],
   "exclude": [
     "node_modules"
   ]

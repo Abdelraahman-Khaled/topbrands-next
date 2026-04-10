@@ -1,8 +1,11 @@
+"use client"
+import { useSearchParams } from "next/navigation";
 
-import { useSearchParams } from 'react-router-dom';
 
-export default function ProductsPage() {
-  const [searchParams] = useSearchParams();
+import { Suspense } from "react";
+
+function ProductsContent() {
+  const searchParams = useSearchParams();
   const categoryParam = searchParams.get('category');
 
   const categories = [
@@ -51,15 +54,13 @@ export default function ProductsPage() {
     ? allProducts.filter(p => p.category === categoryParam)
     : allProducts;
 
-  const getCategoryName = (categoryId: string) => {
+  const getCategoryName = (categoryId) => {
     const cat = categories.find(c => c.id === categoryId);
     return cat ? cat.name : categoryId;
   };
 
   return (
-    <div className="min-h-screen bg-white">
-
-
+    <>
       {/* Hero Section with Image */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
@@ -192,8 +193,16 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
+    </>
+  );
+}
 
-
+export default function ProductsPage() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Suspense fallback={<div>Loading Products...</div>}>
+        <ProductsContent />
+      </Suspense>
     </div>
   );
 }

@@ -1,22 +1,13 @@
+"use client";
 import { useState } from "react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 
-interface Testimonial {
-  id: number;
-  name: string;
-  position: string;
-  company: string;
-  image: string;
-  rating: number;
-  text: string;
-  color: string;
-}
 
 export default function Testimonials() {
   const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const testimonials: Testimonial[] = [
+  const testimonials = [
     {
       id: 1,
       name: t("testimonial_1_name"),

@@ -1,8 +1,8 @@
-import { useTranslation } from "next-i18next";
+"use client";
+import { useTranslation } from "react-i18next";
 
 export default function Services() {
-  const { t } = useTranslation();
-
+  const { t } = useTranslation()
   const services = [
     {
       title: t("distribution") || "Distribution",
@@ -103,7 +103,7 @@ export default function Services() {
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#F7E326] opacity-[0.2] rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#F7E326] opacity-[0.2] rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6   relative z-10">
+      <div className="max-w-7xl mx-auto px-8   relative z-10">
         {/* Header Section (DIV-213) */}
         <div className="flex flex-col items-center  justify-between gap-1  mb-16">
           <span className="px-[20px] py-[8px] bg-[#4B4F54] text-sm text-white rounded-full font-bold tracking-wider ">

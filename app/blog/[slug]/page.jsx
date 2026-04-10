@@ -1,11 +1,10 @@
 
+'use client';
 import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import Navbar from '../../../components/feature/Navbar';
-import Footer from '../../../components/feature/Footer';
-
-
-
+import { useParams } from 'next/navigation';
+import Link from 'next/link';
+import Subscribe from '../../components/Subscribe';
+import { useTranslation } from 'react-i18next';
 const blogPosts = [
   {
     id: 1,
@@ -285,6 +284,7 @@ const blogPosts = [
 ];
 
 export default function BlogArticle() {
+  const { t } = useTranslation();
   const { id } = useParams();
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [article, setArticle] = useState(null);
@@ -335,7 +335,7 @@ export default function BlogArticle() {
         <div className="text-center">
           <i className="ri-article-line text-6xl text-gray-300 mb-4"></i>
           <p className="text-xl text-gray-500" style={{ fontFamily: 'Quicksand' }}>Article not found</p>
-          <Link to="/blog" className="mt-4 inline-block text-[#14B8A6] font-bold hover:underline" style={{ fontFamily: 'Quicksand' }}>
+          <Link href="/blog" className="mt-4 inline-block text-[#14B8A6] font-bold hover:underline" style={{ fontFamily: 'Quicksand' }}>
             Back to Blog
           </Link>
         </div>
@@ -349,7 +349,7 @@ export default function BlogArticle() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 bg-gradient-to-br from-[#000000] to-[#1a1a1a]">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="mb-6">
             <span className="inline-block px-6 py-2 bg-[#F7E326] text-[#000000] rounded-full text-sm font-bold uppercase tracking-wider" style={{ fontFamily: 'Quicksand' }}>
               {article.category}
@@ -360,17 +360,17 @@ export default function BlogArticle() {
           </h1>
           <div className="flex flex-wrap items-center gap-6 text-gray-300">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#14B8A6]">
+              <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-yellow">
                 <img src={article.authorImage} alt={article.author} className="w-full h-full object-cover object-top" />
               </div>
               <span className="font-semibold" style={{ fontFamily: 'Quicksand' }}>{article.author}</span>
             </div>
             <span className="flex items-center gap-2">
-              <i className="ri-calendar-line text-[#14B8A6]"></i>
+              <i className="ri-calendar-line text-brand-charcoal"></i>
               {article.date}
             </span>
             <span className="flex items-center gap-2">
-              <i className="ri-time-line text-[#FF6B6B]"></i>
+              <i className="ri-time-line text-brand-charcoal"></i>
               {article.readTime}
             </span>
           </div>
@@ -379,7 +379,7 @@ export default function BlogArticle() {
 
       {/* Featured Image */}
       <section className="relative -mt-8">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="rounded-2xl overflow-hidden shadow-2xl">
             <img src={article.image} alt={article.title} className="w-full h-[500px] object-cover object-top" />
           </div>
@@ -388,7 +388,7 @@ export default function BlogArticle() {
 
       {/* Article Content */}
       <section className="py-16">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6">
           <div className="flex gap-12">
             {/* Sidebar - Social Share */}
             <div className="hidden lg:block w-16 flex-shrink-0">
@@ -396,7 +396,7 @@ export default function BlogArticle() {
                 <div className="relative">
                   <button
                     onClick={() => setShowShareMenu(!showShareMenu)}
-                    className="w-12 h-12 flex items-center justify-center bg-[#14B8A6] text-white rounded-full hover:bg-[#0D9488] transition-all shadow-lg cursor-pointer"
+                    className="w-12 h-12 flex items-center justify-center bg-brand-yellow text-black rounded-full hover:bg-black hover:text-white duration-300 transition-all shadow-lg cursor-pointer"
                   >
                     <i className="ri-share-line text-xl"></i>
                   </button>
@@ -435,12 +435,12 @@ export default function BlogArticle() {
                     </div>
                   )}
                 </div>
-                <button className="w-12 h-12 flex items-center justify-center bg-[#FF6B6B] text-white rounded-full hover:bg-[#FF5252] transition-all shadow-lg cursor-pointer">
+                {/* <button className="w-12 h-12 flex items-center justify-center bg-[#FF6B6B] text-white rounded-full hover:bg-[#FF5252] transition-all shadow-lg cursor-pointer">
                   <i className="ri-heart-line text-xl"></i>
                 </button>
                 <button className="w-12 h-12 flex items-center justify-center bg-[#F7E326] text-[#000000] rounded-full hover:bg-[#E5D324] transition-all shadow-lg cursor-pointer">
                   <i className="ri-bookmark-line text-xl"></i>
-                </button>
+                </button> */}
               </div>
             </div>
 
@@ -453,7 +453,7 @@ export default function BlogArticle() {
               />
 
               {/* Tags */}
-              <div className="mt-12 pt-8 border-t-2 border-[#DEE3EB]">
+              {/* <div className="mt-12 pt-8 border-t-2 border-[#DEE3EB]">
                 <h3 className="text-xl font-bold text-[#000000] mb-4" style={{ fontFamily: 'Quicksand' }}>
                   Tags
                 </h3>
@@ -468,10 +468,10 @@ export default function BlogArticle() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               {/* Author Bio */}
-              <div className="mt-12 p-8 bg-gradient-to-br from-[#DEE3EB]/50 to-white rounded-2xl border-2 border-[#DEE3EB]">
+              {/* <div className="mt-12 p-8 bg-gradient-to-br from-[#DEE3EB]/50 to-white rounded-2xl border-2 border-[#DEE3EB]">
                 <div className="flex items-start gap-6">
                   <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-[#14B8A6] flex-shrink-0">
                     <img src={article.authorImage} alt={article.author} className="w-full h-full object-cover object-top" />
@@ -485,7 +485,7 @@ export default function BlogArticle() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Mobile Share Buttons */}
               <div className="lg:hidden mt-8 flex justify-center gap-4">
@@ -539,9 +539,9 @@ export default function BlogArticle() {
           <div className="grid md:grid-cols-3 gap-8">
             {relatedArticles.map((relatedArticle) => (
               <Link
-                to={`/blog/${relatedArticle.id}`}
+                href={`/blog/${relatedArticle.id}`}
                 key={relatedArticle.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group border-2 border-transparent hover:border-[#14B8A6] block"
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group border-2 border-transparent hover:border-brand-yellow block"
               >
                 <div className="relative h-56 overflow-hidden">
                   <img
@@ -558,18 +558,18 @@ export default function BlogArticle() {
                 <div className="p-6">
                   <div className="flex items-center gap-4 text-sm text-[#4B4F54] mb-3" style={{ fontFamily: 'Quicksand' }}>
                     <span className="flex items-center gap-1">
-                      <i className="ri-calendar-line text-[#14B8A6]"></i>
+                      <i className="ri-calendar-line text-brand-charcoal"></i>
                       {relatedArticle.date}
                     </span>
                     <span className="flex items-center gap-1">
-                      <i className="ri-time-line text-[#FF6B6B]"></i>
+                      <i className="ri-time-line text-brand-charcoal"></i>
                       {relatedArticle.readTime}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#000000] mb-3 group-hover:text-[#14B8A6] transition-colors line-clamp-2" style={{ fontFamily: 'Quicksand' }}>
+                  <h3 className="text-xl font-bold text-[#000000] mb-3 transition-colors line-clamp-2" style={{ fontFamily: 'Quicksand' }}>
                     {relatedArticle.title}
                   </h3>
-                  <span className="text-[#14B8A6] font-bold flex items-center gap-2 group-hover:gap-3 transition-all whitespace-nowrap" style={{ fontFamily: 'Quicksand' }}>
+                  <span className="text-brand-charcoal font-bold flex items-center gap-2 group-hover:gap-3 transition-all whitespace-nowrap" style={{ fontFamily: 'Quicksand' }}>
                     Read More
                     <i className="ri-arrow-right-line"></i>
                   </span>
@@ -581,38 +581,8 @@ export default function BlogArticle() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-20 bg-gradient-to-br from-[#14B8A6] via-[#0D9488] to-[#14B8A6] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#F7E326] rounded-full blur-3xl"></div>
-        </div>
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <div className="mb-6">
-            <i className="ri-mail-line text-6xl text-white"></i>
-          </div>
-          <h2 className="text-5xl font-bold text-white mb-4" style={{ fontFamily: 'Quicksand' }}>
-            Never Miss an Update
-          </h2>
-          <p className="text-xl text-white/90 mb-8 font-medium" style={{ fontFamily: 'Quicksand' }}>
-            Subscribe to receive the latest insights and market analysis directly to your inbox
-          </p>
-          <form className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="flex-1 px-6 py-4 rounded-lg border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder-white/70 focus:border-white focus:bg-white/20 outline-none font-medium"
-              style={{ fontFamily: 'Quicksand' }}
-            />
-            <button
-              type="submit"
-              className="bg-[#F7E326] text-[#000000] px-8 py-4 rounded-lg font-bold hover:bg-white transition-all shadow-lg whitespace-nowrap cursor-pointer"
-              style={{ fontFamily: 'Quicksand' }}
-            >
-              Subscribe Now
-            </button>
-          </form>
-        </div>
-      </section>
+      <Subscribe title={t("Never_Miss_an_Update")} mail={true} />
+
 
 
 

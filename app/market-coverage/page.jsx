@@ -1,6 +1,7 @@
-import { useTranslation } from "next-i18next";
-import Navbar from "../../components/feature/Navbar";
-import Footer from "../../components/feature/Footer";
+"use client";
+import { useTranslation } from "react-i18next";
+import GlobalCTA from "../components/GlobalCTA";
+import HeroSection from "../components/HeroSection";
 
 export default function MarketCoveragePage() {
   const { t } = useTranslation();
@@ -94,42 +95,16 @@ export default function MarketCoveragePage() {
 
   return (
     <div className="min-h-screen bg-white">
-
-
-      {/* Hero Section with Image */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://readdy.ai/api/search-image?query=Syria%20map%20with%20distribution%20network%20routes%20connecting%20major%20cities%20Damascus%20Aleppo%20Homs%20Latakia%20logistics%20infrastructure%20modern%20business%20visualization%20professional%20corporate%20presentation%20blue%20teal%20orange%20color%20scheme&width=1920&height=600&seq=coverage-hero-main&orientation=landscape"
-            alt="Market Coverage"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="flex items-center space-x-4 rtl:space-x-reverse mb-8">
-            <span className="text-sm font-semibold text-brand-teal tracking-widest uppercase">
-              {t("market_coverage_nav")}
-            </span>
-            <div className="h-px w-16 bg-brand-teal"></div>
-          </div>
-          <h1 className="text-6xl lg:text-7xl font-bold text-white mb-6">
-            {t("nationwide_fmcg")}
-            <br />
-            <span className="text-brand-yellow">
-              {t("distribution_network")}
-            </span>
-          </h1>
-          <p className="text-2xl lg:text-3xl text-gray-200 leading-relaxed max-w-4xl font-light">
-            {t("market_penetration_desc_1")}
-            <strong className="font-semibold text-brand-yellow">
-              {t("market_penetration_desc_2")}
-            </strong>
-            {t("market_penetration_desc_3")}
-          </p>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <HeroSection
+        img={"https://readdy.ai/api/search-image?query=Syria%20map%20with%20distribution%20network%20routes%20connecting%20major%20cities%20Damascus%20Aleppo%20Homs%20Latakia%20logistics%20infrastructure%20modern%20business%20visualization%20professional%20corporate%20presentation%20blue%20teal%20orange%20color%20scheme&width=1920&height=600&seq=coverage-hero-main&orientation=landscape"}
+        title={t("nationwide_fmcg")}
+        yellowTitle={t("distribution_network")}
+        subtitle={t("market_coverage_nav")}
+        description1={t("market_penetration_desc_1")}
+        yellowText={t("market_penetration_desc_2")}
+        description2={t("market_penetration_desc_3")}
+      />
 
       {/* Coverage Map Section */}
       <section className="py-20 lg:py-28 bg-white">
@@ -141,13 +116,13 @@ export default function MarketCoveragePage() {
                 alt="Syria Market Coverage Map"
                 className="w-full h-full object-cover object-top"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8">
                 <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6">
                   <p className="text-sm text-brand-charcoal font-medium mb-2">
                     {t("distribution_network")}
                   </p>
-                  <p className="text-2xl font-bold text-brand-jet">
+                  <p className="text-2xl font-bold text-black">
                     {t("all_major_syrian_cities")}
                   </p>
                 </div>
@@ -155,7 +130,7 @@ export default function MarketCoveragePage() {
             </div>
 
             <div className="space-y-6">
-              <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-8">
+              <h2 className="text-4xl lg:text-5xl font-bold text-black mb-8">
                 {t("coverage_areas")}
               </h2>
               {coverageAreas.map((area, index) => (
@@ -165,10 +140,10 @@ export default function MarketCoveragePage() {
                 >
                   <div className="flex items-center space-x-4 rtl:space-x-reverse">
                     <div className="w-14 h-14 flex items-center justify-center bg-brand-yellow rounded-xl group-hover:scale-110 transition-transform duration-300">
-                      <i className={`${area.icon} text-2xl text-brand-jet`}></i>
+                      <i className={`${area.icon} text-2xl text-black`}></i>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-brand-jet mb-1">
+                      <h3 className="text-2xl font-bold text-black mb-1">
                         {area.city}
                       </h3>
                       <p className="text-sm text-brand-charcoal">
@@ -193,7 +168,7 @@ export default function MarketCoveragePage() {
       <section className="py-20 lg:py-28 bg-brand-paleblue">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-4">
+            <h2 className="text-5xl lg:text-6xl font-bold text-black mb-4">
               {t("distribution_channels")}
             </h2>
             <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">
@@ -205,20 +180,20 @@ export default function MarketCoveragePage() {
             {channels.map((channel, index) => (
               <div
                 key={index}
-                className="bg-white rounded-3xl p-10 hover:shadow-2xl transition-all duration-300 border-l-4 rtl:border-l-0 rtl:border-r-4 border-brand-teal"
+                className="bg-white rounded-3xl p-10 hover:shadow-2xl transition-all duration-300 border-l-4 rtl:border-l-0 rtl:border-r-4 border-brand-charcoal"
               >
-                <div className="w-20 h-20 flex items-center justify-center bg-brand-teal rounded-2xl mb-6">
+                <div className="w-20 h-20 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6">
                   <i className={`${channel.icon} text-4xl text-white`}></i>
                 </div>
-                <h3 className="text-3xl font-bold text-brand-jet mb-4">
+                <h3 className="text-3xl font-bold text-black mb-4">
                   {channel.title}
                 </h3>
                 <p className="text-base text-brand-charcoal leading-relaxed mb-6">
                   {channel.description}
                 </p>
                 <div className="inline-flex items-center space-x-2 rtl:space-x-reverse px-4 py-2 bg-brand-paleblue rounded-full">
-                  <i className="ri-check-line text-brand-teal"></i>
-                  <span className="text-sm font-semibold text-brand-jet">
+                  <i className="ri-check-line text-brand-charcoal"></i>
+                  <span className="text-sm font-semibold text-black">
                     {channel.coverage}
                   </span>
                 </div>
@@ -232,7 +207,7 @@ export default function MarketCoveragePage() {
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-4">
+            <h2 className="text-5xl lg:text-6xl font-bold text-black mb-4">
               {t("distribution_capabilities")}
             </h2>
             <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">
@@ -244,17 +219,17 @@ export default function MarketCoveragePage() {
             {capabilities.map((capability, index) => (
               <div
                 key={index}
-                className="bg-brand-paleblue rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-brand-coral"
+                className="bg-brand-paleblue rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-brand-charcoal"
               >
                 <div
-                  className={`w-16 h-16 flex items-center justify-center ${index % 2 === 0 ? "bg-brand-teal" : "bg-brand-coral"} rounded-xl mb-6 mx-auto`}
+                  className={`w-16 h-16 flex items-center justify-center ${index % 2 === 0 ? "bg-brand-charcoal" : "bg-brand-yellow text-black"} rounded-xl mb-6 mx-auto`}
                 >
-                  <i className={`${capability.icon} text-3xl text-white`}></i>
+                  <i className={`${capability.icon} text-3xl`}></i>
                 </div>
                 <p className="text-sm text-brand-charcoal font-medium mb-2">
                   {capability.title}
                 </p>
-                <p className="text-5xl font-bold text-brand-jet mb-2">
+                <p className="text-4xl font-bold text-black mb-2">
                   {capability.value}
                 </p>
                 <p className="text-sm text-brand-charcoal">
@@ -277,7 +252,7 @@ export default function MarketCoveragePage() {
                 </span>
                 <div className="h-px w-16 bg-brand-charcoal"></div>
               </div>
-              <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet">
+              <h2 className="text-5xl lg:text-6xl font-bold text-black">
                 {t("advanced_logistics_infra")}
               </h2>
               <p className="text-xl text-brand-charcoal leading-relaxed">
@@ -287,10 +262,10 @@ export default function MarketCoveragePage() {
               <div className="space-y-4">
                 <div className="flex items-start space-x-4 rtl:space-x-reverse">
                   <div className="w-8 h-8 flex items-center justify-center bg-brand-yellow rounded-lg mt-1 shrink-0">
-                    <i className="ri-check-line text-brand-jet"></i>
+                    <i className="ri-check-line text-black"></i>
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-brand-jet mb-2">
+                    <h4 className="text-xl font-bold text-black mb-2">
                       {t("temp_controlled_storage")}
                     </h4>
                     <p className="text-base text-brand-charcoal">
@@ -301,10 +276,10 @@ export default function MarketCoveragePage() {
 
                 <div className="flex items-start space-x-4 rtl:space-x-reverse">
                   <div className="w-8 h-8 flex items-center justify-center bg-brand-yellow rounded-lg mt-1 shrink-0">
-                    <i className="ri-check-line text-brand-jet"></i>
+                    <i className="ri-check-line text-black"></i>
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-brand-jet mb-2">
+                    <h4 className="text-xl font-bold text-black mb-2">
                       {t("real_time_tracking")}
                     </h4>
                     <p className="text-base text-brand-charcoal">
@@ -315,10 +290,10 @@ export default function MarketCoveragePage() {
 
                 <div className="flex items-start space-x-4 rtl:space-x-reverse">
                   <div className="w-8 h-8 flex items-center justify-center bg-brand-yellow rounded-lg mt-1 shrink-0">
-                    <i className="ri-check-line text-brand-jet"></i>
+                    <i className="ri-check-line text-black"></i>
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-brand-jet mb-2">
+                    <h4 className="text-xl font-bold text-black mb-2">
                       {t("optimized_routes")}
                     </h4>
                     <p className="text-base text-brand-charcoal">
@@ -335,32 +310,19 @@ export default function MarketCoveragePage() {
                 alt="Logistics Infrastructure"
                 className="w-full h-full object-cover object-top"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-brand-teal to-brand-charcoal">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            {t("expand_market_reach")}
-          </h2>
-          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-            {t("partner_nationwide_fmcg")}
-          </p>
-          <a
-            href="/become-a-partner"
-            className="inline-flex items-center space-x-3 rtl:space-x-reverse px-10 py-4 bg-brand-coral text-white rounded-full font-semibold text-lg hover:brightness-110 transition-all shadow-xl hover:shadow-2xl whitespace-nowrap cursor-pointer"
-          >
-            <span>{t("become_partner")}</span>
-            <i className="ri-arrow-right-line text-xl rtl:rotate-180"></i>
-          </a>
-        </div>
-      </section>
-
-
-    </div>
+      <GlobalCTA
+        title={t("expand_market_reach")}
+        subtitle={t("join_growing_portfolio")}
+        btnText={t("become_a_partner")}
+        btnLink="/become-a-partner"
+      />
+     </div>
   );
 }

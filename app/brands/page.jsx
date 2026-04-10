@@ -1,11 +1,15 @@
-import { useSearchParams, Link } from "react-router-dom";
-import { useTranslation } from "next-i18next";
-import Navbar from "../../components/feature/Navbar";
-import Footer from "../../components/feature/Footer";
+"use client"
+export const dynamic = 'force-dynamic';
+import { useTranslation } from "react-i18next";
+import { useSearchParams } from "next/navigation";
+import Link from "next/link";
+import HeroSection from "../components/HeroSection";
+import GlobalCTA from "../components/GlobalCTA";
+import { Suspense } from "react";
 
-export default function BrandsPage() {
+function BrandsContent() {
   const { t } = useTranslation();
-  const [searchParams] = useSearchParams();
+  const searchParams = useSearchParams();
   const typeParam = searchParams.get("type");
   const categoryParam = searchParams.get("category");
 
@@ -210,55 +214,26 @@ export default function BrandsPage() {
   const currentCategory = categories.find((c) => c.id === categoryParam);
 
   return (
-    <div className="min-h-screen bg-white">
-
-
+    <>
       {/* Hero Section with Image */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://readdy.ai/api/search-image?query=diverse%20international%20and%20regional%20FMCG%20brand%20products%20arranged%20professionally%20on%20display%20shelves%20colorful%20packaging%20modern%20retail%20environment%20bright%20lighting%20organized%20presentation%20Syria%20Damascus&width=1920&height=600&seq=brands-hero-main&orientation=landscape"
-            alt="Brand Portfolio"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
-        </div>
+      <HeroSection
+        title={t("trusted_fmcg_brands")}
+        subtitle={t("brand_portfolio_nav")}
+        description1={t("brand_portfolio_desc_1")}
+        yellowText={t("brand_portfolio_desc_2")}
+        description2={t("brand_portfolio_desc_3")}
+        img={"https://readdy.ai/api/search-image?query=diverse%20international%20and%20regional%20FMCG%20brand%20products%20arranged%20professionally%20on%20display%20shelves%20colorful%20packaging%20modern%20retail%20environment%20bright%20lighting%20organized%20presentation%20Syria%20Damascus&width=1920&height=600&seq=brands-hero-main&orientation=landscape"} />
 
-        <div className="relative max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="flex items-center space-x-4 rtl:space-x-reverse mb-8">
-            <span className="text-sm font-semibold text-brand-teal tracking-widest uppercase">
-              {t("brand_portfolio_nav")}
-            </span>
-            <div className="h-px w-16 bg-brand-teal"></div>
-          </div>
-          <h1 className="text-6xl lg:text-7xl font-bold text-white mb-6">
-            {currentCategory
-              ? currentCategory.name
-              : typeParam === "international"
-                ? t("international_brands")
-                : typeParam === "regional"
-                  ? t("regional_brands")
-                  : t("trusted_fmcg_brands")}
-          </h1>
-          <p className="text-2xl lg:text-3xl text-gray-200 leading-relaxed max-w-4xl font-light">
-            {t("brand_portfolio_desc_1")}
-            <strong className="font-semibold text-brand-yellow">
-              {t("brand_portfolio_desc_2")}
-            </strong>
-            {t("brand_portfolio_desc_3")}
-          </p>
-        </div>
-      </section>
 
       {/* Brand Type Filter */}
-      <section className="py-12 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-8 ">
           <div className="flex flex-wrap items-center gap-4">
             <a
               href="/brands"
               className={`px-6 py-3 rounded-full font-semibold transition-all whitespace-nowrap cursor-pointer ${!typeParam && !categoryParam
-                ? "bg-brand-teal text-white"
-                : "bg-brand-paleblue text-brand-charcoal hover:bg-brand-teal hover:text-white"
+                ? "bg-brand-yellow text-black  text-base"
+                : "bg-white text-brand-charcoal hover:bg-brand-yellow hover:text-black"
                 }`}
             >
               {t("all_brands")}
@@ -266,8 +241,8 @@ export default function BrandsPage() {
             <a
               href="/brands?type=international"
               className={`px-6 py-3 rounded-full font-semibold transition-all whitespace-nowrap cursor-pointer flex items-center space-x-2 rtl:space-x-reverse ${typeParam === "international" && !categoryParam
-                ? "bg-brand-teal text-white"
-                : "bg-brand-paleblue text-brand-charcoal hover:bg-brand-teal hover:text-white"
+                ? "bg-brand-yellow text-black  text-base"
+                : "bg-white text-brand-charcoal hover:bg-brand-yellow hover:text-black"
                 }`}
             >
               <div className="w-5 h-5 flex items-center justify-center">
@@ -278,8 +253,8 @@ export default function BrandsPage() {
             <a
               href="/brands?type=regional"
               className={`px-6 py-3 rounded-full font-semibold transition-all whitespace-nowrap cursor-pointer flex items-center space-x-2 rtl:space-x-reverse ${typeParam === "regional" && !categoryParam
-                ? "bg-brand-teal text-white"
-                : "bg-brand-paleblue text-brand-charcoal hover:bg-brand-teal hover:text-white"
+                ? "bg-brand-yellow text-black  text-base"
+                : "bg-white text-brand-charcoal hover:bg-brand-yellow hover:text-black"
                 }`}
             >
               <div className="w-5 h-5 flex items-center justify-center">
@@ -291,49 +266,9 @@ export default function BrandsPage() {
         </div>
       </section>
 
-      {/* Categories Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-4">
-              {t("product_categories")}
-            </h2>
-            <p className="text-xl text-brand-charcoal">
-              {t("comprehensive_fmcg_dist")}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {categories.map((category, index) => (
-              <a
-                key={index}
-                href={`/brands?category=${category.id}`}
-                className={`group bg-brand-paleblue rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border-2 text-center cursor-pointer block ${categoryParam === category.id
-                  ? "border-brand-teal"
-                  : "border-transparent hover:border-brand-teal"
-                  }`}
-              >
-                <div
-                  className={`w-16 h-16 flex items-center justify-center ${category.color} rounded-xl mb-4 mx-auto group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <i className={`${category.icon} text-3xl text-white`}></i>
-                </div>
-                <h3 className="text-xl font-bold text-brand-jet mb-2">
-                  {category.name}
-                </h3>
-                <span className="text-sm text-brand-charcoal group-hover:text-brand-teal transition-colors flex items-center justify-center space-x-1 rtl:space-x-reverse">
-                  <span>{t("view_brands")}</span>
-                  <i className="ri-arrow-right-line group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180 transition-transform"></i>
-                </span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Brands Grid */}
-      <section className="py-20 bg-brand-paleblue">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-8 ">
           <div className="flex items-center justify-between mb-12">
             <p className="text-lg text-brand-charcoal">
               {t("showing")}{" "}
@@ -361,10 +296,10 @@ export default function BrandsPage() {
             {filteredBrands.map((brand) => (
               <Link
                 key={brand.id}
-                to={`/brands/${brand.slug}`}
-                className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-brand-coral cursor-pointer block"
+                href={`/brands/${brand.slug}`}
+                className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-transparent cursor-pointer block"
               >
-                <div className="w-full h-40 flex items-center justify-center bg-brand-paleblue p-6">
+                <div className="w-full h-40 flex items-center justify-center bg-white p-6">
                   <img
                     src={brand.logo}
                     alt={brand.name}
@@ -380,7 +315,7 @@ export default function BrandsPage() {
                       {brand.origin}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-brand-jet mb-3 group-hover:text-brand-teal transition-colors">
+                  <h3 className="text-2xl font-bold text-brand-jet mb-3 transition-colors">
                     {brand.name}
                   </h3>
                   <p className="text-sm text-brand-charcoal leading-relaxed mb-4">
@@ -409,25 +344,19 @@ export default function BrandsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-brand-charcoal to-brand-jet">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            {t("want_your_brand_distributed")}
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            {t("join_growing_portfolio")}
-          </p>
-          <a
-            href="/become-a-partner"
-            className="inline-flex items-center space-x-3 rtl:space-x-reverse px-10 py-4 bg-brand-coral text-white rounded-full font-semibold text-lg hover:brightness-110 transition-all shadow-xl hover:shadow-2xl whitespace-nowrap cursor-pointer"
-          >
-            <span>{t("become_partner")}</span>
-            <i className="ri-arrow-right-line text-xl rtl:rotate-180"></i>
-          </a>
-        </div>
-      </section>
+      <GlobalCTA title={t("want_your_brand_distributed")}
+        subtitle={t("join_growing_portfolio")}
+      />
+    </>
+  );
+}
 
-
+export default function BrandsPage() {
+  return (
+    <div className="min-h-screen bg-[#DEE3EB]">
+      <Suspense fallback={<div>Loading Brands...</div>}>
+        <BrandsContent />
+      </Suspense>
     </div>
   );
 }

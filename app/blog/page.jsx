@@ -1,6 +1,8 @@
+"use client";
 import { useState } from "react";
 import Link from "next/link";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
+import Subscribe from "../components/Subscribe";
 
 
 
@@ -161,7 +163,7 @@ export default function Blog() {
               {t("insights_updates")}
             </h1>
             <p
-              className="text-xl text-gray-200 font-medium"
+              className="text-xl text-[#E5E7EB] font-medium"
               style={{ fontFamily: "Quicksand" }}
             >
               {t("stay_informed_blog")}
@@ -171,7 +173,7 @@ export default function Blog() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 bg-gradient-to-r from-[#DEE3EB] to-white border-b border-[#DEE3EB]">
+      <section className="py-8 bg-white border-[#DEE3EB]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-wrap gap-3 justify-center">
             {categoryKeys.map((category) => (
@@ -200,12 +202,12 @@ export default function Blog() {
                 className="text-3xl font-bold text-[#000000] flex items-center gap-3"
                 style={{ fontFamily: "Quicksand" }}
               >
-                <i className="ri-fire-fill text-[#FF6B6B] text-4xl"></i>
+                <i className="ri-fire-fill text-brand-yellow text-4xl"></i>
                 {t("featured_article")}
               </h2>
             </div>
             <Link
-              to={`/blog/${blogPosts[0].id}`}
+              href={`/blog/${blogPosts[0].id}`}
               className="block bg-gradient-to-br from-[#000000] to-[#1a1a1a] rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 cursor-pointer group"
             >
               <div className="grid md:grid-cols-2 gap-0">
@@ -231,16 +233,16 @@ export default function Blog() {
                     style={{ fontFamily: "Quicksand" }}
                   >
                     <span className="flex items-center gap-2 rtl:flex-row-reverse bg-white/10 px-4 py-2 rounded-full">
-                      <i className="ri-calendar-line text-[#14B8A6]"></i>
+                      <i className="ri-calendar-line text-brand-charcoal"></i>
                       {blogPosts[0].date}
                     </span>
                     <span className="flex items-center gap-2 rtl:flex-row-reverse bg-white/10 px-4 py-2 rounded-full">
-                      <i className="ri-time-line text-[#FF6B6B]"></i>
+                      <i className="ri-time-line text-brand-yellow"></i>
                       {blogPosts[0].readTime}
                     </span>
                   </div>
                   <h3
-                    className="text-4xl font-bold text-white mb-4 group-hover:text-[#F7E326] transition-colors"
+                    className="text-4xl font-bold text-white mb-4 group-hover:text-[#F7E326] duration-300 transition-colors"
                     style={{ fontFamily: "Quicksand" }}
                   >
                     {t(blogPosts[0].titleKey)}
@@ -256,11 +258,11 @@ export default function Blog() {
                       className="text-sm text-gray-400 font-semibold flex items-center gap-2 rtl:flex-row-reverse"
                       style={{ fontFamily: "Quicksand" }}
                     >
-                      <i className="ri-user-line text-[#14B8A6]"></i>
+                      <i className="ri-user-line text-brand-charcoal"></i>
                       {t(blogPosts[0].authorKey)}
                     </span>
                     <span
-                      className="bg-[#F7E326] text-[#000000] px-6 py-3 rounded-lg font-bold flex items-center gap-2 rtl:flex-row-reverse group-hover:bg-white transition-all whitespace-nowrap"
+                      className="bg-[#F7E326] text-[#000000] px-6 py-3 duration-300 rounded-lg font-bold flex items-center gap-2 rtl:flex-row-reverse group-hover:bg-white transition-all whitespace-nowrap"
                       style={{ fontFamily: "Quicksand" }}
                     >
                       {t("read_article")}
@@ -292,9 +294,9 @@ export default function Blog() {
               .slice(selectedCategory === "all" ? 1 : 0)
               .map((post) => (
                 <Link
-                  to={`/blog/${post.id}`}
+                  href={`/blog/${post.id}`}
                   key={post.id}
-                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group border-2 border-transparent hover:border-[#14B8A6] block"
+                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group border-2 border-transparent hover:border-gray-200 block"
                 >
                   <div className="relative h-56 overflow-hidden">
                     <img
@@ -302,7 +304,7 @@ export default function Blog() {
                       alt={t(post.titleKey)}
                       className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute top-4 left-4 rtl:left-auto rtl:right-4">
                       <span
                         className="bg-[#F7E326] text-[#000000] px-4 py-2 rounded-full text-sm font-bold shadow-lg"
@@ -318,16 +320,16 @@ export default function Blog() {
                       style={{ fontFamily: "Quicksand" }}
                     >
                       <span className="flex items-center gap-1 rtl:flex-row-reverse">
-                        <i className="ri-calendar-line text-[#14B8A6]"></i>
+                        <i className="ri-calendar-line text-brand-charcoal"></i>
                         {post.date}
                       </span>
                       <span className="flex items-center gap-1 rtl:flex-row-reverse">
-                        <i className="ri-time-line text-[#FF6B6B]"></i>
+                        <i className="ri-time-line text-brand-yellow"></i>
                         {post.readTime}
                       </span>
                     </div>
                     <h3
-                      className="text-xl font-bold text-[#000000] mb-3 group-hover:text-[#14B8A6] transition-colors line-clamp-2"
+                      className="text-xl font-bold text-[#000000] mb-3 group-hover:text-black transition-colors line-clamp-2"
                       style={{ fontFamily: "Quicksand" }}
                     >
                       {t(post.titleKey)}
@@ -346,7 +348,7 @@ export default function Blog() {
                         {t(post.authorKey)}
                       </span>
                       <span
-                        className="text-[#14B8A6] font-bold flex items-center gap-2 rtl:flex-row-reverse group-hover:gap-3 transition-all whitespace-nowrap"
+                        className="text-brand-charcoal font-bold flex items-center gap-2 rtl:flex-row-reverse group-hover:gap-3 transition-all whitespace-nowrap"
                         style={{ fontFamily: "Quicksand" }}
                       >
                         {t("read_more")}
@@ -361,44 +363,7 @@ export default function Blog() {
       </section>
 
       {/* Newsletter Subscription */}
-      <section className="py-20 bg-gradient-to-br from-[#14B8A6] via-[#0D9488] to-[#14B8A6] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#F7E326] rounded-full blur-3xl"></div>
-        </div>
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <div className="mb-6">
-            <i className="ri-mail-line text-6xl text-white"></i>
-          </div>
-          <h2
-            className="text-5xl font-bold text-white mb-4"
-            style={{ fontFamily: "Quicksand" }}
-          >
-            {t("subscribe_newsletter")}
-          </h2>
-          <p
-            className="text-xl text-white/90 mb-8 font-medium"
-            style={{ fontFamily: "Quicksand" }}
-          >
-            {t("get_latest_insights")}
-          </p>
-          <form className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-            <input
-              type="email"
-              placeholder={t("enter_email_address")}
-              className="flex-1 px-6 py-4 rounded-lg border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder-white/70 focus:border-white focus:bg-white/20 outline-none font-medium text-left rtl:text-right"
-              style={{ fontFamily: "Quicksand" }}
-            />
-            <button
-              type="submit"
-              className="bg-[#F7E326] text-[#000000] px-8 py-4 rounded-lg font-bold hover:bg-white transition-all shadow-lg whitespace-nowrap cursor-pointer"
-              style={{ fontFamily: "Quicksand" }}
-            >
-              {t("subscribe_now")}
-            </button>
-          </form>
-        </div>
-      </section>
+      <Subscribe title={t("newsletter_title")} mail={true} />
 
 
     </div>

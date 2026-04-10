@@ -1,4 +1,5 @@
-import { useTranslation } from "next-i18next";
+"use client";
+import { useTranslation } from "react-i18next";
 import {
   Clock,
   MapPin,
@@ -63,7 +64,7 @@ export default function WhyPartener() {
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
             <span className="px-5 py-2 bg-gradient-to-r from-[#F7E326] to-[#E5D324] text-black rounded-full text-sm font-bold tracking-wider">
-              {t("why_choose_us")}
+              {t("why_partner_with_us")}
             </span>
           </div>
           <h2 className="text-5xl font-bold text-white mb-6">
@@ -103,7 +104,7 @@ export default function WhyPartener() {
                     {item.title}
                   </h3>
 
-                  <p className="text-[#9CA3AF] text-base leading-relaxed font-light">
+                  <p className="text-[#D1D5DB] text-base leading-relaxed font-light">
                     {item.desc}
                   </p>
                 </div>
@@ -136,7 +137,7 @@ export default function WhyPartener() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 {/* زر Become a Partner */}
                 <button className="w-full sm:w-auto px-8 py-4 bg-[#F7E326] hover:bg-[#e5d222] text-black font-bold rounded-lg flex items-center justify-center gap-2 transition-all group">
-                  {t("become_partner")}
+                  {t("become_a_partner")}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
 

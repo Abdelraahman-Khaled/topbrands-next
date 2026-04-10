@@ -138,7 +138,7 @@ export default function CompanyStructurePage() {
                       alt={position.name}
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent"></div>
                   </div>
                   <div className="p-6">
                     <span className="inline-block px-4 py-1.5 bg-brand-coral text-white text-xs font-bold rounded-full mb-3 uppercase tracking-wider">
