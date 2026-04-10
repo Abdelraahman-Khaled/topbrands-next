@@ -57,12 +57,12 @@ export default function WhyPartener() {
   ];
 
   return (
-    <section className="py-24 bg-black text-white relative overflow-hidden">
+    <section className="py-12 sm:py-24 bg-black text-white relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-20 left-0 w-96 h-96 bg-[#4B4F54]/30 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#F7E326]/20 rounded-full blur-3xl"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-16">
@@ -71,11 +71,11 @@ export default function WhyPartener() {
                 {t("why_partner_with_us")}
               </span>
             </div>
-            <h2 className="text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-5xl font-bold text-white mb-6">
               {t("Your_Trusted")}
               <span className="text-[#F7E326]"> {t("Distribution_Partner")}</span>
             </h2>
-            <p className="text-xl text-[#D1D5DB] max-w-3xl mx-auto font-medium">
+            <p className="text-lg sm:text-xl text-[#D1D5DB] max-w-3xl mx-auto font-medium">
               {t("why_choose_desc")}
             </p>
           </div>
@@ -88,12 +88,12 @@ export default function WhyPartener() {
             <div className="absolute top-[-20%] left-[20%] w-[600px] h-[600px] bg-[#4B4F54] blur-[150px] rounded-full"></div>
           </div>
 
-          <div className="container mx-auto px-6 relative z-10">
+          <div className="container mx-auto px-0 sm:px-6 relative z-10">
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((item, index) => (
                 <StaggerItem
                   key={index}
-                  className="group p-10 rounded-[32px] transition-all duration-300 flex flex-col items-start
+                  className="group p-6 sm:p-10 rounded-[24px] sm:rounded-[32px] transition-all duration-300 flex flex-col items-start
                          border border-white/5 hover:border-white/10
                          bg-white/[0.03] backdrop-blur-lg hover:bg-white/[0.05]"
                 >
@@ -120,9 +120,9 @@ export default function WhyPartener() {
 
         {/* CTA Section */}
         <ScrollReveal delay={0.2}>
-          <section className="py-20 px-6">
+          <section className="py-12 sm:py-20 px-0 sm:px-6">
             <div
-              className="max-w-6xl mx-auto rounded-2xl p-12 md:p-20 text-center relative overflow-hidden border border-white/10"
+              className="max-w-6xl mx-auto rounded-[24px] sm:rounded-2xl p-8 sm:p-12 md:p-20 text-center relative overflow-hidden border border-white/10"
               style={{
                 background:
                   "linear-gradient(135deg, #1C1C1C 0%, #000000 50%, #1C1C1C 100%)",
@@ -132,7 +132,7 @@ export default function WhyPartener() {
               <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#F7E326]/10 blur-[100px] rounded-full"></div>
 
               <div className="relative z-10">
-                <h2 className="text-4xl md:text-5xl max-w-2xl mx-auto font-normal text-white mb-6 leading-tight">
+                <h2 className="text-3xl md:text-5xl max-w-2xl mx-auto font-normal text-white mb-6 leading-tight">
                   {t("cta_title")}
                 </h2>
 

@@ -60,7 +60,7 @@ export default function ProductsBrands() {
   ];
 
   return (
-    <section id="brands" className=" py-20 lg:py-28 relative overflow-hidden bg-[#DEE3EB]">
+    <section id="brands" className="py-12 sm:py-20 lg:py-28 relative overflow-hidden bg-[#DEE3EB]">
       <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0"
@@ -71,13 +71,13 @@ export default function ProductsBrands() {
         ></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-8 ">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 ">
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-2">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-brand-jet mb-2">
               {t("our_products")}
             </h2>
-            <h2 className="text-5xl lg:text-6xl font-bold text-brand-charcoal">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-brand-charcoal">
               {t("our_portfolio")}
             </h2>
           </div>
@@ -87,7 +87,7 @@ export default function ProductsBrands() {
           <ScrollReveal>
             <Link
               href="/brands"
-              className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300  group cursor-pointer h-[720px] block"
+              className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer h-[400px] sm:h-[500px] lg:h-[720px] block"
             >
             <img
               src="https://readdy.ai/api/search-image?query=artistic%20flat%20lay%20composition%20of%20diverse%20FMCG%20products%20including%20packaged%20foods%20beverages%20snacks%20and%20household%20items%20arranged%20aesthetically%20on%20clean%20white%20surface%20professional%20product%20photography%20bright%20even%20lighting%20top%20down%20view%20colorful%20packaging&width=620&height=720&seq=products-montage-001&orientation=portrait"
@@ -116,14 +116,14 @@ export default function ProductsBrands() {
             <div className="space-y-8">
               <Link
               href="/brands?type=international"
-              className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300  group cursor-pointer bg-white h-[344px] block"
+              className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer bg-white h-auto sm:h-[344px] block"
             >
               <div className="p-8 h-full flex flex-col justify-between">
                 <div>
-                  <p className="text-base font-semibold text-brand-charcoal mb-6">
+                  <p className="text-base font-semibold text-brand-charcoal mb-4 sm:mb-6">
                     {t("international_brands")}
                   </p>
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4">
                     {internationalBrands.map((brand, index) => (
                       <div
                         key={index}
@@ -151,14 +151,14 @@ export default function ProductsBrands() {
 
             <Link
               href="/brands?type=regional"
-              className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300  group cursor-pointer bg-white h-[344px] block"
+              className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer bg-white h-auto sm:h-[344px] block"
             >
               <div className="p-8 h-full flex flex-col justify-between">
                 <div>
-                  <p className="text-base font-semibold text-brand-charcoal mb-6">
+                  <p className="text-base font-semibold text-brand-charcoal mb-4 sm:mb-6">
                     {t("regional_brands")}
                   </p>
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4">
                     {regionalBrands.map((brand, index) => (
                       <div
                         key={index}

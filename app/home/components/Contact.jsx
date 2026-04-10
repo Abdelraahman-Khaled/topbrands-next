@@ -33,12 +33,12 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-white relative overflow-hidden">
+    <section id="contact" className="py-12 sm:py-24 bg-white relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-10 right-10 w-72 h-72 bg-[#F7E326]/30 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#F7E326]/30 rounded-full blur-3xl"></div>
 
-      <div className="max-w-7xl mx-auto px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <ScrollReveal>
           <div className="text-center mb-16">
             <div className="inline-block mb-4">
@@ -46,17 +46,17 @@ export default function Contact() {
                 {t("get_in_touch")}
               </span>
             </div>
-            <h2 className="text-5xl font-bold text-[#000000] mb-4">
+            <h2 className="text-3xl sm:text-5xl font-bold text-[#000000] mb-4">
               {t("contact")}{" "}
               <span className="text-[#4B4F54]">{t("hero_title")}</span>
             </h2>
-            <p className="text-xl text-[#4B4F54] max-w-3xl mx-auto font-medium">
+            <p className="text-lg sm:text-xl text-[#4B4F54] max-w-3xl mx-auto font-medium">
               {t("contact_header_desc")}
             </p>
           </div>
         </ScrollReveal>
 
-        <StaggerContainer className="grid lg:grid-cols-3 gap-8 mb-12">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
           {contactInfo.map((info, index) => (
             <StaggerItem
               key={index}
@@ -83,7 +83,7 @@ export default function Contact() {
         </StaggerContainer>
 
         <ScrollReveal delay={0.2}>
-          <div className="bg-gradient-to-br from-[#000000] to-[#1a1a1a] rounded-2xl p-12 shadow-2xl relative overflow-hidden">
+          <div className="bg-gradient-to-br from-[#000000] to-[#1a1a1a] rounded-2xl p-6 sm:p-12 shadow-2xl relative overflow-hidden">
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 left-0 w-64 h-64 bg-[#F7E326] rounded-full blur-3xl"></div>
               <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#F7E326] rounded-full blur-3xl"></div>
@@ -91,10 +91,10 @@ export default function Contact() {
 
             <div className="relative z-10">
               <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-white mb-3">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
                   {t("send_us_message")}
                 </h3>
-                <p className="text-gray-300 font-medium">{t("fill_form_desc")}</p>
+                <p className="text-sm sm:text-base text-gray-300 font-medium">{t("fill_form_desc")}</p>
               </div>
 
               <form className="grid md:grid-cols-2 gap-6">

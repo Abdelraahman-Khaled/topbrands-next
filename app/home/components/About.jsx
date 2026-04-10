@@ -9,7 +9,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-[96px] relative overflow-hidden"
+      className="py-16 sm:py-[96px] relative overflow-hidden"
       style={{
         background:
           "linear-gradient(135deg, rgba(222,227,235,0.21) 50%, #ffffff 100%)",
@@ -19,12 +19,12 @@ export default function About() {
       <div className="absolute top-20 right-10 w-[400px] h-[400px] bg-[#F7E326] opacity-[0.25] rounded-full blur-[100px] pointer-events-none"></div>
       <div className="absolute bottom-20 left-10 w-[300px] h-[300px] bg-[#F7E326] opacity-[0.10] rounded-full blur-[80px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-8  relative z-10">
-        <div className="grid lg:grid-cols-2 gap-[64px] items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8  relative z-10">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-[64px] items-center">
           {/* Left Content */}
           <div className="space-y-6">
             <ScrollReveal>
-              <h2 className="text-5xl  font-bold text-black leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black leading-tight">
                 {t("leading_fmcg_distribution") ||
                   "Leading FMCG Distribution in Syria"}
               </h2>
@@ -34,12 +34,12 @@ export default function About() {
                   {t("about_top_brands_syria") || "About Top Brands Syria"}
                 </span>
               </div>
-              <div className="space-y-6 mt-6">
-                <p className="text-[18px] text-[#4B4F54] leading-relaxed">
+              <div className="space-y-4 sm:space-y-6 mt-6">
+                <p className="text-base sm:text-[18px] text-[#4B4F54] leading-relaxed">
                   {t("about_desc_1") ||
                     "Growing Together is a fast-growing FMCG distributor specializing in food and non-food products. As part of the Al Barengi Group with over 30 years of experience, we represent exclusive brands and provide comprehensive distribution services across Syria."}
                 </p>
-                <p className="text-[18px] text-[#4B4F54] leading-relaxed">
+                <p className="text-base sm:text-[18px] text-[#4B4F54] leading-relaxed">
                   {t("about_desc_2") ||
                     "Our mission is to connect quality brands with retailers nationwide, ensuring efficient distribution, merchandising excellence, and market growth for our partners."}
                 </p>
@@ -156,7 +156,7 @@ export default function About() {
             <ScrollReveal delay={0.1} className="pt-8">
               <a
                 href="/about"
-                className="inline-flex items-center gap-3 px-[32px] py-[16px] bg-[#4B4F54] text-white rounded-lg font-bold text-base hover:bg-black transition-all hover:-translate-y-1 shadow-lg"
+                className="inline-flex items-center gap-3 px-[24px] sm:px-[32px] py-[12px] sm:py-[16px] bg-[#4B4F54] text-white rounded-lg font-bold text-sm sm:text-base hover:bg-black transition-all hover:-translate-y-1 shadow-lg"
               >
                 {t("learn_more_about_us") || "Learn More About Us"}
                 <svg
