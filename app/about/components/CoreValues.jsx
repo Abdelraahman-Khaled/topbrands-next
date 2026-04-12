@@ -1,5 +1,9 @@
-import React from 'react'
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import ScrollReveal from '../../components/ScrollReveal';
+import StaggerContainer from '../../components/StaggerContainer';
+import StaggerItem from '../../components/StaggerItem';
+
 const CoreValues = () => {
     const { t } = useTranslation();
     const values = [
@@ -32,18 +36,20 @@ const CoreValues = () => {
     return (
         <section className="py-20  bg-white">
             <div className="max-w-7xl mx-auto px-8 ">
-                <div className="text-center mb-16">
-                    <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-4">
-                        {t("core_values")}
-                    </h2>
-                    <p className="text-xl text-brand-charcoal max-w-3xl mx-auto font-medium">
-                        {t("core_values_subtitle")}
-                    </p>
-                </div>
+                <ScrollReveal>
+                    <div className="text-center mb-16">
+                        <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-4">
+                            {t("core_values")}
+                        </h2>
+                        <p className="text-xl text-brand-charcoal max-w-3xl mx-auto font-medium">
+                            {t("core_values_subtitle")}
+                        </p>
+                    </div>
+                </ScrollReveal>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {values.map((value, index) => (
-                        <div
+                        <StaggerItem
                             key={index}
                             className="group bg-brand-paleblue rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-brand-yellow"
                         >
@@ -56,9 +62,9 @@ const CoreValues = () => {
                             <p className="text-base text-brand-charcoal leading-relaxed font-medium">
                                 {value.description}
                             </p>
-                        </div>
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerContainer>
             </div>
         </section>
     )

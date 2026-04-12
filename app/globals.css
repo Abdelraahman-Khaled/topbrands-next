@@ -39,7 +39,7 @@ body {
   }
 
   html:lang(ar) {
-    font-family: "Almarai", sans-serif;
+    font-family: "Cairo", sans-serif;
   }
 
   body {
@@ -47,7 +47,7 @@ body {
   }
 
   body:lang(ar) {
-    font-family: "Almarai", sans-serif;
+    font-family: "Cairo", sans-serif;
   }
 
   * {
@@ -55,7 +55,7 @@ body {
   }
 
   *:lang(ar) {
-    font-family: "Almarai", sans-serif;
+    font-family: "Cairo", sans-serif;
   }
 }
 
@@ -265,4 +265,13 @@ textarea::placeholder {
     -webkit-mask-position: 0 0;
     mask-position: 0 0;
   }
+}
+
+img {
+  transition: scale 0.3s ease-in-out;
+  will-change: scale; /* Hint to the browser for smoother animation */
+}
+
+img:hover {
+  scale: 1.1;
 }

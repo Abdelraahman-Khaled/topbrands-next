@@ -82,15 +82,9 @@ export default function ServicesPage() {
         yellowText={t("services_hero_desc_2")}
         description2={t("services_hero_desc_3")}
       />
-      <ScrollReveal delay={0.1}>
-        <ServicesGrid />
-      </ScrollReveal>
-      <ScrollReveal delay={0.2}>
-        <ExcellenceSection />
-      </ScrollReveal>
-      <ScrollReveal delay={0.1}>
-        <GlobalCTA title={t("services_cta_title")} subtitle={t("services_cta_desc")} contact={true} />
-      </ScrollReveal>
+      <ServicesGrid />
+      <ExcellenceSection />
+      <GlobalCTA title={t("services_cta_title")} subtitle={t("services_cta_desc")} contact={true} />
     </div>
   );
 }

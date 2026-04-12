@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import ScrollReveal from '../../components/ScrollReveal';
 
 const WhoWeAre = () => {
     const { t } = useTranslation();
     return (
         <section className="py-20  bg-white">
-            <div className="max-w-7xl mx-auto px-8 ">
+            <ScrollReveal className="max-w-7xl mx-auto px-8 ">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl">
                         <img
@@ -51,7 +52,7 @@ const WhoWeAre = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </ScrollReveal>
         </section>
     )
 }

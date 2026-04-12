@@ -1,12 +1,15 @@
-import React from 'react'
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import StaggerContainer from '../../components/StaggerContainer';
+import StaggerItem from '../../components/StaggerItem';
+
 const AboutMission = () => {
     const { t } = useTranslation();
     return (
         <section className="py-20  bg-brand-paleblue">
             <div className="max-w-7xl mx-auto px-8 ">
-                <div className="grid lg:grid-cols-2 gap-12">
-                    <div className="bg-white rounded-3xl p-10 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <StaggerContainer className="grid lg:grid-cols-2 gap-12">
+                    <StaggerItem className="bg-white rounded-3xl p-10 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
                         <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-6">
                             <i className="ri-eye-line text-3xl text-brand-jet"></i>
                         </div>
@@ -20,9 +23,9 @@ const AboutMission = () => {
                             </strong>
                             {t("vision_desc3")}
                         </p>
-                    </div>
+                    </StaggerItem>
 
-                    <div className="bg-white rounded-3xl p-10 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <StaggerItem className="bg-white rounded-3xl p-10 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
                         <div className="w-16 h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6">
                             <i className="ri-compass-3-line text-3xl text-brand-yellow"></i>
                         </div>
@@ -36,8 +39,8 @@ const AboutMission = () => {
                             </strong>
                             {t("mission_desc3")}
                         </p>
-                    </div>
-                </div>
+                    </StaggerItem>
+                </StaggerContainer>
             </div>
         </section>
     )
