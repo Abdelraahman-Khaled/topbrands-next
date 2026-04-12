@@ -267,13 +267,16 @@ export default function Blog() {
                         <i className="ri-user-line text-brand-charcoal"></i>
                         {t(blogPosts[0].authorKey)}
                       </span>
-                      <span
-                        className="bg-[#F7E326] text-[#000000] px-5 sm:px-6 py-2.5 sm:py-3 duration-300 rounded-lg font-bold flex items-center gap-2 rtl:flex-row-reverse group-hover:bg-white transition-all whitespace-nowrap text-sm sm:text-base"
-
-                      >
-                        {t("read_article")}
-                        <i className="ri-arrow-right-line rtl:rotate-180"></i>
-                      </span>
+                      <div className="mask-btn mask-btn--yellow-white !rounded-lg !min-w-[160px] !h-[48px] sm:!h-[56px] shadow-xl">
+                        <span className="mask-btn__label gap-2 rtl:flex-row-reverse text-sm sm:text-base">
+                          {t("read_article")}
+                          <i className="ri-arrow-right-line rtl:rotate-180"></i>
+                        </span>
+                        <span className="mask-btn__fill gap-2 rtl:flex-row-reverse text-sm sm:text-base">
+                          {t("read_article")}
+                          <i className="ri-arrow-right-line rtl:rotate-180"></i>
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>

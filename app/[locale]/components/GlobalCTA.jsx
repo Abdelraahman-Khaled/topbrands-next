@@ -14,23 +14,35 @@ const GlobalCTA = ({ title, subtitle, contact = false, btnText = "become_a_partn
                 <p className="text-lg md:text-xl text-[#D1D5DB] mb-10 max-w-2xl mx-auto font-medium">
                     {t(subtitle)}
                 </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-4">
                     <LocalizedLink
                         href={btnLink}
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-brand-yellow text-brand-charcoal rounded-full font-bold text-lg hover:brightness-110 transition-all shadow-xl hover:shadow-2xl whitespace-nowrap cursor-pointer"
+                        className="mask-btn mask-btn--yellow-white !rounded-full sm:w-auto w-full shadow-xl hover:shadow-2xl"
                     >
-                        <span>{t(btnText)}</span>
-                        <i className="ri-arrow-right-line text-xl rtl:rotate-180"></i>
+                        <span className="mask-btn__label gap-3">
+                            {t(btnText)}
+                            <i className="ri-arrow-right-line text-xl rtl:rotate-180"></i>
+                        </span>
+                        <span className="mask-btn__fill gap-3">
+                            {t(btnText)}
+                            <i className="ri-arrow-right-line text-xl rtl:rotate-180"></i>
+                        </span>
                     </LocalizedLink>
                     {
                         contact && (
                             <LocalizedLink
                                 href={"/contact"}
-                                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent text-white border-2 border-white rounded-full font-bold text-lg hover:bg-white hover:text-brand-charcoal transition-all shadow-xl hover:shadow-2xl whitespace-nowrap cursor-pointer"
+                                className="mask-btn mask-btn--none-white !rounded-full sm:w-auto w-full shadow-xl hover:shadow-2xl"
                             >
-                                <span>{t("contact_us")}</span>
-                                <i className="ri-mail-line text-xl rtl:rotate-180"></i>
-                            </LocalizedLink>
+                                <span className="mask-btn__label gap-3">
+                                    {t("contact_us")}
+                                    <i className="ri-mail-line text-xl rtl:rotate-180"></i>
+                                </span>
+                                <span className="mask-btn__fill gap-3">
+                                    {t("contact_us")}
+                                    <i className="ri-mail-line text-xl rtl:rotate-180"></i>
+                                </span>
+                             </LocalizedLink>
                         )
                     }
                 </div>

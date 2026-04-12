@@ -110,15 +110,15 @@ export default function BecomePartnerPage() {
       </ScrollReveal>
 
       {/* Partnership Form */}
-      <ScrollReveal delay={0.2}>
-        <section className="py-20 lg:py-28 bg-brand-paleblue">
-          <div className="max-w-5xl mx-auto px-8 lg:px-16">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-4">{t('form_title')}</h2>
-              <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">{t('form_subtitle')}</p>
-            </div>
+      <section className="py-20 lg:py-28 bg-brand-paleblue">
+        <div className="max-w-5xl mx-auto px-8 lg:px-16">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-4">{t('form_title')}</h2>
+            <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">{t('form_subtitle')}</p>
+          </div>
 
-            <div className="bg-white rounded-3xl p-10 lg:p-12 shadow-2xl">
+          <div className="bg-white rounded-3xl p-10 lg:p-12 shadow-2xl">
+            <ScrollReveal delay={0.2}>
               <form onSubmit={handleSubmit} id="partnership-form">
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
                   <div>
@@ -206,51 +206,56 @@ export default function BecomePartnerPage() {
                 )}
 
                 <button
-                  type="submit" disabled={isSubmitting}
-                  className="w-full px-8 py-4 bg-brand-yellow text-black rounded-xl font-semibold text-lg hover:brightness-110 transition-all disabled:opacity-50"
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`mask-btn mask-btn--yellow-black !rounded-xl w-full transition-opacity ${isSubmitting ? 'opacity-50 pointer-events-none' : ''}`}
                 >
-                  {isSubmitting ? t('btn_submitting') : t('btn_submit')}
+                  <span className="mask-btn__label">
+                    {isSubmitting ? t('btn_submitting') : t('btn_submit')}
+                  </span>
+                  <span className="mask-btn__fill">
+                    {isSubmitting ? t('btn_submitting') : t('btn_submit')}
+                  </span>
                 </button>
               </form>
-            </div>
+            </ScrollReveal>
+
           </div>
-        </section>
-      </ScrollReveal>
+        </div>
+      </section>
 
       {/* Contact Info */}
-      <ScrollReveal delay={0.1}>
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-8 lg:px-16">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-4">{t('direct_contact_title')}</h2>
-            </div>
-
-            <StaggerContainer className="grid md:grid-cols-3 gap-8">
-              <StaggerItem className="text-center">
-                <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-4 mx-auto">
-                  <i className="ri-mail-line text-3xl text-black"></i>
-                </div>
-                <h3 className="text-xl font-bold text-brand-jet mb-2">{t('contact_email')}</h3>
-                <p className="text-base text-brand-charcoal">info@topbrands-sy.com</p>
-              </StaggerItem>
-              <StaggerItem className="text-center">
-                <div className="w-16 h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-4 mx-auto">
-                  <i className="ri-phone-line text-3xl text-white"></i>
-                </div>
-                <h3 className="text-xl font-bold text-brand-jet mb-2">{t('contact_phone')}</h3>
-                <p className="text-base text-brand-charcoal">+963 11 6022</p>
-              </StaggerItem>
-              <StaggerItem className="text-center">
-                <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-4 mx-auto">
-                  <i className="ri-map-pin-line text-3xl text-black"></i>
-                </div>
-                <h3 className="text-xl font-bold text-brand-jet mb-2">{t('contact_location')}</h3>
-                <p className="text-base text-brand-charcoal">{t('city_syria')}</p>
-              </StaggerItem>
-            </StaggerContainer>
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-4">{t('direct_contact_title')}</h2>
           </div>
-        </section>
-      </ScrollReveal>
+
+          <StaggerContainer className="grid md:grid-cols-3 gap-8">
+            <StaggerItem className="text-center">
+              <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-4 mx-auto">
+                <i className="ri-mail-line text-3xl text-black"></i>
+              </div>
+              <h3 className="text-xl font-bold text-brand-jet mb-2">{t('contact_email')}</h3>
+              <p className="text-base text-brand-charcoal">info@topbrands-sy.com</p>
+            </StaggerItem>
+            <StaggerItem className="text-center">
+              <div className="w-16 h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-4 mx-auto">
+                <i className="ri-phone-line text-3xl text-white"></i>
+              </div>
+              <h3 className="text-xl font-bold text-brand-jet mb-2">{t('contact_phone')}</h3>
+              <p className="text-base text-brand-charcoal">+963 11 6022</p>
+            </StaggerItem>
+            <StaggerItem className="text-center">
+              <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-4 mx-auto">
+                <i className="ri-map-pin-line text-3xl text-black"></i>
+              </div>
+              <h3 className="text-xl font-bold text-brand-jet mb-2">{t('contact_location')}</h3>
+              <p className="text-base text-brand-charcoal">{t('city_syria')}</p>
+            </StaggerItem>
+          </StaggerContainer>
+        </div>
+      </section>
     </div>
   );
 }

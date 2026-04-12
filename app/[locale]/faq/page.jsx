@@ -75,7 +75,7 @@ export default function FAQ() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://readdy.ai/api/search-image?query=professional%20customer%20support%20help%20desk%20modern%20office%20environment&width=1920&height=600&seq=faq-hero-main&orientation=landscape"
@@ -90,12 +90,12 @@ export default function FAQ() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="relative max-w-4xl mx-auto px-6 text-center"
+          className="relative max-w-4xl mx-auto px-6 md:px-12 text-center"
         >
-          <h1 className="text-4xl lg:text-5xl font-bold text-black mb-6">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-black mb-4 md:mb-6 leading-tight">
             {t('faq_hero_title')}
           </h1>
-          <p className="text-lg lg:text-xl text-brand-charcoal font-medium">
+          <p className="text-base md:text-lg lg:text-xl text-brand-charcoal font-medium max-w-2xl mx-auto leading-relaxed">
             {t('faq_hero_subtitle')}
           </p>
         </motion.div>
@@ -103,14 +103,14 @@ export default function FAQ() {
 
       {/* Category Filter */}
       <ScrollReveal>
-        <section className="py-8 bg-white border-b border-gray-200">
-          <div className="max-w-6xl mx-auto px-6">
+        <section className="py-8 md:py-10 bg-white border-b border-gray-200">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
             <motion.div 
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={staggerContainer}
-              className="flex flex-wrap gap-3 justify-center"
+              className="flex flex-wrap gap-2 md:gap-3 justify-center"
             >
               {categories.map((category) => (
                 <motion.button
@@ -119,12 +119,12 @@ export default function FAQ() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-2 cursor-pointer rounded-full font-bold transition-all whitespace-nowrap ${selectedCategory === category
+                  className={`px-4 md:px-6 py-2 text-sm md:text-base cursor-pointer rounded-full font-bold transition-all whitespace-nowrap ${selectedCategory === category
                     ? 'bg-[#F7E326] text-black shadow-md'
                     : 'bg-gray-100 text-gray-600 hover:bg-[#F7E326] hover:text-black'
                     }`}
                 >
-                  {category === 'All' ? t('faq_all') : category}
+                  {t(`faq_cat_${category.toLowerCase()}`)}
                 </motion.button>
               ))}
             </motion.div>
@@ -133,8 +133,8 @@ export default function FAQ() {
       </ScrollReveal>
 
       {/* FAQ Accordion */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 md:px-6">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -152,19 +152,19 @@ export default function FAQ() {
                 >
                   <button
                     onClick={() => toggleFAQ(faq.id)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left transition-all"
+                    className="w-full px-4 md:px-6 py-5 flex items-center justify-between text-left gap-3 transition-all"
                   >
-                    <div className="flex-1">
+                    <div className="flex-1 min-w-0">
                       <span className="inline-block bg-[#F7E326] text-black px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-2">
-                        {faq.cat}
+                        {t(`faq_cat_${faq.cat.toLowerCase()}`)}
                       </span>
-                      <h3 className="text-lg font-bold text-gray-900">
+                      <h3 className="text-base md:text-lg font-bold text-gray-900 leading-snug">
                         {t(`faq_q${faq.id}`)}
                       </h3>
                     </div>
                     <motion.div 
                       animate={{ rotate: openId === faq.id ? 180 : 0 }}
-                      className="ml-4 w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 flex-shrink-0"
+                      className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-gray-50 shrink-0"
                     >
                       <i className={`ri-${openId === faq.id ? 'subtract' : 'add'}-line text-xl cursor-pointer ${openId === faq.id ? 'text-black' : 'text-brand-yellow'}`}></i>
                     </motion.div>
@@ -176,7 +176,7 @@ export default function FAQ() {
                         animate="open"
                         exit="closed"
                         variants={accordionVariants}
-                        className="px-6 pb-6 border-t border-gray-50 overflow-hidden"
+                        className="px-4 md:px-6 pb-6 border-t border-gray-50 overflow-hidden"
                       >
                         <p className="text-gray-600 font-medium leading-relaxed">
                           {t(`faq_a${faq.id}`)}
@@ -193,43 +193,35 @@ export default function FAQ() {
 
       {/* Footer CTA */}
       <ScrollReveal>
-        <section className="py-20 bg-[#DEE3EB]">
+        <section className="py-16 md:py-24 bg-[#DEE3EB]">
           <motion.div 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="max-w-4xl mx-auto px-6 text-center"
+            className="max-w-4xl mx-auto px-6 md:px-12 text-center"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               {t('faq_still_questions')}
             </h2>
-            <p className="text-lg text-brand-charcoal mb-10 font-medium">
+            <p className="text-base md:text-lg text-brand-charcoal mb-8 md:mb-10 font-medium">
               {t('faq_team_help')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.div 
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+              <LocalizedLink 
+                href="/contact" 
+                className="mask-btn mask-btn--yellow-black !rounded-lg shadow-lg"
               >
-                <LocalizedLink 
-                  href="/contact" 
-                  className="bg-[#F7E326] text-black px-10 py-4 rounded-lg font-bold hover:shadow-lg transition-all text-center duration-300 block"
-                >
-                  {t('faq_contact_btn')}
-                </LocalizedLink>
-              </motion.div>
-              <motion.div 
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+                <span className="mask-btn__label">{t('faq_contact_btn')}</span>
+                <span className="mask-btn__fill">{t('faq_contact_btn')}</span>
+              </LocalizedLink>
+              <LocalizedLink 
+                href="/become-a-partner" 
+                className="mask-btn mask-btn--none-black !rounded-lg shadow-lg"
               >
-                <LocalizedLink 
-                  href="/become-a-partner" 
-                  className="bg-black text-white px-10 py-4 rounded-lg font-bold hover:shadow-lg transition-all text-center duration-300 block"
-                >
-                  {t('faq_partner_btn')}
-                </LocalizedLink>
-              </motion.div>
+                <span className="mask-btn__label">{t('faq_partner_btn')}</span>
+                <span className="mask-btn__fill">{t('faq_partner_btn')}</span>
+              </LocalizedLink>
             </div>
           </motion.div>
         </section>

@@ -112,15 +112,15 @@ export default function MarketCoveragePage() {
 
       {/* Coverage Map Section */}
       <ScrollReveal delay={0.1}>
-        <section className="py-20 lg:py-28 bg-white">
-          <div className="max-w-7xl mx-auto px-8 lg:px-16">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <section className="py-16 md:py-24 lg:py-32 bg-white">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+            <div className="grid lg:grid-cols-2 gap-10 md:gap-16 lg:gap-20 items-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl"
+                className="relative aspect-[4/5] sm:aspect-video md:aspect-auto md:h-[500px] lg:h-[650px] rounded-3xl overflow-hidden shadow-2xl"
               >
                 <motion.img
                   initial={{ scale: 1.1 }}
@@ -135,24 +135,24 @@ export default function MarketCoveragePage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.6 }}
-                  className="absolute bottom-8 left-8 right-8"
+                  className="absolute bottom-4 left-4 right-4 md:bottom-8 md:left-8 md:right-8"
                 >
-                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6">
-                    <p className="text-sm text-brand-charcoal font-medium mb-2">
+                  <div className="bg-white/95 backdrop-blur-md rounded-xl p-4 md:p-6 shadow-xl border border-white/20">
+                    <p className="text-xs md:text-sm text-brand-charcoal font-bold mb-1 md:mb-2 uppercase tracking-wider">
                       {t("distribution_network")}
                     </p>
-                    <p className="text-2xl font-bold text-black">
+                    <p className="text-lg md:text-2xl font-bold text-black leading-tight">
                       {t("all_major_syrian_cities")}
                     </p>
                   </div>
                 </motion.div>
               </motion.div>
 
-              <div className="space-y-6">
-                <h2 className="text-4xl lg:text-5xl font-bold text-black mb-8">
+              <div className="space-y-8">
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-black leading-tight">
                   {t("coverage_areas")}
                 </h2>
-                <StaggerContainer className="space-y-6">
+                <StaggerContainer className="space-y-4 md:space-y-6">
                   {coverageAreas.map((area, index) => (
                     <StaggerItem key={index}>
                       <motion.div
@@ -194,37 +194,37 @@ export default function MarketCoveragePage() {
 
       {/* Distribution Channels */}
       <ScrollReveal delay={0.2}>
-        <section className="py-20 lg:py-28 bg-brand-paleblue">
-          <div className="max-w-7xl mx-auto px-8 lg:px-16">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl lg:text-6xl font-bold text-black mb-4">
+        <section className="py-16 md:py-24 lg:py-32 bg-linear-to-b from-white to-brand-paleblue/30">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+            <div className="text-center mb-12 md:mb-16 lg:mb-20">
+              <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-black mb-4 md:mb-6">
                 {t("distribution_channels")}
               </h2>
-              <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">
+              <p className="text-base md:text-xl text-brand-charcoal max-w-3xl mx-auto font-medium leading-relaxed">
                 {t("multi_channel_dist")}
               </p>
             </div>
 
-            <StaggerContainer className="grid lg:grid-cols-3 gap-8">
+            <StaggerContainer className="grid lg:grid-cols-3 gap-6 lg:gap-10">
               {channels.map((channel, index) => (
                 <StaggerItem key={index}>
                   <motion.div
                     whileHover={{ y: -10 }}
                     transition={{ type: "spring", stiffness: 300 }}
-                    className="bg-white rounded-3xl p-10 hover:shadow-2xl transition-all duration-300 border-l-4 rtl:border-l-0 rtl:border-r-4 border-brand-charcoal h-full"
+                    className="bg-white rounded-[32px] p-6 md:p-8 lg:p-12 hover:shadow-2xl transition-all duration-300 border-l-4 rtl:border-l-0 rtl:border-r-4 border-brand-charcoal h-full flex flex-col"
                   >
-                    <div className="w-20 h-20 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6">
-                      <i className={`${channel.icon} text-4xl text-white`}></i>
+                    <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6 md:mb-8">
+                      <i className={`${channel.icon} text-3xl md:text-4xl text-white`}></i>
                     </div>
-                    <h3 className="text-3xl font-bold text-black mb-4">
+                    <h3 className="text-2xl md:text-3xl font-bold text-black mb-4">
                       {channel.title}
                     </h3>
-                    <p className="text-base text-brand-charcoal leading-relaxed mb-6">
+                    <p className="text-base text-brand-charcoal leading-relaxed mb-8 flex-1">
                       {channel.description}
                     </p>
-                    <div className="inline-flex items-center space-x-2  px-4 py-2 bg-brand-paleblue rounded-full">
-                      <i className="ri-check-line text-brand-charcoal"></i>
-                      <span className="text-sm font-semibold text-black">
+                    <div className="inline-flex items-center space-x-3  px-5 py-2.5 bg-brand-paleblue rounded-full w-fit">
+                      <i className="ri-check-line text-brand-charcoal font-bold"></i>
+                      <span className="text-sm font-bold text-black">
                         {channel.coverage}
                       </span>
                     </div>
@@ -238,18 +238,18 @@ export default function MarketCoveragePage() {
 
       {/* Capabilities Section */}
       <ScrollReveal delay={0.1}>
-        <section className="py-20 lg:py-28 bg-white">
-          <div className="max-w-7xl mx-auto px-8 lg:px-16">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl lg:text-6xl font-bold text-black mb-4">
+        <section className="py-16 md:py-24 lg:py-32 bg-white">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+            <div className="text-center mb-12 md:mb-16 lg:mb-20">
+              <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-black mb-4 md:mb-6">
                 {t("distribution_capabilities")}
               </h2>
-              <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">
+              <p className="text-base md:text-xl text-brand-charcoal max-w-3xl mx-auto font-medium leading-relaxed">
                 {t("infrastructure_resources")}
               </p>
             </div>
 
-            <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {capabilities.map((capability, index) => (
                 <StaggerItem key={index}>
                   <motion.div
@@ -287,20 +287,20 @@ export default function MarketCoveragePage() {
       </ScrollReveal>
 
       {/* Logistics Excellence */}
-      <section className="py-20 lg:py-28 bg-brand-paleblue">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="flex items-center space-x-4  mb-6">
-                <span className="text-sm font-semibold text-brand-charcoal tracking-widest uppercase">
+      <section className="py-16 md:py-24 lg:py-32 bg-linear-to-t from-white to-brand-paleblue/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+          <div className="grid lg:grid-cols-2 gap-10 md:gap-16 lg:gap-20 items-center">
+            <div className="space-y-6 md:space-y-8">
+              <div className="flex items-center space-x-4  mb-4 md:mb-6">
+                <span className="text-xs md:text-sm font-bold text-brand-charcoal tracking-widest uppercase">
                   {t("logistics_nav")}
                 </span>
-                <div className="h-px w-16 bg-brand-charcoal"></div>
+                <div className="h-px w-12 md:w-16 bg-brand-charcoal"></div>
               </div>
-              <h2 className="text-5xl lg:text-6xl font-bold text-black">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-black leading-tight">
                 {t("advanced_logistics_infra")}
               </h2>
-              <p className="text-xl text-brand-charcoal leading-relaxed">
+              <p className="text-lg md:text-xl text-brand-charcoal leading-relaxed font-medium">
                 {t("logistics_infra_desc")}
               </p>
 
@@ -354,7 +354,7 @@ export default function MarketCoveragePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl"
+              className="relative h-[350px] md:h-[500px] lg:h-[650px] rounded-3xl overflow-hidden shadow-2xl"
             >
               <motion.img
                 whileHover={{ scale: 1.05 }}

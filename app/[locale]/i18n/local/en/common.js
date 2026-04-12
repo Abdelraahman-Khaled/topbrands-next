@@ -1169,6 +1169,18 @@ export default {
   faq_hero_subtitle:
     "Find answers to common questions about our services, partnerships, and operations",
   faq_all: "All",
+  faq_cat_all: "All",
+  faq_cat_coverage: "Coverage",
+  faq_cat_products: "Products",
+  faq_cat_partnership: "Partnership",
+  faq_cat_orders: "Orders",
+  faq_cat_delivery: "Delivery",
+  faq_cat_payment: "Payment",
+  faq_cat_quality: "Quality",
+  faq_cat_returns: "Returns",
+  faq_cat_services: "Services",
+  faq_cat_company: "Company",
+  faq_cat_support: "Support",
   faq_still_questions: "Still Have Questions?",
   faq_team_help:
     "Our team is here to help. Contact us for personalized assistance.",
@@ -1219,4 +1231,99 @@ export default {
   faq_q15: "How can I contact customer support?",
   faq_a15:
     "Our customer support team is available via phone at +963 11 123 4567 or email at info@b2bdistribution.sy. We respond to all inquiries within 24 hours during business days.",
+  // Brands Detail Page
+  back_to_brands: "Back to Brands",
+  brand_not_found: "Brand Not Found",
+  contact_for_orders: "Contact for Orders",
+  featured_products_title: "Featured {{name}} Products",
+  featured_products_desc: "Explore our curated selection of high-quality {{name}} products, delivered with excellence throughout the region.",
+  size_label: "Size",
+
+  // Brand: Coffee Joy
+  brand_coffee_joy_name: "Coffee Joy",
+  brand_coffee_joy_desc: "Coffee Joy is a premium coffee-flavored biscuit known for its thin, crispy texture and rich aroma. It is the perfect companion for your coffee break, providing a delightful crunch and intense coffee flavor.",
+  brand_coffee_joy_prod_1_name: "Coffee Joy Pack",
+  brand_coffee_joy_prod_1_desc: "Thin and crispy coffee biscuits",
+  brand_coffee_joy_prod_2_name: "Coffee Joy Family Pack",
+  brand_coffee_joy_prod_2_desc: "Value pack for the whole family",
+
+  // Brand: Danisa
+  brand_danisa_name: "Danisa",
+  brand_danisa_desc: "Danisa Traditional Butter Cookies are made with original Danish recipes and high-quality ingredients. Known for their premium quality and golden texture, they have become a global favorite for gifting and personal indulgence.",
+  brand_danisa_prod_1_name: "Traditional Butter Cookies",
+  brand_danisa_prod_1_desc: "Original Danish recipe butter cookies",
+  brand_danisa_prod_2_name: "Danisa Specialty Pack",
+  brand_danisa_prod_2_desc: "Premium selection of golden cookies",
+
+  // Brand: Domty
+  brand_domty_name: "Domty",
+  brand_domty_desc: "Domty is a leading manufacturer of high-quality dairy and juice products. With a commitment to innovation and quality, Domty provides a wide range of nutritious and delicious options for consumers across the region.",
+  brand_domty_prod_1_name: "Domty Feta Cheese",
+  brand_domty_prod_1_desc: "Creamy and fresh feta cheese",
+  brand_domty_prod_2_name: "Domty Natural Juice",
+  brand_domty_prod_2_desc: "100% natural fruit juice",
+
+  // Brand: Kopiko
+  brand_kopiko_name: "Kopiko",
+  brand_kopiko_desc: "Kopiko is the world's #1 coffee candy, made from real coffee beans extracts. It brings the rich taste of coffee into a convenient candy and beverage format, keeping you energized throughout the day.",
+  brand_kopiko_prod_1_name: "Kopiko Coffee Candy",
+  brand_kopiko_prod_1_desc: "Classic pocket coffee candy",
+  brand_kopiko_prod_2_name: "Kopiko Lucky Day",
+  brand_kopiko_prod_2_desc: "Strong instant coffee drink",
+
+  // Brand: Landessa
+  brand_landessa_name: "Landessa",
+  brand_landessa_desc: "Landessa offers premium iced coffee beverages made with 100% Arabica beans and fresh Alpine milk. Packaged in eco-friendly CartoCan, it provides a high-quality coffee experience on the go.",
+  brand_landessa_prod_1_name: "Iced Coffee Latte",
+  brand_landessa_prod_1_desc: "Smooth latte with Alpine milk",
+  brand_landessa_prod_2_name: "Iced Coffee Espresso",
+  brand_landessa_prod_2_desc: "Strong and bold iced espresso",
+
+  // Brand: Leeza
+  brand_leeza_name: "Leeza",
+  brand_leeza_desc: "Leeza provides a versatile range of sweet spreads and confectionery products. Known for their smooth texture and rich flavor, Leeza products are perfect for breakfasts and snacking.",
+  brand_leeza_prod_1_name: "Chocolate Spread",
+  brand_leeza_prod_1_desc: "Rich hazelnut chocolate spread",
+  brand_leeza_prod_2_name: "Leeza Wafers",
+  brand_leeza_prod_2_desc: "Crispy cream-filled wafers",
+
+  // Brand: Lotus
+  brand_lotus_name: "Lotus",
+  brand_lotus_desc: "Lotus Biscoff is a unique caramelized biscuit with a surprising crunch and distinctive flavor. It is loved worldwide and perfectly complements coffee, or can be enjoyed as a spread.",
+  brand_lotus_prod_1_name: "Lotus Biscoff Biscuits",
+  brand_lotus_prod_1_desc: "Original caramelized biscuits",
+  brand_lotus_prod_2_name: "Lotus Biscoff Spread",
+  brand_lotus_prod_2_desc: "Smooth caramelized cookie spread",
+
+  // Brand: Pinar
+  brand_pinar_regional_name: "Pinar",
+  brand_pinar_regional_desc: "Pinar is a high-quality Turkish dairy brand known for its authentic Labneh and premium cheese products. It brings the traditional flavors of Turkey to consumers with modern quality standards.",
+  brand_pinar_regional_prod_1_name: "Pinar Labneh",
+  brand_pinar_regional_prod_1_desc: "Authentic creamy Turkish labneh",
+  brand_pinar_regional_prod_2_name: "Pinar White Cheese",
+  brand_pinar_regional_prod_2_desc: "Traditional Turkish white cheese",
+
+  // Brand: Sirarcha
+  brand_sirarcha_name: "Sirarcha",
+  brand_sirarcha_desc: "Sirarcha offers bold and spicy chili sauces that add the perfect kick to any meal. Crafted for flavor enthusiasts, it balances heat and spice for a superior culinary experience.",
+  brand_sirarcha_prod_1_name: "Sirarcha Hot Sauce",
+  brand_sirarcha_prod_1_desc: "Spicy chili sauce with garlic",
+  brand_sirarcha_prod_2_name: "Sirarcha Chili Mayo",
+  brand_sirarcha_prod_2_desc: "Creamy and spicy chili mayonnaise",
+
+  // Brand: Ulker
+  brand_ulker_regional_name: "Ulker",
+  brand_ulker_regional_desc: "Ulker is a household name for biscuits and chocolates, delivering quality treats and sweets across the region. With its rich heritage, Ulker remains a leader in the confectionery market.",
+  brand_ulker_regional_prod_1_name: "Ulker Chocolate",
+  brand_ulker_regional_prod_1_desc: "Rich milk chocolate bar",
+  brand_ulker_regional_prod_2_name: "Ulker Biscuits",
+  brand_ulker_regional_prod_2_desc: "Classic tea biscuits",
+
+  // Brand: Wild Power
+  brand_wild_power_name: "Wild Power",
+  brand_wild_power_desc: "Wild Power is a dynamic energy drink brand providing a reliable boost of energy and refreshing flavors. Designed for active lifestyles, it keeps you performing at your best.",
+  brand_wild_power_prod_1_name: "Wild Power Original",
+  brand_wild_power_prod_1_desc: "Original energy drink formula",
+  brand_wild_power_prod_2_name: "Wild Power Zero",
+  brand_wild_power_prod_2_desc: "Sugar-free energy boost",
 };

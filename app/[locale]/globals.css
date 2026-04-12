@@ -165,6 +165,27 @@ textarea::placeholder {
   animation: ani-to-0 0.7s steps(29) forwards;
 }
 
+/* [REVEAL] None → Black: Starts transparent, fills black on hover */
+.mask-btn--none-black {
+  --_fill: #000;
+  --_fill-text: #fff;
+  --_label: #000;
+  --_label-hover: #000;
+  background: transparent;
+  border: 2px solid #000 !important;
+}
+.mask-btn--none-black .mask-btn__fill {
+  -webkit-mask-position: 100% 0;
+  mask-position: 100% 0;
+  -webkit-animation: ani-to-100 0.7s steps(29) forwards;
+  animation: ani-to-100 0.7s steps(29) forwards;
+}
+.mask-btn--none-black:hover .mask-btn__fill {
+  -webkit-animation: ani-to-0 0.7s steps(29) forwards;
+  animation: ani-to-0 0.7s steps(29) forwards;
+}
+
+
 /* ── Shared Inner Elements ── */
 
 .mask-btn__label {

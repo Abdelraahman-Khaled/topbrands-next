@@ -72,7 +72,7 @@ export default function Footer() {
             </ul>
           </StaggerItem>
 
-          <StaggerItem>
+          {/* <StaggerItem>
             <h4 className="text-lg font-semibold mb-6">{t("categories")}</h4>
             <ul className="space-y-3.5">
               <li>
@@ -108,7 +108,7 @@ export default function Footer() {
                 </LocalizedLink>
               </li>
             </ul>
-          </StaggerItem>
+          </StaggerItem> */}
 
           <StaggerItem>
             <h4 className="text-lg font-semibold mb-6">{t("resources")}</h4>
@@ -201,12 +201,12 @@ export default function Footer() {
 
             <div className="text-right rtl:text-left">
               <p className="text-sm  mb-5 leading-relaxed">{t("stay_updated")}</p>
-              <form className="flex rounded-lg overflow-hidden shadow-lg rtl:flex-row-reverse">
+              <form className="flex rounded-lg overflow-hidden shadow-lg ">
                 <input
                   type="email"
                   name="email"
                   placeholder={t("enter_email")}
-                  className="flex-1 px-4 py-3.5 bg-transparent border border-gray-500 text-white placeholder-gray-400 outline-none focus:border-brand-yellow transition-all text-sm rounded-l-lg rtl:rounded-l-none rtl:rounded-r-lg"
+                  className="flex-1 px-4 py-3.5 bg-transparent border border-gray-300 text-white placeholder-gray-400 outline-none focus:border-brand-yellow transition-all text-sm rounded-l-lg rtl:rounded-l-none rtl:rounded-r-lg"
                 />
                 <button
                   type="submit"

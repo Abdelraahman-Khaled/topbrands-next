@@ -206,15 +206,18 @@ export default function ContactPage() {
                   </div>
                 )}
 
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 bg-brand-yellow text-black rounded-xl font-bold text-lg disabled:opacity-50"
+                  className={` mask-btn mask-btn--yellow-black rounded-xl w-full transition-opacity ${isSubmitting ? 'opacity-50 pointer-events-none' : ''}`}
                 >
-                  {isSubmitting ? t("sending") : t("contact_send_message_btn")}
-                </motion.button>
+                  <span className="mask-btn__label b">
+                    {isSubmitting ? t('btn_submitting') : t('btn_submit')}
+                  </span>
+                  <span className="mask-btn__fill ">
+                    {isSubmitting ? t('btn_submitting') : t('btn_submit')}
+                  </span>
+                </button>
               </motion.form>
             </div>
           </div>

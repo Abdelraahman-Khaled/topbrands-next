@@ -24,74 +24,74 @@ function BrandsContent() {
   const internationalBrands = [
     {
       id: 1,
-      name: "PINAR",
-      slug: "pinar",
-      logo: "https://readdy.ai/api/search-image?query=PINAR%20Turkish%20food%20brand%20logo%20clean%20white%20background%20professional%20product%20branding&width=200&height=120&seq=brand-pinar-page-001&orientation=landscape",
-      category: "food-beverages",
-      categoryName: "Food & Beverages",
-      description:
-        "Leading Turkish food brand specializing in dairy products, olive oil, and premium food items with international quality standards.",
-      products: ["Olive Oil", "Dairy Products", "Cheese", "Butter"],
-      origin: "Turkey",
-    },
-    {
-      id: 2,
-      name: "Ülker",
-      slug: "ulker",
-      logo: "https://readdy.ai/api/search-image?query=Ulker%20Turkish%20biscuit%20brand%20logo%20clean%20white%20background%20professional%20product%20branding&width=200&height=120&seq=brand-ulker-page-002&orientation=landscape",
+      name: "Coffee Joy",
+      slug: "coffee-joy",
+      logo: "/images/brands/Coffee Joy.webp",
       category: "snacks-confectionery",
       categoryName: "Snacks & Confectionery",
       description:
-        "One of Turkey's most beloved snack brands, offering a wide range of biscuits, chocolates, and confectionery products.",
-      products: ["Biscuits", "Chocolates", "Wafers", "Cakes"],
-      origin: "Turkey",
-    },
-    {
-      id: 3,
-      name: "Halta",
-      slug: "halta",
-      logo: "https://readdy.ai/api/search-image?query=Halta%20food%20brand%20logo%20clean%20white%20background%20professional%20product%20branding&width=200&height=120&seq=brand-halta-page-003&orientation=landscape",
-      category: "food-beverages",
-      categoryName: "Food & Beverages",
-      description:
-        "Premium food and beverage brand known for natural juices, sauces, and quality food products.",
-      products: ["Fruit Juices", "Tomato Paste", "Sauces", "Beverages"],
+        "Premium coffee-flavored biscuits known for their thin, crispy texture and rich aroma, perfect for coffee lovers.",
+      products: ["Coffee Biscuits", "Snack Packs"],
       origin: "International",
     },
     {
-      id: 4,
-      name: "Jacker",
-      slug: "jacker",
-      logo: "https://readdy.ai/api/search-image?query=Jacker%20snack%20brand%20logo%20clean%20white%20background%20professional%20product%20branding&width=200&height=120&seq=brand-jacker-page-004&orientation=landscape",
+      id: 2,
+      name: "Danisa",
+      slug: "danisa",
+      logo: "/images/brands/Danisa.webp",
       category: "snacks-confectionery",
       categoryName: "Snacks & Confectionery",
       description:
-        "Popular snack brand offering crispy chips, crackers, and savory snacks for all occasions.",
-      products: ["Potato Chips", "Crackers", "Corn Snacks", "Savory Snacks"],
+        "Traditional Danish butter cookies made with original Danish recipes and high-quality ingredients for a premium experience.",
+      products: ["Butter Cookies", "Premium Tins"],
+      origin: "International",
+    },
+    {
+      id: 3,
+      name: "Domty",
+      slug: "domty",
+      logo: "/images/brands/Domty.webp",
+      category: "dairy-products",
+      categoryName: "Dairy Products",
+      description:
+        "Leading manufacturer of high-quality dairy and juice products, famous for its wide variety and excellent taste.",
+      products: ["Feta Cheese", "Fruit Juices", "Bakery Items"],
+      origin: "Egypt",
+    },
+    {
+      id: 4,
+      name: "Kopiko",
+      slug: "kopiko",
+      logo: "/images/brands/Kopiko.webp",
+      category: "snacks-confectionery",
+      categoryName: "Snacks & Confectionery",
+      description:
+        "The world's #1 coffee candy and a pioneer in coffee-based snacks and beverages, loved globally.",
+      products: ["Coffee Candy", "Instant Coffee", "Coffee Drinks"],
       origin: "International",
     },
     {
       id: 5,
-      name: "Global Dairy Co.",
-      slug: "global-dairy-co",
-      logo: "https://readdy.ai/api/search-image?query=international%20dairy%20products%20brand%20logo%20clean%20white%20background%20professional%20product%20branding&width=200&height=120&seq=brand-intl-page-005&orientation=landscape",
-      category: "dairy-products",
-      categoryName: "Dairy Products",
-      description:
-        "International dairy brand providing fresh milk, yogurt, and dairy essentials with strict quality control.",
-      products: ["Fresh Milk", "Yogurt", "Cream", "Dairy Desserts"],
-      origin: "International",
-    },
-    {
-      id: 6,
-      name: "RefreshCo",
-      slug: "refreshco",
-      logo: "https://readdy.ai/api/search-image?query=global%20beverage%20brand%20logo%20clean%20white%20background%20professional%20product%20branding&width=200&height=120&seq=brand-intl-page-006&orientation=landscape",
+      name: "Landessa",
+      slug: "landessa",
+      logo: "/images/brands/Landessa.webp",
       category: "food-beverages",
       categoryName: "Food & Beverages",
       description:
-        "Global beverage company offering refreshing drinks, energy beverages, and premium water products.",
-      products: ["Soft Drinks", "Energy Drinks", "Bottled Water", "Juices"],
+        "Premium iced coffee beverages made with 100% Arabica beans and fresh Alpine milk for a refreshing kick.",
+      products: ["Iced Coffee", "Latte", "Espresso Drinks"],
+      origin: "Austria",
+    },
+    {
+      id: 6,
+      name: "Leeza",
+      slug: "leeza",
+      logo: "/images/brands/Leeza.webp",
+      category: "food-beverages",
+      categoryName: "Food & Beverages",
+      description:
+        "Versatile range of sweet spreads and confectionery products known for their smooth texture and rich flavor.",
+      products: ["Chocolate Spread", "Hazelnut Cream"],
       origin: "International",
     },
   ];
@@ -99,81 +99,76 @@ function BrandsContent() {
   const regionalBrands = [
     {
       id: 7,
-      name: "Al Sham Foods",
-      slug: "al-sham-foods",
-      logo: "https://readdy.ai/api/search-image?query=Middle%20Eastern%20food%20brand%20logo%20clean%20white%20background%20professional%20product%20branding&width=200&height=120&seq=brand-reg-page-001&orientation=landscape",
-      category: "food-beverages",
-      categoryName: "Food & Beverages",
-      description:
-        "Authentic Middle Eastern food brand specializing in traditional flavors and regional specialties.",
-      products: ["Tahini", "Halva", "Spices", "Traditional Foods"],
-      origin: "Syria",
-    },
-    {
-      id: 8,
-      name: "Damascus Essentials",
-      slug: "damascus-essentials",
-      logo: "https://readdy.ai/api/search-image?query=Arabic%20FMCG%20brand%20logo%20clean%20white%20background%20professional%20product%20branding&width=200&height=120&seq=brand-reg-page-002&orientation=landscape",
-      category: "non-food-fmcg",
-      categoryName: "Non-Food FMCG",
-      description:
-        "Leading regional FMCG brand providing household essentials and personal care products.",
-      products: [
-        "Cleaning Products",
-        "Personal Care",
-        "Household Items",
-        "Hygiene Products",
-      ],
-      origin: "Syria",
-    },
-    {
-      id: 9,
-      name: "Levant Sweets",
-      slug: "levant-sweets",
-      logo: "https://readdy.ai/api/search-image?query=Levantine%20consumer%20goods%20brand%20logo%20clean%20white%20background%20professional%20product%20branding&width=200&height=120&seq=brand-reg-page-003&orientation=landscape",
+      name: "Lotus",
+      slug: "lotus",
+      logo: "/images/brands/Lotus.webp",
       category: "snacks-confectionery",
       categoryName: "Snacks & Confectionery",
       description:
-        "Traditional Levantine confectionery brand offering authentic sweets and snacks.",
-      products: ["Baklava", "Maamoul", "Traditional Sweets", "Nuts"],
-      origin: "Syria",
+        "Original caramelized biscuits and spreads with a unique taste and crunchy texture, loved by all ages.",
+      products: ["Biscoff Biscuits", "Cookie Spread"],
+      origin: "Regional",
     },
     {
-      id: 10,
-      name: "Syrian Dairy Fresh",
-      slug: "syrian-dairy-fresh",
-      logo: "https://readdy.ai/api/search-image?query=Syrian%20local%20brand%20logo%20clean%20white%20background%20professional%20product%20branding&width=200&height=120&seq=brand-reg-page-004&orientation=landscape",
+      id: 8,
+      name: "Pinar",
+      slug: "pinar-regional",
+      logo: "/images/brands/Pinar.webp",
       category: "dairy-products",
       categoryName: "Dairy Products",
       description:
-        "Local dairy producer known for fresh milk, labneh, and traditional Syrian dairy products.",
-      products: ["Fresh Milk", "Labneh", "White Cheese", "Yogurt"],
-      origin: "Syria",
+        "High-quality Turkish dairy brand known for its authentic Labneh and premium cheese products.",
+      products: ["Labneh", "White Cheese", "Dairy Essentials"],
+      origin: "Turkey",
     },
     {
-      id: 11,
-      name: "Aleppo Gourmet",
-      slug: "aleppo-gourmet",
-      logo: "https://readdy.ai/api/search-image?query=regional%20food%20products%20brand%20logo%20clean%20white%20background%20professional%20product%20branding&width=200&height=120&seq=brand-reg-page-005&orientation=landscape",
+      id: 9,
+      name: "Sirarcha",
+      slug: "sirarcha",
+      logo: "/images/brands/Sirarcha.webp",
       category: "food-beverages",
       categoryName: "Food & Beverages",
       description:
-        "Premium regional food brand featuring gourmet products and specialty ingredients.",
-      products: ["Olive Oil", "Pickles", "Preserves", "Gourmet Foods"],
-      origin: "Syria",
+        "Bold and spicy chili sauces that add the perfect kick to any meal, crafted for flavor enthusiasts.",
+      products: ["Hot Sauce", "Chill Sauces"],
+      origin: "Regional",
     },
     {
-      id: 12,
-      name: "Orient Home Care",
-      slug: "orient-home-care",
-      logo: "https://readdy.ai/api/search-image?query=Middle%20East%20consumer%20brand%20logo%20clean%20white%20background%20professional%20product%20branding&width=200&height=120&seq=brand-reg-page-006&orientation=landscape",
-      category: "non-food-fmcg",
-      categoryName: "Non-Food FMCG",
+      id: 10,
+      name: "Ulker",
+      slug: "ulker-regional",
+      logo: "/images/brands/Ulker.webp",
+      category: "snacks-confectionery",
+      categoryName: "Snacks & Confectionery",
       description:
-        "Regional home care brand providing quality cleaning and household maintenance products.",
-      products: ["Detergents", "Cleaners", "Air Fresheners", "Tissues"],
-      origin: "Syria",
+        "A household name for biscuits and chocolates, delivering quality treats and sweets across the region.",
+      products: ["Chocolate Bars", "Biscuits", "Wafers"],
+      origin: "Turkey",
     },
+    {
+      id: 11,
+      name: "Wild Power",
+      slug: "wild-power",
+      logo: "/images/brands/Wild Power.webp",
+      category: "food-beverages",
+      categoryName: "Food & Beverages",
+      description:
+        "Dynamic energy drink brand providing a reliable boost of energy and refreshing flavors for active lifestyles.",
+      products: ["Energy Drinks"],
+      origin: "Regional",
+    },
+    // {
+    //   id: 12,
+    //   name: "Al Sham",
+    //   slug: "al-sham",
+    //   logo: "/images/brands/Lotus.webp", // Placeholder as ProductsBrands had only 5
+    //   category: "food-beverages",
+    //   categoryName: "Food & Beverages",
+    //   description:
+    //     "Traditional flavors and quality food products representing the rich culinary heritage of the region.",
+    //   products: ["Regional Specialties", "Fine Foods"],
+    //   origin: "Regional",
+    // },
   ];
 
   const categories = [
@@ -310,7 +305,7 @@ function BrandsContent() {
                     href={`/brands/${brand.slug}`}
                     className="block h-full group bg-white rounded-2xl overflow-hidden border-2 border-transparent cursor-pointer"
                   >
-                    <AnimatedCard className="h-full">
+                    <div className="h-full">
                       <div className="w-full h-40 flex items-center justify-center bg-white p-6">
                         <img
                           src={brand.logo}
@@ -323,7 +318,7 @@ function BrandsContent() {
                           <span className="text-xs text-brand-charcoal font-medium uppercase tracking-wider">
                             {t(brand.category.replace("-", "_"))}
                           </span>
-                          <span className="px-3 py-1 bg-brand-coral text-white text-xs font-semibold rounded-full">
+                          <span className="px-3 py-1 bg-brand-yellow text-black text-xs font-semibold rounded-full">
                             {brand.origin}
                           </span>
                         </div>
@@ -349,7 +344,7 @@ function BrandsContent() {
                           </div>
                         </div>
                       </div>
-                    </AnimatedCard>
+                    </div>
                   </LocalizedLink>
                 </StaggerItem>
               ))}
@@ -359,11 +354,9 @@ function BrandsContent() {
       </ScrollReveal>
 
       {/* CTA Section */}
-      <ScrollReveal delay={0.1}>
-        <GlobalCTA title={t("want_your_brand_distributed")}
-          subtitle={t("join_growing_portfolio")}
-        />
-      </ScrollReveal>
+      <GlobalCTA title={t("want_your_brand_distributed")}
+        subtitle={t("join_growing_portfolio")}
+      />
     </>
   );
 }

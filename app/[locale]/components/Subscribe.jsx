@@ -43,20 +43,31 @@ const Subscribe = ({ title, becomePartner = false, mail = false }) => {
                         <div className='flex flex-col sm:flex-row gap-4 w-full justify-center px-4 md:px-0'>
                             <LocalizedLink
                                 href={'/become-a-partner'}
-                                className="inline-flex items-center justify-center gap-3 px-8 md:px-10 py-3.5 md:py-4 bg-brand-yellow text-brand-charcoal rounded-full font-bold text-base md:text-lg hover:brightness-110 transition-all shadow-xl hover:shadow-2xl whitespace-nowrap cursor-pointer w-full sm:w-auto"
+                                className="mask-btn mask-btn--yellow-white !rounded-full sm:w-auto w-full shadow-xl hover:shadow-2xl"
                             >
-                                <span>{t("become_a_partner")}</span>
-                                <i className="ri-arrow-right-line text-xl rtl:rotate-180"></i>
+                                <span className="mask-btn__label gap-3">
+                                    {t("become_a_partner")}
+                                    <i className="ri-arrow-right-line text-xl rtl:rotate-180"></i>
+                                </span>
+                                <span className="mask-btn__fill gap-3">
+                                    {t("become_a_partner")}
+                                    <i className="ri-arrow-right-line text-xl rtl:rotate-180"></i>
+                                </span>
                             </LocalizedLink>
 
                             <LocalizedLink
                                 href={"/services"}
-                                className="inline-flex items-center justify-center gap-3 px-8 md:px-10 py-3.5 md:py-4 bg-inherit text-brand-white border-2 border-brand-white rounded-full font-bold text-base md:text-lg hover:brightness-110 transition-all shadow-xl hover:shadow-2xl whitespace-nowrap cursor-pointer hover:bg-white duration-300 hover:text-brand-charcoal w-full sm:w-auto"
+                                className="mask-btn mask-btn--none-white !rounded-full sm:w-auto w-full shadow-xl hover:shadow-2xl"
                             >
-                                <span>{t("btn_services")}</span>
-                                <i className="ri-arrow-right-line text-xl rtl:rotate-180"></i>
+                                <span className="mask-btn__label gap-3">
+                                    {t("btn_services")}
+                                    <i className="ri-arrow-right-line text-xl rtl:rotate-180"></i>
+                                </span>
+                                <span className="mask-btn__fill gap-3">
+                                    {t("btn_services")}
+                                    <i className="ri-arrow-right-line text-xl rtl:rotate-180"></i>
+                                </span>
                             </LocalizedLink>
-
                         </div>
                         :
                         <form
@@ -70,9 +81,10 @@ const Subscribe = ({ title, becomePartner = false, mail = false }) => {
                             />
                             <button
                                 type="submit"
-                                className="w-full sm:w-auto bg-[#F7E326] hover:bg-[#e5d120] text-black font-bold px-8 md:px-10 py-4 rounded-lg transition-all duration-200 whitespace-nowrap"
+                                className="mask-btn mask-btn--yellow-white !rounded-lg w-full sm:w-auto"
                             >
-                                {t("newsletter_btn")}
+                                <span className="mask-btn__label">{t("newsletter_btn")}</span>
+                                <span className="mask-btn__fill">{t("newsletter_btn")}</span>
                             </button>
                         </form>
                 }

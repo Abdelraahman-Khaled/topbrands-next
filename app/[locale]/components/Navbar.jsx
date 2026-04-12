@@ -172,9 +172,8 @@ export default function Navbar() {
           >
             <motion.button
               onClick={toggleLanguage}
-              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-3 py-1.5 rounded-lg font-bold transition-all flex items-center gap-2 shadow-sm  text-white bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20`}
+              className={`px-3 py-1.5 cursor-pointer duration-300 rounded-lg font-bold transition-all flex items-center gap-2 shadow-sm  text-white bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20`}
             >
               <i className="ri-global-line"></i>
               {currentLocale === "en" ? "AR" : "EN"}
