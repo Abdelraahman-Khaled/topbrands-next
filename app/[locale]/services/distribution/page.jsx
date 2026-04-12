@@ -33,10 +33,10 @@ export default function DistributionPage() {
   ];
 
   const stats = [
-    { value: '14', label: 'Governorates Covered' },
-    { value: '5000+', label: 'Retail Points' },
-    { value: '98%', label: 'Delivery Success Rate' },
-    { value: '24h', label: 'Average Delivery Time' }
+    { value: '14', label: t("stat1_label") },
+    { value: '5000+', label: t("stat2_label") },
+    { value: '98%', label: t("stat3_label") },
+    { value: '24h', label: t("stat4_label") }
   ];
 
   return (
@@ -46,12 +46,12 @@ export default function DistributionPage() {
       {/* Hero Section */}
       <HeroSection
         img="https://readdy.ai/api/search-image?query=aerial%20view%20of%20large%20distribution%20center%20with%20multiple%20delivery%20trucks%20loading%20docks%20warehouse%20facility%20professional%20logistics%20operations%20bright%20daylight%20industrial%20photography%20clean%20modern%20setting&width=1920&height=800&seq=distribution-hero-001&orientation=landscape"
-        subtitle="DISTRIBUTION"
-        title="Nationwide Distribution"
-        yellowTitle="Network"
-        description1="Strong coverage across traditional retail, modern trade, and wholesale channels throughout Syria."
-        yellowText="We ensure your products"
-        description2="reach every corner of the market."
+        subtitle={t("distribution")}
+        title={t("national_wide")}
+        yellowTitle={t("dist_hero_yellow")}
+        description1={t("dist_hero_desc")}
+        yellowText={t("We_ensure_your_products")}
+        description2={t("dist_hero_desc2")}
       />
 
       {/* Stats Section */}
@@ -99,46 +99,44 @@ export default function DistributionPage() {
       </ScrollReveal>
 
       {/* Process Section */}
-      <ScrollReveal>
-        <section className="py-16 lg:py-24 bg-brand-paleblue">
-          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-jet mb-6">{t('how_title')}</h2>
-                <p className="text-lg text-brand-charcoal mb-8 leading-relaxed font-medium">
-                  {t('how_subtitle')}
-                </p>
+      <section className="py-16 lg:py-24 bg-brand-paleblue">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-jet mb-6">{t('how_title')}</h2>
+              <p className="text-lg text-brand-charcoal mb-8 leading-relaxed font-medium">
+                {t('how_subtitle')}
+              </p>
 
-                <StaggerContainer className="space-y-6">
-                  {[1, 2, 3, 4].map((i) => (
-                    <StaggerItem key={i} className="flex items-start gap-4">
-                      <div className="w-10 h-10 flex items-center justify-center bg-brand-yellow rounded-full text-brand-jet font-bold flex-shrink-0">
-                        {i}
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-bold text-brand-jet mb-1  tracking-tight">
-                          {t(`step${i}_title`) || (i === 1 ? "Order Processing" : i === 2 ? "Route Optimization" : i === 3 ? "Delivery Execution" : "Confirmation & Reporting")}
-                        </h4>
-                        <p className="text-sm md:text-base text-brand-charcoal font-medium">
-                          {t(`step${i}_desc`) || (i === 1 ? "Efficient order management and inventory allocation" : i === 2 ? "Smart routing for fastest delivery times" : i === 3 ? "Professional delivery with real-time tracking" : "Delivery confirmation and performance analytics")}
-                        </p>
-                      </div>
-                    </StaggerItem>
-                  ))}
-                </StaggerContainer>
-              </div>
+              <StaggerContainer className="space-y-6">
+                {[1, 2, 3, 4].map((i) => (
+                  <StaggerItem key={i} className="flex items-start gap-4">
+                    <div className="w-10 h-10 flex items-center justify-center bg-brand-yellow rounded-full text-brand-jet font-bold flex-shrink-0">
+                      {i}
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-brand-jet mb-1  tracking-tight">
+                        {t(`step${i}_title`) || (i === 1 ? "Order Processing" : i === 2 ? "Route Optimization" : i === 3 ? "Delivery Execution" : "Confirmation & Reporting")}
+                      </h4>
+                      <p className="text-sm md:text-base text-brand-charcoal font-medium">
+                        {t(`step${i}_desc`) || (i === 1 ? "Efficient order management and inventory allocation" : i === 2 ? "Smart routing for fastest delivery times" : i === 3 ? "Professional delivery with real-time tracking" : "Delivery confirmation and performance analytics")}
+                      </p>
+                    </div>
+                  </StaggerItem>
+                ))}
+              </StaggerContainer>
+            </div>
 
-              <div className="relative group">
-                <img
-                  src="https://readdy.ai/api/search-image?query=delivery%20truck%20driver%20handing%20package%20to%20store%20owner%20retail%20delivery%20professional%20service%20friendly%20interaction%20bright%20daylight%20commercial%20photography&width=600&height=500&seq=distribution-process-001&orientation=portrait"
-                  alt="Distribution Process"
-                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover object-center rounded-[32px] shadow-2xl transition-transform group-hover:scale-[1.02] duration-500"
-                />
-              </div>
+            <div className="relative group">
+              <img
+                src="https://readdy.ai/api/search-image?query=delivery%20truck%20driver%20handing%20package%20to%20store%20owner%20retail%20delivery%20professional%20service%20friendly%20interaction%20bright%20daylight%20commercial%20photography&width=600&height=500&seq=distribution-process-001&orientation=portrait"
+                alt="Distribution Process"
+                className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover object-center rounded-[32px] shadow-2xl transition-transform duration-500"
+              />
             </div>
           </div>
-        </section>
-      </ScrollReveal>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <Subscribe

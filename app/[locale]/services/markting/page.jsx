@@ -12,64 +12,64 @@ export default function MarketingPage() {
   const services = [
     {
       icon: 'ri-bar-chart-box-line',
-      title: 'Market Research & Analysis',
-      description: 'In-depth market research and consumer behavior analysis to identify opportunities and optimize strategies.'
+      title: t('marketing_services_research_title'),
+      description: t('marketing_services_research_desc')
     },
     {
       icon: 'ri-megaphone-line',
-      title: 'Brand Activation',
-      description: 'Creative brand activation campaigns that engage consumers and drive brand awareness across all touchpoints.'
+      title: t('marketing_services_activation_title'),
+      description: t('marketing_services_activation_desc')
     },
     {
       icon: 'ri-smartphone-line',
-      title: 'Digital Marketing',
-      description: 'Comprehensive digital marketing strategies including social media, content marketing, and online advertising.'
+      title: t('marketing_services_digital_title'),
+      description: t('marketing_services_digital_desc')
     },
     {
       icon: 'ri-store-3-line',
-      title: 'Trade Marketing',
-      description: 'Strategic trade marketing initiatives to boost product visibility and sales at retail points.'
+      title: t('marketing_services_trade_title'),
+      description: t('marketing_services_trade_desc')
     },
     {
       icon: 'ri-team-line',
-      title: 'Promoter Management',
-      description: 'Professional promoter teams trained to represent your brand and drive in-store conversions.'
+      title: t('marketing_services_promoter_title'),
+      description: t('marketing_services_promoter_desc')
     },
     {
       icon: 'ri-pie-chart-line',
-      title: 'Analytics & Reporting',
-      description: 'Real-time analytics and comprehensive reporting to measure campaign performance and ROI.'
+      title: t('marketing_services_analytics_title'),
+      description: t('marketing_services_analytics_desc')
     }
   ];
 
   const capabilities = [
     {
       icon: 'ri-lightbulb-line',
-      title: 'Strategic Planning',
-      description: 'Data-driven marketing strategies aligned with your business objectives'
+      title: t('cap_strategic_planning_title'),
+      description: t('cap_strategic_planning_desc')
     },
     {
       icon: 'ri-focus-3-line',
-      title: 'Consumer Insights',
-      description: 'Deep understanding of local consumer preferences and behaviors'
+      title: t('cap_consumer_insights_title'),
+      description: t('cap_consumer_insights_desc')
     },
     {
       icon: 'ri-rocket-line',
-      title: 'Campaign Execution',
-      description: 'Flawless execution of marketing campaigns across all channels'
+      title: t('cap_campaign_execution_title'),
+      description: t('cap_campaign_execution_desc')
     },
     {
       icon: 'ri-line-chart-line',
-      title: 'Performance Tracking',
-      description: 'Continuous monitoring and optimization for maximum results'
+      title: t('cap_performance_tracking_title'),
+      description: t('cap_performance_tracking_desc')
     }
   ];
 
   const stats = [
-    { value: '500+', label: 'Campaigns Executed' },
-    { value: '50+', label: 'Brand Partners' },
-    { value: '95%', label: 'Client Satisfaction' },
-    { value: '3x', label: 'Average ROI' }
+    { value: '500+', label: t('stat_campaigns') },
+    { value: '50+', label: t('stat_partners') },
+    { value: '95%', label: t('stat_satisfaction') },
+    { value: '3x', label: t('stat_roi') }
   ];
 
   return (
@@ -79,12 +79,12 @@ export default function MarketingPage() {
       {/* Hero Section */}
       <HeroSection
         img="https://readdy.ai/api/search-image?query=modern%20marketing%20team%20brainstorming%20session%20creative%20office%20environment%20with%20digital%20screens%20showing%20analytics%20charts%20graphs%20professional%20business%20meeting%20colorful%20post%20it%20notes%20whiteboard%20strategy%20planning%20bright%20contemporary%20workspace&width=1920&height=800&seq=marketing-hero-001&orientation=landscape"
-        subtitle="360 MARKETING"
-        title="360 Marketing"
-        yellowTitle="Solutions"
-        description1="Complete marketing solutions with dedicated teams for marketing insights, strategic growth,"
-        yellowText="and comprehensive brand management"
-        description2="across all channels."
+        subtitle={t('marketing_hero_subtitle')}
+        title={t('marketing_hero_title')}
+        yellowTitle={t('marketing_hero_yellow_title')}
+        description1={t('marketing_hero_desc1')}
+        yellowText={t('marketing_hero_yellow_text')}
+        description2={t('marketing_hero_desc2')}
       />
 
       {/* Stats Section */}
@@ -106,9 +106,9 @@ export default function MarketingPage() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
           <ScrollReveal>
             <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-jet mb-4 uppercase tracking-tight">Our Marketing Services</h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-jet mb-4 uppercase tracking-tight">{t('our_marketing_services')}</h2>
               <p className="text-lg md:text-xl text-brand-charcoal max-w-3xl mx-auto font-medium">
-                Comprehensive marketing solutions tailored to drive your brand's success
+                {t('marketing_services_subtitle')}
               </p>
             </div>
           </ScrollReveal>
@@ -135,9 +135,9 @@ export default function MarketingPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <ScrollReveal>
               <div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-jet mb-6">Why Choose Our Marketing Solutions?</h2>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-jet mb-6">{t('why_choose_marketing_title')}</h2>
                 <p className="text-lg text-brand-charcoal mb-8 leading-relaxed font-medium">
-                  Our dedicated marketing team combines local market expertise with global best practices to deliver results-driven campaigns that resonate with your target audience.
+                  {t('why_choose_marketing_desc')}
                 </p>
 
                 <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -172,22 +172,22 @@ export default function MarketingPage() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
           <ScrollReveal>
             <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-jet mb-4">Our Approach</h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-jet mb-4">{t('our_approach_title')}</h2>
               <p className="text-lg md:text-xl text-brand-charcoal max-w-3xl mx-auto font-medium">
-                A systematic approach to delivering marketing excellence
+                {t('our_approach_subtitle')}
               </p>
             </div>
           </ScrollReveal>
 
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
-              { id: 1, title: 'Discovery', desc: 'Understanding your brand, goals, and target audience' },
-              { id: 2, title: 'Strategy', desc: 'Developing data-driven marketing strategies' },
-              { id: 3, title: 'Execution', desc: 'Implementing campaigns across all channels' },
-              { id: 4, title: 'Optimization', desc: 'Continuous improvement based on performance data' }
+              { id: 1, title: t('step_discovery_title'), desc: t('step_discovery_desc') },
+              { id: 2, title: t('step_strategy_title'), desc: t('step_strategy_desc') },
+              { id: 3, title: t('step_execution_title'), desc: t('step_execution_desc') },
+              { id: 4, title: t('step_optimization_title'), desc: t('step_optimization_desc') }
             ].map((step) => (
-              <StaggerItem key={step.id} className="text-center group bg-brand-paleblue p-8 rounded-[32px] hover:bg-brand-yellow transition-all duration-300">
-                <div className="w-16 h-16 flex items-center justify-center bg-brand-jet text-brand-yellow rounded-full mx-auto mb-6 group-hover:scale-110 transition-transform">
+              <StaggerItem key={step.id} className="text-center group bg-brand-paleblue p-8 rounded-[32px] hover:bg-brand-yellow transition-all duration-500">
+                <div className="w-16 h-16 flex items-center justify-center bg-brand-jet text-brand-yellow rounded-full mx-auto mb-6 transition-transform">
                   <span className="text-2xl font-bold">{step.id}</span>
                 </div>
                 <h3 className="text-xl font-bold text-brand-jet mb-3">{step.title}</h3>
@@ -201,8 +201,8 @@ export default function MarketingPage() {
       {/* CTA Section */}
       <div className="py-12 md:py-16">
         <GlobalCTA
-            title="Ready to Elevate Your Brand?"
-            subtitle="Partner with Top Brands Syria for comprehensive 360 marketing solutions"
+            title={t('marketing_cta_title')}
+            subtitle={t('marketing_cta_subtitle')}
             contact={true}
         />
       </div>

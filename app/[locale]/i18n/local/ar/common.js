@@ -8,6 +8,7 @@ export default {
   blog: "المدونة",
   contact: "اتصل بنا",
   products: "المنتجات",
+  markting: "التسويق",
   //end of navbar
   // {Home}
   // hero
@@ -848,7 +849,8 @@ export default {
   dist_hero_yellow: "شبكة",
   dist_hero_desc:
     "تغطية قوية عبر قنوات التجزئة التقليدية، والتجارة الحديثة، والجملة في جميع أنحاء سوريا. نضمن وصول منتجاتك إلى كل ركن من أركان السوق.",
-
+  We_ensure_your_products: "نحن نضمن جودة منتجاتك",
+  dist_hero_desc2: "الوصول إلى كل ركن من أركان السوق.",
   stat1_val: "14",
   stat1_label: "محافظة مغطاة",
   stat2_val: "5000+",
@@ -1264,4 +1266,114 @@ export default {
   brand_wild_power_prod_1_desc: "تركيبة مشروب الطاقة الأصلية",
   brand_wild_power_prod_2_name: "وايلد باور زيرو",
   brand_wild_power_prod_2_desc: "دفعة طاقة خالية من السكر",
+
+  // Marketing Page
+  marketing_hero_subtitle: "تسويق 360 درجة",
+  marketing_hero_title: "تسويق 360 درجة",
+  marketing_hero_yellow_title: "حلول",
+  marketing_hero_desc1:
+    "حلول تسويقية كاملة مع فرق عمل مخصصة لرؤى التسويق والنمو الاستراتيجي،",
+  marketing_hero_yellow_text: "وإدارة شاملة للعلامة التجارية",
+  marketing_hero_desc2: "عبر جميع القنوات.",
+  stat_campaigns: "حملات تم تنفيذها",
+  stat_partners: "شركاء العلامة التجارية",
+  stat_satisfaction: "رضا العملاء",
+  stat_roi: "متوسط العائد على الاستثمار",
+  our_marketing_services: "خدماتنا التسويقية",
+  marketing_services_subtitle:
+    "حلول تسويقية شاملة مصممة لتعزيز نجاح علامتك التجارية",
+  marketing_services_research_title: "أبحاث وتحليل السوق",
+  marketing_services_research_desc:
+    "أبحاث سوقية متعمقة وتحليل لسلوك المستهلك لتحديد الفرص وتحسين الاستراتيجيات.",
+  marketing_services_activation_title: "تفعيل العلامة التجارية",
+  marketing_services_activation_desc:
+    "حملات إبداعية لتفعيل العلامة التجارية تجذب المستهلكين وتعزز الوعي بالعلامة التجارية عبر جميع نقاط الاتصال.",
+  marketing_services_digital_title: "التسويق الرقمي",
+  marketing_services_digital_desc:
+    "استراتيجيات تسويق رقمي شاملة تشمل منصات التواصل الاجتماعي، وتسويق المحتوى، والإعلانات عبر الإنترنت.",
+  marketing_services_trade_title: "التسويق التجاري",
+  marketing_services_trade_desc:
+    "مبادرات تسويق تجاري استراتيجية لتعزيز رؤية المنتج والمبيعات في نقاط البيع.",
+  marketing_services_promoter_title: "إدارة المروجين",
+  marketing_services_promoter_desc:
+    "فرق مروجين محترفة ومدربة لتمثيل علامتك التجارية وتحفيز الشراء داخل المتجر.",
+  marketing_services_analytics_title: "التحليلات والتقارير",
+  marketing_services_analytics_desc:
+    "تحليلات فورية وتقارير شاملة لقياس أداء الحملات والعائد على الاستثمار.",
+  why_choose_marketing_title: "لماذا تختار حلولنا التسويقية؟",
+  why_choose_marketing_desc:
+    "يجمع فريق التسويق المتخصص لدينا بين الخبرة في السوق المحلي وأفضل الممارسات العالمية لتقديم حملات قائمة على النتائج تلقى صدى لدى جمهورك المستهدف.",
+  cap_strategic_planning_title: "التخطيط الاستراتيجي",
+  cap_strategic_planning_desc:
+    "استراتيجيات تسويقية قائمة على البيانات تتماشى مع أهداف عملك",
+  cap_consumer_insights_title: "رؤى المستهلك",
+  cap_consumer_insights_desc:
+    "فهم عميق لتفضيلات المستهلكين المحليين وسلوكياتهم",
+  cap_campaign_execution_title: "تنفيذ الحملات",
+  cap_campaign_execution_desc: "تنفيذ دقيق للحملات التسويقية عبر جميع القنوات",
+  cap_performance_tracking_title: "تتبع الأداء",
+  cap_performance_tracking_desc:
+    "مراقبة وتحسين مستمر لتحقيق أقصى قدر من النتائج",
+  our_approach_title: "نهجنا",
+  our_approach_subtitle: "نهج منهجي لتحقيق التميز التسويقي",
+  step_discovery_title: "الاكتشاف",
+  step_discovery_desc: "فهم علامتك التجارية وأهدافك وجمهورك المستهدف",
+  step_strategy_title: "الاستراتيجية",
+  step_strategy_desc: "تطوير استراتيجيات تسويقية قائمة على البيانات",
+  step_execution_title: "التنفيذ",
+  step_execution_desc: "تنفيذ الحملات عبر جميع القنوات",
+  step_optimization_title: "التحسين",
+  step_optimization_desc: "التحسين المستمر بناءً على بيانات الأداء",
+  marketing_cta_title: "هل أنت مستعد للارتقاء بعلامتك التجارية؟",
+  marketing_cta_subtitle:
+    "شارك توب براندز سوريا للحصول على حلول تسويقية متكاملة 360 درجة",
+
+  // Logistics Page
+  logistics_hero_subtitle: "الخدمات اللوجستية",
+  logistics_hero_title: "خدمات لوجستية",
+  logistics_hero_yellow_title: "وتخزين متطورة",
+  logistics_hero_desc: "تخزين فعال، مسارات توصيل محسنة، ونقل مبرد عند الحاجة.",
+  logistics_hero_yellow_text: "يتم التعامل مع منتجاتك",
+  logistics_hero_desc2: "بعناية ودقة.",
+  cap_fleet_mgmt: "إدارة الأسطول",
+  cap_bulk_storage: "تخزين كميات كبيرة",
+  cap_same_day: "توصيل في نفس اليوم",
+  cap_quality_control: "رقابة الجودة",
+  cap_documentation: "التوثيق",
+  cap_support: "دعم 24/7",
+  logistics_solutions_title: "حلول لوجستية",
+  logistics_solutions_desc:
+    "بنية تحتية لوجستية شاملة مصممة للتميز في قطاع السلع الاستهلاكية",
+  feature_modern_warehouse_title: "مستودعات حديثة",
+  feature_modern_warehouse_desc:
+    "مرافق مستودعات متطورة مع أنظمة تخزين منظمة وإدارة المخزون.",
+  feature_temp_control_title: "التحكم في درجة الحرارة",
+  feature_temp_control_desc:
+    "تخزين ونقل مراقب لدرجة الحرارة للمنتجات الحساسة للحرارة.",
+  feature_route_opt_title: "تحسين المسارات",
+  feature_route_opt_desc: "تخطيط مسار متقدم لتوصيل فعال وتقليل تكاليف النقل.",
+  feature_inv_mgmt_title: "إدارة المخزون",
+  feature_inv_mgmt_desc:
+    "تتبع المخزون في الوقت الفعلي وأنظمة إعادة تزويد المخزون المؤتمتة.",
+  warehouse_excellence_title: "التميز في التخزين",
+  warehouse_excellence_desc:
+    "تم تصميم مرافق التخزين لدينا للتعامل مع المتطلبات الفريدة لمنتجات السلع الاستهلاكية، مما يضمن سلامة المنتج وتلبية الطلبات بكفاءة.",
+  warehouse_point1: "مناطق تخزين منظمة حسب فئة المنتج",
+  warehouse_point2: "نظام إدارة المخزون FIFO (الوارد أولاً يصرف أولاً)",
+  warehouse_point3: "فحص الجودة عند الاستلام والشحن",
+  warehouse_point4: "مرفق آمن مع مراقبة على مدار الساعة",
+  fleet_transport_title: "الأسطول والنقل",
+  fleet_transport_desc:
+    "يضمن أسطولنا المتنوع من المركبات التسليم في الوقت المناسب عبر جميع قطاعات السوق، من التجزئة الحضرية إلى الجملة الإقليمية.",
+  fleet_heavy_trucks_title: "شاحنات ثقيلة",
+  fleet_heavy_trucks_desc: "عمليات تسليم كميات كبيرة",
+  fleet_vans_title: "فانات",
+  fleet_vans_desc: "توزيع حضري",
+  fleet_refrigerated_title: "مبردة",
+  fleet_refrigerated_desc: "سلسلة تبريد",
+  fleet_express_title: "إكسبريس",
+  fleet_express_desc: "توصيل سريع",
+  logistics_cta_title: "هل تحتاج لدعم لوجستي؟",
+  logistics_cta_subtitle:
+    "دع توب براندز سوريا تتولى احتياجاتك اللوجستية والتخزينية للسلع الاستهلاكية",
 };
