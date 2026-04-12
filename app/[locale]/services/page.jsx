@@ -7,7 +7,6 @@ import GlobalCTA from "../components/GlobalCTA";
 
 
 
-import ScrollReveal from "../components/ScrollReveal";
 
 export default function ServicesPage() {
   const { t } = useTranslation();

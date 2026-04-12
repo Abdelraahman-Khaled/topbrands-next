@@ -147,6 +147,43 @@ export default function Footer() {
               </li>
             </ul>
           </StaggerItem>
+          <StaggerItem>
+            <h4 className="text-lg font-semibold mb-6">{t("services")}</h4>
+            <ul className="space-y-3.5">
+              <li>
+                <LocalizedLink
+                  href="/services/logistics"
+                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
+                >
+                  {t("Advanced_Logistics")}
+                </LocalizedLink>
+              </li>
+              <li>
+                <LocalizedLink
+                  href="/services/professional-sales"
+                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
+                >
+                  {t("professional_sales")}
+                </LocalizedLink>
+              </li>
+              <li>
+                <LocalizedLink
+                  href="/services/distribution"
+                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
+                >
+                  {t("distribution")}
+                </LocalizedLink>
+              </li>
+              <li>
+                <LocalizedLink
+                  href="/services/markting"
+                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
+                >
+                  {t("markting")}
+                </LocalizedLink>
+              </li>
+            </ul>
+          </StaggerItem>
 
           <StaggerItem>
             <h4 className="text-lg font-semibold mb-6">{t("legal")}</h4>

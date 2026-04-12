@@ -14,6 +14,7 @@ export default {
   years_group: "30+ YEARS VIA AL BARENGI GROUP",
   contact_syria: "Contact Top Brands Syria",
   become_partner: "Become a Distribution Partner",
+  markting:"Markting",
   Distribution_Partner: "Distribution Partner",
   get_in_touch: "Get In Touch",
   explore_services: "Explore Our Services",
@@ -889,7 +890,8 @@ export default {
   dist_hero_yellow: "Network",
   dist_hero_desc:
     "Strong coverage across traditional retail, modern trade, and wholesale channels throughout Syria. We ensure your products reach every corner of the market.",
-
+  We_ensure_your_products: "We ensure your products",
+  dist_hero_desc2: "reach every corner of the market.",
   stat1_val: "14",
   stat1_label: "Governorates Covered",
   stat2_val: "5000+",
@@ -1236,12 +1238,14 @@ export default {
   brand_not_found: "Brand Not Found",
   contact_for_orders: "Contact for Orders",
   featured_products_title: "Featured {{name}} Products",
-  featured_products_desc: "Explore our curated selection of high-quality {{name}} products, delivered with excellence throughout the region.",
+  featured_products_desc:
+    "Explore our curated selection of high-quality {{name}} products, delivered with excellence throughout the region.",
   size_label: "Size",
 
   // Brand: Coffee Joy
   brand_coffee_joy_name: "Coffee Joy",
-  brand_coffee_joy_desc: "Coffee Joy is a premium coffee-flavored biscuit known for its thin, crispy texture and rich aroma. It is the perfect companion for your coffee break, providing a delightful crunch and intense coffee flavor.",
+  brand_coffee_joy_desc:
+    "Coffee Joy is a premium coffee-flavored biscuit known for its thin, crispy texture and rich aroma. It is the perfect companion for your coffee break, providing a delightful crunch and intense coffee flavor.",
   brand_coffee_joy_prod_1_name: "Coffee Joy Pack",
   brand_coffee_joy_prod_1_desc: "Thin and crispy coffee biscuits",
   brand_coffee_joy_prod_2_name: "Coffee Joy Family Pack",
@@ -1249,7 +1253,8 @@ export default {
 
   // Brand: Danisa
   brand_danisa_name: "Danisa",
-  brand_danisa_desc: "Danisa Traditional Butter Cookies are made with original Danish recipes and high-quality ingredients. Known for their premium quality and golden texture, they have become a global favorite for gifting and personal indulgence.",
+  brand_danisa_desc:
+    "Danisa Traditional Butter Cookies are made with original Danish recipes and high-quality ingredients. Known for their premium quality and golden texture, they have become a global favorite for gifting and personal indulgence.",
   brand_danisa_prod_1_name: "Traditional Butter Cookies",
   brand_danisa_prod_1_desc: "Original Danish recipe butter cookies",
   brand_danisa_prod_2_name: "Danisa Specialty Pack",
@@ -1257,7 +1262,8 @@ export default {
 
   // Brand: Domty
   brand_domty_name: "Domty",
-  brand_domty_desc: "Domty is a leading manufacturer of high-quality dairy and juice products. With a commitment to innovation and quality, Domty provides a wide range of nutritious and delicious options for consumers across the region.",
+  brand_domty_desc:
+    "Domty is a leading manufacturer of high-quality dairy and juice products. With a commitment to innovation and quality, Domty provides a wide range of nutritious and delicious options for consumers across the region.",
   brand_domty_prod_1_name: "Domty Feta Cheese",
   brand_domty_prod_1_desc: "Creamy and fresh feta cheese",
   brand_domty_prod_2_name: "Domty Natural Juice",
@@ -1265,7 +1271,8 @@ export default {
 
   // Brand: Kopiko
   brand_kopiko_name: "Kopiko",
-  brand_kopiko_desc: "Kopiko is the world's #1 coffee candy, made from real coffee beans extracts. It brings the rich taste of coffee into a convenient candy and beverage format, keeping you energized throughout the day.",
+  brand_kopiko_desc:
+    "Kopiko is the world's #1 coffee candy, made from real coffee beans extracts. It brings the rich taste of coffee into a convenient candy and beverage format, keeping you energized throughout the day.",
   brand_kopiko_prod_1_name: "Kopiko Coffee Candy",
   brand_kopiko_prod_1_desc: "Classic pocket coffee candy",
   brand_kopiko_prod_2_name: "Kopiko Lucky Day",
@@ -1273,7 +1280,8 @@ export default {
 
   // Brand: Landessa
   brand_landessa_name: "Landessa",
-  brand_landessa_desc: "Landessa offers premium iced coffee beverages made with 100% Arabica beans and fresh Alpine milk. Packaged in eco-friendly CartoCan, it provides a high-quality coffee experience on the go.",
+  brand_landessa_desc:
+    "Landessa offers premium iced coffee beverages made with 100% Arabica beans and fresh Alpine milk. Packaged in eco-friendly CartoCan, it provides a high-quality coffee experience on the go.",
   brand_landessa_prod_1_name: "Iced Coffee Latte",
   brand_landessa_prod_1_desc: "Smooth latte with Alpine milk",
   brand_landessa_prod_2_name: "Iced Coffee Espresso",
@@ -1281,7 +1289,8 @@ export default {
 
   // Brand: Leeza
   brand_leeza_name: "Leeza",
-  brand_leeza_desc: "Leeza provides a versatile range of sweet spreads and confectionery products. Known for their smooth texture and rich flavor, Leeza products are perfect for breakfasts and snacking.",
+  brand_leeza_desc:
+    "Leeza provides a versatile range of sweet spreads and confectionery products. Known for their smooth texture and rich flavor, Leeza products are perfect for breakfasts and snacking.",
   brand_leeza_prod_1_name: "Chocolate Spread",
   brand_leeza_prod_1_desc: "Rich hazelnut chocolate spread",
   brand_leeza_prod_2_name: "Leeza Wafers",
@@ -1289,7 +1298,8 @@ export default {
 
   // Brand: Lotus
   brand_lotus_name: "Lotus",
-  brand_lotus_desc: "Lotus Biscoff is a unique caramelized biscuit with a surprising crunch and distinctive flavor. It is loved worldwide and perfectly complements coffee, or can be enjoyed as a spread.",
+  brand_lotus_desc:
+    "Lotus Biscoff is a unique caramelized biscuit with a surprising crunch and distinctive flavor. It is loved worldwide and perfectly complements coffee, or can be enjoyed as a spread.",
   brand_lotus_prod_1_name: "Lotus Biscoff Biscuits",
   brand_lotus_prod_1_desc: "Original caramelized biscuits",
   brand_lotus_prod_2_name: "Lotus Biscoff Spread",
@@ -1297,7 +1307,8 @@ export default {
 
   // Brand: Pinar
   brand_pinar_regional_name: "Pinar",
-  brand_pinar_regional_desc: "Pinar is a high-quality Turkish dairy brand known for its authentic Labneh and premium cheese products. It brings the traditional flavors of Turkey to consumers with modern quality standards.",
+  brand_pinar_regional_desc:
+    "Pinar is a high-quality Turkish dairy brand known for its authentic Labneh and premium cheese products. It brings the traditional flavors of Turkey to consumers with modern quality standards.",
   brand_pinar_regional_prod_1_name: "Pinar Labneh",
   brand_pinar_regional_prod_1_desc: "Authentic creamy Turkish labneh",
   brand_pinar_regional_prod_2_name: "Pinar White Cheese",
@@ -1305,7 +1316,8 @@ export default {
 
   // Brand: Sirarcha
   brand_sirarcha_name: "Sirarcha",
-  brand_sirarcha_desc: "Sirarcha offers bold and spicy chili sauces that add the perfect kick to any meal. Crafted for flavor enthusiasts, it balances heat and spice for a superior culinary experience.",
+  brand_sirarcha_desc:
+    "Sirarcha offers bold and spicy chili sauces that add the perfect kick to any meal. Crafted for flavor enthusiasts, it balances heat and spice for a superior culinary experience.",
   brand_sirarcha_prod_1_name: "Sirarcha Hot Sauce",
   brand_sirarcha_prod_1_desc: "Spicy chili sauce with garlic",
   brand_sirarcha_prod_2_name: "Sirarcha Chili Mayo",
@@ -1313,7 +1325,8 @@ export default {
 
   // Brand: Ulker
   brand_ulker_regional_name: "Ulker",
-  brand_ulker_regional_desc: "Ulker is a household name for biscuits and chocolates, delivering quality treats and sweets across the region. With its rich heritage, Ulker remains a leader in the confectionery market.",
+  brand_ulker_regional_desc:
+    "Ulker is a household name for biscuits and chocolates, delivering quality treats and sweets across the region. With its rich heritage, Ulker remains a leader in the confectionery market.",
   brand_ulker_regional_prod_1_name: "Ulker Chocolate",
   brand_ulker_regional_prod_1_desc: "Rich milk chocolate bar",
   brand_ulker_regional_prod_2_name: "Ulker Biscuits",
@@ -1321,9 +1334,115 @@ export default {
 
   // Brand: Wild Power
   brand_wild_power_name: "Wild Power",
-  brand_wild_power_desc: "Wild Power is a dynamic energy drink brand providing a reliable boost of energy and refreshing flavors. Designed for active lifestyles, it keeps you performing at your best.",
+  brand_wild_power_desc:
+    "Wild Power is a dynamic energy drink brand providing a reliable boost of energy and refreshing flavors. Designed for active lifestyles, it keeps you performing at your best.",
   brand_wild_power_prod_1_name: "Wild Power Original",
   brand_wild_power_prod_1_desc: "Original energy drink formula",
   brand_wild_power_prod_2_name: "Wild Power Zero",
   brand_wild_power_prod_2_desc: "Sugar-free energy boost",
+
+  // Marketing Page
+  marketing_hero_subtitle: "360 MARKETING",
+  marketing_hero_title: "360 Marketing",
+  marketing_hero_yellow_title: "Solutions",
+  marketing_hero_desc1:
+    "Complete marketing solutions with dedicated teams for marketing insights, strategic growth,",
+  marketing_hero_yellow_text: "and comprehensive brand management",
+  marketing_hero_desc2: "across all channels.",
+  stat_campaigns: "Campaigns Executed",
+  stat_partners: "Brand Partners",
+  stat_satisfaction: "Client Satisfaction",
+  stat_roi: "Average ROI",
+  our_marketing_services: "Our Marketing Services",
+  marketing_services_subtitle:
+    "Comprehensive marketing solutions tailored to drive your brand's success",
+  marketing_services_research_title: "Market Research & Analysis",
+  marketing_services_research_desc:
+    "In-depth market research and consumer behavior analysis to identify opportunities and optimize strategies.",
+  marketing_services_activation_title: "Brand Activation",
+  marketing_services_activation_desc:
+    "Creative brand activation campaigns that engage consumers and drive brand awareness across all touchpoints.",
+  marketing_services_digital_title: "Digital Marketing",
+  marketing_services_digital_desc:
+    "Comprehensive digital marketing strategies including social media, content marketing, and online advertising.",
+  marketing_services_trade_title: "Trade Marketing",
+  marketing_services_trade_desc:
+    "Strategic trade marketing initiatives to boost product visibility and sales at retail points.",
+  marketing_services_promoter_title: "Promoter Management",
+  marketing_services_promoter_desc:
+    "Professional promoter teams trained to represent your brand and drive in-store conversions.",
+  marketing_services_analytics_title: "Analytics & Reporting",
+  marketing_services_analytics_desc:
+    "Real-time analytics and comprehensive reporting to measure campaign performance and ROI.",
+  why_choose_marketing_title: "Why Choose Our Marketing Solutions?",
+  why_choose_marketing_desc:
+    "Our dedicated marketing team combines local market expertise with global best practices to deliver results-driven campaigns that resonate with your target audience.",
+  cap_strategic_planning_title: "Strategic Planning",
+  cap_strategic_planning_desc:
+    "Data-driven marketing strategies aligned with your business objectives",
+  cap_consumer_insights_title: "Consumer Insights",
+  cap_consumer_insights_desc:
+    "Deep understanding of local consumer preferences and behaviors",
+  cap_campaign_execution_title: "Campaign Execution",
+  cap_campaign_execution_desc:
+    "Flawless execution of marketing campaigns across all channels",
+  cap_performance_tracking_title: "Performance Tracking",
+  cap_performance_tracking_desc:
+    "Continuous monitoring and optimization for maximum results",
+  our_approach_title: "Our Approach",
+  our_approach_subtitle:
+    "A systematic approach to delivering marketing excellence",
+  step_discovery_title: "Discovery",
+  step_discovery_desc: "Understanding your brand, goals, and target audience",
+  step_strategy_title: "Strategy",
+  step_strategy_desc: "Developing data-driven marketing strategies",
+  step_execution_title: "Execution",
+  step_execution_desc: "Implementing campaigns across all channels",
+  step_optimization_title: "Optimization",
+  step_optimization_desc: "Continuous improvement based on performance data",
+  marketing_cta_title: "Ready to Elevate Your Brand?",
+  marketing_cta_subtitle:
+    "Partner with Top Brands Syria for comprehensive 360 marketing solutions",
+
+  // Logistics Page
+  logistics_hero_subtitle: "LOGISTICS",
+  logistics_hero_title: "Advanced Logistics",
+  logistics_hero_yellow_title: "& Warehousing",
+  logistics_hero_desc: "Efficient warehousing, optimized delivery routes, and temperature-controlled transportation when required.",
+  logistics_hero_yellow_text: "Your products handled",
+  logistics_hero_desc2: "with care and precision.",
+  cap_fleet_mgmt: "Fleet Management",
+  cap_bulk_storage: "Bulk Storage",
+  cap_same_day: "Same-Day Delivery",
+  cap_quality_control: "Quality Control",
+  cap_documentation: "Documentation",
+  cap_support: "24/7 Support",
+  logistics_solutions_title: "Logistics Solutions",
+  logistics_solutions_desc: "Comprehensive logistics infrastructure designed for FMCG excellence",
+  feature_modern_warehouse_title: "Modern Warehousing",
+  feature_modern_warehouse_desc: "State-of-the-art warehouse facilities with organized storage systems and inventory management.",
+  feature_temp_control_title: "Temperature Control",
+  feature_temp_control_desc: "Climate-controlled storage and transportation for temperature-sensitive FMCG products.",
+  feature_route_opt_title: "Route Optimization",
+  feature_route_opt_desc: "Advanced route planning for efficient delivery and reduced transportation costs.",
+  feature_inv_mgmt_title: "Inventory Management",
+  feature_inv_mgmt_desc: "Real-time inventory tracking and automated stock replenishment systems.",
+  warehouse_excellence_title: "Warehouse Excellence",
+  warehouse_excellence_desc: "Our warehousing facilities are designed to handle the unique requirements of FMCG products, ensuring product integrity and efficient order fulfillment.",
+  warehouse_point1: "Organized storage zones by product category",
+  warehouse_point2: "FIFO inventory management system",
+  warehouse_point3: "Quality inspection at receiving and dispatch",
+  warehouse_point4: "Secure facility with 24/7 monitoring",
+  fleet_transport_title: "Fleet & Transportation",
+  fleet_transport_desc: "Our diverse fleet of vehicles ensures timely delivery across all market segments, from urban retail to regional wholesale.",
+  fleet_heavy_trucks_title: "Heavy Trucks",
+  fleet_heavy_trucks_desc: "Bulk deliveries",
+  fleet_vans_title: "Vans",
+  fleet_vans_desc: "Urban distribution",
+  fleet_refrigerated_title: "Refrigerated",
+  fleet_refrigerated_desc: "Cold chain",
+  fleet_express_title: "Express",
+  fleet_express_desc: "Quick delivery",
+  logistics_cta_title: "Need Logistics Support?",
+  logistics_cta_subtitle: "Let Top Brands Syria handle your FMCG logistics and warehousing needs",
 };
