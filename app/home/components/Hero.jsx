@@ -67,7 +67,7 @@ export default function Hero() {
               <motion.span
                 variants={headlineRevealVariants}
                 transition={{ delay: 0.2 }}
-                className="text-[#E5E7EB] text-5xl font-semibold block"
+                className="text-[#E5E7EB] text-[24px] sm:text-[36px] md:text-[48px] font-semibold block"
               >
                 {t("hero_title_accent")}
               </motion.span>
@@ -95,7 +95,7 @@ export default function Hero() {
             <motion.a
               whileTap={tapButtonVariants}
               href="/become-a-partner"
-              className="mask-btn mask-btn--yellow-black "
+              className="mask-btn mask-btn--yellow-black w-full"
             >
               <span className="mask-btn__label" >{t("become_partner")}</span>
               <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
@@ -107,7 +107,7 @@ export default function Hero() {
             <motion.a
               whileTap={tapButtonVariants}
               href="/contact"
-              className="mask-btn mask-btn--none-white"
+              className="mask-btn mask-btn--none-white w-full"
             >
               <span className="mask-btn__label ">{t("contact_syria")}</span>
               <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
