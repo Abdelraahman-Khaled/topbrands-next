@@ -1,0 +1,275 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-brand-yellow: #f7e326;
+  --color-brand-jet: #000000;
+  --color-brand-charcoal: #4b4f54;
+  --color-brand-paleblue: #dee3eb;
+  --color-brand-teal: #14b8a6;
+  --color-brand-coral: #ff6b6b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: "Quicksand", sans-serif;
+    /* scroll-behavior: smooth; */
+  }
+
+  html:lang(ar) {
+    font-family: "Cairo", sans-serif;
+  }
+
+  body {
+    font-family: "Quicksand", sans-serif;
+  }
+
+  body:lang(ar) {
+    font-family: "Cairo", sans-serif;
+  }
+
+  * {
+    font-family: "Quicksand", sans-serif;
+  }
+
+  *:lang(ar) {
+    font-family: "Cairo", sans-serif;
+  }
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: gray;
+}
+
+/* animation  */
+
+/* ════════════════════════════════════════════════════════════════════
+   Mask-animation button system - FINAL REVISED
+   ───────────────────────────────────────────────────────────────── */
+
+.mask-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  min-width: 200px;
+  height: 56px;
+  transition: all 0.3s ease;
+}
+
+/* ── THEMES ── */
+
+/* [REVEAL] None → White: Starts transparent, fills white on hover */
+.mask-btn--none-white {
+  --_fill: #fff;
+  --_fill-text: #000;
+  --_label: #fff;
+  --_label-hover: #fff;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+}
+.mask-btn--none-white .mask-btn__fill {
+  -webkit-mask-position: 100% 0;
+  mask-position: 100% 0;
+  -webkit-animation: ani-to-100 0.7s steps(29) forwards;
+  animation: ani-to-100 0.7s steps(29) forwards;
+}
+.mask-btn--none-white:hover .mask-btn__fill {
+  -webkit-animation: ani-to-0 0.7s steps(29) forwards;
+  animation: ani-to-0 0.7s steps(29) forwards;
+}
+
+/* [REVEAL] Yellow → White: Starts yellow, fills white on hover */
+.mask-btn--yellow-white {
+  --_fill: #f7e326; /* The starting color */
+  --_fill-text: #000; /* Text color on yellow */
+  --_label: #000; /* Text color on white (the background) */
+  --_label-hover: #000;
+  background: #fff; /* The target color */
+}
+
+.mask-btn--yellow-white .mask-btn__fill {
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
+  -webkit-animation: ani-to-0 0.7s steps(29) forwards;
+  animation: ani-to-0 0.7s steps(29) forwards;
+}
+
+.mask-btn--yellow-white:hover .mask-btn__fill {
+  -webkit-animation: ani-to-100 0.7s steps(29) forwards;
+  animation: ani-to-100 0.7s steps(29) forwards;
+}
+/* [ERASE] Yellow → Black: Starts yellow, sweeps out to reveal black */
+.mask-btn--yellow-black {
+  --_fill: #f7e326;
+  --_fill-text: #000;
+  --_label: #fff;
+  --_label-hover: #fff;
+  background: #000;
+}
+.mask-btn--yellow-black .mask-btn__fill {
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
+  -webkit-animation: ani-to-0 0.7s steps(29) forwards;
+  animation: ani-to-0 0.7s steps(29) forwards;
+}
+.mask-btn--yellow-black:hover .mask-btn__fill {
+  -webkit-animation: ani-to-100 0.7s steps(29) forwards;
+  animation: ani-to-100 0.7s steps(29) forwards;
+}
+
+/* [REVEAL] Gray → Black: Starts gray, fills black on hover */
+.mask-btn--gray-black {
+  --_fill: #000;
+  --_fill-text: #fff;
+  --_label: #fff;
+  --_label-hover: #fff;
+  background: #4b4f54;
+}
+.mask-btn--gray-black .mask-btn__fill {
+  -webkit-mask-position: 100% 0;
+  mask-position: 100% 0;
+  -webkit-animation: ani-to-100 0.7s steps(29) forwards;
+  animation: ani-to-100 0.7s steps(29) forwards;
+}
+.mask-btn--gray-black:hover .mask-btn__fill {
+  -webkit-animation: ani-to-0 0.7s steps(29) forwards;
+  animation: ani-to-0 0.7s steps(29) forwards;
+}
+
+/* ── Shared Inner Elements ── */
+
+.mask-btn__label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  color: var(--_label);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1;
+  transition: color 0.15s ease-in-out;
+}
+.mask-btn:hover .mask-btn__label {
+  color: var(--_label-hover);
+}
+
+.mask-btn__fill {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--_fill);
+  color: var(--_fill-text);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+
+  /* Sprite mask shared setup */
+  -webkit-mask-image: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+  mask-image: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+  -webkit-mask-size: 3000% 100%;
+  mask-size: 3000% 100%;
+}
+
+.mask-btn--yellow-white {
+  --_fill: #f7e326;
+  --_fill-text: #000;
+  --_label: #000;
+  --_label-hover: #000;
+  background: #fff;
+}
+
+/* ######################################### */
+
+/* ── Keyframes ── */
+
+/* Sweeps OUT to reveal (moves to 100%) */
+@keyframes ani-to-100 {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+@-webkit-keyframes ani-to-100 {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+/* Sweeps IN to cover (moves to 0%) */
+@keyframes ani-to-0 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+@-webkit-keyframes ani-to-0 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+img {
+  transition: scale 0.5s ease-in-out;
+  will-change: scale; /* Hint to the browser for smoother animation */
+}
+
+img:hover {
+  scale: 1.05;
+}
