@@ -85,7 +85,7 @@ const WarehouseExcellence = () => {
       <section className="py-24 bg-[#DEE3EB]">
         <div className="max-w-7xl px-6 mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <img
-            src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=1000"
+            src="/images/logistics/warehouse.webp"
             className="rounded-3xl shadow-xl h-full object-cover"
             alt="Forklift"
           />
@@ -140,7 +140,7 @@ const FleetSection = () => {
             </StaggerContainer>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=1000"
+            src="/images/logistics/fleet.webp"
             className="rounded-3xl shadow-xl order-1 lg:order-2 h-full"
             alt="Truck Fleet"
           />
@@ -156,7 +156,7 @@ export default function LogisticsPage() {
     <main>
 
       <HeroSection
-        img={"/images/logistics/logistics-hero.jpg"}
+        img={"/images/logistics/logistics-hero.webp"}
         title={t("Advanced_Logistics")}
         yellowTitle={t("log_hero_yellow")}
         subtitle={t("Logistics")}

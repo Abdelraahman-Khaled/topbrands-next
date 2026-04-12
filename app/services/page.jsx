@@ -74,7 +74,7 @@ export default function ServicesPage() {
 
 
       {/* Hero Section */}
-      <HeroSection img={"/images/services/hero.jpg"}
+      <HeroSection img={"/images/services/hero.webp"}
         title={t("Integrated FMCG")}
         yellowTitle={t("distribution_solutions_title")}
         subtitle={t("our_services")}

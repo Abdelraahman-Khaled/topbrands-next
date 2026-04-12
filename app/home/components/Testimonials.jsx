@@ -146,9 +146,12 @@ export default function Testimonials() {
             </p>
             <a
               href="/become-a-partner"
-              className="inline-block px-10 py-4 bg-[#F7E326] text-[#000000] rounded-lg text-lg font-bold hover:bg-white transition-all hover:transform hover:-translate-y-1 shadow-lg whitespace-nowrap cursor-pointer"
+              className="mask-btn mask-btn--yellow-white"
             >
-              {t("become_partner")}
+              <span className="mask-btn__label">{t("become_partner")}</span>
+              <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
+                {t("become_partner")}
+              </span>
             </a>
           </div>
         </div>

@@ -72,7 +72,7 @@ export default function Navbar() {
     { key: "about", href: "/about" },
     { key: "services", href: "/services" },
     { key: "brands", href: "/brands" },
-    { key: "products", href: "/products" },
+    // { key: "products", href: "/products" },
     { key: "coverage", href: "/market-coverage" },
     { key: "blog", href: "/blog" },
     { key: "contact", href: "/contact" }
@@ -102,9 +102,9 @@ export default function Navbar() {
 
   const mobileItemVariants = {
     closed: { opacity: 0, x: 20, filter: "blur(5px)" },
-    open: { 
-      opacity: 1, 
-      x: 0, 
+    open: {
+      opacity: 1,
+      x: 0,
       filter: "blur(0px)",
       transition: { type: "spring", stiffness: 300, damping: 30 }
     }
@@ -115,41 +115,37 @@ export default function Navbar() {
       initial="hidden"
       animate="visible"
       variants={navContainerVariants}
-      className={`fixed top-0 left-0 right-0 z-50 transition-[background,padding,shadow] duration-500 ease-out border-b ${isScrolled 
-        ? "bg-white/85 backdrop-blur-xl shadow-lg border-gray-100/30 py-3" 
-        : "bg-transparent border-transparent py-5"
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background,padding,shadow] duration-500 ease-out  
+        ${isScrolled
+          ? "bg-black/85  backdrop-blur-xl shadow-lg py-4"
+          : "bg-transparent border-transparent py-5"
         } ${isOpen ? "bg-white/95 !backdrop-blur-3xl" : ""}`}
     >
       <div className="w-full px-6 lg:px-16 mx-auto">
-        <div className="flex items-center justify-between h-14">
-          <motion.a 
-            href="/" 
+        <div className="flex items-center justify-between h-12">
+          <motion.a
+            href="/"
             className="flex items-center cursor-pointer"
             variants={itemVariants}
-            whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
           >
             <img
-              src="/images/logo.png"
+              src="/images/white-logo.png"
               alt="Top Brands Syria"
               className="h-12 w-auto"
             />
           </motion.a>
 
           {/* Staggered Navigation Links */}
-          <div className="hidden lg:flex items-center space-x-10 rtl:space-x-reverse">
+          <div className="hidden lg:flex items-center space-x-10 rtl:space-x-reverse me-2">
             {links.map((link) => (
               <motion.a
                 key={link.key}
                 href={link.href}
                 variants={itemVariants}
-                className={`relative text-base font-semibold tracking-wide transition-colors whitespace-nowrap cursor-pointer group ${isScrolled
-                  ? "text-gray-800 hover:text-brand-yellow"
-                  : "text-white hover:text-brand-yellow"
-                  }`}
-              >
+                className={`relative text-base font-semibold text-white hover:text-brand-yellow tracking-wide transition-colors whitespace-nowrap cursor-pointer group`}>
                 {t(link.key)}
-                <motion.span 
+                <motion.span
                   className="absolute -bottom-1.5 left-0 w-0 h-[2px] bg-brand-yellow rounded-full transition-all duration-300 group-hover:w-full"
                 />
               </motion.a>
@@ -157,40 +153,38 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Action Buttons */}
-          <motion.div 
-            className="hidden lg:flex items-center space-x-4 rtl:space-x-reverse"
+          <motion.div
+            className="hidden lg:flex items-center space-x-4 rtl:space-x-reverse gap-2"
             variants={itemVariants}
           >
             <motion.button
               onClick={toggleLanguage}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-3 py-1.5 rounded-lg font-bold transition-all flex items-center gap-2 shadow-sm ${isScrolled
-                ? "text-gray-800 bg-gray-100 hover:bg-gray-200"
-                : "text-white bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20"
-                }`}
+              className={`px-3 py-1.5 rounded-lg font-bold transition-all flex items-center gap-2 shadow-sm  text-white bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20`}
             >
               <i className="ri-global-line"></i>
               {i18n.language === "en" ? "AR" : "EN"}
             </motion.button>
             <motion.a
               href="/become-a-partner"
-              whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0,0,0,0.1)" }}
               whileTap={{ scale: 0.95 }}
-              className={`px-6 py-2.5 rounded-full border-2 font-bold transition-all whitespace-nowrap cursor-pointer ${isScrolled
-                ? "border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
-                : "border-white text-white hover:bg-white hover:text-gray-900 shadow-[0_0_15px_rgba(255,255,255,0.15)]"
-                }`}
+              className="mask-btn mask-btn--none-white h-full! p-3"
             >
-              {t("become_partner")}
+              <span className="mask-btn__label p-0!" >{t("become_a_partner")}</span>
+              <span type="button" className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
+                {t("become_a_partner")}
+              </span>
             </motion.a>
             <motion.a
               href="/contact"
-              whileHover={{ scale: 1.05, boxShadow: "0px 10px 25px rgba(234, 179, 8, 0.4)" }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-2.5 bg-brand-yellow text-gray-900 rounded-full font-bold shadow-md hover:shadow-lg transition-all whitespace-nowrap cursor-pointer"
+              className="mask-btn mask-btn--yellow-black h-full! p-3"
             >
-              {t("get_in_touch")}
+              <span className="mask-btn__label p-0!">{t("get_in_touch")}</span>
+              <button type="button" className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
+                {t("contact_us")}
+              </button>
             </motion.a>
           </motion.div>
 
@@ -198,13 +192,13 @@ export default function Navbar() {
           <div className="flex lg:hidden items-center space-x-4">
             <button
               onClick={toggleLanguage}
-              className={`p-2 rounded-lg font-bold flex items-center gap-1 ${isScrolled || isOpen ? "text-gray-800" : "text-white"}`}
+              className={`p-2 rounded-lg font-bold flex items-center gap-1 "text-white"}`}
             >
               {i18n.language === "en" ? "AR" : "EN"}
             </button>
             <button
               onClick={toggleMenu}
-              className={`text-3xl focus:outline-none transition-colors ${isScrolled || isOpen ? "text-gray-800" : "text-white"}`}
+              className={`text-3xl focus:outline-none transition-colors "text-white"}`}
             >
               <i className={isOpen ? "ri-close-line" : "ri-menu-3-line"}></i>
             </button>
@@ -257,7 +251,7 @@ export default function Navbar() {
                     className="text-2xl font-bold text-gray-900 py-4 border-b border-gray-50 flex items-center justify-between group px-4"
                   >
                     <span>{t(link.key)}</span>
-                    <motion.i 
+                    <motion.i
                       whileHover={{ x: 5 }}
                       className="ri-arrow-right-s-line text-brand-yellow text-3xl transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1"
                     ></motion.i>
@@ -281,8 +275,8 @@ export default function Navbar() {
                 >
                   {t("get_in_touch")}
                 </motion.a>
-                
-                <motion.div 
+
+                <motion.div
                   variants={mobileItemVariants}
                   className="pt-10 text-center"
                 >

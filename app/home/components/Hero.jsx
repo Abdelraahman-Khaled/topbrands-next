@@ -91,21 +91,28 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-start items-start sm:items-center pt-6 sm:pt-8"
           >
+            {/* Become a Partner — Yellow → Black */}
             <motion.a
-              whileHover={hoverCardVariants}
               whileTap={tapButtonVariants}
               href="/become-a-partner"
-              className="px-[32px] py-[16px] bg-[#F7E326] text-black rounded-lg font-semibold text-base  transition-all whitespace-nowrap cursor-pointer flex items-center justify-center"
+              className="mask-btn mask-btn--yellow-black "
             >
-              {t("become_partner")}
+              <span className="mask-btn__label" >{t("become_partner")}</span>
+              <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
+                {t("become_partner")}
+              </span>
             </motion.a>
+
+            {/* Contact — None → White */}
             <motion.a
-              whileHover={hoverCardVariants}
               whileTap={tapButtonVariants}
               href="/contact"
-              className="px-[34px] py-[18px] bg-transparent text-white border border-white rounded-lg font-semibold text-base hover:bg-white/10 transition-all whitespace-nowrap cursor-pointer flex items-center justify-center"
+              className="mask-btn mask-btn--none-white"
             >
-              {t("contact_syria")}
+              <span className="mask-btn__label ">{t("contact_syria")}</span>
+              <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
+                {t("contact_syria")}
+              </span>
             </motion.a>
           </motion.div>
         </div>

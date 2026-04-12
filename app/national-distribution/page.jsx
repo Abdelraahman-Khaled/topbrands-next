@@ -90,7 +90,7 @@ export default function DistributionPage() {
                 subtitle={t('distribution')}
                 yellowTitle={t("dist_hero_yellow")}
                 description1={t("dist_hero_desc")}
-                img="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000"
+                img="/images/national-distribution/nationwide distribution.webp"
                 buttonText={t('dist_hero_button')}
                 buttonLink="/contact"
             />

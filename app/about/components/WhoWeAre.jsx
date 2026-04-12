@@ -9,9 +9,9 @@ const WhoWeAre = () => {
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl">
                         <img
-                            src="https://readdy.ai/api/search-image?query=modern%20FMCG%20distribution%20warehouse%20interior%20with%20organized%20product%20shelves%20professional%20logistics%20operation%20bright%20clean%20environment%20workers%20managing%20inventory%20Syria%20Damascus%20professional%20corporate%20photography&width=600&height=600&seq=about-warehouse-001&orientation=squarish"
+                            src="/images/about/about section in about page.webp"
                             alt={t("contact_accent")}
-                            className="w-full h-full object-cover object-top"
+                            className="w-full h-full object-cover object-right"
                         />
                         <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent"></div>
                     </div>

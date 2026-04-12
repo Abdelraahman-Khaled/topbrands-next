@@ -23,7 +23,7 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12 pb-12 border-b border-gray-500">
             <a href="/" className="flex items-center mb-6 lg:mb-0 cursor-pointer">
               <img
-                src="https://static.readdy.ai/image/33ae949e9bb8604989b852dfb93165e8/f5682646b37da99c847f4d571dfb20bd.png"
+                src="/images/footer.webp"
                 alt="Top Brands Syria"
                 className="h-12 w-auto"
               />
@@ -181,69 +181,69 @@ export default function Footer() {
         <ScrollReveal>
           <div className="grid lg:grid-cols-3 gap-8 items-center pt-12 border-t border-gray-500">
             <div className="w-full h-44 rounded-2xl overflow-hidden shadow-lg">
-            <img
-              src="https://readdy.ai/api/search-image?query=assorted%20branded%20FMCG%20products%20including%20packaged%20foods%20snacks%20and%20beverages%20arranged%20artistically%20on%20clean%20surface%20professional%20product%20photography%20bright%20lighting%20colorful%20packaging&width=280&height=180&seq=footer-products-001&orientation=landscape"
-              alt="Products"
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
-
-          <div className="lg:px-6">
-            <p className="text-3xl font-semibold  leading-snug">
-              {t("quality_products")},
-              <br />
-              {t("reliable_distribution")},
-              <br />
-              {t("nationwide_reach")}
-            </p>
-          </div>
-
-          <div className="text-right rtl:text-left">
-            <p className="text-sm  mb-5 leading-relaxed">{t("stay_updated")}</p>
-            <form className="flex rounded-lg overflow-hidden shadow-lg rtl:flex-row-reverse">
-              <input
-                type="email"
-                name="email"
-                placeholder={t("enter_email")}
-                className="flex-1 px-4 py-3.5 bg-transparent border border-gray-500 text-white placeholder-gray-400 outline-none focus:border-brand-yellow transition-all text-sm rounded-l-lg rtl:rounded-l-none rtl:rounded-r-lg"
+              <img
+                src="https://readdy.ai/api/search-image?query=assorted%20branded%20FMCG%20products%20including%20packaged%20foods%20snacks%20and%20beverages%20arranged%20artistically%20on%20clean%20surface%20professional%20product%20photography%20bright%20lighting%20colorful%20packaging&width=280&height=180&seq=footer-products-001&orientation=landscape"
+                alt="Products"
+                className="w-full h-full object-cover object-center"
               />
-              <button
-                type="submit"
-                className="px-8 py-3.5 bg-brand-yellow hover:brightness-110 text-brand-jet font-semibold transition-all inline-flex items-center space-x-2 rtl:space-x-reverse rounded-r-lg rtl:rounded-r-none rtl:rounded-l-lg whitespace-nowrap"
-              >
-                <span>{t("subscribe")}</span>
-                <i className="ri-arrow-right-line rtl:rotate-180"></i>
-              </button>
-            </form>
+            </div>
+
+            <div className="lg:px-6">
+              <p className="text-3xl font-semibold  leading-snug">
+                {t("quality_products")},
+                <br />
+                {t("reliable_distribution")},
+                <br />
+                {t("nationwide_reach")}
+              </p>
+            </div>
+
+            <div className="text-right rtl:text-left">
+              <p className="text-sm  mb-5 leading-relaxed">{t("stay_updated")}</p>
+              <form className="flex rounded-lg overflow-hidden shadow-lg rtl:flex-row-reverse">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder={t("enter_email")}
+                  className="flex-1 px-4 py-3.5 bg-transparent border border-gray-500 text-white placeholder-gray-400 outline-none focus:border-brand-yellow transition-all text-sm rounded-l-lg rtl:rounded-l-none rtl:rounded-r-lg"
+                />
+                <button
+                  type="submit"
+                  className="px-8 py-3.5 bg-brand-yellow hover:brightness-110 text-brand-jet font-semibold transition-all inline-flex items-center space-x-2 rtl:space-x-reverse rounded-r-lg rtl:rounded-r-none rtl:rounded-l-lg whitespace-nowrap"
+                >
+                  <span>{t("subscribe")}</span>
+                  <i className="ri-arrow-right-line rtl:rotate-180"></i>
+                </button>
+              </form>
+            </div>
           </div>
-        </div>
-      </ScrollReveal>
+        </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
           <div className="flex justify-center space-x-4 rtl:space-x-reverse mt-12 pt-8 border-t border-gray-500">
             <a
-            href="#"
-            className="w-10 border-[#4B4F54] border-2 h-10 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
-          >
-            <i className="ri-linkedin-fill text-lg"></i>
-          </a>
-          <a
-            href="#"
-            className="w-10 h-10 border-[#4B4F54] border-2 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
-          >
-            <i className="ri-facebook-fill text-lg"></i>
-          </a>
-          <a
-            href="#"
-            className="w-10 h-10 border-[#4B4F54] border-2 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
-          >
-            <i className="ri-instagram-line text-lg"></i>
-          </a>
-          <a
-            href="#"
-            className="w-10 h-10 border-[#4B4F54] border-2 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
-          >
-            <i className="ri-whatsapp-line text-lg"></i>
+              href="#"
+              className="w-10 border-[#4B4F54] border-2 h-10 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
+            >
+              <i className="ri-linkedin-fill text-lg"></i>
+            </a>
+            <a
+              href="#"
+              className="w-10 h-10 border-[#4B4F54] border-2 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
+            >
+              <i className="ri-facebook-fill text-lg"></i>
+            </a>
+            <a
+              href="#"
+              className="w-10 h-10 border-[#4B4F54] border-2 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
+            >
+              <i className="ri-instagram-line text-lg"></i>
+            </a>
+            <a
+              href="#"
+              className="w-10 h-10 border-[#4B4F54] border-2 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
+            >
+              <i className="ri-whatsapp-line text-lg"></i>
             </a>
           </div>
         </ScrollReveal>
@@ -251,13 +251,13 @@ export default function Footer() {
         <ScrollReveal delay={0.3}>
           <div className="mt-8 text-center">
             <p className="text-sm  mb-2">
-            © 2025 Top Brands Syria. {t("all_rights_reserved")}.
-          </p>
-          <a
-            href="https://readdy.ai/?ref=logo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm  hover:text-black transition-colors"
+              © 2025 Top Brands Syria. {t("all_rights_reserved")}.
+            </p>
+            <a
+              href="https://readdy.ai/?ref=logo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm  hover:text-black transition-colors"
             ></a>
           </div>
         </ScrollReveal>

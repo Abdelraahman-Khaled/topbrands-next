@@ -36,7 +36,7 @@ export default function MarketingPage() {
                 subtitle={t('mkt_hero_title')}
                 yellowTitle={t('mkt_hero_yellow')}
                 description1={t('mkt_hero_desc')}
-                img={"/images/markting/hero-img.jpg"}
+                img={"/images/markting/hero-img.webp"}
             />
             <HeroCounter
                 stats={statData}
@@ -85,7 +85,7 @@ export default function MarketingPage() {
                     </div>
                     <div className='w-full h-full'>
                         <img
-                            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1000"
+                            src="/images/markting/marketing solutions.webp"
                             className="rounded-3xl h-full w-full object-cover"
                             alt="Team Strategy"
                         />

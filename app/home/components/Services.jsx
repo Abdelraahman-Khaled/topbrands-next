@@ -173,35 +173,25 @@ export default function Services() {
 
         {/* Custom Solution Banner (DIV-273) */}
         <ScrollReveal delay={0.2}>
-          <div className="mt-12 sm:mt-16 bg-[#000000] rounded-[24px] sm:rounded-[32px] p-6 sm:p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-start">
-            <div className="text-white w-full">
+          <div className="mt-12 sm:mt-16 flex-col bg-[#000000] rounded-2xl sm:rounded-[32px] p-6 sm:p-8 md:p-12 flex  justify-between items-center gap-8 text-center">
+            <div className="text-white">
               <h3 className="text-2xl sm:text-[30px] font-bold mb-2">
                 {t("need_custom_solution") ||
                   "Need a Custom Distribution Solution?"}
               </h3>
-              <p className="text-lg sm:text-[20px] text-white/80 max-w-xl mx-auto md:mx-0">
+              <p className="text-lg sm:text-[20px] w-full text-white/80 max-w-xl mx-auto md:mx-0">
                 {t("need_custom_solution_desc") ||
                   "We tailor our services to meet your specific business needs"}
               </p>
             </div>
             <a
               href="/contact"
-              className="flex items-center gap-3 px-[28px] sm:px-[34px] py-[14px] sm:py-[18px] bg-[#F7E326] text-black rounded-lg font-bold text-sm sm:text-base hover:shadow-2xl hover:gap-4 transition-all whitespace-nowrap"
+              className="mask-btn mask-btn--yellow-white"
             >
-              {t("contact_our_team") || "Contact Our Team"}
-              <svg
-                width="11"
-                height="11"
-                viewBox="0 0 11 11"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="transition-all duration-300"
-              >
-                <path
-                  d="M8.26615 4.79303L4.61493 1.00382L5.57863 -4.44968e-05L10.8587 5.49998L5.57863 11L4.61493 9.99614L8.26615 6.20692H0V4.79303H8.26615Z"
-                  fill="black"
-                />
-              </svg>
+              <span className="mask-btn__label" >{t("contact_our_team")}</span>
+              <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
+                {t("contact_our_team")}
+              </span>
             </a>
           </div>
         </ScrollReveal>

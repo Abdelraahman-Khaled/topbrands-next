@@ -159,10 +159,13 @@ export default function Contact() {
                 <div className="md:col-span-2 text-center">
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-[#F7E326] to-[#E5D324] text-[#000000] rounded-lg font-bold hover:shadow-xl transition-all hover:-translate-y-1 whitespace-nowrap cursor-pointer"
+                    className="mask-btn mask-btn--yellow-white"
                   >
-                    {t("send_message")}
-                    <i className="ri-send-plane-fill rtl:-rotate-90"></i>
+                    <span className="mask-btn__label">{t("send_message")}</span>
+                    <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
+                      {t("send_message")}
+                      <i className="ri-send-plane-fill rtl:-rotate-90 mx-2"></i>
+                    </span>
                   </button>
                 </div>
               </form>

@@ -154,34 +154,47 @@ export default function About() {
             </StaggerContainer>
 
             <ScrollReveal delay={0.1} className="pt-8">
-              <a
+              {/* <a
                 href="/about"
                 className="inline-flex items-center gap-3 px-[24px] sm:px-[32px] py-[12px] sm:py-[16px] bg-[#4B4F54] text-white rounded-lg font-bold text-sm sm:text-base hover:bg-black transition-all hover:-translate-y-1 shadow-lg"
               >
                 {t("learn_more_about_us") || "Learn More About Us"}
-                <svg
-                  width="11"
-                  height="11"
-                  viewBox="0 0 11 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8.26615 4.79303L4.61493 1.00382L5.57863 -4.44968e-05L10.8587 5.49998L5.57863 11L4.61493 9.99614L8.26615 6.20692H0V4.79303H8.26615Z"
+               
+              </a> */}
+              {/* #4B4F54 → Black */}
+              <a
+                href="/become-a-partner"
+                className="mask-btn mask-btn--gray-black"
+              >
+                <span className="mask-btn__label">{t("learn_more_about_us")}</span>
+                <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
+                  {t("learn_more_about_us")}
+                  <svg
+                    width="11"
+                    height="11"
+                    viewBox="0 0 11 11"
                     fill="white"
-                  />
-                </svg>
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="mx-1.5"
+                  >
+                    <path
+                      d="M8.26615 4.79303L4.61493 1.00382L5.57863 -4.44968e-05L10.8587 5.49998L5.57863 11L4.61493 9.99614L8.26615 6.20692H0V4.79303H8.26615Z"
+                      fill="white"
+                    />
+                  </svg>
+                </span>
+
               </a>
             </ScrollReveal>
           </div>
 
           {/* Right Area (Image Placeholder) */}
-          <ScrollReveal delay={0.2} className="relative group">
-            <div className="relative rounded-[16px] overflow-hidden shadow-2xl border-[1px] border-white/20 aspect-[4/5] bg-[#E5E7EB]">
+          <ScrollReveal delay={0.2} className="relative group h-full">
+            <div className="relative rounded-[16px] overflow-hidden shadow-2xl h-full border-[1px] border-white/20 aspect-[4/5] bg-[#E5E7EB]">
               {/* This space is for the image 63:202. Using a placeholder as requested. */}
-              <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+              <div className="absolute inset-0 flex items-center justify-center h-full text-gray-400">
                 <img
-                  src="/images/home/about.png"
+                  src="/images/home/about.webp"
                   alt=""
                   className="w-full h-full object-cover"
                 />

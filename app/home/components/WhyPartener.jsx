@@ -142,16 +142,28 @@ export default function WhyPartener() {
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   {/* Become a Partner Button */}
-                  <button className="w-full sm:w-auto px-8 py-4 bg-[#F7E326] hover:bg-[#e5d222] text-black font-bold rounded-xl flex items-center justify-center gap-2 transition-all group">
-                    {t("become_a_partner")}
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform rtl:rotate-180" />
-                  </button>
+                  <a
+                    href="/become-a-partner"
+                    className="mask-btn mask-btn--yellow-white"
+                  >
+                    <span className="mask-btn__label">{t("become_a_partner")}</span>
+                    <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
+                      {t("become_a_partner")}
+                      <ArrowRight className="w-5 h-5 mx-2 transition-transform rtl:rotate-180" />
+                    </span>
+                  </a>
 
                   {/* Contact Us Button */}
-                  <button className="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 text-white font-medium rounded-xl border border-white/10 flex items-center justify-center gap-2 transition-all">
-                    {t("contact_us")}
-                    <Phone className="w-5 h-5 text-gray-300" />
-                  </button>
+                  <a
+                    href="/contact"
+                    className="mask-btn mask-btn--none-white"
+                  >
+                    <span className="mask-btn__label">{t("contact_us")}</span>
+                    <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
+                      {t("contact_us")}
+                      <Phone className="w-5 h-5 mx-2 text-gray-300" />
+                    </span>
+                  </a>
                 </div>
               </div>
             </div>

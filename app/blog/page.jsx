@@ -142,7 +142,7 @@ export default function Blog() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="https://readdy.ai/api/search-image?query=professional%20business%20person%20writing%20blog%20article%20on%20laptop%20in%20modern%20office%20workspace%20with%20coffee%20cup%20notebooks%20and%20plants%20bright%20natural%20lighting%20creative%20workspace%20inspiring%20environment%20clean%20desk%20setup&width=1920&height=600&seq=blog-hero-main-001&orientation=landscape"
+            src="/images/blogs banner.webp"
             alt="Blog Hero"
             className="w-full h-full object-cover object-top"
           />
@@ -219,8 +219,8 @@ export default function Blog() {
                 <div className="grid md:grid-cols-2 gap-0">
                   <div className="relative h-64 sm:h-80 md:h-auto overflow-hidden">
                     <img
-                      src={blogPosts[0].image}
-                      alt={t(blogPosts[0].titleKey)}
+                      src={"/images/blogs/featured articles.webp"}
+                      alt="featured articles"
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-6 left-6 rtl:left-auto rtl:right-6">
