@@ -42,3 +42,5 @@ next-env.d.ts
 .specify
 .agent
 specs
+.agents
+content
