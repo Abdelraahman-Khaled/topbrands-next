@@ -1,21 +1,27 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import ScrollReveal from '../../components/ScrollReveal';
+import StaggerContainer from '../../components/StaggerContainer';
+import StaggerItem from '../../components/StaggerItem';
+
 const OurEdgeSection = () => {
     const { t } = useTranslation();
     return (
         <section className="py-20  bg-white">
             <div className="max-w-7xl mx-auto px-8 ">
-                <div className="text-center mb-16">
-                    <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-4">
-                        {t("competitive_edge")}
-                    </h2>
-                    <p className="text-xl text-brand-charcoal max-w-3xl mx-auto font-medium">
-                        {t("competitive_edge_subtitle")}
-                    </p>
-                </div>
+                <ScrollReveal>
+                    <div className="text-center mb-16">
+                        <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-4">
+                            {t("competitive_edge")}
+                        </h2>
+                        <p className="text-xl text-brand-charcoal max-w-3xl mx-auto font-medium">
+                            {t("competitive_edge_subtitle")}
+                        </p>
+                    </div>
+                </ScrollReveal>
 
-                <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-brand-paleblue rounded-2xl p-8 border-l-4 border-brand-yellow rtl:border-l-0 rtl:border-r-4">
+                <StaggerContainer className="grid md:grid-cols-2 gap-8">
+                    <StaggerItem className="bg-brand-paleblue rounded-2xl p-8 border-l-4 border-brand-yellow rtl:border-l-0 rtl:border-r-4">
                         <div className="w-14 h-14 flex items-center justify-center bg-brand-yellow rounded-xl mb-6">
                             <i className="ri-route-line text-2xl text-black"></i>
                         </div>
@@ -25,9 +31,9 @@ const OurEdgeSection = () => {
                         <p className="text-base text-brand-charcoal leading-relaxed font-medium">
                             {t("optimized_network_desc")}
                         </p>
-                    </div>
+                    </StaggerItem>
 
-                    <div className="bg-brand-paleblue rounded-2xl p-8 border-l-4 border-brand-charcoal rtl:border-l-0 rtl:border-r-4">
+                    <StaggerItem className="bg-brand-paleblue rounded-2xl p-8 border-l-4 border-brand-charcoal rtl:border-l-0 rtl:border-r-4">
                         <div className="w-14 h-14 flex items-center justify-center bg-brand-charcoal rounded-xl mb-6">
                             <i className="ri-database-2-line text-2xl text-white"></i>
                         </div>
@@ -37,9 +43,9 @@ const OurEdgeSection = () => {
                         <p className="text-base text-brand-charcoal leading-relaxed font-medium">
                             {t("advanced_inventory_desc")}
                         </p>
-                    </div>
+                    </StaggerItem>
 
-                    <div className="bg-brand-paleblue rounded-2xl p-8 border-l-4 border-brand-charcoal rtl:border-l-0 rtl:border-r-4">
+                    <StaggerItem className="bg-brand-paleblue rounded-2xl p-8 border-l-4 border-brand-charcoal rtl:border-l-0 rtl:border-r-4">
                         <div className="w-14 h-14 flex items-center justify-center bg-brand-charcoal rounded-xl mb-6">
                             <i className="ri-team-line text-2xl text-white"></i>
                         </div>
@@ -49,9 +55,9 @@ const OurEdgeSection = () => {
                         <p className="text-base text-brand-charcoal leading-relaxed font-medium">
                             {t("sales_force_desc")}
                         </p>
-                    </div>
+                    </StaggerItem>
 
-                    <div className="bg-brand-paleblue rounded-2xl p-8 border-l-4 border-brand-yellow rtl:border-l-0 rtl:border-r-4">
+                    <StaggerItem className="bg-brand-paleblue rounded-2xl p-8 border-l-4 border-brand-yellow rtl:border-l-0 rtl:border-r-4">
                         <div className="w-14 h-14 flex items-center justify-center bg-brand-yellow rounded-xl mb-6">
                             <i className="ri-line-chart-line text-2xl text-black"></i>
                         </div>
@@ -61,8 +67,8 @@ const OurEdgeSection = () => {
                         <p className="text-base text-brand-charcoal leading-relaxed font-medium">
                             {t("market_intelligence_desc")}
                         </p>
-                    </div>
-                </div>
+                    </StaggerItem>
+                </StaggerContainer>
             </div>
         </section>
     )

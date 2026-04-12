@@ -1,5 +1,9 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import ScrollReveal from '../../components/ScrollReveal';
+import StaggerContainer from '../../components/StaggerContainer';
+import StaggerItem from '../../components/StaggerItem';
+
 const AboutCertifications = () => {
     const { t } = useTranslation();
     const certifications = [
@@ -27,18 +31,20 @@ const AboutCertifications = () => {
     return (
         <section className="py-20  bg-brand-paleblue">
             <div className="max-w-7xl mx-auto px-8 ">
-                <div className="text-center mb-16">
-                    <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-4">
-                        {t("certs_standards")}
-                    </h2>
-                    <p className="text-xl text-brand-charcoal max-w-3xl mx-auto font-medium">
-                        {t("certs_standards_subtitle")}
-                    </p>
-                </div>
+                <ScrollReveal>
+                    <div className="text-center mb-16">
+                        <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-4">
+                            {t("certs_standards")}
+                        </h2>
+                        <p className="text-xl text-brand-charcoal max-w-3xl mx-auto font-medium">
+                            {t("certs_standards_subtitle")}
+                        </p>
+                    </div>
+                </ScrollReveal>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {certifications.map((cert, index) => (
-                        <div
+                        <StaggerItem
                             key={index}
                             className="bg-white rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300"
                         >
@@ -51,9 +57,9 @@ const AboutCertifications = () => {
                             <p className="text-sm text-brand-charcoal leading-relaxed font-medium">
                                 {cert.description}
                             </p>
-                        </div>
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerContainer>
             </div>
         </section>
     )

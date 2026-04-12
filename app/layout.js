@@ -30,6 +30,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
+
         <link
           href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Almarai:wght@300;400;700;800&display=swap"
           rel="stylesheet"
@@ -40,6 +41,10 @@ export default function RootLayout({ children }) {
         />
         <link
           href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
           rel="stylesheet"
         />
       </head>

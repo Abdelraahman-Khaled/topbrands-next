@@ -25,74 +25,28 @@ export default function AboutPage() {
         description2={t("who_we_are_subtitle3")} />
 
       {/* Who We Are Section */}
-      <ScrollReveal>
-        <WhoWeAre />
-      </ScrollReveal>
+      <WhoWeAre />
 
       {/* Vision & Mission Section */}
-      <ScrollReveal>
-        <AboutMission />
-      </ScrollReveal>
+      <AboutMission />
 
       {/* Core Values Section */}
-      <ScrollReveal>
-        <CoreValues />
-      </ScrollReveal>
+      <CoreValues />
 
       {/* Leadership Team Section */}
-      <ScrollReveal>
-        <Ledaership />
-      </ScrollReveal>
+      <Ledaership />
 
       {/* Our Edge Section */}
-      <ScrollReveal>
-        <OurEdgeSection />
-      </ScrollReveal>
+      <OurEdgeSection />
 
       {/* Certifications Section */}
-      <ScrollReveal>
-        <AboutCertifications />
-      </ScrollReveal>
-
-      {/* Al Barengi Group Section */}
-      {/* <section className="py-20  bg-white">
-        <div className="max-w-7xl mx-auto px-8 ">
-          <div className="bg-gradient-to-br from-brand-charcoal to-brand-jet rounded-3xl p-12 lg:p-16 text-white">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 flex items-center justify-center bg-brand-yellow rounded-2xl mb-8 mx-auto">
-                <i className="ri-building-4-line text-4xl text-brand-jet"></i>
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                {t("al_barengi_part")}
-              </h2>
-              <p className="text-xl leading-relaxed mb-6 font-medium">
-                {t("al_barengi_desc1")}
-                <strong className="text-brand-yellow">
-                  {t("al_barengi_desc2")}
-                </strong>
-                {t("al_barengi_desc3")}
-                <strong className="text-brand-yellow">
-                  {t("al_barengi_desc4")}
-                </strong>
-                {t("al_barengi_desc5")}
-              </p>
-              <p className="text-lg leading-relaxed text-gray-300 font-medium">
-                {t("al_barengi_heritage")}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> */}
+      <AboutCertifications />
 
       {/* Growth Direction Section */}
-      <ScrollReveal delay={0.2}>
-        <GrowthDirection />
-      </ScrollReveal>
+      <GrowthDirection />
 
       {/* CTA Section */}
-      <ScrollReveal delay={0.3}>
-        <GlobalCTA title={t("ready_to_partner")} subtitle={t("join_growing_portfolio")} contact={false} />
-      </ScrollReveal>
+      <GlobalCTA title={t("ready_to_partner")} subtitle={t("join_growing_portfolio")} contact={false} />
     </div>
   );
 }

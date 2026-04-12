@@ -1,5 +1,9 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import ScrollReveal from '../../components/ScrollReveal';
+import StaggerContainer from '../../components/StaggerContainer';
+import StaggerItem from '../../components/StaggerItem';
+
 const Ledaership = () => {
     const { t } = useTranslation();
     const leadership = [
@@ -28,18 +32,20 @@ const Ledaership = () => {
     return (
         <section className="py-20  bg-brand-paleblue">
             <div className="max-w-7xl mx-auto px-8 ">
-                <div className="text-center mb-16">
-                    <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-4">
-                        {t("leadership_team")}
-                    </h2>
-                    <p className="text-xl text-brand-charcoal max-w-3xl mx-auto font-medium">
-                        {t("leadership_team_subtitle")}
-                    </p>
-                </div>
+                <ScrollReveal>
+                    <div className="text-center mb-16">
+                        <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-4">
+                            {t("leadership_team")}
+                        </h2>
+                        <p className="text-xl text-brand-charcoal max-w-3xl mx-auto font-medium">
+                            {t("leadership_team_subtitle")}
+                        </p>
+                    </div>
+                </ScrollReveal>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {leadership.map((leader, index) => (
-                        <div
+                        <StaggerItem
                             key={index}
                             className="group bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
                         >
@@ -61,9 +67,9 @@ const Ledaership = () => {
                                     {leader.bio}
                                 </p>
                             </div>
-                        </div>
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerContainer>
             </div>
         </section>
     )

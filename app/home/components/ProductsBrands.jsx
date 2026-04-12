@@ -48,11 +48,11 @@ export default function ProductsBrands() {
       logo: "/images/home/brands/Sirarcha.webp",
 
     },
-    {
-      name: "Tora Bika",
-      logo: "/images/home/brands/Tora Bika.webp",
+    // {
+    //   name: "Tora Bika",
+    //   logo: "/images/home/brands/Tora Bika.webp",
 
-    },
+    // },
     {
       name: "Ulker",
       logo: "/images/home/brands/Ulker.webp",
@@ -164,7 +164,7 @@ export default function ProductsBrands() {
               >
                 <div className="p-8 h-full flex flex-col justify-between gap-3">
                   <div>
-                   
+
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4 mt-4">
                       {regionalBrands.map((brand, index) => (
                         <div
