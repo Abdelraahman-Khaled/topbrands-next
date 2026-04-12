@@ -334,6 +334,6 @@ export default function MarketCoveragePage() {
           btnLink="/become-a-partner"
         />
       </ScrollReveal>
-     </div>
+    </div>
   );
 }

@@ -7,6 +7,7 @@ export default {
   coverage: "Market Coverage",
   blog: "Blog",
   contact: "Contact Us",
+  products: "Products",
   //end of navbar
   // {Home}
   // hero

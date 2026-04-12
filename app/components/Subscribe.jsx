@@ -6,7 +6,7 @@ import Link from 'next/link';
 const Subscribe = ({ title, becomePartner = false, mail = false }) => {
     const { t } = useTranslation();
     return (
-        <section className="relative w-full bg-[#0B1411] py-24 px-6 overflow-hidden">
+        <section className="relative w-full bg-[#0B1411] py-16 md:py-24 px-6 overflow-hidden">
 
             {/* Background Glows */}
             <div
@@ -22,7 +22,7 @@ const Subscribe = ({ title, becomePartner = false, mail = false }) => {
 
                 {/* Mail Icon */}
                 {
-                     mail && (
+                    mail && (
                         <div className="mb-8 text-white">
                             <Mail size={48} strokeWidth={1.5} />
                         </div>
@@ -30,20 +30,20 @@ const Subscribe = ({ title, becomePartner = false, mail = false }) => {
                 }
 
                 {/* Text Content */}
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
                     {title}
                 </h2>
-                <p className="text-white/90 text-lg mb-10 max-w-2xl">
+                <p className="text-white/90 text-base sm:text-lg mb-8 md:mb-10 max-w-2xl px-4 md:px-0">
                     {t("newsletter_desc")}
                 </p>
 
                 {/* Form */}
                 {
                     becomePartner ?
-                        <div className='flex gap-4'>
+                        <div className='flex flex-col sm:flex-row gap-4 w-full justify-center px-4 md:px-0'>
                             <Link
                                 href={'/become-a-partner'}
-                                className="inline-flex ms-2 items-center gap-3 px-10 py-4 bg-brand-yellow text-brand-charcoal rounded-full font-bold text-lg hover:brightness-110 transition-all shadow-xl hover:shadow-2xl whitespace-nowrap cursor-pointer"
+                                className="inline-flex items-center justify-center gap-3 px-8 md:px-10 py-3.5 md:py-4 bg-brand-yellow text-brand-charcoal rounded-full font-bold text-base md:text-lg hover:brightness-110 transition-all shadow-xl hover:shadow-2xl whitespace-nowrap cursor-pointer w-full sm:w-auto"
                             >
                                 <span>{t("become_a_partner")}</span>
                                 <i className="ri-arrow-right-line text-xl rtl:rotate-180"></i>
@@ -51,7 +51,7 @@ const Subscribe = ({ title, becomePartner = false, mail = false }) => {
 
                             <Link
                                 href={"/services"}
-                                className="inline-flex ms-2 items-center gap-3 px-10 py-4 bg-inherit text-brand-white border-2 border-brand-white rounded-full font-bold text-lg hover:brightness-110 transition-all shadow-xl hover:shadow-2xl whitespace-nowrap cursor-pointer hover:bg-white duration-300 hover:text-brand-charcoal"
+                                className="inline-flex items-center justify-center gap-3 px-8 md:px-10 py-3.5 md:py-4 bg-inherit text-brand-white border-2 border-brand-white rounded-full font-bold text-base md:text-lg hover:brightness-110 transition-all shadow-xl hover:shadow-2xl whitespace-nowrap cursor-pointer hover:bg-white duration-300 hover:text-brand-charcoal w-full sm:w-auto"
                             >
                                 <span>{t("btn_services")}</span>
                                 <i className="ri-arrow-right-line text-xl rtl:rotate-180"></i>
@@ -70,7 +70,7 @@ const Subscribe = ({ title, becomePartner = false, mail = false }) => {
                             />
                             <button
                                 type="submit"
-                                className="w-full sm:w-auto bg-[#F7E326] hover:bg-[#e5d120] text-black font-bold px-10 py-4 rounded-lg transition-all duration-200 whitespace-nowrap"
+                                className="w-full sm:w-auto bg-[#F7E326] hover:bg-[#e5d120] text-black font-bold px-8 md:px-10 py-4 rounded-lg transition-all duration-200 whitespace-nowrap"
                             >
                                 {t("newsletter_btn")}
                             </button>

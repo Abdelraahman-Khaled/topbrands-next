@@ -120,9 +120,9 @@ export default function WhyPartener() {
 
         {/* CTA Section */}
         <ScrollReveal delay={0.2}>
-          <section className="py-12 sm:py-20 px-0 sm:px-6">
+          <section className="py-8 sm:py-20 px-0 md:px-6">
             <div
-              className="max-w-6xl mx-auto rounded-[24px] sm:rounded-2xl p-8 sm:p-12 md:p-20 text-center relative overflow-hidden border border-white/10"
+              className="max-w-6xl mx-auto rounded-[24px] sm:rounded-3xl p-6 sm:p-12 md:p-20 text-center relative overflow-hidden border border-white/10"
               style={{
                 background:
                   "linear-gradient(135deg, #1C1C1C 0%, #000000 50%, #1C1C1C 100%)",
@@ -132,23 +132,23 @@ export default function WhyPartener() {
               <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#F7E326]/10 blur-[100px] rounded-full"></div>
 
               <div className="relative z-10">
-                <h2 className="text-3xl md:text-5xl max-w-2xl mx-auto font-normal text-white mb-6 leading-tight">
+                <h2 className="text-2xl sm:text-4xl md:text-5xl max-w-2xl mx-auto font-bold text-white mb-6 leading-tight">
                   {t("cta_title")}
                 </h2>
 
-                <p className="text-[#D1D5DB] text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light">
+                <p className="text-[#D1D5DB] text-base md:text-xl mb-10 max-w-3xl mx-auto font-light leading-relaxed">
                   {t("cta_desc")}
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  {/* زر Become a Partner */}
-                  <button className="w-full sm:w-auto px-8 py-4 bg-[#F7E326] hover:bg-[#e5d222] text-black font-bold rounded-lg flex items-center justify-center gap-2 transition-all group">
+                  {/* Become a Partner Button */}
+                  <button className="w-full sm:w-auto px-8 py-4 bg-[#F7E326] hover:bg-[#e5d222] text-black font-bold rounded-xl flex items-center justify-center gap-2 transition-all group">
                     {t("become_a_partner")}
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform rtl:rotate-180" />
                   </button>
 
-                  {/* زر Contact Us */}
-                  <button className="w-full sm:w-auto px-8 py-4 bg-[#2A2A2A] hover:bg-[#333333] text-white font-medium rounded-lg border border-white/20 flex items-center justify-center gap-2 transition-all">
+                  {/* Contact Us Button */}
+                  <button className="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 text-white font-medium rounded-xl border border-white/10 flex items-center justify-center gap-2 transition-all">
                     {t("contact_us")}
                     <Phone className="w-5 h-5 text-gray-300" />
                   </button>

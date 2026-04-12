@@ -1,9 +1,12 @@
 "use client";
 import { useTranslation } from "react-i18next";
+import HeroSection from "../../components/HeroSection";
+import GlobalCTA from "../../components/GlobalCTA";
 import ScrollReveal from "../../components/ScrollReveal";
 import StaggerContainer from "../../components/StaggerContainer";
 import StaggerItem from "../../components/StaggerItem";
 import AnimatedCard from "../../components/AnimatedCard";
+import Subscribe from "../../components/Subscribe";
 
 export default function MerchandisingPage() {
   const { t } = useTranslation();
@@ -44,41 +47,25 @@ export default function MerchandisingPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://readdy.ai/api/search-image?query=professional%20merchandiser%20arranging%20products%20on%20supermarket%20shelves%20organized%20retail%20display%20bright%20store%20lighting%20commercial%20photography%20clean%20modern%20store%20interior&width=1920&height=800&seq=merchandising-hero-001&orientation=landscape"
-            alt="Sales & Merchandising"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-8 lg:px-16">
-          <div className="flex items-center space-x-4 mb-8">
-            <span className="text-sm font-semibold text-brand-yellow tracking-widest uppercase">/ MERCHANDISING</span>
-            <div className="h-px w-16 bg-brand-yellow"></div>
-          </div>
-          <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6">
-            Professional Sales
-            <br />
-            <span className="text-brand-yellow">& Merchandising</span>
-          </h1>
-          <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-3xl">
-            Experienced sales teams with deep local market knowledge and strong customer relationships. We ensure your brand stands out at every point of sale.
-          </p>
-        </div>
-      </section>
+      <HeroSection
+        img="https://readdy.ai/api/search-image?query=professional%20merchandiser%20arranging%20products%20on%20supermarket%20shelves%20organized%20retail%20display%20bright%20store%20lighting%20commercial%20photography%20clean%20modern%20store%20interior&width=1920&height=800&seq=merchandising-hero-001&orientation=landscape"
+        subtitle="MERCHANDISING"
+        title="Professional Sales"
+        yellowTitle="& Merchandising"
+        description1="Experienced sales teams with deep local market knowledge and strong customer relationships."
+        yellowText="We ensure your brand"
+        description2="stands out at every point of sale."
+      />
 
       {/* Services Bar */}
       <ScrollReveal>
         <section className="py-12 bg-brand-yellow">
-          <div className="max-w-7xl mx-auto px-8 lg:px-16">
-            <div className="flex flex-wrap justify-center gap-4">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
               {services.map((service, index) => (
-                <div key={index} className="flex items-center space-x-2 bg-brand-jet px-5 py-2.5 rounded-full">
+                <div key={index} className="flex items-center space-x-2 bg-brand-jet px-4 py-2 sm:px-5 sm:py-2.5 rounded-full shadow-lg">
                   <i className="ri-check-line text-brand-yellow"></i>
-                  <span className="text-sm font-medium text-white whitespace-nowrap">{service}</span>
+                  <span className="text-xs sm:text-sm font-bold text-white whitespace-nowrap  tracking-wider">{service}</span>
                 </div>
               ))}
             </div>
@@ -88,24 +75,24 @@ export default function MerchandisingPage() {
 
       {/* Features Section */}
       <ScrollReveal>
-        <section className="py-20 lg:py-28 bg-white">
-          <div className="max-w-7xl mx-auto px-8 lg:px-16">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-4">Merchandising Services</h2>
-              <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">
+        <section className="py-16 lg:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-jet mb-4  tracking-tight">Merchandising Services</h2>
+              <p className="text-lg md:text-xl text-brand-charcoal max-w-3xl mx-auto font-medium">
                 Comprehensive in-store execution to drive brand visibility and sales performance
               </p>
             </div>
- 
-            <StaggerContainer className="grid md:grid-cols-2 gap-8">
+
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {features.map((feature, index) => (
                 <StaggerItem key={index}>
-                  <AnimatedCard className="h-full bg-brand-paleblue rounded-3xl p-10 border border-transparent hover:border-brand-yellow group">
-                    <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <i className={`${feature.icon} text-3xl text-brand-jet`}></i>
+                  <AnimatedCard className="h-full bg-brand-paleblue rounded-[32px] p-8 md:p-10 border border-transparent hover:border-brand-yellow group transition-all duration-300">
+                    <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <i className={`${feature.icon} text-2xl md:text-3xl text-brand-jet`}></i>
                     </div>
-                    <h3 className="text-2xl font-bold text-brand-jet mb-4">{feature.title}</h3>
-                    <p className="text-base text-brand-charcoal leading-relaxed">{feature.description}</p>
+                    <h3 className="text-xl md:text-2xl font-bold text-brand-jet mb-3 md:mb-4">{feature.title}</h3>
+                    <p className="text-sm md:text-base text-brand-charcoal leading-relaxed font-medium">{feature.description}</p>
                   </AnimatedCard>
                 </StaggerItem>
               ))}
@@ -116,39 +103,39 @@ export default function MerchandisingPage() {
 
       {/* Sales Team Section */}
       <ScrollReveal>
-        <section className="py-20 lg:py-28 bg-brand-paleblue">
-          <div className="max-w-7xl mx-auto px-8 lg:px-16">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <section className="py-16 lg:py-24 bg-brand-paleblue">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
-                <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-6">Expert Sales Team</h2>
-                <p className="text-lg text-brand-charcoal mb-8 leading-relaxed">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-jet mb-6">Expert Sales Team</h2>
+                <p className="text-lg text-brand-charcoal mb-8 leading-relaxed font-medium">
                   Our dedicated sales force combines deep market knowledge with professional execution to build strong retailer relationships and drive consistent sell-through.
                 </p>
- 
+
                 <StaggerContainer className="space-y-6">
                   {[
                     { icon: 'ri-user-star-line', title: 'Trained Professionals', desc: 'Skilled in sales techniques and product knowledge' },
                     { icon: 'ri-map-pin-user-line', title: 'Local Market Experts', desc: 'Deep understanding of regional consumer preferences' },
-                    { icon: 'ri-handshake-line', title: 'Relationship Builders', desc: 'Strong connections with retailers and wholesalers' }
+                    { icon: 'ri-user-heart-line', title: 'Relationship Builders', desc: 'Strong connections with retailers and wholesalers' }
                   ].map((item, i) => (
-                    <StaggerItem key={i} className="flex items-start space-x-4">
+                    <StaggerItem key={i} className="flex items-start gap-4">
                       <div className="w-12 h-12 flex items-center justify-center bg-brand-yellow rounded-xl flex-shrink-0">
                         <i className={`${item.icon} text-2xl text-brand-jet`}></i>
                       </div>
                       <div>
-                        <h4 className="text-lg font-bold text-brand-jet mb-1">{item.title}</h4>
-                        <p className="text-brand-charcoal">{item.desc}</p>
+                        <h4 className="text-lg font-bold text-brand-jet mb-1  tracking-tight">{item.title}</h4>
+                        <p className="text-sm md:text-base text-brand-charcoal font-medium">{item.desc}</p>
                       </div>
                     </StaggerItem>
                   ))}
                 </StaggerContainer>
               </div>
- 
-              <div className="relative">
+
+              <div className="relative group">
                 <img
                   src="https://readdy.ai/api/search-image?query=professional%20sales%20representative%20talking%20with%20store%20manager%20in%20retail%20environment%20friendly%20business%20discussion%20bright%20store%20lighting%20commercial%20photography&width=600&height=500&seq=merchandising-sales-001&orientation=portrait"
                   alt="Sales Team"
-                  className="w-full h-[500px] object-cover object-center rounded-3xl shadow-2xl"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover object-center rounded-[32px] shadow-2xl transition-transform group-hover:scale-[1.02] duration-500"
                 />
               </div>
             </div>
@@ -158,33 +145,33 @@ export default function MerchandisingPage() {
 
       {/* Results Section */}
       <ScrollReveal>
-        <section className="py-20 lg:py-28 bg-white">
-          <div className="max-w-7xl mx-auto px-8 lg:px-16">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="relative order-2 lg:order-1">
+        <section className="py-16 lg:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div className="relative order-2 lg:order-1 group">
                 <img
                   src="https://readdy.ai/api/search-image?query=well%20organized%20supermarket%20shelf%20with%20consumer%20products%20perfect%20product%20display%20retail%20merchandising%20excellence%20bright%20store%20lighting%20clean%20modern%20store&width=600&height=500&seq=merchandising-results-001&orientation=portrait"
                   alt="Merchandising Results"
-                  className="w-full h-[500px] object-cover object-center rounded-3xl shadow-2xl"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover object-center rounded-[32px] shadow-2xl transition-transform group-hover:scale-[1.02] duration-500"
                 />
               </div>
- 
+
               <div className="order-1 lg:order-2">
-                <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-6">Driving Results</h2>
-                <p className="text-lg text-brand-charcoal mb-8 leading-relaxed">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-jet mb-6">Driving Results</h2>
+                <p className="text-lg text-brand-charcoal mb-8 leading-relaxed font-medium">
                   Our merchandising efforts translate directly into improved brand performance and increased sales at the point of purchase.
                 </p>
- 
-                <StaggerContainer className="grid grid-cols-2 gap-6">
+
+                <StaggerContainer className="grid grid-cols-2 gap-4 md:gap-6">
                   {[
                     { val: '95%', lab: 'Shelf Availability' },
                     { val: '100%', lab: 'Planogram Compliance' },
                     { val: 'Weekly', lab: 'Store Visits' },
                     { val: 'Real-time', lab: 'Reporting' }
                   ].map((res, i) => (
-                    <StaggerItem key={i} className="bg-brand-paleblue p-6 rounded-2xl text-center">
-                      <div className="text-4xl font-bold text-brand-yellow mb-2">{res.val}</div>
-                      <p className="text-sm text-brand-charcoal">{res.lab}</p>
+                    <StaggerItem key={i} className="bg-brand-paleblue p-6 rounded-[24px] text-center group hover:bg-brand-yellow transition-colors duration-300">
+                      <div className="text-3xl md:text-4xl font-bold text-brand-jet group-hover:text-brand-jet transition-colors duration-300 mb-2">{res.val}</div>
+                      <p className="text-xs md:text-sm text-brand-charcoal font-bold  tracking-wider">{res.lab}</p>
                     </StaggerItem>
                   ))}
                 </StaggerContainer>
@@ -195,32 +182,13 @@ export default function MerchandisingPage() {
       </ScrollReveal>
 
       {/* CTA Section */}
-      <section className="py-20 bg-brand-charcoal">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Boost Your In-Store Presence
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Let our merchandising team maximize your brand visibility across Syria
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="/become-a-partner"
-              className="inline-flex items-center space-x-3 px-10 py-4 bg-brand-yellow text-brand-jet rounded-full font-semibold text-lg hover:brightness-110 transition-all shadow-xl hover:shadow-2xl whitespace-nowrap cursor-pointer"
-            >
-              <span>Become a Partner</span>
-              <i className="ri-arrow-right-line text-xl"></i>
-            </a>
-            <a
-              href="/services"
-              className="inline-flex items-center space-x-3 px-10 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold text-lg hover:bg-white hover:text-brand-jet transition-all whitespace-nowrap cursor-pointer"
-            >
-              <span>All Services</span>
-              <i className="ri-arrow-left-line text-xl"></i>
-            </a>
-          </div>
-        </div>
-      </section>
+      <div className="py-12 md:py-16">
+       
+        <Subscribe
+          title="Boost Your In-Store Presence"
+        becomePartner={true}
+         />
+      </div>
 
 
     </div>

@@ -44,11 +44,11 @@ export default function RootLayout({ children }) {
       </head>
       <body className="min-h-full flex flex-col">
         <I18nProvider>
+          <Navbar />
           <PageTransitionWrapper>
-            <Navbar />
             {children}
-            <Footer />
           </PageTransitionWrapper>
+          <Footer />
         </I18nProvider>
       </body>
     </html>

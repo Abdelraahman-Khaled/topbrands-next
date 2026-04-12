@@ -110,29 +110,29 @@ export default function Stats() {
           </p>
         </div>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, index) => (
             <StaggerItem
               key={index}
-              className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors duration-300"
+              className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 hover:bg-white/10 transition-all duration-300"
             >
               <div
-                className={`w-12 h-12 flex items-center justify-center rounded-xl mb-6 ${stat.iconBg}`}
+                className={`w-12 h-12 flex items-center justify-center rounded-xl mb-4 md:mb-6 ${stat.iconBg}`}
               >
                 {stat.icon}
               </div>
 
               <div className="flex items-center gap-2 mb-2">
-                <div className="text-[40px] font-bold text-white leading-none">
+                <div className="text-3xl md:text-[40px] font-bold text-white leading-none">
                   {stat.number.replace("+", "")}
                 </div>
                 {stat.number.includes("+") && (
-                  <div className="text-[40px] font-bold text-[#F7E326] leading-none">
+                  <div className="text-3xl md:text-[40px] font-bold text-[#F7E326] leading-none">
                     +
                   </div>
                 )}
               </div>
-              <div className="text-base text-[#D1D5DB] font-medium">
+              <div className="text-sm md:text-base text-[#D1D5DB] font-medium">
                 {stat.label}
               </div>
             </StaggerItem>

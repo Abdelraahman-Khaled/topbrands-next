@@ -96,52 +96,55 @@ export default function BrandDetailPage() {
 
 
       {/* Brand Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-brand-paleblue to-white">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+      <section className="relative pt-24 md:pt-32 pb-12 md:pb-20 bg-gradient-to-br from-brand-paleblue to-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
           <Link
             href="/brands"
-            className="inline-flex items-center space-x-2 text-brand-charcoal hover:text-black transition-colors mb-8 cursor-pointer"
+            className="inline-flex items-center space-x-2 text-brand-charcoal hover:text-black transition-colors mb-8 cursor-pointer group"
           >
-            <i className="ri-arrow-left-line text-xl"></i>
-            <span className="font-medium">Back to Brands</span>
+            <i className="ri-arrow-left-line text-xl group-hover:-translate-x-1 transition-transform"></i>
+            <span className="font-bold uppercase tracking-widest text-xs md:text-sm">Back to Brands</span>
           </Link>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="flex items-center space-x-4 mb-6">
-                <span className="px-4 py-2 bg-brand-yellow text-[#101010] text-sm font-semibold rounded-full">
+          <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="flex flex-wrap items-center gap-3 mb-6 md:mb-8">
+                <span className="px-4 py-1.5 bg-brand-yellow text-brand-jet text-xs font-bold uppercase tracking-widest rounded-full shadow-sm">
                   {brand.origin}
                 </span>
-                <span className="px-4 py-2 bg-brand-charcoal text-white text-sm font-semibold rounded-full">
+                <span className="px-4 py-1.5 bg-brand-jet text-white text-xs font-bold uppercase tracking-widest rounded-full shadow-sm">
                   {brand.category}
                 </span>
               </div>
-              <h1 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-6">{brand.name}</h1>
-              <p className="text-xl font-normal text-brand-charcoal leading-relaxed mb-8">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-brand-jet mb-6">{brand.name}</h1>
+              <p className="text-base md:text-lg lg:text-xl font-medium text-brand-charcoal leading-relaxed mb-8 md:mb-10 max-w-2xl">
                 {brand.description}
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4">
                 <a
                   href="/contact"
-                  className="inline-flex items-center space-x-2 px-8 py-4 bg-brand-yellow text-[#101010] rounded-full font-semibold hover:brightness-110 duration-300 transition-all whitespace-nowrap cursor-pointer"
+                  className="inline-flex items-center justify-center space-x-3 px-8 py-4 bg-brand-yellow text-brand-jet rounded-full font-bold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all whitespace-nowrap cursor-pointer"
                 >
                   <span>Contact for Orders</span>
-                  <i className="ri-arrow-right-line"></i>
+                  <i className="ri-shopping-cart-line text-lg"></i>
                 </a>
                 <a
                   href="/become-a-partner"
-                  className="inline-flex items-center space-x-2 px-8 py-4 border-2 border-brand-charcoal text-brand-charcoal rounded-full font-semibold duration-300 hover:bg-brand-charcoal hover:text-white transition-all whitespace-nowrap cursor-pointer"
+                  className="inline-flex items-center justify-center space-x-3 px-8 py-4 border-2 border-brand-jet text-brand-jet rounded-full font-bold hover:bg-brand-jet hover:text-white transition-all whitespace-nowrap cursor-pointer"
                 >
                   <span>Become a Partner</span>
                 </a>
               </div>
             </div>
-            <div className="bg-white rounded-3xl shadow-2xl p-12 flex items-center justify-center">
-              <img
-                src={brand.logo}
-                alt={brand.name}
-                className="max-w-full max-h-64 object-contain"
-              />
+            <div className="order-1 lg:order-2">
+              <div className="bg-white rounded-[48px] shadow-2xl p-8 md:p-16 flex items-center justify-center relative overflow-hidden group">
+                <div className="absolute inset-0 bg-brand-yellow/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img
+                  src={brand.logo}
+                  alt={brand.name}
+                  className="max-w-full max-h-48 md:max-h-64 object-contain relative z-10 transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -149,46 +152,50 @@ export default function BrandDetailPage() {
 
       {/* Products Section */}
       <ScrollReveal delay={0.1}>
-        <section className="py-20 bg-white" data-product-shop>
-          <div className="max-w-7xl mx-auto px-8 lg:px-16">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-4">
-                {brand.name} Products
+        <section className="py-16 md:py-24 bg-white" data-product-shop>
+          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+            <div className="text-center mb-12 md:mb-20">
+              <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-brand-jet mb-4 md:mb-6">
+                Featured {brand.name} Products
               </h2>
-              <p className="text-xl text-brand-charcoal">
-                Explore our complete range of {brand.name} products
+              <p className="text-base md:text-xl text-brand-charcoal max-w-3xl mx-auto font-medium lead-relaxed">
+                Explore our curated selection of high-quality {brand.name} products, delivered with excellence throughout the region.
               </p>
             </div>
 
-            <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
               {brand.products.map((product) => (
                 <StaggerItem key={product.id}>
                   <div
-                    className="group h-full bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 "
+                    className="group h-full bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-brand-charcoal/5 flex flex-col"
                   >
-                    <div className="relative w-full h-64 bg-brand-paleblue overflow-hidden">
+                    <div className="relative w-full h-64 md:h-72 bg-brand-paleblue overflow-hidden">
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
                       />
                       <div className="absolute top-4 right-4 rtl:left-4 rtl:right-auto">
-                        <span className="px-3 py-1 bg-brand-teal text-white text-sm font-semibold rounded-full">
+                        <span className="px-3 py-1 bg-brand-teal text-white text-[10px] md:text-xs font-bold uppercase tracking-widest rounded-full shadow-lg">
                           {product.size}
                         </span>
                       </div>
                     </div>
-                    <div className="p-6 flex flex-col h-[calc(100%-16rem)]">
-                      <h3 className="text-xl font-bold text-brand-jet mb-2 group-hover:text-brand-teal transition-colors">
+                    <div className="p-6 md:p-8 flex flex-col flex-grow">
+                      <h3 className="text-xl md:text-2xl font-bold text-brand-jet mb-3 group-hover:text-brand-teal transition-colors duration-300">
                         {product.name}
                       </h3>
-                      <p className="text-sm text-brand-charcoal leading-relaxed mb-4 flex-grow">
+                      <p className="text-sm md:text-base text-brand-charcoal leading-relaxed mb-6 flex-grow font-medium">
                         {product.description}
                       </p>
-                      <div className="flex items-center justify-between mt-auto">
-                        <span className="text-xs text-brand-charcoal font-medium uppercase tracking-wider">
+                      <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-50">
+                        <span className="text-[10px] md:text-xs text-brand-charcoal font-bold uppercase tracking-widest flex items-center gap-2">
+                          <i className="ri-flask-line text-brand-teal"></i>
                           Size: {product.size}
                         </span>
+                        <div className="w-8 h-8 rounded-full bg-brand-yellow/10 flex items-center justify-center text-brand-jet group-hover:bg-brand-yellow transition-colors duration-300">
+                          <i className="ri-arrow-right-up-line"></i>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -203,7 +210,7 @@ export default function BrandDetailPage() {
       <ScrollReveal delay={0.2}>
         <GlobalCTA
           title={`${t("Interested_in")} ${brand.name} ${t("Products")}?`}
-          subtitle={`Contact us for detailed product information, pricing, and availability`}
+          subtitle={`Partner with us to bring ${brand.name}'s premium range to your customers or place a bulk order today.`}
           btnText="contact_us"
         />
       </ScrollReveal>
