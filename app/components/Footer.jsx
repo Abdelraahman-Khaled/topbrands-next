@@ -209,10 +209,10 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="px-8 py-3.5 bg-brand-yellow hover:brightness-110 text-brand-jet font-semibold transition-all inline-flex items-center space-x-2 rtl:space-x-reverse rounded-r-lg rtl:rounded-r-none rtl:rounded-l-lg whitespace-nowrap"
+                  className="px-8 py-3.5 group bg-brand-yellow duration-300 text-brand-jet font-semibold transition-all inline-flex items-center space-x-2 rtl:space-x-reverse rounded-r-lg rtl:rounded-r-none rtl:rounded-l-lg whitespace-nowrap"
                 >
                   <span>{t("subscribe")}</span>
-                  <i className="ri-arrow-right-line rtl:rotate-180"></i>
+                  <i className="ri-arrow-right-line rtl:rotate-180 group-hover:translate-x-0.5 duration-300"></i>
                 </button>
               </form>
             </div>
