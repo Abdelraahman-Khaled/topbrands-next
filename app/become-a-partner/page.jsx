@@ -74,7 +74,7 @@ export default function BecomePartnerPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <HeroSection
-        img="https://readdy.ai/api/search-image?query=professional%20business%20partnership%20handshake%20modern%20office%20setting%20international%20FMCG%20brands%20collaboration%20successful%20business%20meeting%20bright%20contemporary%20environment%20Syria%20Damascus%20corporate%20success&width=1920&height=600&seq=partner-hero-main&orientation=landscape"
+        img="/images/become a partner banner.webp"
         title={t('expand_brand')}
         yellowTitle={t('presence_syria')}
         subtitle={t('partnership_nav')}

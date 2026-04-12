@@ -17,7 +17,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section with Image */}
       <HeroSection
-        img={"https://readdy.ai/api/search-image?query=modern%20FMCG%20distribution%20company%20headquarters%20building%20professional%20corporate%20office%20exterior%20Damascus%20Syria%20blue%20sky%20contemporary%20architecture%20clean%20lines%20glass%20facade%20business%20district&width=1920&height=600&seq=about-hero-main&orientation=landscape"}
+        img={"/images/about/about page banner.webp"}
         subtitle={t("about_us_nav")}
         title={t("who_we_are")}
         description1={t("who_we_are_subtitle1")}

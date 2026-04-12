@@ -203,7 +203,7 @@ export default function ProductsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Suspense fallback={<div>Loading Products...</div>}>
-        <ProductsContent />
+        {/* <ProductsContent /> */}
       </Suspense>
     </div>
   );

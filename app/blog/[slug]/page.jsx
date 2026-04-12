@@ -349,28 +349,28 @@ export default function BlogArticle() {
 
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 bg-gradient-to-br from-[#000000] to-[#1a1a1a]">
+      <section className="relative pt-24 pb-12 md:pt-32 md:pb-16 bg-gradient-to-br from-[#000000] to-[#1a1a1a]">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="mb-6">
+          <div className="mb-4 md:mb-6">
             <span className="inline-block px-6 py-2 bg-[#F7E326] text-[#000000] rounded-full text-sm font-bold uppercase tracking-wider" style={{ fontFamily: 'Quicksand' }}>
               {article.category}
             </span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: 'Quicksand' }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: 'Quicksand' }}>
             {article.title}
           </h1>
-          <div className="flex flex-wrap items-center gap-6 text-gray-300">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-gray-300">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-yellow">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-brand-yellow flex-shrink-0">
                 <img src={article.authorImage} alt={article.author} className="w-full h-full object-cover object-top" />
               </div>
-              <span className="font-semibold" style={{ fontFamily: 'Quicksand' }}>{article.author}</span>
+              <span className="font-semibold text-sm sm:text-base" style={{ fontFamily: 'Quicksand' }}>{article.author}</span>
             </div>
-            <span className="flex items-center gap-2">
+            <span className="flex items-center gap-2 text-sm sm:text-base">
               <i className="ri-calendar-line text-brand-charcoal"></i>
               {article.date}
             </span>
-            <span className="flex items-center gap-2">
+            <span className="flex items-center gap-2 text-sm sm:text-base">
               <i className="ri-time-line text-brand-charcoal"></i>
               {article.readTime}
             </span>
@@ -379,17 +379,17 @@ export default function BlogArticle() {
       </section>
 
       {/* Featured Image */}
-      <section className="relative -mt-8">
+      <section className="relative -mt-6 sm:-mt-8">
         <div className="max-w-6xl mx-auto px-6">
           <div className="rounded-2xl overflow-hidden shadow-2xl">
-            <img src={article.image} alt={article.title} className="w-full h-[500px] object-cover object-top" />
+            <img src={article.image} alt={article.title} className="w-full h-64 sm:h-80 md:h-[400px] lg:h-[500px] object-cover object-top" />
           </div>
         </div>
       </section>
 
       {/* Article Content */}
       <ScrollReveal delay={0.1}>
-        <section className="py-16">
+        <section className="py-10 md:py-16">
           <div className="max-w-5xl mx-auto px-6">
             <div className="flex gap-12">
               {/* Sidebar - Social Share */}
@@ -530,13 +530,13 @@ export default function BlogArticle() {
 
       {/* Related Articles */}
       <ScrollReveal delay={0.2}>
-        <section className="py-20 bg-gradient-to-br from-[#DEE3EB]/30 to-white">
+        <section className="py-12 md:py-20 bg-gradient-to-br from-[#DEE3EB]/30 to-white">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-12">
-              <h2 className="text-4xl font-bold text-[#000000] mb-3" style={{ fontFamily: 'Quicksand' }}>
+            <div className="mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#000000] mb-3" style={{ fontFamily: 'Quicksand' }}>
                 Related Articles
               </h2>
-              <p className="text-lg text-[#4B4F54] font-medium" style={{ fontFamily: 'Quicksand' }}>
+              <p className="text-base sm:text-lg text-[#4B4F54] font-medium" style={{ fontFamily: 'Quicksand' }}>
                 Continue exploring insights from the Syrian FMCG market
               </p>
             </div>
@@ -600,16 +600,30 @@ export default function BlogArticle() {
         }
         .prose h2 {
           color: #000000;
-          font-size: 2rem;
+          font-size: 1.5rem;
           font-weight: 700;
-          margin-top: 3rem;
-          margin-bottom: 1.5rem;
+          margin-top: 2rem;
+          margin-bottom: 1rem;
           font-family: 'Quicksand', sans-serif;
         }
+        @media (min-width: 768px) {
+          .prose h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+          }
+        }
         .prose p {
-          margin-bottom: 1.5rem;
-          line-height: 1.8;
-          font-size: 1.125rem;
+          margin-bottom: 1.25rem;
+          line-height: 1.7;
+          font-size: 1rem;
+        }
+        @media (min-width: 768px) {
+          .prose p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.125rem;
+          }
         }
         .prose ul, .prose ol {
           margin-bottom: 1.5rem;

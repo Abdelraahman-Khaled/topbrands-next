@@ -98,7 +98,7 @@ export default function MarketCoveragePage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <HeroSection
-        img={"https://readdy.ai/api/search-image?query=Syria%20map%20with%20distribution%20network%20routes%20connecting%20major%20cities%20Damascus%20Aleppo%20Homs%20Latakia%20logistics%20infrastructure%20modern%20business%20visualization%20professional%20corporate%20presentation%20blue%20teal%20orange%20color%20scheme&width=1920&height=600&seq=coverage-hero-main&orientation=landscape"}
+        img={"/images/market-coverage/banner.webp"}
         title={t("nationwide_fmcg")}
         yellowTitle={t("distribution_network")}
         subtitle={t("market_coverage_nav")}
@@ -114,7 +114,7 @@ export default function MarketCoveragePage() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://readdy.ai/api/search-image?query=stylized%20map%20of%20Syria%20showing%20major%20cities%20Damascus%20Aleppo%20Homs%20Latakia%20with%20distribution%20network%20routes%20connecting%20cities%20clean%20modern%20infographic%20style%20professional%20business%20presentation%20blue%20and%20orange%20color%20scheme&width=600&height=600&seq=syria-map-coverage-001&orientation=squarish"
+                  src="/images/market-coverage/map.webp"
                   alt="Syria Market Coverage Map"
                   className="w-full h-full object-cover object-top"
                 />
@@ -314,7 +314,7 @@ export default function MarketCoveragePage() {
 
               <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://readdy.ai/api/search-image?query=modern%20FMCG%20warehouse%20with%20organized%20shelves%20delivery%20trucks%20loading%20dock%20professional%20logistics%20operation%20bright%20clean%20environment%20Syria%20Damascus%20distribution%20center&width=600&height=600&seq=logistics-warehouse-002&orientation=squarish"
+                  src="/images/market-coverage/section1.webp"
                   alt="Logistics Infrastructure"
                   className="w-full h-full object-cover object-top"
                 />
@@ -334,6 +334,6 @@ export default function MarketCoveragePage() {
           btnLink="/become-a-partner"
         />
       </ScrollReveal>
-     </div>
+    </div>
   );
 }

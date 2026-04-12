@@ -138,11 +138,11 @@ export default function Blog() {
 
 
       {/* Hero Section with Image */}
-      <section className="relative pt-32 pb-20 min-h-[500px] flex items-center overflow-hidden">
+      <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 min-h-[400px] md:min-h-[500px] flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="https://readdy.ai/api/search-image?query=professional%20business%20person%20writing%20blog%20article%20on%20laptop%20in%20modern%20office%20workspace%20with%20coffee%20cup%20notebooks%20and%20plants%20bright%20natural%20lighting%20creative%20workspace%20inspiring%20environment%20clean%20desk%20setup&width=1920&height=600&seq=blog-hero-main-001&orientation=landscape"
+            src="/images/blogs banner.webp"
             alt="Blog Hero"
             className="w-full h-full object-cover object-top"
           />
@@ -160,13 +160,13 @@ export default function Blog() {
               </span>
             </div>
             <h1
-              className="text-6xl font-bold text-white mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6"
               style={{ fontFamily: "Quicksand" }}
             >
               {t("insights_updates")}
             </h1>
             <p
-              className="text-xl text-[#E5E7EB] font-medium"
+              className="text-lg md:text-xl text-[#E5E7EB] font-medium"
               style={{ fontFamily: "Quicksand" }}
             >
               {t("stay_informed_blog")}
@@ -184,7 +184,7 @@ export default function Blog() {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-3 rounded-full font-semibold transition-all whitespace-nowrap cursor-pointer ${selectedCategory === category
+                  className={`px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold transition-all whitespace-nowrap cursor-pointer ${selectedCategory === category
                     ? "bg-gradient-to-r from-[#F7E326] to-[#E5D324] text-[#000000] shadow-lg transform scale-105"
                     : "bg-white text-[#4B4F54] hover:bg-[#F7E326]/20 border-2 border-[#DEE3EB] hover:border-[#F7E326]"
                     }`}
@@ -217,10 +217,10 @@ export default function Blog() {
                 className="block bg-gradient-to-br from-[#000000] to-[#1a1a1a] rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 cursor-pointer group"
               >
                 <div className="grid md:grid-cols-2 gap-0">
-                  <div className="relative h-96 md:h-auto overflow-hidden">
+                  <div className="relative h-64 sm:h-80 md:h-auto overflow-hidden">
                     <img
-                      src={blogPosts[0].image}
-                      alt={t(blogPosts[0].titleKey)}
+                      src={"/images/blogs/featured articles.webp"}
+                      alt="featured articles"
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-6 left-6 rtl:left-auto rtl:right-6">
@@ -233,42 +233,42 @@ export default function Blog() {
                       </span>
                     </div>
                   </div>
-                  <div className="p-12 flex flex-col justify-center">
+                  <div className="p-6 sm:p-10 md:p-12 flex flex-col justify-center">
                     <div
-                      className="flex items-center gap-4 text-sm text-gray-400 mb-4"
+                      className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-400 mb-4"
                       style={{ fontFamily: "Quicksand" }}
                     >
-                      <span className="flex items-center gap-2 rtl:flex-row-reverse bg-white/10 px-4 py-2 rounded-full">
+                      <span className="flex items-center gap-2 rtl:flex-row-reverse bg-white/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full whitespace-nowrap">
                         <i className="ri-calendar-line text-brand-charcoal"></i>
                         {blogPosts[0].date}
                       </span>
-                      <span className="flex items-center gap-2 rtl:flex-row-reverse bg-white/10 px-4 py-2 rounded-full">
+                      <span className="flex items-center gap-2 rtl:flex-row-reverse bg-white/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full whitespace-nowrap">
                         <i className="ri-time-line text-brand-yellow"></i>
                         {blogPosts[0].readTime}
                       </span>
                     </div>
                     <h3
-                      className="text-4xl font-bold text-white mb-4 group-hover:text-[#F7E326] duration-300 transition-colors"
+                      className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-[#F7E326] duration-300 transition-colors"
                       style={{ fontFamily: "Quicksand" }}
                     >
                       {t(blogPosts[0].titleKey)}
                     </h3>
                     <p
-                      className="text-gray-300 mb-6 text-lg font-medium leading-relaxed"
+                      className="text-gray-300 mb-6 text-base sm:text-lg font-medium leading-relaxed"
                       style={{ fontFamily: "Quicksand" }}
                     >
                       {t(blogPosts[0].excerptKey)}
                     </p>
-                    <div className="flex items-center justify-between pt-6 border-t border-white/20">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 border-t border-white/20">
                       <span
-                        className="text-sm text-gray-400 font-semibold flex items-center gap-2 rtl:flex-row-reverse"
+                        className="text-xs sm:text-sm text-gray-400 font-semibold flex items-center gap-2 rtl:flex-row-reverse"
                         style={{ fontFamily: "Quicksand" }}
                       >
                         <i className="ri-user-line text-brand-charcoal"></i>
                         {t(blogPosts[0].authorKey)}
                       </span>
                       <span
-                        className="bg-[#F7E326] text-[#000000] px-6 py-3 duration-300 rounded-lg font-bold flex items-center gap-2 rtl:flex-row-reverse group-hover:bg-white transition-all whitespace-nowrap"
+                        className="bg-[#F7E326] text-[#000000] px-5 sm:px-6 py-2.5 sm:py-3 duration-300 rounded-lg font-bold flex items-center gap-2 rtl:flex-row-reverse group-hover:bg-white transition-all whitespace-nowrap text-sm sm:text-base"
                         style={{ fontFamily: "Quicksand" }}
                       >
                         {t("read_article")}
@@ -284,11 +284,11 @@ export default function Blog() {
       )}
 
       {/* Blog Posts Grid */}
-      <section className="py-20 bg-gradient-to-br from-white via-[#DEE3EB]/30 to-white">
+      <section className="py-12 md:py-20 bg-gradient-to-br from-white via-[#DEE3EB]/30 to-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-12">
+          <div className="mb-8 md:mb-12">
             <h2
-              className="text-3xl font-bold text-[#000000]"
+              className="text-2xl md:text-3xl font-bold text-[#000000]"
               style={{ fontFamily: "Quicksand" }}
             >
               {selectedCategory === "all"
@@ -377,3 +377,4 @@ export default function Blog() {
     </div>
   );
 }
+

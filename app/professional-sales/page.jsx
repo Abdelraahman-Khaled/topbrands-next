@@ -22,7 +22,7 @@ export default function SalesMerchandisingPage() {
         <main className="w-full bg-white">
             {/* 1. Hero Section */}
             <HeroSection
-                img="/images/professional-sales/hero-img.jpg"
+                img="/images/professional-sales/hero-img.webp"
                 title={t('professional_sales')}
                 subtitle={t('merchandising')}
                 yellowTitle={t('sales_hero_yellow')}
@@ -75,7 +75,7 @@ export default function SalesMerchandisingPage() {
                             ))}
                         </div>
                     </div>
-                    <img src="/images/professional-sales/sales-team.jpg" className="rounded-3xl w-full h-full object-cover" alt="Sales Team" />
+                    <img src="/images/professional-sales/sales team.webp" className="rounded-3xl w-full h-full object-cover" alt="Sales Team" />
                 </div>
             </section>
 
@@ -83,7 +83,7 @@ export default function SalesMerchandisingPage() {
             <section className="py-24 bg-white px-6">
                 <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
                     <div>
-                        <img src="/images/professional-sales/results.png" className="rounded-[2.5rem] w-full object-cover order-2 lg:order-1" alt="Retail Shelf" />
+                        <img src="/images/professional-sales/results.webp" className="rounded-[2.5rem] w-full object-cover order-2 lg:order-1" alt="Retail Shelf" />
                     </div>
                     <div className="order-1 lg:order-2 space-y-10">
                         <h2 className="text-5xl font-bold text-black tracking-tight">{t('results_title')}</h2>

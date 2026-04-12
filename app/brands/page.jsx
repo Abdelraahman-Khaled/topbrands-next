@@ -226,8 +226,8 @@ function BrandsContent() {
         description1={t("brand_portfolio_desc_1")}
         yellowText={t("brand_portfolio_desc_2")}
         description2={t("brand_portfolio_desc_3")}
-        img={"https://readdy.ai/api/search-image?query=diverse%20international%20and%20regional%20FMCG%20brand%20products%20arranged%20professionally%20on%20display%20shelves%20colorful%20packaging%20modern%20retail%20environment%20bright%20lighting%20organized%20presentation%20Syria%20Damascus&width=1920&height=600&seq=brands-hero-main&orientation=landscape"} />
-
+        img={"/images/brands banner.webp"}
+      />
 
       {/* Brand Type Filter */}
       <ScrollReveal delay={0.1}>

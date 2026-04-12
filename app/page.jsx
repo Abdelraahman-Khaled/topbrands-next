@@ -14,40 +14,25 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       <Hero />
-      
-      <ScrollReveal delay={0.1}>
-        <Stats />
-      </ScrollReveal>
 
-      <ScrollReveal delay={0.2}>
-        <About />
-      </ScrollReveal>
+      <Stats />
 
-      <ScrollReveal delay={0.15}>
-        <Services />
-      </ScrollReveal>
 
-      <ScrollReveal delay={0.15}>
-        <ProductsBrands />
-      </ScrollReveal>
+      <About />
 
-      <ScrollReveal delay={0.15}>
-        <WhyChooseUs />
-      </ScrollReveal>
+      <Services />
 
-      <ScrollReveal delay={0.15}>
-        <OurCustomers />
-      </ScrollReveal>
+      <ProductsBrands />
 
-      <ScrollReveal delay={0.15}>
-        <WhyPartener />
-      </ScrollReveal>
+      <WhyChooseUs />
+
+      <OurCustomers />
+
+      <WhyPartener />
 
       {/* <ScrollReveal delay={0.2}><Testimonials /></ScrollReveal> */}
 
-      <ScrollReveal delay={0.15}>
-        <Contact />
-      </ScrollReveal>
+      <Contact />
     </div>
   );
 }

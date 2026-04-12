@@ -63,7 +63,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       <HeroSection
-        img="/images/contact/hero-img.jpg"
+        img="/images/contact/hero-img.webp"
         title={t("contact_us_title")}
         yellowTitle={t("growing_together")}
         subtitle={t("contact_nav")}

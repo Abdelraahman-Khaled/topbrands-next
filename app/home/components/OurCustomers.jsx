@@ -177,26 +177,26 @@ export default function OurCustomers() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {stats.map((stat) => (
             <StaggerItem
               key={stat.id}
-              className="bg-white rounded-[16px] p-10 flex flex-col items-center justify-center shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] transition-shadow duration-300 border border-gray-50"
+              className="bg-white rounded-[16px] p-6 sm:p-10 flex flex-col items-center justify-center shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] transition-shadow duration-300 border border-gray-50"
             >
               {/* Icon Container */}
               <div
-                className={`w-16 h-16 ${stat.iconBg} rounded-[12px] flex items-center justify-center mb-6`}
+                className={`w-14 h-14 md:w-16 md:h-16 ${stat.iconBg} rounded-[12px] flex items-center justify-center mb-4 md:mb-6`}
               >
                 {stat.icon}
               </div>
 
               {/* Stats Number */}
-              <h3 className="text-[30px] font-bold text-black mb-2">
+              <h3 className="text-2xl md:text-[30px] font-bold text-black mb-2">
                 {stat.number}
               </h3>
 
               {/* Label */}
-              <p className="text-[#6B7280] text-sm font-medium">{stat.label}</p>
+              <p className="text-[#6B7280] text-xs md:text-sm font-medium">{stat.label}</p>
             </StaggerItem>
           ))}
         </StaggerContainer>
