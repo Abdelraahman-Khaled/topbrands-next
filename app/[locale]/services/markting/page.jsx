@@ -78,10 +78,10 @@ export default function MarketingPage() {
 
       {/* Hero Section */}
       <HeroSection
-        img="https://readdy.ai/api/search-image?query=modern%20marketing%20team%20brainstorming%20session%20creative%20office%20environment%20with%20digital%20screens%20showing%20analytics%20charts%20graphs%20professional%20business%20meeting%20colorful%20post%20it%20notes%20whiteboard%20strategy%20planning%20bright%20contemporary%20workspace&width=1920&height=800&seq=marketing-hero-001&orientation=landscape"
-        subtitle={t('marketing_hero_subtitle')}
-        title={t('marketing_hero_title')}
-        yellowTitle={t('marketing_hero_yellow_title')}
+        img="/images/markting/hero-img.webp"
+        subtitle={t('mkt_hero_title')}
+        title={t('mkt_hero_title')}
+        yellowTitle={t('mkt_hero_yellow')}
         description1={t('marketing_hero_desc1')}
         yellowText={t('marketing_hero_yellow_text')}
         description2={t('marketing_hero_desc2')}
@@ -158,9 +158,9 @@ export default function MarketingPage() {
 
             <ScrollReveal delay={0.2} className="relative group">
               <img
-                src="https://readdy.ai/api/search-image?query=marketing%20team%20analyzing%20data%20on%20large%20screen%20dashboard%20showing%20growth%20charts%20social%20media%20metrics%20brand%20performance%20analytics%20modern%20office%20environment%20professional%20business%20setting%20bright%20lighting&width=600&height=500&seq=marketing-capabilities-001&orientation=portrait"
+                src="/images/markting/marketing solutions.webp"
                 alt="Marketing Capabilities"
-                className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover object-center rounded-[32px] shadow-2xl transition-transform group-hover:scale-[1.02] duration-500"
+                className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover object-center rounded-[32px] "
               />
             </ScrollReveal>
           </div>
@@ -201,9 +201,9 @@ export default function MarketingPage() {
       {/* CTA Section */}
       <div className="py-12 md:py-16">
         <GlobalCTA
-            title={t('marketing_cta_title')}
-            subtitle={t('marketing_cta_subtitle')}
-            contact={true}
+          title={t('marketing_cta_title')}
+          subtitle={t('marketing_cta_subtitle')}
+          contact={true}
         />
       </div>
 

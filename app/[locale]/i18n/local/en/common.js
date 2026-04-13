@@ -14,7 +14,7 @@ export default {
   years_group: "30+ YEARS VIA AL BARENGI GROUP",
   contact_syria: "Contact Top Brands Syria",
   become_partner: "Become a Distribution Partner",
-  markting:"Markting",
+  markting:"Markting Solutions",
   Distribution_Partner: "Distribution Partner",
   get_in_touch: "Get In Touch",
   explore_services: "Explore Our Services",

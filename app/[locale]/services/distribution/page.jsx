@@ -45,7 +45,7 @@ export default function DistributionPage() {
 
       {/* Hero Section */}
       <HeroSection
-        img="https://readdy.ai/api/search-image?query=aerial%20view%20of%20large%20distribution%20center%20with%20multiple%20delivery%20trucks%20loading%20docks%20warehouse%20facility%20professional%20logistics%20operations%20bright%20daylight%20industrial%20photography%20clean%20modern%20setting&width=1920&height=800&seq=distribution-hero-001&orientation=landscape"
+        img="/images/national-distribution/nationwide distribution.webp"
         subtitle={t("distribution")}
         title={t("national_wide")}
         yellowTitle={t("dist_hero_yellow")}
