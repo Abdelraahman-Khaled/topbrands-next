@@ -8,7 +8,7 @@ export default {
   blog: "المدونة",
   contact: "اتصل بنا",
   products: "المنتجات",
-  markting: "التسويق",
+  markting: "حلول تسويقية",
   //end of navbar
   // {Home}
   // hero
