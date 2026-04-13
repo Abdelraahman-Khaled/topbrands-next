@@ -11,6 +11,7 @@ export default function Services() {
   const services = [
     {
       title: t("distribution") || "Distribution",
+      link: t("distribution"),
       desc:
         t("distribution_desc") ||
         "Efficient distribution network covering retail, wholesale, and key accounts across Syria.",
@@ -32,6 +33,7 @@ export default function Services() {
     },
     {
       title: t("logistics") || "Logistics",
+      link: t("logistics"),
       desc:
         t("logistics_desc") ||
         "Reliable warehousing and inventory management with real-time tracking systems.",
@@ -53,6 +55,7 @@ export default function Services() {
     },
     {
       title: t("merchandising") || "Merchandising",
+      link: t("professional-sales"),
       desc:
         t("merchandising_desc") ||
         "Professional shelf management and visibility solutions to boost sales results.",
@@ -74,6 +77,7 @@ export default function Services() {
     },
     {
       title: t("marketing_solutions") || "Marketing Solutions",
+      link: t('marketing_service'),
       desc:
         t("marketing_desc") ||
         "Dynamic marketing strategies to enhance brand awareness and market share.",
@@ -149,7 +153,7 @@ export default function Services() {
                   {service.desc}
                 </p>
                 <LocalizedLink
-                  href={`/services#${service.title.toLowerCase()}`}
+                  href={`/services/${service.link.toLowerCase()}`}
                   className="inline-flex items-center gap-2 text-black font-bold group-hover:text-[#4B4F54]"
                 >
                   {t("learn_more") || "Learn More"}

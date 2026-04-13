@@ -176,10 +176,10 @@ export default function Footer() {
               </li>
               <li>
                 <LocalizedLink
-                  href="/services/markting"
+                  href="/services/marketing"
                   className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
                 >
-                  {t("markting")}
+                  {t("marketing_service")}
                 </LocalizedLink>
               </li>
             </ul>

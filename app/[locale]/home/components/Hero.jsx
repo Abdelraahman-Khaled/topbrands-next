@@ -5,19 +5,19 @@ import { headlineRevealVariants, hoverCardVariants, tapButtonVariants } from "..
 import LocalizedLink from "../../components/LocalizedLink";
 
 export default function Hero() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
-
+  const isRtl = i18n.language === 'ar'; // Check if current language is Arabic
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-jet">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0 flex flex-col h-full w-full">
+      <div className="absolute inset-0 z-0 flex h-full w-full ">
         {/* Background photo block */}
-        <div className="relative flex-1">
+        <div className={`relative w-full lg:w-[60%] h-full ${isRtl ? 'mr-auto' : ''}`}>
           <img
-            src="/images/home/hero.jpg"
+            src="/images/home/hero.webp"
             alt="Distribution Excellence"
-            className="w-full h-full"
+            className="w-full h-full object-cover object-center"
           />
           {/* Overlay gradient over the image */}
           <div className="absolute inset-0 bg-linear-to-t from-transparent via-black/30 to-black/40"></div>
@@ -26,7 +26,7 @@ export default function Hero() {
 
       {/* Decorative Gradient overlays from Figma */}
       <div
-        className="absolute top-0 right-0 w-1/3 h-full z-0"
+        className="absolute top-0 right-0 w-[40%] h-full z-0"
         style={{
           background:
             "linear-gradient(120deg, #4B4F54 0%, #000000 50%, #4B4F54 100%)",
@@ -41,7 +41,7 @@ export default function Hero() {
         }}
       ></div>
       {/* Content */}
-      <div className="relative flex z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-24 sm:py-32 text-start w-full mt-8 sm:mt-12 md:mt-24 mb-12">
+      <div className="relative flex z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-24 sm:py-32 text-start w-full  md:mt-0 mt-4 mb-12">
         <div className="space-y-6 sm:space-y-8 flex flex-col items-start w-full">
           {/* Badge */}
           <div className="inline-flex animate-fade-in mb-2 sm:mb-4">
@@ -93,7 +93,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-start items-start sm:items-center pt-6 sm:pt-8"
           >
             {/* Become a Partner — Yellow → Black */}
-            <motion.div whileTap={tapButtonVariants}>
+            <motion.div whileTap={tapButtonVariants} className="w-full">
               <LocalizedLink
                 href="/become-a-partner"
                 className="mask-btn mask-btn--yellow-black w-full"
@@ -106,7 +106,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Contact — None → White */}
-            <motion.div whileTap={tapButtonVariants}>
+            <motion.div whileTap={tapButtonVariants} className="w-full">
               <LocalizedLink
                 href="/contact"
                 className="mask-btn mask-btn--none-white w-full"

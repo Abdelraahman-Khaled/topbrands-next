@@ -39,7 +39,7 @@ export default function SalesMerchandisingPage() {
                 <StaggerContainer className="max-w-7xl mx-auto flex flex-wrap justify-center gap-3 md:gap-4">
                     {['placement', 'shelf', 'pos', 'stock', 'competitor', 'photo', 'promo', 'inventory'].map((key) => (
                         <StaggerItem key={key}>
-                            <div className="bg-black text-white px-5 md:px-6 py-2 md:py-2.5 rounded-full flex items-center gap-2 md:gap-3 text-xs md:text-sm font-bold shadow-md hover:scale-105 transition-transform duration-300">
+                            <div className="bg-black text-white px-5 md:px-6 py-2 md:py-2.5 rounded-full flex items-center gap-2 md:gap-3 text-xs md:text-sm font-bold shadow-md transition-transform duration-300">
                                 <Check size={14} className="text-brand-yellow" strokeWidth={3} />
                                 {t(`pill_${key}`)}
                             </div>
@@ -96,10 +96,10 @@ export default function SalesMerchandisingPage() {
             <section className="py-16 md:py-24 bg-white px-6">
                 <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <ScrollReveal className="order-2 lg:order-1 group overflow-hidden rounded-[2.5rem]">
-                        <img 
-                            src="/images/professional-sales/results.webp" 
-                            className="w-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-[1.03]" 
-                            alt="Retail Shelf" 
+                        <img
+                            src="/images/professional-sales/results.webp"
+                            className="w-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-[1.03]"
+                            alt="Retail Shelf"
                         />
                     </ScrollReveal>
                     <div className="order-1 lg:order-2 space-y-8 md:space-y-10">
