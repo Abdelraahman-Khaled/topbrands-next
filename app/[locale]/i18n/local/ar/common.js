@@ -8,6 +8,10 @@ export default {
   blog: "المدونة",
   contact: "اتصل بنا",
   products: "المنتجات",
+  professional_sales: "المبيعات الاحترافية",
+  distribution_service: "التوزيع",
+  marketing_service: "التسويق",
+  logistics_service: "الخدمات اللوجستية",
   markting: "حلول تسويقية",
   //end of navbar
   // {Home}

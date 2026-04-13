@@ -8,6 +8,10 @@ export default {
   blog: "Blog",
   contact: "Contact Us",
   products: "Products",
+  professional_sales: "Professional Sales",
+  distribution_service: "Distribution",
+  marketing_service: "Marketing",
+  logistics_service: "Logistics",
   //end of navbar
   // {Home}
   // hero

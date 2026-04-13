@@ -10,7 +10,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-
   --color-brand-yellow: #f7e326;
   --color-brand-jet: #000000;
   --color-brand-charcoal: #4b4f54;
@@ -185,7 +184,6 @@ textarea::placeholder {
   animation: ani-to-0 0.7s steps(29) forwards;
 }
 
-
 /* ── Shared Inner Elements ── */
 
 .mask-btn__label {
@@ -224,8 +222,8 @@ textarea::placeholder {
   z-index: 2;
 
   /* Sprite mask shared setup */
-  -webkit-mask-image: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
-  mask-image: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+  -webkit-mask-image: url("/images/btn-hover.png");
+  mask-image: url("/images/btn-hover.png");
   -webkit-mask-size: 3000% 100%;
   mask-size: 3000% 100%;
 }

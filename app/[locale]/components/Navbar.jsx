@@ -9,6 +9,8 @@ import LocalizedLink from "./LocalizedLink";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [mobileSubMenuOpen, setMobileSubMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
   const pathname = usePathname();
   const router = useRouter();
@@ -77,7 +79,16 @@ export default function Navbar() {
   const links = [
     { key: "home", href: "/" },
     { key: "about", href: "/about" },
-    { key: "services", href: "/services" },
+    {
+      key: "services",
+      href: "/services",
+      sublinks: [
+        { key: "professional_sales", href: "/services/professional-sales" },
+        { key: "distribution_service", href: "/services/distribution" },
+        { key: "marketing_service", href: "/services/marketing" },
+        { key: "logistics_service", href: "/services/logistics" }
+      ]
+    },
     { key: "brands", href: "/brands" },
     // { key: "products", href: "/products" },
     { key: "coverage", href: "/market-coverage" },
@@ -147,20 +158,61 @@ export default function Navbar() {
           </motion.div>
 
           {/* Staggered Navigation Links */}
-          <div className="hidden lg:flex items-center space-x-10  me-2">
+          <div className="hidden lg:flex items-center space-x-10 me-2">
             {links.map((link) => (
               <motion.div
                 key={link.key}
                 variants={itemVariants}
+                className="relative"
+                onMouseEnter={() => link.sublinks && setActiveDropdown(link.key)}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
-                <LocalizedLink
-                  href={link.href}
-                  className={`relative text-base font-semibold text-white hover:text-brand-yellow tracking-wide transition-colors whitespace-nowrap cursor-pointer group`}>
-                  {t(link.key)}
-                  <motion.span
-                    className="absolute -bottom-1.5 left-0 w-0 h-[2px] bg-brand-yellow rounded-full transition-all duration-300 group-hover:w-full"
-                  />
-                </LocalizedLink>
+                {link.sublinks ? (
+                  <div className="flex items-center gap-1 cursor-pointer py-2">
+                    <LocalizedLink
+                      href={link.href}
+                      className={`relative text-base font-semibold text-white hover:text-brand-yellow tracking-wide transition-colors whitespace-nowrap group`}
+                    >
+                      {t(link.key)}
+                      <motion.span
+                        className="absolute -bottom-1.5 left-0 w-0 h-[2px] bg-brand-yellow rounded-full transition-all duration-300 group-hover:w-full"
+                      />
+                    </LocalizedLink>
+                    <i className={`ri-arrow-down-s-line text-white transition-transform duration-300 ${activeDropdown === link.key ? "rotate-180" : ""}`}></i>
+
+                    <AnimatePresence>
+                      {activeDropdown === link.key && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                          transition={{ duration: 0.2, ease: "easeOut" }}
+                          className="absolute top-full left-0 w-64 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl py-3 mt-2 border border-white/20 overflow-hidden"
+                        >
+                          {link.sublinks.map((sublink) => (
+                            <LocalizedLink
+                              key={sublink.key}
+                              href={sublink.href}
+                              className="block px-6 py-3 text-sm font-bold text-gray-800 hover:bg-brand-yellow  transition-transform hover:translate-x-1 transition-all duration-300"
+                            >
+                              {t(sublink.key)}
+                            </LocalizedLink>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <LocalizedLink
+                    href={link.href}
+                    className={`relative text-base font-semibold text-white hover:text-brand-yellow tracking-wide transition-colors whitespace-nowrap cursor-pointer group`}
+                  >
+                    {t(link.key)}
+                    <motion.span
+                      className="absolute -bottom-1.5 left-0 w-0 h-[2px] bg-brand-yellow rounded-full  transition-all duration-300 group-hover:w-full"
+                    />
+                  </LocalizedLink>
+                )}
               </motion.div>
             ))}
           </div>
@@ -193,7 +245,7 @@ export default function Navbar() {
             >
               <span className="mask-btn__label p-0!">{t("get_in_touch")}</span>
               <button type="button" className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
-                {t("contact_us")}
+                {t("get_in_touch")}
               </button>
             </LocalizedLink>
           </motion.div>
@@ -202,7 +254,7 @@ export default function Navbar() {
           <div className="flex lg:hidden items-center space-x-4">
             <button
               onClick={toggleLanguage}
-              className={`p-2 rounded-lg font-bold flex items-center gap-1 text-white}`}
+              className={`p-2 rounded-lg cursor-pointer font-bold flex items-center gap-1 text-white}`}
             >
               {currentLocale === "en" ? "AR" : "EN"}
             </button>
@@ -236,7 +288,7 @@ export default function Navbar() {
               <div className="flex items-center gap-4">
                 <button
                   onClick={toggleLanguage}
-                  className="px-3 py-1 bg-gray-100 rounded-lg font-bold text-gray-800"
+                  className="px-3 py-1 cursor-pointer bg-gray-100 rounded-lg font-bold text-gray-800"
                 >
                   {currentLocale === "en" ? "AR" : "EN"}
                 </button>
@@ -254,40 +306,75 @@ export default function Navbar() {
               {/* Main Links */}
               <div className="flex flex-col space-y-2">
                 {links.map((link) => (
-                  <motion.div
-                    key={link.key}
-                    variants={mobileItemVariants}
-                  >
-                    <LocalizedLink
-                      href={link.href}
-                      className="text-2xl font-bold text-gray-900 py-4 border-b border-gray-50 flex items-center justify-between group px-4"
-                    >
-                      <span>{t(link.key)}</span>
-                      <motion.i
-                        whileHover={{ x: 5 }}
-                        className="ri-arrow-right-s-line text-brand-yellow text-3xl transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1"
-                      ></motion.i>
-                    </LocalizedLink>
+                  <motion.div key={link.key} variants={mobileItemVariants}>
+                    {link.sublinks ? (
+                      <div className="flex flex-col">
+                        <button
+                          onClick={() => setMobileSubMenuOpen(!mobileSubMenuOpen)}
+                          className="text-2xl font-bold text-gray-900 py-4 border-b border-gray-50 flex items-center justify-between group px-4 w-full text-left"
+                        >
+                          <span>{t(link.key)}</span>
+                          <i className={`ri-arrow-down-s-line text-brand-yellow text-3xl transition-transform duration-300 ${mobileSubMenuOpen ? "rotate-180" : ""}`}></i>
+                        </button>
+                        <AnimatePresence>
+                          {mobileSubMenuOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              className="overflow-hidden bg-gray-50/50 rounded-xl"
+                            >
+                              {link.sublinks.map((sublink) => (
+                                <LocalizedLink
+                                  key={sublink.key}
+                                  href={sublink.href}
+                                  onClick={toggleMenu}
+                                  className="text-lg font-bold text-gray-700 py-3 px-8 flex items-center justify-between group border-b border-gray-100 last:border-0"
+                                >
+                                  <span>{t(sublink.key)}</span>
+                                  <i className="ri-arrow-right-s-line text-brand-yellow text-xl"></i>
+                                </LocalizedLink>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ) : (
+                      <LocalizedLink
+                        href={link.href}
+                        className="text-2xl font-bold text-gray-900 py-4 border-b border-gray-50 flex items-center justify-between group px-4"
+                      >
+                        <span>{t(link.key)}</span>
+                        <motion.i
+                          whileHover={{ x: document.dir === 'rtl' ? -5 : 5 }}
+                          className="ri-arrow-right-s-line text-brand-yellow text-3xl transition-transform group-hover:translate-x-1 rtl:rotate-180  rtl:group-hover:-translate-x-1"
+                        ></motion.i>
+                      </LocalizedLink>
+                    )}
                   </motion.div>
                 ))}
               </div>
 
               {/* Action Buttons */}
-              <div className="mt-12 flex flex-col space-y-4">
-                <motion.div variants={mobileItemVariants}>
+              <div className="mt-12 flex flex-col space-y-2">
+                <motion.div variants={mobileItemVariants} className="space-y-2">
                   <LocalizedLink
                     href="/become-a-partner"
-                    className="w-full py-4 text-center rounded-2xl border-2 border-gray-900 font-extrabold text-gray-900 shadow-sm block"
+                    className="mask-btn mask-btn--gray-black w-full p-3"
                   >
-                    {t("become_partner")}
+                    <span className="mask-btn__label p-0!" >{t("become_a_partner")}</span>
+                    <span type="button" className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
+                      {t("become_a_partner")}
+                    </span>
                   </LocalizedLink>
-                </motion.div>
-                <motion.div variants={mobileItemVariants}>
                   <LocalizedLink
                     href="/contact"
-                    className="w-full py-4 text-center rounded-2xl bg-brand-yellow font-extrabold text-gray-900 shadow-xl shadow-yellow-500/30 block"
+                    className="mask-btn mask-btn--yellow-black w-full p-3"
                   >
-                    {t("get_in_touch")}
+                    <span className="mask-btn__label p-0!">{t("get_in_touch")}</span>
+                    <button type="button" className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
+                      {t("get_in_touch")}
+                    </button>
                   </LocalizedLink>
                 </motion.div>
 

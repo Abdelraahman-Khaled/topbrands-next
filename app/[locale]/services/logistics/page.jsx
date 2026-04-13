@@ -106,7 +106,7 @@ export default function LogisticsPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <ScrollReveal className="relative order-2 lg:order-1 group overflow-hidden rounded-[32px]">
               <img
-                src="https://readdy.ai/api/search-image?query=warehouse%20worker%20using%20forklift%20moving%20pallets%20organized%20storage%20facility%20professional%20logistics%20operations%20bright%20industrial%20lighting%20clean%20modern%20warehouse&width=600&height=500&seq=logistics-warehouse-001&orientation=portrait"
+                src="/images/logistics/warehouse.webp"
                 alt="Warehouse Operations"
                 className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover object-center shadow-2xl transition-transform duration-700 group-hover:scale-[1.03]"
               />

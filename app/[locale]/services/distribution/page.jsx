@@ -126,12 +126,11 @@ export default function DistributionPage() {
                 ))}
               </StaggerContainer>
             </div>
-
-            <div className="relative group">
+            <div className="w-full h-full overflow-hidden rounded-[24px] shadow-2xl ">
               <img
-                src="https://readdy.ai/api/search-image?query=delivery%20truck%20driver%20handing%20package%20to%20store%20owner%20retail%20delivery%20professional%20service%20friendly%20interaction%20bright%20daylight%20commercial%20photography&width=600&height=500&seq=distribution-process-001&orientation=portrait"
+                src="/images/national-distribution/distribute.webp"
                 alt="Distribution Process"
-                className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover object-center rounded-[32px] shadow-2xl transition-transform duration-500"
+                className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover object-center transition-transform duration-500 "
               />
             </div>
           </div>
