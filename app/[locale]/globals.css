@@ -81,7 +81,10 @@ textarea::placeholder {
   border: none;
   min-width: 200px;
   height: 56px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, background-color 0s linear 0.7s;
+}
+.mask-btn:hover {
+  transition: all 0.3s ease, background-color 0s linear 0s;
 }
 
 /* ── THEMES ── */
@@ -112,7 +115,10 @@ textarea::placeholder {
   --_fill-text: #000; /* Text color on yellow */
   --_label: #000; /* Text color on white (the background) */
   --_label-hover: #000;
-  background: #fff; /* The target color */
+  background-color: transparent; /* Prevents corner bleed */
+}
+.mask-btn--yellow-white:hover {
+  background-color: #fff; /* Target color shown on hover */
 }
 
 .mask-btn--yellow-white .mask-btn__fill {
@@ -132,7 +138,10 @@ textarea::placeholder {
   --_fill-text: #000;
   --_label: #fff;
   --_label-hover: #fff;
-  background: #000;
+  background-color: transparent;
+}
+.mask-btn--yellow-black:hover {
+  background-color: #000;
 }
 .mask-btn--yellow-black .mask-btn__fill {
   -webkit-mask-position: 0 0;
@@ -228,13 +237,7 @@ textarea::placeholder {
   mask-size: 3000% 100%;
 }
 
-.mask-btn--yellow-white {
-  --_fill: #f7e326;
-  --_fill-text: #000;
-  --_label: #000;
-  --_label-hover: #000;
-  background: #fff;
-}
+/* Duplicate yellow-white rule removed */
 
 /* ######################################### */
 

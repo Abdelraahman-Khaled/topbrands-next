@@ -17,8 +17,6 @@ export default function BrandDetailPage() {
       name: t('brand_coffee_joy_name'),
       logo: '/images/brands/Coffee Joy.webp',
       slug: "coffee-joy",
-      category: t('snacks_confectionery'),
-      origin: t('international_brands'),
       description: t('brand_coffee_joy_desc'),
       products: [
         { id: 1, name: t('brand_coffee_joy_prod_1_name'), size: '45g', image: '/images/brands/Coffee Joy.webp', description: t('brand_coffee_joy_prod_1_desc') },
@@ -29,8 +27,6 @@ export default function BrandDetailPage() {
       name: t('brand_danisa_name'),
       logo: '/images/brands/Danisa.webp',
       slug: "danisa",
-      category: t('snacks_confectionery'),
-      origin: t('international_brands'),
       description: t('brand_danisa_desc'),
       products: [
         { id: 1, name: t('brand_danisa_prod_1_name'), size: '454g', image: 'https://readdy.ai/api/search-image?query=Danisa%20butter%20cookies%20blue%20tin%20premium%20gift&width=400&height=400&seq=dan-1', description: t('brand_danisa_prod_1_desc') },
@@ -41,8 +37,6 @@ export default function BrandDetailPage() {
       name: t('brand_domty_name'),
       logo: '/images/brands/Domty.webp',
       slug: "domty",
-      category: t('dairy_products'),
-      origin: t('egypt'),
       description: t('brand_domty_desc'),
       products: [
         { id: 1, name: t('brand_domty_prod_1_name'), size: '500g', image: 'https://readdy.ai/api/search-image?query=Domty%20feta%20cheese%20white%20packaging%20fresh%20dairy&width=400&height=400&seq=dom-1', description: t('brand_domty_prod_1_desc') },
@@ -53,8 +47,6 @@ export default function BrandDetailPage() {
       name: t('brand_kopiko_name'),
       logo: '/images/brands/Kopiko.webp',
       slug: "kopiko",
-      category: t('snacks_confectionery'),
-      origin: t('international_brands'),
       description: t('brand_kopiko_desc'),
       products: [
         { id: 1, name: t('brand_kopiko_prod_1_name'), size: '150g', image: 'https://readdy.ai/api/search-image?query=Kopiko%20coffee%20candy%20pouch%20real%20coffee%20extract&width=400&height=400&seq=kop-1', description: t('brand_kopiko_prod_1_desc') },
@@ -65,8 +57,6 @@ export default function BrandDetailPage() {
       name: t('brand_landessa_name'),
       logo: '/images/brands/Landessa.webp',
       slug: "landessa",
-      category: t('food_beverages'),
-      origin: t('austria'),
       description: t('brand_landessa_desc'),
       products: [
         { id: 1, name: t('brand_landessa_prod_1_name'), size: '230ml', image: 'https://readdy.ai/api/search-image?query=Landessa%20iced%20coffee%20latte%20can%20alpine%20milk&width=400&height=400&seq=lan-1', description: t('brand_landessa_prod_1_desc') },
@@ -77,8 +67,6 @@ export default function BrandDetailPage() {
       name: t('brand_leeza_name'),
       logo: '/images/brands/Leeza.webp',
       slug: "leeza",
-      category: t('food_beverages'),
-      origin: t('international_brands'),
       description: t('brand_leeza_desc'),
       products: [
         { id: 1, name: t('brand_leeza_prod_1_name'), size: '350g', image: 'https://readdy.ai/api/search-image?query=Leeza%20chocolate%20hazelnut%20spread%20jar&width=400&height=400&seq=lee-1', description: t('brand_leeza_prod_1_desc') },
@@ -89,8 +77,6 @@ export default function BrandDetailPage() {
       name: t('brand_lotus_name'),
       logo: '/images/brands/Lotus.webp',
       slug: "lotus",
-      category: t('snacks_confectionery'),
-      origin: t('regional_brands'),
       description: t('brand_lotus_desc'),
       products: [
         { id: 1, name: t('brand_lotus_prod_1_name'), size: '250g', image: 'https://readdy.ai/api/search-image?query=Lotus%20Biscoff%20biscuits%20pack%20caramelized&width=400&height=400&seq=lot-1', description: t('brand_lotus_prod_1_desc') },
@@ -101,8 +87,6 @@ export default function BrandDetailPage() {
       name: t('brand_pinar_regional_name'),
       logo: '/images/brands/Pinar.webp',
       slug: "pinar-regional",
-      category: t('dairy_products'),
-      origin: t('turkey'),
       description: t('brand_pinar_regional_desc'),
       products: [
         { id: 1, name: t('brand_pinar_regional_prod_1_name'), size: '400g', image: 'https://readdy.ai/api/search-image?query=Pinar%20labneh%20tub%20creamy%20turkish%20cheese&width=400&height=400&seq=pin-1', description: t('brand_pinar_regional_prod_1_desc') },
@@ -113,8 +97,6 @@ export default function BrandDetailPage() {
       name: t('brand_sirarcha_name'),
       logo: '/images/brands/Sirarcha.webp',
       slug: "sirarcha",
-      category: t('food_beverages'),
-      origin: t('regional_brands'),
       description: t('brand_sirarcha_desc'),
       products: [
         { id: 1, name: t('brand_sirarcha_prod_1_name'), size: '480ml', image: 'https://readdy.ai/api/search-image?query=Sriracha%20chili%20sauce%20bottle%20hot%20spicy&width=400&height=400&seq=sir-1', description: t('brand_sirarcha_prod_1_desc') },
@@ -125,8 +107,6 @@ export default function BrandDetailPage() {
       name: t('brand_ulker_regional_name'),
       logo: '/images/brands/Ulker.webp',
       slug: "ulker-regional",
-      category: t('snacks_confectionery'),
-      origin: t('turkey'),
       description: t('brand_ulker_regional_desc'),
       products: [
         { id: 1, name: t('brand_ulker_regional_prod_1_name'), size: '80g', image: 'https://readdy.ai/api/search-image?query=Ulker%20chocolate%20bar%20turkish%20confectionery&width=400&height=400&seq=ulk-1', description: t('brand_ulker_regional_prod_1_desc') },
@@ -137,8 +117,6 @@ export default function BrandDetailPage() {
       name: t('brand_wild_power_name'),
       logo: '/images/brands/Wild Power.webp',
       slug: "wild-power",
-      category: t('food_beverages'),
-      origin: t('regional_brands'),
       description: t('brand_wild_power_desc'),
       products: [
         { id: 1, name: t('brand_wild_power_prod_1_name'), size: '250ml', image: 'https://readdy.ai/api/search-image?query=Wild%20Power%20energy%20drink%20can%20refreshing&width=400&height=400&seq=wp-1', description: t('brand_wild_power_prod_1_desc') },
@@ -185,14 +163,6 @@ export default function BrandDetailPage() {
 
           <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
             <div className="order-2 lg:order-1">
-              <div className="flex flex-wrap items-center gap-3 mb-6 md:mb-8">
-                <span className="px-4 py-2 bg-brand-yellow text-brand-jet text-[10px] md:text-xs font-bold uppercase tracking-widest rounded-full shadow-sm">
-                  {brand.origin}
-                </span>
-                <span className="px-4 py-2 bg-brand-jet text-white text-[10px] md:text-xs font-bold uppercase tracking-widest rounded-full shadow-sm">
-                  {brand.category}
-                </span>
-              </div>
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-brand-jet mb-6 leading-tight">{brand.name}</h1>
               <p className="text-base md:text-lg lg:text-xl font-medium text-black leading-relaxed mb-8 md:mb-10 max-w-2xl opacity-90">
                 {brand.description}
@@ -254,9 +224,8 @@ export default function BrandDetailPage() {
             <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
               {brand.products.map((product) => (
                 <>
-                  <LocalizedLink
+                  <div
                     key={product.id}
-                    href={`/brands/${brand.slug}`}
                     className="block h-full group shadow-xl bg-white rounded-2xl overflow-hidden border-2 border-transparent cursor-pointer"
                   >
                     <div className="h-full">
@@ -288,7 +257,7 @@ export default function BrandDetailPage() {
                         </div>
                       </div>
                     </div>
-                  </LocalizedLink>
+                  </div>
                 </>
               ))}
             </StaggerContainer>

@@ -15,10 +15,10 @@ export default {
   //end of navbar
   // {Home}
   // hero
-  years_group: "30+ YEARS VIA AL BARENGI GROUP",
+  years_group: "30+ YEARS OF DISTRIBUTION EXCELLENCE",
   contact_syria: "Contact Top Brands Syria",
   become_partner: "Become a Distribution Partner",
-  markting:"Markting Solutions",
+  markting: "Markting Solutions",
   Distribution_Partner: "Distribution Partner",
   get_in_touch: "Get In Touch",
   explore_services: "Explore Our Services",
@@ -43,7 +43,7 @@ export default {
   // about
   about_top_brands_syria: "About Top Brands Syria",
   about_desc_1:
-    "Growing Together is a fast-growing FMCG distributor specializing in food and non-food products. As part of the Al Barengi Group with over 30 years of experience, we represent exclusive brands and provide comprehensive distribution services across Syria.",
+    "Top Brands is a leading FMCG distributor specializing in food and non-food products. With a legacy of over 30 years of industry experience, we represent exclusive brands and provide comprehensive, nationwide distribution services across Syria.",
   about_desc_2:
     "Our mission is to connect quality brands with retailers nationwide, ensuring efficient distribution, merchandising excellence, and market growth for our partners.",
   trusted_partner: "Trusted Partner",
@@ -108,7 +108,7 @@ export default {
   contact_us: "Contact Us",
   exp_title: "30+ Years Experience",
   exp_desc:
-    "Decades of expertise in FMCG distribution through Al Barengi Group",
+    "Decades of proven expertise in FMCG distribution and market leadership.",
   cov_title: "Nationwide Coverage",
   cov_desc: "Distribution network spanning all 14 Syrian governorates",
   team_title: "Expert Team",
@@ -157,7 +157,8 @@ export default {
   privacy_s3_title: "3. Information Sharing and Disclosure",
   privacy_s3_desc:
     "B2B Distribution does not sell or rent your business information to third parties. We may share information with:",
-  pri_s3_item1: "Al Barengi Group companies for operational purposes",
+  pri_s3_item1:
+    "Dedicated specialized divisions for streamlined operational purposes.",
   pri_s3_item2:
     "Service providers who assist in our operations (logistics, payment processing)",
   pri_s3_item3:
@@ -389,7 +390,7 @@ export default {
   connect_brands:
     "We connect international and regional brands with the Syrian consumer market through professional distribution, sales execution, and logistics support.",
   established_2025:
-    "Established in 2025, Top Brands Syria operates under the Al Barengi Group, leveraging over 30 years of market experience to deliver food and non-food consumer products nationwide.",
+    "Established in 2025, Top Brands Syria is built on over 30 years of deep-rooted market experience, delivering premium food and non-food consumer products nationwide.",
   group_heritage: "Group Heritage",
   years_market: "30+ Years ",
   coverage_label: "Coverage",
@@ -423,7 +424,7 @@ export default {
   leadership_team: "Leadership Team",
   leadership_team_subtitle:
     "Experienced professionals driving our vision forward",
-  leader_1_name: "Ahmad Al-Barengi",
+  leader_1_name: "Ahmad Al-bhnsawi",
   leader_1_pos: "Chief Executive Officer",
   leader_1_bio:
     "Leading Top Brands Syria with over 20 years of experience in FMCG distribution and strategic business development across the Middle East.",
@@ -1231,9 +1232,9 @@ export default {
   faq_q13: "Do you offer exclusive distribution rights?",
   faq_a13:
     "Exclusive distribution arrangements are negotiated on a case-by-case basis depending on the brand, territory, and business commitment. Contact our partnership team to discuss opportunities.",
-  faq_q14: "What is your relationship with Al Barengi Group?",
+  faq_q14: "What is the foundation of Top Brands Syria’s expertise?",
   faq_a14:
-    "B2B Distribution operates under the Al Barengi Group umbrella, benefiting from over 30 years of experience in the Syrian market. This provides us with strong financial backing and market knowledge.",
+    "Top Brands Syria operates on a foundational legacy of over 30 years in the Syrian market. This deep-rooted experience provides us with robust financial stability, extensive market intelligence, and a proven track record that ensures reliable distribution and growth for our partners.",
   faq_q15: "How can I contact customer support?",
   faq_a15:
     "Our customer support team is available via phone at +963 11 123 4567 or email at info@b2bdistribution.sy. We respond to all inquiries within 24 hours during business days.",
@@ -1412,7 +1413,8 @@ export default {
   logistics_hero_subtitle: "LOGISTICS",
   logistics_hero_title: "Advanced Logistics",
   logistics_hero_yellow_title: "& Warehousing",
-  logistics_hero_desc: "Efficient warehousing, optimized delivery routes, and temperature-controlled transportation when required.",
+  logistics_hero_desc:
+    "Efficient warehousing, optimized delivery routes, and temperature-controlled transportation when required.",
   logistics_hero_yellow_text: "Your products handled",
   logistics_hero_desc2: "with care and precision.",
   cap_fleet_mgmt: "Fleet Management",
@@ -1422,23 +1424,30 @@ export default {
   cap_documentation: "Documentation",
   cap_support: "24/7 Support",
   logistics_solutions_title: "Logistics Solutions",
-  logistics_solutions_desc: "Comprehensive logistics infrastructure designed for FMCG excellence",
+  logistics_solutions_desc:
+    "Comprehensive logistics infrastructure designed for FMCG excellence",
   feature_modern_warehouse_title: "Modern Warehousing",
-  feature_modern_warehouse_desc: "State-of-the-art warehouse facilities with organized storage systems and inventory management.",
+  feature_modern_warehouse_desc:
+    "State-of-the-art warehouse facilities with organized storage systems and inventory management.",
   feature_temp_control_title: "Temperature Control",
-  feature_temp_control_desc: "Climate-controlled storage and transportation for temperature-sensitive FMCG products.",
+  feature_temp_control_desc:
+    "Climate-controlled storage and transportation for temperature-sensitive FMCG products.",
   feature_route_opt_title: "Route Optimization",
-  feature_route_opt_desc: "Advanced route planning for efficient delivery and reduced transportation costs.",
+  feature_route_opt_desc:
+    "Advanced route planning for efficient delivery and reduced transportation costs.",
   feature_inv_mgmt_title: "Inventory Management",
-  feature_inv_mgmt_desc: "Real-time inventory tracking and automated stock replenishment systems.",
+  feature_inv_mgmt_desc:
+    "Real-time inventory tracking and automated stock replenishment systems.",
   warehouse_excellence_title: "Warehouse Excellence",
-  warehouse_excellence_desc: "Our warehousing facilities are designed to handle the unique requirements of FMCG products, ensuring product integrity and efficient order fulfillment.",
+  warehouse_excellence_desc:
+    "Our warehousing facilities are designed to handle the unique requirements of FMCG products, ensuring product integrity and efficient order fulfillment.",
   warehouse_point1: "Organized storage zones by product category",
   warehouse_point2: "FIFO inventory management system",
   warehouse_point3: "Quality inspection at receiving and dispatch",
   warehouse_point4: "Secure facility with 24/7 monitoring",
   fleet_transport_title: "Fleet & Transportation",
-  fleet_transport_desc: "Our diverse fleet of vehicles ensures timely delivery across all market segments, from urban retail to regional wholesale.",
+  fleet_transport_desc:
+    "Our diverse fleet of vehicles ensures timely delivery across all market segments, from urban retail to regional wholesale.",
   fleet_heavy_trucks_title: "Heavy Trucks",
   fleet_heavy_trucks_desc: "Bulk deliveries",
   fleet_vans_title: "Vans",
@@ -1448,5 +1457,9 @@ export default {
   fleet_express_title: "Express",
   fleet_express_desc: "Quick delivery",
   logistics_cta_title: "Need Logistics Support?",
-  logistics_cta_subtitle: "Let Top Brands Syria handle your FMCG logistics and warehousing needs",
+  logistics_cta_subtitle:
+    "Let Top Brands Syria handle your FMCG logistics and warehousing needs",
+  see_all_brands: "See All Brands",
+  stay_updated_desc: "Get the latest news from Top Brands Syria.",
+  footer_stay_updated: "Stay Updated",
 };

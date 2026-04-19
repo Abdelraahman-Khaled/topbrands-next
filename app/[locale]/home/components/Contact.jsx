@@ -161,7 +161,10 @@ export default function Contact() {
                     type="submit"
                     className="mask-btn mask-btn--yellow-white"
                   >
-                    <span className="mask-btn__label">{t("send_message")}</span>
+                    <span className="mask-btn__label">
+                      {t("send_message")}
+                      <i className="ri-send-plane-fill rtl:-rotate-90 mx-2"></i>
+                    </span>
                     <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
                       {t("send_message")}
                       <i className="ri-send-plane-fill rtl:-rotate-90 mx-2"></i>

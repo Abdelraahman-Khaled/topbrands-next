@@ -34,13 +34,13 @@ export default function AboutPage() {
       <CoreValues />
 
       {/* Leadership Team Section */}
-      <Ledaership />
+      {/* <Ledaership /> */}
 
       {/* Our Edge Section */}
       <OurEdgeSection />
 
       {/* Certifications Section */}
-      <AboutCertifications />
+      {/* <AboutCertifications /> */}
 
       {/* Growth Direction Section */}
       <GrowthDirection />

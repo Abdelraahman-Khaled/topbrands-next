@@ -7,8 +7,8 @@ import LocalizedLink from '../components/LocalizedLink';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
   }
@@ -27,23 +27,23 @@ const staggerContainer = {
 
 const staggerItem = {
   hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
   }
 };
 
 const accordionVariants = {
-  open: { 
-    height: "auto", 
-    opacity: 1, 
+  open: {
+    height: "auto",
+    opacity: 1,
     marginTop: 16,
     transition: { height: { duration: 0.4, ease: [0.16, 1, 0.3, 1] }, opacity: { duration: 0.3, delay: 0.1 } }
   },
-  closed: { 
-    height: 0, 
-    opacity: 0, 
+  closed: {
+    height: 0,
+    opacity: 0,
     marginTop: 0,
     transition: { height: { duration: 0.4, ease: [0.16, 1, 0.3, 1] }, opacity: { duration: 0.2 } }
   }
@@ -76,16 +76,16 @@ export default function FAQ() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://readdy.ai/api/search-image?query=professional%20customer%20support%20help%20desk%20modern%20office%20environment&width=1920&height=600&seq=faq-hero-main&orientation=landscape"
-            alt="FAQ"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-linear-to-r from-[#DEE3EB] to-[#FFFFFF]"></div>
-        </div>
+        {/* Background Image Layer */}
+        <div
+          className="absolute inset-0 bg-no-repeat bg-cover bg-center pointer-events-none"
+          style={{ backgroundImage: "url('/images/blogs%20banner.webp')" }}
+        />
 
-        <motion.div 
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-linear-to-br from-brand-paleblue/60 via-white/70 to-white/90 pointer-events-none" />
+
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -105,7 +105,7 @@ export default function FAQ() {
       <ScrollReveal>
         <section className="py-8 md:py-10 bg-white border-b border-gray-200">
           <div className="max-w-6xl mx-auto px-4 md:px-6">
-            <motion.div 
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -135,7 +135,7 @@ export default function FAQ() {
       {/* FAQ Accordion */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -162,7 +162,7 @@ export default function FAQ() {
                         {t(`faq_q${faq.id}`)}
                       </h3>
                     </div>
-                    <motion.div 
+                    <motion.div
                       animate={{ rotate: openId === faq.id ? 180 : 0 }}
                       className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-gray-50 shrink-0"
                     >
@@ -171,7 +171,7 @@ export default function FAQ() {
                   </button>
                   <AnimatePresence initial={false}>
                     {openId === faq.id && (
-                      <motion.div 
+                      <motion.div
                         initial="closed"
                         animate="open"
                         exit="closed"
@@ -194,7 +194,7 @@ export default function FAQ() {
       {/* Footer CTA */}
       <ScrollReveal>
         <section className="py-16 md:py-24 bg-[#DEE3EB]">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -208,15 +208,15 @@ export default function FAQ() {
               {t('faq_team_help')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <LocalizedLink 
-                href="/contact" 
+              <LocalizedLink
+                href="/contact"
                 className="mask-btn mask-btn--yellow-black !rounded-lg shadow-lg"
               >
                 <span className="mask-btn__label">{t('faq_contact_btn')}</span>
                 <span className="mask-btn__fill">{t('faq_contact_btn')}</span>
               </LocalizedLink>
-              <LocalizedLink 
-                href="/become-a-partner" 
+              <LocalizedLink
+                href="/become-a-partner"
                 className="mask-btn mask-btn--none-black !rounded-lg shadow-lg"
               >
                 <span className="mask-btn__label">{t('faq_partner_btn')}</span>

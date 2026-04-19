@@ -26,7 +26,7 @@ export default function HomePage() {
 
       <WhyChooseUs />
 
-      <OurCustomers />
+      {/* <OurCustomers /> */}
 
       <WhyPartener />
 
