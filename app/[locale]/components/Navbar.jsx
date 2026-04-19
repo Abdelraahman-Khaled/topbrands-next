@@ -139,26 +139,27 @@ export default function Navbar() {
           : "bg-transparent border-transparent py-5"
         } ${isOpen ? "bg-white/95 !backdrop-blur-3xl" : ""}`}
     >
-      <div className="w-full px-6 lg:px-16 mx-auto">
+      <div className="w-full px-4 xl:px-16 mx-auto">
         <div className="flex items-center justify-between h-12">
           <motion.div
             variants={itemVariants}
             whileTap={{ scale: 0.97 }}
+            className="shrink-0 me-4 xl:me-10"
           >
             <LocalizedLink
               href="/"
-              className="flex items-center cursor-pointer"
+              className="flex items-center cursor-pointer shrink-0"
             >
               <img
                 src="/images/logo.webp"
                 alt="Top Brands Syria"
-                className="h-12 w-auto"
+                className="h-9 xl:h-11 w-auto object-contain shrink-0 transition-all duration-300"
               />
             </LocalizedLink>
           </motion.div>
 
           {/* Staggered Navigation Links */}
-          <div className="hidden lg:flex items-center space-x-10 me-2">
+          <div className="hidden xl:flex items-center gap-5 xl:gap-8 mx-auto">
             {links.map((link) => (
               <motion.div
                 key={link.key}
@@ -219,7 +220,7 @@ export default function Navbar() {
 
           {/* Desktop Action Buttons */}
           <motion.div
-            className="hidden lg:flex items-center space-x-4  gap-2"
+            className="hidden xl:flex items-center gap-2 xl:gap-3 shrink-0"
             variants={itemVariants}
           >
             <motion.button
@@ -251,7 +252,7 @@ export default function Navbar() {
           </motion.div>
 
           {/* Mobile Menu Toggle */}
-          <div className="flex lg:hidden items-center space-x-4">
+          <div className="flex xl:hidden items-center gap-2 sm:gap-4">
             <button
               onClick={toggleLanguage}
               className={`p-2 rounded-lg cursor-pointer font-bold flex items-center gap-1 text-white}`}
@@ -276,15 +277,21 @@ export default function Navbar() {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed inset-0 h-screen w-screen bg-white z-[100] lg:hidden flex flex-col"
+            className="fixed inset-0 h-screen w-screen bg-white z-[100] xl:hidden flex flex-col"
           >
             {/* Mobile Menu Header (Logo + Close) */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
-              <img
-                src="/images/logo.png"
-                alt="Top Brands"
-                className="h-10 w-auto"
-              />
+              <LocalizedLink
+                href="/"
+                onClick={toggleMenu}
+                className="flex items-center"
+              >
+                <img
+                  src="/images/logo.webp"
+                  alt="Top Brands"
+                  className="h-9 w-auto object-contain brightness-0"
+                />
+              </LocalizedLink>
               <div className="flex items-center gap-4">
                 <button
                   onClick={toggleLanguage}
