@@ -45,7 +45,7 @@ export default function Hero() {
         <div className="space-y-6 sm:space-y-8 flex flex-col items-start w-full">
           {/* Badge */}
           <div className="inline-flex animate-fade-in mb-2 sm:mb-4">
-            <span className="px-[14px] sm:px-[18px] py-[6px] sm:py-[8px] text-white rounded-full text-[12px] sm:text-base font-bold uppercase tracking-wider border border-2 border-[#F7E326]">
+            <span className="px-[14px] sm:px-[18px] py-[6px] sm:py-[8px] text-white rounded-full text-[12px] sm:text-sm font-bold uppercase tracking-wider border border-2 border-[#F7E326]">
               {t("years_group")}
             </span>
           </div>

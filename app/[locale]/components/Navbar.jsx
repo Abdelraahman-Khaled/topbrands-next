@@ -139,12 +139,13 @@ export default function Navbar() {
           : "bg-transparent border-transparent py-5"
         } ${isOpen ? "bg-white/95 !backdrop-blur-3xl" : ""}`}
     >
-      <div className="w-full px-4 xl:px-16 mx-auto">
-        <div className="flex items-center justify-between h-12">
+      <div className=" px-4 sm:px-6 md:px-8 w-full">
+        <div className="flex items-center justify-between h-12 relative">
+          {/* Logo */}
           <motion.div
             variants={itemVariants}
             whileTap={{ scale: 0.97 }}
-            className="shrink-0 me-4 xl:me-10"
+            className="shrink-0 pe-2"
           >
             <LocalizedLink
               href="/"
@@ -159,7 +160,7 @@ export default function Navbar() {
           </motion.div>
 
           {/* Staggered Navigation Links */}
-          <div className="hidden xl:flex items-center gap-5 xl:gap-8 mx-auto">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-10">
             {links.map((link) => (
               <motion.div
                 key={link.key}
@@ -231,24 +232,26 @@ export default function Navbar() {
               <i className="ri-global-line"></i>
               {currentLocale === "en" ? "AR" : "EN"}
             </motion.button>
-            <LocalizedLink
-              href="/become-a-partner"
-              className="mask-btn mask-btn--none-white h-full! p-3"
-            >
-              <span className="mask-btn__label p-0!" >{t("become_a_partner")}</span>
-              <span type="button" className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
-                {t("become_a_partner")}
-              </span>
-            </LocalizedLink>
-            <LocalizedLink
-              href="/contact"
-              className="mask-btn mask-btn--yellow-black h-full! p-3"
-            >
-              <span className="mask-btn__label p-0!">{t("get_in_touch")}</span>
-              <button type="button" className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
-                {t("get_in_touch")}
-              </button>
-            </LocalizedLink>
+            <div className="hidden xl:flex items-center gap-2 xl:gap-3">
+              <LocalizedLink
+                href="/become-a-partner"
+                className="mask-btn mask-btn--none-white h-full! p-3"
+              >
+                <span className="mask-btn__label p-0!" >{t("become_a_partner")}</span>
+                <span type="button" className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
+                  {t("become_a_partner")}
+                </span>
+              </LocalizedLink>
+              <LocalizedLink
+                href="/contact"
+                className="mask-btn mask-btn--yellow-black h-full! p-3"
+              >
+                <span className="mask-btn__label p-0!">{t("get_in_touch")}</span>
+                <button type="button" className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
+                  {t("get_in_touch")}
+                </button>
+              </LocalizedLink>
+            </div>
           </motion.div>
 
           {/* Mobile Menu Toggle */}
@@ -287,9 +290,9 @@ export default function Navbar() {
                 className="flex items-center"
               >
                 <img
-                  src="/images/logo.webp"
+                  src="/images/logo-mobile.webp"
                   alt="Top Brands"
-                  className="h-9 w-auto object-contain brightness-0"
+                  className="h-9 w-auto object-contain"
                 />
               </LocalizedLink>
               <div className="flex items-center gap-4">
@@ -315,14 +318,22 @@ export default function Navbar() {
                 {links.map((link) => (
                   <motion.div key={link.key} variants={mobileItemVariants}>
                     {link.sublinks ? (
-                      <div className="flex flex-col">
-                        <button
-                          onClick={() => setMobileSubMenuOpen(!mobileSubMenuOpen)}
-                          className="text-2xl font-bold text-gray-900 py-4 border-b border-gray-50 flex items-center justify-between group px-4 w-full text-left"
-                        >
-                          <span>{t(link.key)}</span>
-                          <i className={`ri-arrow-down-s-line text-brand-yellow text-3xl transition-transform duration-300 ${mobileSubMenuOpen ? "rotate-180" : ""}`}></i>
-                        </button>
+                      <div className="flex flex-col border-b border-gray-50">
+                        <div className="flex items-center justify-between group">
+                          <LocalizedLink
+                            href={link.href}
+                            onClick={toggleMenu}
+                            className="text-2xl font-bold text-gray-900 py-4 px-4 flex-1"
+                          >
+                            {t(link.key)}
+                          </LocalizedLink>
+                          <button
+                            onClick={() => setMobileSubMenuOpen(!mobileSubMenuOpen)}
+                            className="p-4 focus:outline-none"
+                          >
+                            <i className={`ri-arrow-down-s-line text-brand-yellow text-3xl transition-transform duration-300 ${mobileSubMenuOpen ? "rotate-180" : ""}`}></i>
+                          </button>
+                        </div>
                         <AnimatePresence>
                           {mobileSubMenuOpen && (
                             <motion.div
@@ -398,6 +409,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
-  );
+    </motion.nav >
+  )
 }
