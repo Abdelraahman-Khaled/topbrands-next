@@ -4,301 +4,157 @@ import ScrollReveal from "./ScrollReveal";
 import StaggerContainer from "./StaggerContainer";
 import StaggerItem from "./StaggerItem";
 import LocalizedLink from "./LocalizedLink";
+
 export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-white text-[#4B4F54] relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
-          }}
-        ></div>
-      </div>
+    <footer className="bg-white text-[#4B4F54]  relative overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-16 pt-16 pb-8">
 
-      <div className="relative max-w-7xl mx-auto px-8 lg:px-16 py-16">
+        {/* Top Section: Logo & Tagline */}
         <ScrollReveal>
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12 pb-12 border-b border-gray-500">
-            <LocalizedLink href="/" className="flex items-center mb-6 lg:mb-0 cursor-pointer">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 pb-8 border-b border-[#D1D5DB]">
+            <LocalizedLink href="/" className="mb-4 md:mb-0 cursor-pointer">
               <img
                 src="/images/footer.webp"
                 alt="Top Brands Syria"
-                className="h-12 w-auto"
+                className="h-10 w-auto"
               />
             </LocalizedLink>
-            <p className="text-base ">{t("leading_fmcg")}</p>
+            <p className="text-sm md:text-base font-medium text-gray-400">
+              {t("leading_fmcg")}
+            </p>
           </div>
         </ScrollReveal>
 
-        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        {/* Main Grid: 4 Columns */}
+        <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-8">
+
+          {/* Company Column */}
           <StaggerItem>
-            <h4 className="text-lg font-semibold mb-6">{t("company")}</h4>
-            <ul className="space-y-3.5">
+            <h4 className="text-base font-bold text-brand-jet mb-6  tracking-wider">{t("company")}</h4>
+            <ul className="space-y-3">
               <li>
-                <LocalizedLink
-                  href="/about"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
+                <LocalizedLink href="/about" className="text-sm  hover:text-black transition-colors cursor-pointer">
                   {t("about")}
                 </LocalizedLink>
               </li>
               <li>
-                <LocalizedLink
-                  href="/services"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
+                <LocalizedLink href="/services" className="text-sm hover:text-black transition-colors cursor-pointer">
                   {t("services")}
                 </LocalizedLink>
               </li>
               <li>
-                <LocalizedLink
-                  href="/brands"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
+                <LocalizedLink href="/brands" className="text-sm hover:text-black transition-colors cursor-pointer">
                   {t("brand_portfolio")}
                 </LocalizedLink>
               </li>
               <li>
-                <LocalizedLink
-                  href="/market-coverage"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
-                  {t("coverage")}
-                </LocalizedLink>
-              </li>
-            </ul>
-          </StaggerItem>
-
-          {/* <StaggerItem>
-            <h4 className="text-lg font-semibold mb-6">{t("categories")}</h4>
-            <ul className="space-y-3.5">
-              <li>
-                <LocalizedLink
-                  href="/brands?category=food-beverages"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
-                  {t("food_beverages")}
-                </LocalizedLink>
-              </li>
-              <li>
-                <LocalizedLink
-                  href="/brands?category=snacks-confectionery"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
-                  {t("snacks_confectionery")}
-                </LocalizedLink>
-              </li>
-              <li>
-                <LocalizedLink
-                  href="/brands?category=dairy-products"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
-                  {t("dairy_products")}
-                </LocalizedLink>
-              </li>
-              <li>
-                <LocalizedLink
-                  href="/brands?category=non-food-fmcg"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
-                  {t("non_food_fmcg")}
-                </LocalizedLink>
-              </li>
-            </ul>
-          </StaggerItem> */}
-
-          <StaggerItem>
-            <h4 className="text-lg font-semibold mb-6">{t("resources")}</h4>
-            <ul className="space-y-3.5">
-              <li>
-                <LocalizedLink
-                  href="/blog"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
-                  {t("blog_insights")}
-                </LocalizedLink>
-              </li>
-              <li>
-                <LocalizedLink
-                  href="/faq"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
-                  {t("faq")}
-                </LocalizedLink>
-              </li>
-              <li>
-                <LocalizedLink
-                  href="/become-a-partner"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
-                  {t("become_partner")}
-                </LocalizedLink>
-              </li>
-              <li>
-                <LocalizedLink
-                  href="/contact"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
+                <LocalizedLink href="/contact" className="text-sm hover:text-black transition-colors cursor-pointer">
                   {t("contact_us")}
                 </LocalizedLink>
               </li>
             </ul>
           </StaggerItem>
+
+          {/* Services Column */}
           <StaggerItem>
-            <h4 className="text-lg font-semibold mb-6">{t("services")}</h4>
-            <ul className="space-y-3.5">
+            <h4 className="text-base font-bold text-brand-jet mb-6  tracking-wider">{t("services")}</h4>
+            <ul className="space-y-3">
               <li>
-                <LocalizedLink
-                  href="/services/logistics"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
+                <LocalizedLink href="/services/logistics" className="text-sm hover:text-black transition-colors cursor-pointer">
                   {t("Advanced_Logistics")}
                 </LocalizedLink>
               </li>
               <li>
-                <LocalizedLink
-                  href="/services/professional-sales"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
+                <LocalizedLink href="/services/professional-sales" className="text-sm hover:text-black transition-colors cursor-pointer">
                   {t("professional_sales")}
                 </LocalizedLink>
               </li>
               <li>
-                <LocalizedLink
-                  href="/services/distribution"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
+                <LocalizedLink href="/services/distribution" className="text-sm hover:text-black transition-colors cursor-pointer">
                   {t("distribution")}
                 </LocalizedLink>
               </li>
               <li>
-                <LocalizedLink
-                  href="/services/marketing"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
+                <LocalizedLink href="/services/marketing" className="text-sm hover:text-black transition-colors cursor-pointer">
                   {t("marketing_service")}
                 </LocalizedLink>
               </li>
             </ul>
           </StaggerItem>
 
+          {/* Legal Column */}
           <StaggerItem>
-            <h4 className="text-lg font-semibold mb-6">{t("legal")}</h4>
-            <ul className="space-y-3.5">
+            <h4 className="text-base font-bold text-brand-jet mb-6  tracking-wider">{t("legal")}</h4>
+            <ul className="space-y-3">
               <li>
-                <LocalizedLink
-                  href="/privacy-policy"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
+                <LocalizedLink href="/privacy-policy" className="text-sm hover:text-black transition-colors cursor-pointer">
                   {t("privacy_policy")}
                 </LocalizedLink>
               </li>
               <li>
-                <LocalizedLink
-                  href="/terms-conditions"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
+                <LocalizedLink href="/terms-conditions" className="text-sm hover:text-black transition-colors cursor-pointer">
                   {t("terms_conditions")}
                 </LocalizedLink>
               </li>
               <li>
-                <LocalizedLink
-                  href="/cookie-policy"
-                  className=" hover:text-black hover:translate-x-1 rtl:hover:-translate-x-1 transition-all cursor-pointer inline-block"
-                >
+                <LocalizedLink href="/cookie-policy" className="text-sm hover:text-black transition-colors cursor-pointer">
                   {t("cookie_policy")}
                 </LocalizedLink>
               </li>
             </ul>
           </StaggerItem>
+
+          <StaggerItem className="lg:col-span-1">
+            <h4 className="text-base font-bold text-brand-jet mb-6 tracking-wide">{t("footer_stay_updated")}</h4>
+            <p className="text-sm text-gray-500 mb-6 leading-relaxed">
+              {t("stay_updated_desc") || "Get the latest news from Top Brands Syria."}
+            </p>
+            <form className="flex flex-col sm:flex-row w-full max-w-md rounded-xl sm:rounded-xl border border-gray-200 overflow-hidden shadow-sm bg-white focus-within:ring-2 focus-within:ring-brand-yellow/30 transition-all">
+              <input
+                type="email"
+                placeholder={t("enter_email")}
+                className="flex-1 px-4 py-3 text-sm text-gray-700 outline-none placeholder:text-gray-300 min-w-0"
+              />
+              <button
+                type="submit"
+                className="px-6 py-3 bg-[#F7E326] text-black font-bold text-sm transition-all duration-300 cursor-pointer hover:bg-black hover:text-[#F7E326] whitespace-nowrap w-full sm:w-auto"
+              >
+                {t("subscribe")}
+              </button>
+            </form>
+          </StaggerItem>
         </StaggerContainer>
 
-        <ScrollReveal>
-          <div className="grid lg:grid-cols-3 gap-8 items-center pt-12 border-t border-gray-500">
-            <div className="w-full h-44 rounded-2xl overflow-hidden shadow-lg">
-              <img
-                src="https://readdy.ai/api/search-image?query=assorted%20branded%20FMCG%20products%20including%20packaged%20foods%20snacks%20and%20beverages%20arranged%20artistically%20on%20clean%20surface%20professional%20product%20photography%20bright%20lighting%20colorful%20packaging&width=280&height=180&seq=footer-products-001&orientation=landscape"
-                alt="Products"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-
-            <div className="lg:px-6">
-              <p className="text-3xl font-semibold  leading-snug">
-                {t("quality_products")},
-                <br />
-                {t("reliable_distribution")},
-                <br />
-                {t("nationwide_reach")}
-              </p>
-            </div>
-
-            <div className="text-right rtl:text-left">
-              <p className="text-sm  mb-5 leading-relaxed">{t("stay_updated")}</p>
-              <form className="flex rounded-lg overflow-hidden shadow-lg ">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder={t("enter_email")}
-                  className="flex-1 px-4 py-3.5 bg-transparent border border-gray-300 text-white placeholder-gray-400 outline-none focus:border-brand-yellow transition-all text-sm rounded-l-lg rtl:rounded-l-none rtl:rounded-r-lg"
-                />
-                <button
-                  type="submit"
-                  className="px-8 py-3.5 group bg-brand-yellow duration-300 text-brand-jet font-semibold transition-all inline-flex items-center space-x-2  rounded-r-lg rtl:rounded-r-none rtl:rounded-l-lg whitespace-nowrap"
-                >
-                  <span>{t("subscribe")}</span>
-                  <i className="ri-arrow-right-line rtl:rotate-180 group-hover:translate-x-0.5 duration-300"></i>
-                </button>
-              </form>
-            </div>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.2}>
-          <div className="flex justify-center space-x-4  mt-12 pt-8 border-t border-gray-500">
-            <a
-              href="#"
-              className="w-10 border-[#4B4F54] border-2 h-10 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
-            >
-              <i className="ri-linkedin-fill text-lg"></i>
-            </a>
-            <a
-              href="#"
-              className="w-10 h-10 border-[#4B4F54] border-2 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
-            >
-              <i className="ri-facebook-fill text-lg"></i>
-            </a>
-            <a
-              href="#"
-              className="w-10 h-10 border-[#4B4F54] border-2 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
-            >
-              <i className="ri-instagram-line text-lg"></i>
-            </a>
-            <a
-              href="#"
-              className="w-10 h-10 border-[#4B4F54] border-2 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:border-brand-yellow hover:text-brand-jet transition-all cursor-pointer"
-            >
-              <i className="ri-whatsapp-line text-lg"></i>
-            </a>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.3}>
-          <div className="mt-8 text-center">
-            <p className="text-sm  mb-2">
-              © 2025 Top Brands Syria. {t("all_rights_reserved")}.
+        {/* Bottom Section: Copyright & Socials */}
+        <StaggerItem>
+          <div className="flex flex-col md:flex-row justify-between items-center pt-4 border-t border-[#D1D5DB] gap-6">
+            <p className="text-xs text-brand-charcoal font-normal">
+              © {new Date().getFullYear()} Top Brands Syria. {t("all_rights_reserved")}.
             </p>
-            <a
-              href="https://readdy.ai/?ref=logo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm  hover:text-black transition-colors"
-            ></a>
+
+            <div className="flex items-center space-x-3 rtl:space-x-reverse">
+              {[
+                { icon: "ri-linkedin-fill", href: "#" },
+                { icon: "ri-facebook-fill", href: "#" },
+                { icon: "ri-instagram-line", href: "#" },
+                { icon: "ri-whatsapp-line", href: "#" }
+              ].map((social, idx) => (
+                <a
+                  key={idx}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 border border-gray-300 rounded-full flex items-center justify-center text-gray-600 hover:bg-[#F7E326] hover:border-[#F7E326] hover:text-black transition-all duration-300"
+                >
+                  <i className={`${social.icon} text-lg`}></i>
+                </a>
+              ))}
+            </div>
           </div>
-        </ScrollReveal>
+        </StaggerItem>
       </div>
     </footer>
   );

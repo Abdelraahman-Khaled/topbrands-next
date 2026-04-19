@@ -150,7 +150,7 @@ export default function Navbar() {
               className="flex items-center cursor-pointer"
             >
               <img
-                src="/images/white-logo.png"
+                src="/images/logo.webp"
                 alt="Top Brands Syria"
                 className="h-12 w-auto"
               />

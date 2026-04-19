@@ -88,7 +88,13 @@ export const reducedMotionVariants = {
   initial: { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 },
   animate: { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 },
   exit: { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 },
-  visible: { opacity: 1, y: 0, filter: "blur(0px)", scale: 1, transition: { staggerChildren: 0, delayChildren: 0 } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    scale: 1,
+    transition: { staggerChildren: 0, delayChildren: 0 },
+  },
   hidden: { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 },
   whileInView: { opacity: 1, y: 0 },
 };

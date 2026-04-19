@@ -53,8 +53,8 @@ const CoreValues = () => {
                             key={index}
                             className="group bg-brand-paleblue rounded-2xl p-6 md:p-8 hover:shadow-xl transition-all duration-300 border border-transparent hover:border-brand-yellow"
                         >
-                            <div className="w-14 h-14 flex items-center justify-center bg-brand-charcoal rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <i className={`${value.icon} text-2xl text-white`}></i>
+                            <div className="w-14 h-14 flex items-center justify-center bg-brand-yellow rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <i className={`${value.icon} text-2xl text-black`}></i>
                             </div>
                             <h3 className="text-2xl font-bold text-brand-jet mb-4">
                                 {value.title}

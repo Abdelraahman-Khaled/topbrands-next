@@ -147,10 +147,11 @@ export default function WhyPartener() {
                     href="/become-a-partner"
                     className="mask-btn mask-btn--yellow-white"
                   >
-                    <span className="mask-btn__label">{t("become_a_partner")}</span>
+                    <span className="mask-btn__label">{t("become_a_partner")}
+                      <ArrowRight className="w-5 h-5 mx-2 transition-transform rtl:rotate-180" />
+                    </span>
                     <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
                       {t("become_a_partner")}
-                      <ArrowRight className="w-5 h-5 mx-2 transition-transform rtl:rotate-180" />
                     </span>
                   </LocalizedLink>
 

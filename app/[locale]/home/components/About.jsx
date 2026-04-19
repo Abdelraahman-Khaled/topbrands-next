@@ -26,23 +26,20 @@ export default function About() {
           <div className="space-y-6">
             <ScrollReveal>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black leading-tight">
-                {t("leading_fmcg_distribution") ||
-                  "Leading FMCG Distribution in Syria"}
+                {t("leading_fmcg_distribution")}
               </h2>
 
               <div className="inline-block mt-6">
-                <span className="px-[20px] py-[8px] bg-[#4B4F54] text-sm text-white rounded-full font-bold tracking-wider">
+                <span className="px-[20px] py-[8px] bg-[#F1DD25] text-sm text-black  rounded-full font-bold tracking-wider">
                   {t("about_top_brands_syria") || "About Top Brands Syria"}
                 </span>
               </div>
               <div className="space-y-4 sm:space-y-6 mt-6">
                 <p className="text-base sm:text-[18px] text-[#4B4F54] leading-relaxed">
-                  {t("about_desc_1") ||
-                    "Growing Together is a fast-growing FMCG distributor specializing in food and non-food products. As part of the Al Barengi Group with over 30 years of experience, we represent exclusive brands and provide comprehensive distribution services across Syria."}
+                  {t("about_desc_1")}
                 </p>
                 <p className="text-base sm:text-[18px] text-[#4B4F54] leading-relaxed">
-                  {t("about_desc_2") ||
-                    "Our mission is to connect quality brands with retailers nationwide, ensuring efficient distribution, merchandising excellence, and market growth for our partners."}
+                  {t("about_desc_2")}
                 </p>
               </div>
             </ScrollReveal>
@@ -50,7 +47,7 @@ export default function About() {
             {/* Feature Cards Grid (DIV-143) */}
             <StaggerContainer className="grid md:grid-cols-2 gap-4 pt-4">
               {/* Card 1: Trusted Partner */}
-              <StaggerItem className="flex items-center gap-3 p-[18px] bg-white rounded-xl hover:border hover:border-[#4B4F54] transform hover:-translate-y-1 duration-300 shadow-sm">
+              <StaggerItem className="border-2 border-brand-charcoal flex items-center gap-3 p-[18px] bg-white rounded-xl duration-300 shadow-sm">
                 <div className="w-12 h-12 flex items-center justify-center bg-[#4B4F54] rounded-lg flex-shrink-0 shadow-md">
                   <svg
                     width="18"
@@ -76,7 +73,7 @@ export default function About() {
               </StaggerItem>
 
               {/* Card 2: Wide Coverage */}
-              <StaggerItem className="flex items-center gap-3 p-[16px] bg-white rounded-xl hover:border hover:border-[#F7E326] transform hover:-translate-y-1 duration-300 shadow-sm">
+              <StaggerItem className="border-2 border-brand-yellow flex items-center gap-3 p-[16px] bg-white rounded-xl transform  duration-300 shadow-sm">
                 <div className="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-[#F7E326] to-[#E5D223] rounded-lg flex-shrink-0 shadow-md">
                   <svg
                     width="18"
@@ -102,7 +99,7 @@ export default function About() {
               </StaggerItem>
 
               {/* Card 3: Retail Network */}
-              <StaggerItem className="flex items-center gap-3 p-[16px] bg-white rounded-xl hover:border hover:border-[#F7E326] transform hover:-translate-y-1 duration-300 shadow-sm">
+              <StaggerItem className="border-2 border-brand-yellow border-2 border-brand-charcoal flex items-center gap-3 p-[16px] bg-white rounded-xl  duration-300 shadow-sm">
                 <div className="w-12 h-12 flex items-center justify-center bg-[#F7E326] rounded-lg flex-shrink-0 shadow-md">
                   <svg
                     width="20"
@@ -128,7 +125,7 @@ export default function About() {
               </StaggerItem>
 
               {/* Card 4: Product Range */}
-              <StaggerItem className="flex items-center gap-3 p-[16px] bg-white rounded-xl hover:border hover:border-[#4B4F54] transform hover:-translate-y-1 duration-300 shadow-sm">
+              <StaggerItem className="border-2 border-brand-charcoal  flex items-center gap-3 p-[16px] bg-white rounded-xl  duration-300 shadow-sm">
                 <div className="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-[#4B4F54] to-[#3B3E42] rounded-lg flex-shrink-0 shadow-md">
                   <svg
                     width="19"
@@ -167,7 +164,22 @@ export default function About() {
                 href="/become-a-partner"
                 className="mask-btn mask-btn--gray-black"
               >
-                <span className="mask-btn__label">{t("learn_more_about_us")}</span>
+                <span className="mask-btn__label">{t("learn_more_about_us")}
+
+                  <svg
+                    width="11"
+                    height="11"
+                    viewBox="0 0 11 11"
+                    fill="white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="mx-1.5"
+                  >
+                    <path
+                      d="M8.26615 4.79303L4.61493 1.00382L5.57863 -4.44968e-05L10.8587 5.49998L5.57863 11L4.61493 9.99614L8.26615 6.20692H0V4.79303H8.26615Z"
+                      fill="white"
+                    />
+                  </svg> 
+                </span>
                 <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
                   {t("learn_more_about_us")}
                   <svg

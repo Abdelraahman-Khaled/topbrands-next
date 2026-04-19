@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import I18nProvider from "./components/I18nProvider";
-import PageTransitionWrapper from "./components/PageTransitionWrapper";
+
 import { locales, defaultLocale } from "./i18n/config";
 import { notFound } from "next/navigation";
 
@@ -66,7 +66,7 @@ export default async function RootLayout({ children, params }) {
       <body className="min-h-full flex flex-col">
         <I18nProvider locale={locale}>
           <Navbar />
-          <PageTransitionWrapper>{children}</PageTransitionWrapper>
+          {children}
           <Footer />
         </I18nProvider>
       </body>

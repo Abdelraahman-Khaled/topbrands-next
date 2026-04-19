@@ -29,7 +29,7 @@ export default function Hero() {
         className="absolute top-0 right-0 w-[40%] h-full z-0"
         style={{
           background:
-            "linear-gradient(120deg, #4B4F54 0%, #000000 50%, #4B4F54 100%)",
+            "linear-gradient(120deg, #4B4F54 0%, #000000 70%, #F7E326 100%)",
         }}
       ></div>
       <div
@@ -45,7 +45,7 @@ export default function Hero() {
         <div className="space-y-6 sm:space-y-8 flex flex-col items-start w-full">
           {/* Badge */}
           <div className="inline-flex animate-fade-in mb-2 sm:mb-4">
-            <span className="px-[14px] sm:px-[18px] py-[6px] sm:py-[8px] text-white rounded-full text-sm sm:text-base font-bold uppercase tracking-wider border border-2 border-[#FFFFFF66]">
+            <span className="px-[14px] sm:px-[18px] py-[6px] sm:py-[8px] text-white rounded-full text-[12px] sm:text-base font-bold uppercase tracking-wider border border-2 border-[#F7E326]">
               {t("years_group")}
             </span>
           </div>
@@ -109,7 +109,7 @@ export default function Hero() {
             <motion.div whileTap={tapButtonVariants} className="w-full">
               <LocalizedLink
                 href="/contact"
-                className="mask-btn mask-btn--none-white w-full"
+                className="mask-btn mask-btn--none-white w-full border-2 border-brand-yellow!"
               >
                 <span className="mask-btn__label ">{t("contact_syria")}</span>
                 <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
