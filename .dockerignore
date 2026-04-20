@@ -11,8 +11,12 @@ yarn-error.log*
 .netlify
 deno.lock
 netlify.toml
-.env
-.env.local
-.env.development
-.env.production
-.env.example
+.env*
+.agent
+.agents
+specs
+.specify
+skills-lock.json
+.vscode
+.idea
+
