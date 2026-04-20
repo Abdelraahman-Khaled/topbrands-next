@@ -13,7 +13,7 @@ services:
     container_name: top-brands
     restart: always
     ports:
-      - "9100:3000"
+      - "9101:3000"
     # Optional: Use .env file if deploying locally
     # env_file:
     #   - .env
