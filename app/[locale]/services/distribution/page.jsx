@@ -8,7 +8,7 @@ import { getPageData } from "@/services/home.service";
 
 export default async function DistributionPage({ params }) {
     const { locale } = await params;
-    const pageDataRaw = await getPageData("distribution_service", locale);
+    const pageDataRaw = await getPageData("distribution_services", locale);
 
     const sections = pageDataRaw || [];
     const findSection = (type) => sections.find(s => s[type])?.[type];

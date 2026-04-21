@@ -7,7 +7,7 @@ import { getPageData } from "@/services/home.service";
 
 export default async function LogisticsPage({ params }) {
     const { locale } = await params;
-    const pageDataRaw = await getPageData("logistics_service", locale);
+    const pageDataRaw = await getPageData("logestics_services", locale);
 
     const sections = pageDataRaw || [];
     const findSection = (type) => sections.find(s => s[type])?.[type];

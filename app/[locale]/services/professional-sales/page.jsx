@@ -29,7 +29,7 @@ const MerchCard = ({ title, description, id }) => {
 
 export default async function SalesMerchandisingPage({ params }) {
     const { locale } = await params;
-    const pageDataRaw = await getPageData("merchandising_service", locale);
+    const pageDataRaw = await getPageData("merchandising_services", locale);
 
     const sections = pageDataRaw || [];
     const findSection = (type) => sections.find(s => s[type])?.[type];
