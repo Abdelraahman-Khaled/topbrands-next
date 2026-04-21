@@ -73,8 +73,8 @@ export default function WhyChooseUs({ data }) {
           {services.map((service, index) => (
             <AnimatedCard
               key={index}
-              className="relative rounded-2xl pr-0 sm:pr-8 h-full
-               sm:after:content-[''] sm:after:absolute sm:after:right-0 sm:after:top-1/3 sm:after:-translate-y-1/2 
+              className="relative rounded-2xl pr-0 sm:pr-8 rtl:sm:pr-0 rtl:sm:pl-8 h-full
+               sm:after:content-[''] sm:after:absolute sm:after:right-0 rtl:sm:after:right-auto rtl:sm:after:left-0 sm:after:top-1/3 sm:after:-translate-y-1/2 
                sm:after:w-[1px] sm:after:h-[40%] sm:after:bg-[#4B4F54]/20 sm:last:after:hidden"
             >
               <div className={`w-14 h-14 flex items-center justify-center rounded-xl mb-6 ${service.iconBg}`}>
