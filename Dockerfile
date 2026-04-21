@@ -15,17 +15,12 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Set environment variables for build time
-# ARG NEXT_PUBLIC_BASE_URL
-# ARG NEXT_PUBLIC_EMAILJS_SERVICE_ID
-# ARG NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-# ARG NEXT_PUBLIC_EMAILJS_USER_ID
+# Set environment variables for build time (Next.js needs them during build)
+ARG NEXT_PUBLIC_API_BASE_URL
+ARG NEXT_PUBLIC_FORM_ENDPOINT
 
-# ENV NEXT_PUBLIC_BASE_URL=$NEXT_PUBLIC_BASE_URL
-# ENV NEXT_PUBLIC_EMAILJS_SERVICE_ID=$NEXT_PUBLIC_EMAILJS_SERVICE_ID
-# ENV NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=$NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-# ENV NEXT_PUBLIC_EMAILJS_USER_ID=$NEXT_PUBLIC_EMAILJS_USER_ID
-
+ENV NEXT_PUBLIC_API_BASE_URL=$NEXT_PUBLIC_API_BASE_URL
+ENV NEXT_PUBLIC_FORM_ENDPOINT=$NEXT_PUBLIC_FORM_ENDPOINT
 ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN npm run build
@@ -47,7 +42,6 @@ RUN mkdir .next
 RUN chown nextjs:nodejs .next
 
 # Automatically leverage output traces to reduce image size
-# https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
@@ -60,5 +54,4 @@ ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
 
 # server.js is created by next build from the standalone output
-# https://nextjs.org/docs/pages/api-reference/next-config-js/output
 CMD ["node", "server.js"]

@@ -16,57 +16,64 @@ import StaggerItem from "../../components/StaggerItem";
 import LocalizedLink from "../../components/LocalizedLink";
 
 export default function WhyPartener({ data }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isAr = i18n.language === 'ar';
 
   if (!data) return null;
 
-  const headerTitle = data["Title"]?.value;
-  const headerSubtitle = data["Subtitle"]?.value;
-  const headerDesc = data["Description"]?.value;
-  
-  const ctaTitle = data["Text Element 13"]?.value;
-  const ctaDesc = data["Text Element 14"]?.value;
-  const ctaButton1Text = data["Text Element 15"]?.value;
-  const ctaButton2Text = data["Text Element 16"]?.value;
+  // Extract settings title based on locale
+  const settings = data.settings || {};
+  const settingsTitle = settings[isAr ? "1" : "0"]?.value || "";
+
+  // Main Headers
+  const headerSubtitle = data["Text Element 1"]?.value;
+  const headerTitle = data["Text Element 2"]?.value;
+  const headerDesc = data["Text Element 3"]?.value;
+
+  // Fallbacks for the CTA section since it's not in the JSON schema for 'your_trusted'
+  const ctaTitle = t("ready_to_transform", "Ready to Transform Your Distribution?");
+  const ctaDesc = t("partner_with_us_desc", "Partner with Top Brands to unlock unparalleled market access and accelerate your growth.");
+  const ctaButton1Text = t("become_a_partner", "Become a Partner");
+  const ctaButton2Text = t("contact_us", "Contact Us");
 
   const features = [
     {
-      title: data["Text Element 1"]?.value || "Years of Experience",
-      desc: data["Text Element 2"]?.value,
+      title: data["Text Element 4"]?.value,
+      desc: data["Text Element 5"]?.value,
       icon: <Clock className="w-6 h-6 text-white" />,
       iconBg: "bg-[#4B4F54]",
     },
     {
-      title: data["Text Element 3"]?.value || "Nationwide Coverage",
-      desc: data["Text Element 4"]?.value,
-      icon: <MapPin className="w-6 h-6 text-black" />,
+      title: data["Text Element 6"]?.value,
+      desc: data["Text Element 7"]?.value,
+      icon:<MapPin className="w-6 h-6 text-black" />,
       iconBg: "bg-[#F7E326]",
     },
     {
-      title: data["Text Element 5"]?.value || "Expert Sales Team",
-      desc: data["Text Element 6"]?.value,
-      icon: <Users className="w-6 h-6 text-white" />,
+      title: data["Text Element 8"]?.value,
+      desc: data["Text Element 9"]?.value,
+      icon:<Users className="w-6 h-6 text-white" />,
       iconBg: "bg-[#4B4F54]",
     },
     {
-      title: data["Text Element 7"]?.value || "Quality Assurance",
-      desc: data["Text Element 8"]?.value,
+      title: data["Text Element 10"]?.value,
+      desc: data["Text Element 11"]?.value,
       icon: <ShieldCheck className="w-6 h-6 text-black" />,
       iconBg: "bg-[#F7E326]",
     },
     {
-      title: data["Text Element 9"]?.value || "Market Insights",
-      desc: data["Text Element 10"]?.value,
+      title: data["Text Element 12"]?.value,
+      desc: data["Text Element 13"]?.value,
       icon: <BarChart3 className="w-6 h-6 text-white" />,
       iconBg: "bg-[#4B4F54]",
     },
     {
-      title: data["Text Element 11"]?.value || "Dedicated Support",
-      desc: data["Text Element 12"]?.value,
+      title: data["Text Element 14"]?.value,
+      desc: data["Text Element 15"]?.value,
       icon: <Headphones className="w-6 h-6 text-black" />,
       iconBg: "bg-[#F7E326]",
     },
-  ];
+  ].filter(f => f.title);
 
   return (
     <section className="py-12 sm:py-24 bg-black text-white relative overflow-hidden">
@@ -82,7 +89,7 @@ export default function WhyPartener({ data }) {
               </span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold text-white mb-6">
-              {headerTitle}
+              {headerTitle}  <span className="text-[#F7E326]">{settingsTitle}</span>
             </h2>
             <p className="text-lg sm:text-xl text-[#D1D5DB] max-w-3xl mx-auto font-medium">
               {headerDesc}

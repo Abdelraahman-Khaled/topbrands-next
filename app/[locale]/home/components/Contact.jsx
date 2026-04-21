@@ -5,13 +5,16 @@ import StaggerContainer from "../../components/StaggerContainer";
 import StaggerItem from "../../components/StaggerItem";
 
 export default function Contact({ data }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   if (!data) return null;
 
-  const headerTitle = data["Title"]?.value;
-  const badgeText = data["Badge"]?.value;
-  const headerDesc = data["Description"]?.value;
+  const isAr = i18n.language === 'ar';
+  const settingsTitle = data.settings?.[isAr ? "1" : "0"]?.value || "";
+
+  const badgeText = data["Contact Element 1"]?.value;
+  const headerTitle = data["Contact Element 2"]?.value;
+  const headerDesc = data["Contact Element 3"]?.value;
 
   const contactInfo = [
     {
@@ -57,7 +60,7 @@ export default function Contact({ data }) {
               </div>
             )}
             <h2 className="text-3xl sm:text-5xl font-bold text-[#000000] mb-4">
-              {headerTitle}
+              {headerTitle} <span className="text-brand-charcoal">{settingsTitle}</span>
             </h2>
             <p className="text-lg sm:text-xl text-[#4B4F54] max-w-3xl mx-auto font-medium">
               {headerDesc}

@@ -8,8 +8,8 @@ export default function ProductsBrands({ data, brands = [] }) {
 
   if (!data) return null;
 
-  const title = data["Title"]?.value;
-  const buttonLabel = data["See All Brands Label"]?.value;
+  const title = data["Intro Text"]?.value || data["Title"]?.value;
+  const buttonLabel = data["See All Brands Label"]?.value || t("see_all_brands") || "See All Brands";
 
   return (
     <section id="brands" className="py-16 sm:py-24 bg-[#DEE3EB] relative">

@@ -35,7 +35,7 @@ const ContactForm = () => {
                 formBody.append(key, value);
             });
 
-            const response = await fetch("https://readdy.ai/api/form/d5v1ot5r44f5krorl03g", {
+            const response = await fetch(process.env.NEXT_PUBLIC_FORM_ENDPOINT || "https://readdy.ai/api/form/d5v1ot5r44f5krorl03g", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: formBody.toString(),

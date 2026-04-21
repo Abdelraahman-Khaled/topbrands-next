@@ -6,6 +6,7 @@ import Contact from "./home/components/Contact";
 import Stats from "./home/components/Stats";
 import WhyPartener from "./home/components/WhyPartener";
 import WhyChooseUs from "./home/components/WhyChooseUs";
+import GlobalCTA from "./components/GlobalCTA"; // For the "looking_for" section
 import { getPageData } from "@/services/home.service";
 
 export default async function HomePage({ params }) {
@@ -18,16 +19,17 @@ export default async function HomePage({ params }) {
 
   const findSection = (type) => data.sections.find(s => s[type])?.[type];
 
+  // Mapping exactly according to the provided JSON
   const heroData = findSection("hero_section");
   const statsData = findSection("our_impact");
   const aboutData = findSection("leading_fmcg");
   const servicesData = findSection("comprehensive_distribution");
-  const strategicData = findSection("strategic_brand_partnerships");
-  const whyChooseData = findSection("why_choose_us_section");
-  const whyPartnerData = findSection("your_trusted_fmcg_distribution_partner");
-  const contactData = findSection("contact_us_section");
-  const servicesCta = findSection("custom_distribution")
-  console.log(servicesCta);
+  const customDistData = findSection("custom_distribution"); // CTA after services
+  const brandsData = findSection("our_brands");
+  const whyChooseData = findSection("why_choose");
+  const whyPartnerData = findSection("your_trusted");
+  const lookingForData = findSection("looking_for"); // CTA before contact
+  const contactData = findSection("contact_section_home");
 
   return (
     <div className="min-h-screen bg-white">
@@ -37,18 +39,24 @@ export default async function HomePage({ params }) {
 
       {aboutData && <About data={aboutData} />}
 
-      {servicesData && <Services data={servicesData} cta={servicesCta} />}
+      {servicesData && <Services data={servicesData} cta={customDistData} />}
 
-      {strategicData && (
+      {brandsData && (
         <ProductsBrands
           brands={data.brands}
-          data={strategicData}
+          data={brandsData}
         />
       )}
 
       {whyChooseData && <WhyChooseUs data={whyChooseData} />}
 
       {whyPartnerData && <WhyPartener data={whyPartnerData} />}
+      
+      {/* {lookingForData && (
+        <div className="py-12 md:py-16">
+          <GlobalCTA data={lookingForData} contact={true} />
+        </div>
+      )} */}
 
       {contactData && <Contact data={contactData} />}
     </div>

@@ -7,9 +7,10 @@ import LocalizedLink from './LocalizedLink';
 const GlobalCTA = ({ title, subtitle, contact = false, btnText = "become_a_partner", btnLink = "/become-a-partner", data }) => {
     const { t } = useTranslation();
 
-    const finalTitle = data ? (data["Element 1"]?.value || data["Text Element 1"]?.value) : t(title);
-    const finalSubtitle = data ? (data["Element 2"]?.value || data["Text Element 2"]?.value) : t(subtitle);
-    const finalBtnText = data ? (data["Element 3"]?.value || data["Text Element 3"]?.value) : t(btnText);
+    const finalTitle = data ? (data["CTA Element 1"]?.value || data["Element 1"]?.value || data["Text Element 1"]?.value) : t(title);
+    const finalSubtitle = data ? (data["CTA Element 2"]?.value || data["Element 2"]?.value || data["Text Element 2"]?.value) : t(subtitle);
+    const finalBtnText = data ? (data["CTA Element 3"]?.value || data["Element 3"]?.value || data["Text Element 3"]?.value) : t(btnText);
+    const finalBtn2Text = data ? (data["CTA Element 4"]?.value || t("contact_us")) : t("contact_us");
 
     return (
         <section className="py-16 lg:py-24 bg-linear-to-br from-brand-charcoal to-brand-jet">
@@ -41,11 +42,11 @@ const GlobalCTA = ({ title, subtitle, contact = false, btnText = "become_a_partn
                                 className="mask-btn mask-btn--none-white !rounded-full sm:w-auto w-full shadow-xl hover:shadow-2xl"
                             >
                                 <span className="mask-btn__label gap-3">
-                                    {t("contact_us")}
+                                    {finalBtn2Text}
                                     <i className="ri-mail-line text-xl rtl:rotate-180"></i>
                                 </span>
                                 <span className="mask-btn__fill gap-3">
-                                    {t("contact_us")}
+                                    {finalBtn2Text}
                                     <i className="ri-mail-line text-xl rtl:rotate-180"></i>
                                 </span>
                             </LocalizedLink>
