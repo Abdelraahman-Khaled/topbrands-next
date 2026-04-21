@@ -1,18 +1,24 @@
+"use client"
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import ScrollReveal from './ScrollReveal';
 import LocalizedLink from './LocalizedLink';
 
-const GlobalCTA = ({ title, subtitle, contact = false, btnText = "become_a_partner", btnLink = "/become-a-partner" }) => {
+const GlobalCTA = ({ title, subtitle, contact = false, btnText = "become_a_partner", btnLink = "/become-a-partner", data }) => {
     const { t } = useTranslation();
+
+    const finalTitle = data ? (data["Element 1"]?.value || data["Text Element 1"]?.value) : t(title);
+    const finalSubtitle = data ? (data["Element 2"]?.value || data["Text Element 2"]?.value) : t(subtitle);
+    const finalBtnText = data ? (data["Element 3"]?.value || data["Text Element 3"]?.value) : t(btnText);
+
     return (
         <section className="py-16 lg:py-24 bg-linear-to-br from-brand-charcoal to-brand-jet">
             <ScrollReveal className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 text-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                    {t(title)}
+                    {finalTitle}
                 </h2>
                 <p className="text-lg md:text-xl text-[#D1D5DB] mb-10 max-w-2xl mx-auto font-medium">
-                    {t(subtitle)}
+                    {finalSubtitle}
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-4">
                     <LocalizedLink
@@ -20,11 +26,11 @@ const GlobalCTA = ({ title, subtitle, contact = false, btnText = "become_a_partn
                         className="mask-btn mask-btn--yellow-white !rounded-full sm:w-auto w-full shadow-xl hover:shadow-2xl"
                     >
                         <span className="mask-btn__label gap-3">
-                            {t(btnText)}
+                            {finalBtnText}
                             <i className="ri-arrow-right-line text-xl rtl:rotate-180"></i>
                         </span>
                         <span className="mask-btn__fill gap-3">
-                            {t(btnText)}
+                            {finalBtnText}
                             <i className="ri-arrow-right-line text-xl rtl:rotate-180"></i>
                         </span>
                     </LocalizedLink>
@@ -42,7 +48,7 @@ const GlobalCTA = ({ title, subtitle, contact = false, btnText = "become_a_partn
                                     {t("contact_us")}
                                     <i className="ri-mail-line text-xl rtl:rotate-180"></i>
                                 </span>
-                             </LocalizedLink>
+                            </LocalizedLink>
                         )
                     }
                 </div>
@@ -51,4 +57,4 @@ const GlobalCTA = ({ title, subtitle, contact = false, btnText = "become_a_partn
     )
 }
 
-export default GlobalCTA
+export default GlobalCTA;

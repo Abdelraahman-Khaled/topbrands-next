@@ -3,55 +3,64 @@ import { useTranslation } from "react-i18next";
 import ScrollReveal from "../../components/ScrollReveal";
 import StaggerContainer from "../../components/StaggerContainer";
 import StaggerItem from "../../components/StaggerItem";
-export default function Contact() {
-  const { t } = useTranslation()
+
+export default function Contact({ data }) {
+  const { t } = useTranslation();
+
+  if (!data) return null;
+
+  const headerTitle = data["Title"]?.value;
+  const badgeText = data["Badge"]?.value;
+  const headerDesc = data["Description"]?.value;
+
   const contactInfo = [
     {
       icon: "ri-phone-line",
-      title: t("phone"),
-      details: "+963 11 123 4567",
-      link: "tel:+963111234567",
-      gradient: "from-[#4B4F54] to-[#4B4F54]",
+      title: data["Phone Label"]?.value || t("phone"),
+      details: data["Phone Value"]?.value || "+963 11 123 4567",
+      link: `tel:${(data["Phone Value"]?.value || "").replace(/\s/g, "")}`,
       iconBg: "bg-gradient-to-br from-[#4B4F54] to-[#4B4F54]",
     },
     {
       icon: "ri-mail-line",
-      title: t("email"),
-      details: "info@topbrandssyria.com",
-      link: "mailto:info@topbrandssyria.com",
-      gradient: "from-[#4B4F54] to-[#4B4F54]",
+      title: data["Email Label"]?.value || t("email"),
+      details: data["Email Value"]?.value || "info@topbrandssyria.com",
+      link: `mailto:${data["Email Value"]?.value}`,
       iconBg: "bg-gradient-to-br from-[#F7E326] to-[#E5D324]",
     },
     {
       icon: "ri-map-pin-line",
-      title: t("location"),
-      details: t("damascus_syria"),
+      title: data["Location Label"]?.value || t("location"),
+      details: data["Location Value"]?.value || t("damascus_syria"),
       link: "#",
-      gradient: "from-[#4B4F54] to-[#4B4F54]",
       iconBg: "bg-gradient-to-br from-[#4B4F54] to-[#4B4F54]",
     },
   ];
 
+  const formTitle = data["Form Title"]?.value || t("send_us_message");
+  const formDesc = data["Form Desc"]?.value || t("fill_form_desc");
+  const submitLabel = data["Form Submit Label"]?.value || t("send_message");
+
   return (
     <section id="contact" className="py-12 sm:py-24 bg-white relative overflow-hidden">
-      {/* Decorative Elements */}
       <div className="absolute top-10 right-10 w-72 h-72 bg-[#F7E326]/30 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#F7E326]/30 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <div className="inline-block mb-4">
-              <span className="px-5 py-2 bg-[#F7E326] text-black rounded-full text-sm font-bold  tracking-wider">
-                {t("get_in_touch")}
-              </span>
-            </div>
+            {badgeText && (
+              <div className="inline-block mb-4">
+                <span className="px-5 py-2 bg-[#F7E326] text-black rounded-full text-sm font-bold tracking-wider">
+                  {badgeText}
+                </span>
+              </div>
+            )}
             <h2 className="text-3xl sm:text-5xl font-bold text-[#000000] mb-4">
-              {t("contact")}{" "}
-              <span className="text-[#4B4F54]">{t("hero_title")}</span>
+              {headerTitle}
             </h2>
             <p className="text-lg sm:text-xl text-[#4B4F54] max-w-3xl mx-auto font-medium">
-              {t("contact_header_desc")}
+              {headerDesc}
             </p>
           </div>
         </ScrollReveal>
@@ -66,17 +75,13 @@ export default function Contact() {
               <div
                 className={`w-16 h-16 flex items-center justify-center ${info.iconBg} rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg mx-auto`}
               >
-                <i
-                  className={`${info.icon} ${info.title === t("email") ? "text-[#000000]" : "text-white"} text-3xl`}
-                ></i>
+                <i className={`${info.icon} ${info.title === (data["Email Label"]?.value || t("email")) ? "text-[#000000]" : "text-white"} text-3xl`}></i>
               </div>
               <h3 className="text-xl font-bold text-[#000000] mb-2 text-center">
                 {info.title}
               </h3>
-              <p
-                className={`text-transparent bg-clip-text bg-gradient-to-r ${info.gradient} font-bold text-center`}
-              >
-                {info.details}contact
+              <p className="text-[#4B4F54] font-bold text-center">
+                {info.details}
               </p>
             </StaggerItem>
           ))}
@@ -92,9 +97,11 @@ export default function Contact() {
             <div className="relative z-10">
               <div className="text-center mb-8">
                 <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-                  {t("send_us_message")}
+                  {formTitle}
                 </h3>
-                <p className="text-sm sm:text-base text-gray-300 font-medium">{t("fill_form_desc")}</p>
+                <p className="text-sm sm:text-base text-gray-300 font-medium">
+                  {formDesc}
+                </p>
               </div>
 
               <form className="grid md:grid-cols-2 gap-6">
@@ -106,7 +113,7 @@ export default function Contact() {
                     type="text"
                     required
                     className="w-full px-4 py-3 rounded-lg bg-white/10 border-2 border-white/20 text-white placeholder-gray-400 focus:border-[#F7E326] focus:bg-white/20 outline-none transition-all font-medium"
-                    placeholder={t("your_name_placeholder")}
+                    placeholder={data["Form Name Placeholder"]?.value || t("your_name_placeholder")}
                   />
                 </div>
 
@@ -118,7 +125,7 @@ export default function Contact() {
                     type="email"
                     required
                     className="w-full px-4 py-3 rounded-lg bg-white/10 border-2 border-white/20 text-white placeholder-gray-400 focus:border-[#F7E326] focus:bg-white/20 outline-none transition-all font-medium"
-                    placeholder={t("your_email_placeholder")}
+                    placeholder={data["Form Email Placeholder"]?.value || t("your_email_placeholder")}
                   />
                 </div>
 
@@ -129,7 +136,7 @@ export default function Contact() {
                   <input
                     type="tel"
                     className="w-full px-4 py-3 rounded-lg bg-white/10 border-2 border-white/20 text-white placeholder-gray-400 focus:border-[#F7E326] focus:bg-white/20 outline-none transition-all font-medium"
-                    placeholder="+963 XX XXX XXXX"
+                    placeholder={data["Form Phone Placeholder"]?.value || "+963 XX XXX XXXX"}
                   />
                 </div>
 
@@ -140,7 +147,7 @@ export default function Contact() {
                   <input
                     type="text"
                     className="w-full px-4 py-3 rounded-lg bg-white/10 border-2 border-white/20 text-white placeholder-gray-400 focus:border-[#F7E326] focus:bg-white/20 outline-none transition-all font-medium"
-                    placeholder={t("your_company_placeholder")}
+                    placeholder={data["Form Company Placeholder"]?.value || t("your_company_placeholder")}
                   />
                 </div>
 
@@ -152,7 +159,7 @@ export default function Contact() {
                     required
                     rows={5}
                     className="w-full px-4 py-3 rounded-lg bg-white/10 border-2 border-white/20 text-white placeholder-gray-400 focus:border-[#F7E326] focus:bg-white/20 outline-none transition-all resize-none font-medium"
-                    placeholder={t("tell_us_distribution_placeholder")}
+                    placeholder={data["Form Message Placeholder"]?.value || t("tell_us_distribution_placeholder")}
                   ></textarea>
                 </div>
 
@@ -162,11 +169,11 @@ export default function Contact() {
                     className="mask-btn mask-btn--yellow-white"
                   >
                     <span className="mask-btn__label">
-                      {t("send_message")}
+                      {submitLabel}
                       <i className="ri-send-plane-fill rtl:-rotate-90 mx-2"></i>
                     </span>
                     <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
-                      {t("send_message")}
+                      {submitLabel}
                       <i className="ri-send-plane-fill rtl:-rotate-90 mx-2"></i>
                     </span>
                   </button>

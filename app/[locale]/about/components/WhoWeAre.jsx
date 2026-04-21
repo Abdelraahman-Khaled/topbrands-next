@@ -1,29 +1,42 @@
+"use client"
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import ScrollReveal from '../../components/ScrollReveal';
 
-const WhoWeAre = () => {
-    const { t } = useTranslation();
+const WhoWeAre = ({ data }) => {
+    if (!data) return null;
+
+    const desc1 = data["Text Element 1"]?.value;
+    const desc2 = data["Text Element 2"]?.value;
+    const heritageLabel = data["Text Element 3"]?.value;
+    const heritageValue = data["Text Element 4"]?.value;
+    const coverageLabel = data["Text Element 5"]?.value;
+    const coverageValue = data["Text Element 6"]?.value;
+    const imageUrl = data.image_url;
+
     return (
         <section className="py-12 md:py-20 bg-white">
             <ScrollReveal className="max-w-7xl mx-auto px-8 ">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <div className="relative h-[350px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
                         <img
-                            src="/images/about/about section in about page.webp"
-                            alt={t("contact_accent")}
+                            src={imageUrl || "/images/about/about section in about page.webp"}
+                            alt={desc1 || "About Us"}
                             className="w-full h-full object-cover object-right"
                         />
                         <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent"></div>
                     </div>
 
                     <div className="space-y-8">
-                        <p className="text-lg md:text-xl text-brand-charcoal leading-relaxed font-medium">
-                            {t("connect_brands")}
-                        </p>
-                        <p className="text-lg md:text-xl text-brand-charcoal leading-relaxed font-medium">
-                            {t("established_2025")}
-                        </p>
+                        {desc1 && (
+                            <p className="text-lg md:text-xl text-brand-charcoal leading-relaxed font-medium">
+                                {desc1}
+                            </p>
+                        )}
+                        {desc2 && (
+                            <p className="text-lg md:text-xl text-brand-charcoal leading-relaxed font-medium">
+                                {desc2}
+                            </p>
+                        )}
 
                         <div className="grid md:grid-cols-2 grid-cols-1 gap-6 pt-8">
                             <div className="bg-brand-yellow rounded-2xl p-6">
@@ -31,10 +44,10 @@ const WhoWeAre = () => {
                                     <i className="ri-building-line text-2xl text-brand-yellow"></i>
                                 </div>
                                 <p className="text-sm text-brand-charcoal font-bold mb-1">
-                                    {t("group_heritage")}
+                                    {heritageLabel}
                                 </p>
                                 <p className="text-2xl font-bold text-brand-jet">
-                                    {t("years_market")}
+                                    {heritageValue}
                                 </p>
                             </div>
 
@@ -43,10 +56,10 @@ const WhoWeAre = () => {
                                     <i className="ri-map-pin-line text-2xl text-brand-yellow"></i>
                                 </div>
                                 <p className="text-sm text-brand-charcoal font-bold mb-1">
-                                    {t("coverage_label")}
+                                    {coverageLabel}
                                 </p>
                                 <p className="text-2xl font-bold text-brand-jet">
-                                    {t("nationwide")}
+                                    {coverageValue}
                                 </p>
                             </div>
                         </div>
@@ -57,4 +70,4 @@ const WhoWeAre = () => {
     )
 }
 
-export default WhoWeAre
+export default WhoWeAre;

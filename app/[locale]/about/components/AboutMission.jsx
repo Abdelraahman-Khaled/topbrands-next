@@ -1,10 +1,16 @@
+"use client"
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import StaggerContainer from '../../components/StaggerContainer';
 import StaggerItem from '../../components/StaggerItem';
 
-const AboutMission = () => {
-    const { t } = useTranslation();
+const AboutMission = ({ data }) => {
+    if (!data) return null;
+
+    const visionTitle = data["Element 1"]?.value;
+    const visionDesc = data["Element 2"]?.value;
+    const missionTitle = data["Element 3"]?.value;
+    const missionDesc = data["Element 4"]?.value;
+
     return (
         <section className="py-12 md:py-20 bg-brand-paleblue">
             <div className="max-w-7xl mx-auto px-8 ">
@@ -14,14 +20,10 @@ const AboutMission = () => {
                             <i className="ri-eye-line text-3xl text-brand-jet"></i>
                         </div>
                         <h2 className="text-3xl md:text-4xl font-bold text-brand-jet mb-6">
-                            {t("vision")}
+                            {visionTitle}
                         </h2>
                         <p className="text-lg md:text-xl text-brand-charcoal leading-relaxed font-medium">
-                            {t("vision_desc1")}
-                            <strong className="font-bold text-brand-jet">
-                                {t("vision_desc2")}
-                            </strong>
-                            {t("vision_desc3")}
+                            {visionDesc}
                         </p>
                     </StaggerItem>
 
@@ -30,14 +32,10 @@ const AboutMission = () => {
                             <i className="ri-compass-3-line text-3xl text-brand-yellow"></i>
                         </div>
                         <h2 className="text-3xl md:text-4xl font-bold text-brand-jet mb-6">
-                            {t("mission")}
+                            {missionTitle}
                         </h2>
                         <p className="text-lg md:text-xl text-brand-charcoal leading-relaxed font-medium">
-                            {t("mission_desc1")}
-                            <strong className="font-bold text-brand-jet">
-                                {t("mission_desc2")}
-                            </strong>
-                            {t("mission_desc3")}
+                            {missionDesc}
                         </p>
                     </StaggerItem>
                 </StaggerContainer>
@@ -46,4 +44,4 @@ const AboutMission = () => {
     )
 }
 
-export default AboutMission
+export default AboutMission;

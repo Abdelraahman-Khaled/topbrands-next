@@ -1,48 +1,53 @@
+"use client"
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import ScrollReveal from '../../components/ScrollReveal';
 import StaggerContainer from '../../components/StaggerContainer';
 import StaggerItem from '../../components/StaggerItem';
 
-const CoreValues = () => {
-    const { t } = useTranslation();
+const CoreValues = ({ data }) => {
+    if (!data) return null;
+
+    const headerTitle = data["Element 1"]?.value;
+    const headerSubtitle = data["Element 2"]?.value;
+
     const values = [
         {
             icon: "ri-eye-line",
-            title: t("transparency"),
-            description: t("transparency_desc"),
+            title: data["Element 3"]?.value,
+            description: data["Element 4"]?.value,
         },
         {
             icon: "ri-customer-service-2-line",
-            title: t("customer_commitment"),
-            description: t("customer_commitment_desc"),
+            title: data["Element 5"]?.value,
+            description: data["Element 6"]?.value,
         },
         {
             icon: "ri-shield-check-line",
-            title: t("reliability"),
-            description: t("reliability_desc"),
+            title: data["Element 7"]?.value,
+            description: data["Element 8"]?.value,
         },
         {
             icon: "ri-team-line",
-            title: t("partnership_mindset"),
-            description: t("partnership_mindset_desc"),
+            title: data["Element 9"]?.value,
+            description: data["Element 10"]?.value,
         },
         {
             icon: "ri-line-chart-line",
-            title: t("market_excellence"),
-            description: t("market_excellence_desc"),
+            title: data["Element 11"]?.value,
+            description: data["Element 12"]?.value,
         },
-    ];
+    ].filter(v => v.title); // Only show if title exists
+
     return (
         <section className="py-12 md:py-20 bg-white">
             <div className="max-w-7xl mx-auto px-8 ">
                 <ScrollReveal>
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-jet mb-4">
-                            {t("core_values")}
+                            {headerTitle}
                         </h2>
                         <p className="text-lg md:text-xl text-brand-charcoal max-w-3xl mx-auto font-medium">
-                            {t("core_values_subtitle")}
+                            {headerSubtitle}
                         </p>
                     </div>
                 </ScrollReveal>
@@ -70,4 +75,4 @@ const CoreValues = () => {
     )
 }
 
-export default CoreValues
+export default CoreValues;

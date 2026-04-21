@@ -1,9 +1,14 @@
+"use client"
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import ScrollReveal from '../../components/ScrollReveal';
 
-const GrowthDirection = () => {
-    const { t } = useTranslation();
+const GrowthDirection = ({ data }) => {
+    if (!data) return null;
+
+    const title = data["Element 1"]?.value;
+    const desc1 = data["Element 2"]?.value;
+    const desc2 = data["Element 3"]?.value;
+
     return (
         <section className="py-12 md:py-24 bg-brand-paleblue relative overflow-hidden">
             <div className="absolute top-0 right-0 w-72 md:w-96 h-72 md:h-96 bg-brand-yellow rounded-full blur-3xl opacity-20"></div>
@@ -15,17 +20,13 @@ const GrowthDirection = () => {
                         <i className="ri-rocket-line text-3xl md:text-4xl text-brand-jet"></i>
                     </div>
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-jet mb-8">
-                        {t("growth_direction")}
+                        {title}
                     </h2>
                     <p className="text-xl md:text-2xl text-brand-charcoal leading-relaxed mb-6 font-medium">
-                        {t("growth_direction_desc1")}
-                        <strong className="font-bold text-brand-jet">
-                            {t("growth_direction_desc2")}
-                        </strong>
-                        {t("growth_direction_desc3")}
+                        {desc1}
                     </p>
                     <p className="text-lg md:text-xl text-brand-charcoal leading-relaxed font-medium">
-                        {t("growth_long_term")}
+                        {desc2}
                     </p>
                 </ScrollReveal>
             </div>

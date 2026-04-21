@@ -104,6 +104,11 @@ export default function Footer() {
                   {t("cookie_policy")}
                 </LocalizedLink>
               </li>
+              <li>
+                <LocalizedLink href="/faq" className="text-sm hover:text-black transition-colors cursor-pointer">
+                  {t("faq")}
+                </LocalizedLink>
+              </li>
             </ul>
           </StaggerItem>
 
