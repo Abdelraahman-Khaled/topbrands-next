@@ -1,4 +1,5 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://back.topbrands-sy.com/api";
+const BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL || "https://back.topbrands-sy.com/api";
 
 /**
  * Fetches page data from the external API.
@@ -17,10 +18,7 @@ export async function getPageData(page, locale) {
         locale,
         "Content-Type": "application/json",
       },
-      next: {
-        revalidate: 3600, // Revalidate every hour
-        tags: [page], // Allow on-demand revalidation using the page tag
-      },
+      cache: "no-store", // Always fetch fresh — instant dashboard updates
     });
 
     if (!res.ok) {
@@ -50,7 +48,7 @@ export async function getBrandProducts(id, locale) {
         locale,
         "Content-Type": "application/json",
       },
-      next: { revalidate: 3600 },
+      cache: "no-store",
     });
 
     if (!res.ok) {
@@ -81,7 +79,7 @@ export async function getFaqs(locale) {
         locale,
         "Content-Type": "application/json",
       },
-      next: { revalidate: 3600 },
+      cache: "no-store",
     });
 
     if (!res.ok) return [];
