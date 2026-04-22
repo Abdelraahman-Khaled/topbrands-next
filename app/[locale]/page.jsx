@@ -50,15 +50,15 @@ export default async function HomePage({ params }) {
 
       {whyChooseData && <WhyChooseUs data={whyChooseData} />}
 
-      {whyPartnerData && <WhyPartener data={whyPartnerData} />}
-      
+      {whyPartnerData && <WhyPartener data={whyPartnerData} cta={lookingForData} />}
+
       {/* {lookingForData && (
         <div className="py-12 md:py-16">
           <GlobalCTA data={lookingForData} contact={true} />
         </div>
       )} */}
 
-      {contactData && <Contact data={contactData} />}
+      {contactData && <Contact data={contactData} ctaData={lookingForData} />}
     </div>
   );
 }

@@ -4,9 +4,19 @@ import ScrollReveal from "./ScrollReveal";
 import StaggerContainer from "./StaggerContainer";
 import StaggerItem from "./StaggerItem";
 import LocalizedLink from "./LocalizedLink";
+import { useCompany } from "./CompanyProvider";
 
 export default function Footer() {
   const { t } = useTranslation();
+  const { companyData } = useCompany();
+
+  const socialLinks = [
+    { icon: "ri-linkedin-fill", href: companyData?.linkedin_url || "#" },
+    { icon: "ri-facebook-fill", href: companyData?.facebook_url || "#" },
+    { icon: "ri-instagram-line", href: companyData?.instagram_url || "#" },
+    { icon: "ri-twitter-x-fill", href: companyData?.twitter_url || "#" },
+    { icon: "ri-whatsapp-line", href: `https://wa.me/${companyData?.whatsapp_number?.replace(/\s/g, "")}` }
+  ];
 
   return (
     <footer className="bg-white text-[#4B4F54]  relative overflow-hidden">
@@ -140,13 +150,8 @@ export default function Footer() {
               © {new Date().getFullYear()} Top Brands Syria. {t("all_rights_reserved")}.
             </p>
 
-            <div className="flex items-center space-x-3 rtl:space-x-reverse">
-              {[
-                { icon: "ri-linkedin-fill", href: "#" },
-                { icon: "ri-facebook-fill", href: "#" },
-                { icon: "ri-instagram-line", href: "#" },
-                { icon: "ri-whatsapp-line", href: "#" }
-              ].map((social, idx) => (
+            <div className="flex items-center gap-2 rtl:space-x-reverse">
+              {socialLinks.map((social, idx) => (
                 <a
                   key={idx}
                   href={social.href}

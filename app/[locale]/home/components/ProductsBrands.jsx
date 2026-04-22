@@ -7,9 +7,10 @@ export default function ProductsBrands({ data, brands = [] }) {
   const { t } = useTranslation();
 
   if (!data) return null;
+  console.log(data);
 
   const title = data["Intro Text"]?.value || data["Title"]?.value;
-  const buttonLabel = data["See All Brands Label"]?.value || t("see_all_brands") || "See All Brands";
+  const buttonLabel = data["btn Text"]?.value || t("see_all_brands") || "See All Brands";
 
   return (
     <section id="brands" className="py-16 sm:py-24 bg-[#DEE3EB] relative">
@@ -30,8 +31,13 @@ export default function ProductsBrands({ data, brands = [] }) {
                 <LocalizedLink
                   key={brand.id || index}
                   href={`/brands/${brand.id}`}
-                  className="w-[calc(50%-1.5rem)] md:w-[calc(33.33%-3rem)] lg:w-[calc(20%-3rem)] aspect-[4/3] flex items-center justify-center transition-transform hover:-translate-y-2 duration-300 group"
+                  className={`w-[calc(50%-1.5rem)] md:w-[calc(33.33%-3rem)] lg:w-[calc(20%-3rem)] aspect-[4/3] flex items-center justify-center transition-transform hover:-translate-y-2 duration-300 group relative ${brand.is_highlighted ? "before:absolute before:inset-0 before:bg-[#F7E326]/5 before:rounded-3xl before:blur-2xl" : ""}`}
                 >
+                  {brand.is_highlighted && (
+                    <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 z-10 w-6 h-6 bg-[#F7E326] rounded-full flex items-center justify-center text-[10px] text-black shadow-sm ring-4 ring-white">
+                      <i className="ri-star-fill"></i>
+                    </div>
+                  )}
                   <img
                     src={brand.image_url}
                     alt={brand.title || brand.alt_text}

@@ -50,7 +50,7 @@ export default async function AboutPage({ params }) {
       {edgeData && <OurEdgeSection data={edgeData} />}
 
       {/* Growth Direction Section */}
-      {growthData && <GrowthDirection data={growthData} />}
+      {/* {growthData && <GrowthDirection data={growthData} />} */}
 
       {/* CTA Section */}
       {ctaData && (

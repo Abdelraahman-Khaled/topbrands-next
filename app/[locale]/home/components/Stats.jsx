@@ -2,6 +2,7 @@
 import { useTranslation } from "react-i18next";
 import StaggerContainer from "../../components/StaggerContainer";
 import StaggerItem from "../../components/StaggerItem";
+import Counter from "../../components/Counter";
 
 export default function Stats({ data }) {
   const { t } = useTranslation();
@@ -88,13 +89,8 @@ export default function Stats({ data }) {
 
               <div className="flex items-center gap-2 mb-2">
                 <div className="text-3xl md:text-[40px] font-bold text-white leading-none">
-                  {stat.value.replace("+", "")}
+                  <Counter value={stat.value} />
                 </div>
-                {stat.value.includes("+") && (
-                  <div className="text-3xl md:text-[40px] font-bold text-[#F7E326] leading-none">
-                    +
-                  </div>
-                )}
               </div>
               <div className="text-sm md:text-base text-[#D1D5DB] font-medium">
                 {stat.label}

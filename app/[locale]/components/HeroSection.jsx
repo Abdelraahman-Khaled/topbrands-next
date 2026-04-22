@@ -15,8 +15,18 @@ const HeroSection = ({ subtitle, title, description1, yellowText, description2, 
     const finalDescription1 = data ? data["Text Element 3"]?.value : description1;
     const finalDescription2 = data ? data["Text Element 4"]?.value : description2;
     const finalImg = data ? data.image_url : img;
-    const finalYellowText = data ? data["settings"]?.[isAr ? "1" : "0"]?.value : yellowText;
-    const finalYellowTitle = yellowTitle; // Usually part of title or separate if needed
+
+    // Helper to find setting by key and language
+    const getSettingValue = (key) => {
+        if (!data?.settings) return null;
+        const matches = Object.values(data.settings).filter(s => s.key === key);
+        if (matches.length >= 2) return matches[isAr ? 1 : 0]?.value;
+        if (matches.length === 1) return matches[0]?.value;
+        return null;
+    }
+
+    const finalYellowTitle = getSettingValue("title") || yellowTitle;
+    const finalYellowText = getSettingValue("sub title") || (data ? null : yellowText);
 
     return (
         <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden min-h-[60vh] flex items-center">
@@ -28,7 +38,7 @@ const HeroSection = ({ subtitle, title, description1, yellowText, description2, 
                     transition={{ duration: 1.5, ease: "easeOut" }}
                     src={finalImg}
                     alt={finalTitle || "Hero Image"}
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/40 to-transparent rtl:bg-gradient-to-l rtl:from-black/80 rtl:via-black/40 rtl:to-transparent"></div>
             </div>
@@ -57,11 +67,6 @@ const HeroSection = ({ subtitle, title, description1, yellowText, description2, 
                         {finalTitle}
                         {finalYellowTitle && (
                             <span className="text-brand-yellow"> {finalYellowTitle} </span>
-                        )}
-                        {finalYellowText && !finalYellowTitle && (
-                            <strong className="font-bold text-brand-yellow font-almarai">
-                                {" "} {finalYellowText} {" "}
-                            </strong>
                         )}
                     </motion.div>
                 </h1>

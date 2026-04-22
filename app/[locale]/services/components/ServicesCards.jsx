@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import { Truck, Store, Award, FastForward, Map, ShoppingCart, Ship } from 'lucide-react';
+import { Truck, Store, Award, FastForward, Map, ShoppingCart, Ship, TrendingUp } from 'lucide-react';
 import StaggerContainer from '../../components/StaggerContainer';
 import StaggerItem from '../../components/StaggerItem';
 import ScrollReveal from '../../components/ScrollReveal';
@@ -10,7 +10,7 @@ const ServiceCard = ({ icon: Icon, data, isYellow }) => {
 
     const title = data["Element 1"]?.value;
     const description = data["Element 2"]?.value;
-    
+
     // Extract bullets from Element 3 till Element 6
     const bullets = Object.keys(data)
         .filter(key => {
@@ -65,11 +65,41 @@ const ServicesGrid = ({ data }) => {
         { key: 'marketCov', icon: Map, isYellow: false },
         { key: 'merchVis', icon: ShoppingCart, isYellow: true },
         { key: 'importTrade', icon: Ship, isYellow: false },
+        { key: 'marketIntelligence', icon: TrendingUp, isYellow: true },
     ];
 
     return (
-        <section className="w-full bg-[#DEE3EB] py-16 px-6">
-            <StaggerContainer className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-20">
+        <section className="relative w-full bg-[#DEE3EB] py-20 lg:py-28 px-6 overflow-hidden">
+
+            {/* ── Decorative blobs ── */}
+            <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-yellow/20 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-80 h-80 bg-white/40 rounded-full blur-[80px] pointer-events-none" />
+
+            {/* ── Dot grid (top-right) ── */}
+            <svg className="absolute top-8 right-8 opacity-20 pointer-events-none" width="160" height="160" viewBox="0 0 160 160">
+                {Array.from({ length: 6 }).map((_, row) =>
+                    Array.from({ length: 6 }).map((_, col) => (
+                        <circle key={`${row}-${col}`} cx={col * 28 + 8} cy={row * 28 + 8} r="3" fill="#1a1a1a" />
+                    ))
+                )}
+            </svg>
+
+            {/* ── Dot grid (bottom-left) ── */}
+            <svg className="absolute bottom-8 left-8 opacity-20 pointer-events-none" width="160" height="160" viewBox="0 0 160 160">
+                {Array.from({ length: 6 }).map((_, row) =>
+                    Array.from({ length: 6 }).map((_, col) => (
+                        <circle key={`${row}-${col}`} cx={col * 28 + 8} cy={row * 28 + 8} r="3" fill="#1a1a1a" />
+                    ))
+                )}
+            </svg>
+
+            {/* ── Yellow accent ring (centre-right) ── */}
+            <svg className="absolute top-1/2 -right-16 -translate-y-1/2 opacity-15 pointer-events-none" width="260" height="260" viewBox="0 0 260 260">
+                <circle cx="130" cy="130" r="120" fill="none" stroke="#F7E326" strokeWidth="20" strokeDasharray="30 15" />
+            </svg>
+
+            {/* ── Grid content ── */}
+            <StaggerContainer className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-10">
                 {services.map((service, index) => (
                     <ServiceCard
                         key={index}

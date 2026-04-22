@@ -15,7 +15,7 @@ import StaggerContainer from "../../components/StaggerContainer";
 import StaggerItem from "../../components/StaggerItem";
 import LocalizedLink from "../../components/LocalizedLink";
 
-export default function WhyPartener({ data }) {
+export default function WhyPartener({ data, cta }) {
   const { t, i18n } = useTranslation();
   const isAr = i18n.language === 'ar';
 
@@ -31,10 +31,10 @@ export default function WhyPartener({ data }) {
   const headerDesc = data["Text Element 3"]?.value;
 
   // Fallbacks for the CTA section since it's not in the JSON schema for 'your_trusted'
-  const ctaTitle = t("ready_to_transform", "Ready to Transform Your Distribution?");
-  const ctaDesc = t("partner_with_us_desc", "Partner with Top Brands to unlock unparalleled market access and accelerate your growth.");
-  const ctaButton1Text = t("become_a_partner", "Become a Partner");
-  const ctaButton2Text = t("contact_us", "Contact Us");
+  const ctaTitle = cta?.["CTA Element 1"]?.value || t("ready_to_transform", "Ready to Transform Your Distribution?");
+  const ctaDesc = cta?.["CTA Element 2"]?.value || t("partner_with_us_desc", "Partner with Top Brands to unlock unparalleled market access and accelerate your growth.");
+  const ctaButton1Text = cta?.["CTA Element 3"]?.value || t("become_a_partner", "Become a Partner");
+  const ctaButton2Text = cta?.["CTA Element 4"]?.value || t("contact_us", "Contact Us");
 
   const features = [
     {
@@ -46,13 +46,13 @@ export default function WhyPartener({ data }) {
     {
       title: data["Text Element 6"]?.value,
       desc: data["Text Element 7"]?.value,
-      icon:<MapPin className="w-6 h-6 text-black" />,
+      icon: <MapPin className="w-6 h-6 text-black" />,
       iconBg: "bg-[#F7E326]",
     },
     {
       title: data["Text Element 8"]?.value,
       desc: data["Text Element 9"]?.value,
-      icon:<Users className="w-6 h-6 text-white" />,
+      icon: <Users className="w-6 h-6 text-white" />,
       iconBg: "bg-[#4B4F54]",
     },
     {
@@ -83,8 +83,8 @@ export default function WhyPartener({ data }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <div className="inline-block mb-4">
-              <span className="px-5 py-2 bg-gradient-to-r from-[#F7E326] to-[#E5D324] text-black rounded-full text-sm font-bold tracking-wider">
+            <div className="inline-block mb-6">
+              <span className="px-5 py-2  bg-gradient-to-r from-[#F7E326] to-[#E5D324] text-black rounded-full text-sm font-bold tracking-wider">
                 {headerSubtitle}
               </span>
             </div>
@@ -164,7 +164,9 @@ export default function WhyPartener({ data }) {
                       href="/contact"
                       className="mask-btn mask-btn--none-white"
                     >
-                      <span className="mask-btn__label">{ctaButton2Text}</span>
+                      <span className="mask-btn__label">{ctaButton2Text}
+                        <Phone className="w-5 h-5 mx-2 text-gray-300" />
+                      </span>
                       <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
                         {ctaButton2Text}
                         <Phone className="w-5 h-5 mx-2 text-gray-300" />

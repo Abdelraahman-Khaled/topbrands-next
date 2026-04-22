@@ -14,7 +14,7 @@ export default function About({ data }) {
   const badgeText = data["Text Element 2"]?.value;
   const description1 = data["Text Element 3"]?.value;
   const description2 = data["Text Element 4"]?.value;
-  
+
   const feature1Title = data["Text Element 5"]?.value;
   const feature1Desc = data["Text Element 6"]?.value;
   const feature2Title = data["Text Element 7"]?.value;
@@ -23,7 +23,7 @@ export default function About({ data }) {
   const feature3Desc = data["Text Element 10"]?.value;
   const feature4Title = data["Text Element 11"]?.value;
   const feature4Desc = data["Text Element 12"]?.value;
-  
+
   const buttonText = data["Text Element 13"]?.value;
   const imageUrl = data.image_url;
 
@@ -94,7 +94,7 @@ export default function About({ data }) {
               </StaggerItem>
 
               {/* Card 3 */}
-              <StaggerItem className="border-2 border-brand-charcoal flex items-center gap-3 p-[16px] bg-white rounded-xl duration-300 shadow-sm">
+              <StaggerItem className="border-2 border-brand-yellow flex items-center gap-3 p-[16px] bg-white rounded-xl duration-300 shadow-sm">
                 <div className="w-12 h-12 flex items-center justify-center bg-[#F7E326] rounded-lg flex-shrink-0 shadow-md">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18.24 9.64V19C18.24 19.28 18.1472 19.5167 17.9616 19.71C17.776 19.9033 17.5488 20 17.28 20H1.92C1.6512 20 1.424 19.9033 1.2384 19.71C1.0528 19.5167 0.96 19.28 0.96 19V9.64C0.6528 9.28 0.416 8.87333 0.2496 8.42C0.0832 7.96667 0 7.49333 0 7V1C0 0.720001 0.0928 0.483334 0.2784 0.290001C0.464 0.0966663 0.6912 0 0.96 0H18.24C18.5088 0 18.736 0.0966663 18.9216 0.290001C19.1072 0.483334 19.2 0.720001 19.2 1V7C19.2 7.49333 19.1168 7.96667 18.9504 8.42C18.784 8.87333 18.5472 9.28 18.24 9.64ZM16.32 10.88C16.0128 10.96 15.6928 11 15.36 11C14.7968 11 14.2656 10.88 13.7664 10.64C13.2672 10.4 12.8384 10.0667 12.48 9.64C12.1216 10.0667 11.6928 10.4 11.1936 10.64C10.6944 10.88 10.1632 11 9.6 11C9.0368 11 8.5056 10.88 8.0064 10.64C7.5072 10.4 7.0784 10.0667 6.72 9.64C6.3616 10.0667 5.9328 10.4 5.4336 10.64C4.9344 10.88 4.4032 11 3.84 11C3.5072 11 3.1872 10.96 2.88 10.88V18H16.32V10.88ZM11.52 7C11.52 6.72 11.6128 6.48333 11.7984 6.29C11.984 6.09667 12.2112 6 12.48 6C12.7488 6 12.976 6.09667 13.1616 6.29C13.3472 6.48333 13.44 6.72 13.44 7C13.44 7.36 13.5264 7.69333 13.6992 8C13.872 8.30667 14.1056 8.55 14.4 8.73C14.6944 8.91 15.0144 9 15.36 9C15.7056 9 16.0256 8.91 16.32 8.73C16.6144 8.55 16.848 8.30667 17.0208 8C17.1936 7.69333 17.28 7.36 17.28 7V2H1.92V7C1.92 7.36 2.0064 7.69333 2.1792 8C2.352 8.30667 2.5856 8.55 2.88 8.73C3.1744 8.91 3.4944 9 3.84 9C4.1856 9 4.5056 8.91 4.8 8.73C5.0944 8.55 5.328 8.30667 5.5008 8C5.6736 7.69333 5.76 7.36 5.76 7C5.76 6.72 5.8528 6.48333 6.0384 6.29C6.224 6.09667 6.4512 6 6.72 6C6.9888 6 7.216 6.09667 7.4016 6.29C7.5872 6.48333 7.68 6.72 7.68 7C7.68 7.36 7.7664 7.69333 7.9392 8C8.112 8.30667 8.3456 8.55 8.64 8.73C8.9344 8.91 9.2544 9 9.6 9C9.9456 9 10.2656 8.91 10.56 8.73C10.8544 8.55 11.088 8.30667 11.2608 8C11.4336 7.69333 11.52 7.36 11.52 7Z" fill="black" />
@@ -127,13 +127,13 @@ export default function About({ data }) {
                   className="mask-btn mask-btn--gray-black"
                 >
                   <span className="mask-btn__label">{buttonText}
-                    <svg width="11" height="11" viewBox="0 0 11 11" fill="white" xmlns="http://www.w3.org/2000/svg" className="mx-1.5">
+                    <svg width="11" height="11" viewBox="0 0 11 11" fill="white" xmlns="http://www.w3.org/2000/svg" className="mx-1.5 rtl:rotate-180">
                       <path d="M8.26615 4.79303L4.61493 1.00382L5.57863 -4.44968e-05L10.8587 5.49998L5.57863 11L4.61493 9.99614L8.26615 6.20692H0V4.79303H8.26615Z" fill="white" />
                     </svg>
                   </span>
                   <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
                     {buttonText}
-                    <svg width="11" height="11" viewBox="0 0 11 11" fill="white" xmlns="http://www.w3.org/2000/svg" className="mx-1.5">
+                    <svg width="11" height="11" viewBox="0 0 11 11" fill="white" xmlns="http://www.w3.org/2000/svg" className="mx-1.5 rtl:rotate-180">
                       <path d="M8.26615 4.79303L4.61493 1.00382L5.57863 -4.44968e-05L10.8587 5.49998L5.57863 11L4.61493 9.99614L8.26615 6.20692H0V4.79303H8.26615Z" fill="white" />
                     </svg>
                   </span>

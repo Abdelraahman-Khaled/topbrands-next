@@ -90,3 +90,32 @@ export async function getFaqs(locale) {
     return [];
   }
 }
+
+/**
+ * Fetches company contact data from the external API.
+ * @param {string} locale - The current locale
+ * @returns {Promise<Object>} Company data
+ */
+export async function getCompanyData(locale) {
+  try {
+    const res = await fetch(`${BASE_URL}/web_site/get_company_data`, {
+      method: "GET",
+      headers: {
+        locale,
+        "Content-Type": "application/json",
+      },
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      console.error(`Failed to fetch company data: ${res.statusText}`);
+      return null;
+    }
+
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error(`Error fetching company data:`, error);
+    return null;
+  }
+}

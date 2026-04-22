@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import I18nProvider from "./components/I18nProvider";
+import { CompanyProvider } from "./components/CompanyProvider";
 
 import { locales, defaultLocale } from "./i18n/config";
 import { notFound } from "next/navigation";
@@ -65,9 +66,11 @@ export default async function RootLayout({ children, params }) {
       </head>
       <body className="min-h-full flex flex-col">
         <I18nProvider locale={locale}>
-          <Navbar />
-          {children}
-          <Footer />
+          <CompanyProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </CompanyProvider>
         </I18nProvider>
       </body>
     </html>

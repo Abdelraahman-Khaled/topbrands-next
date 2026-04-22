@@ -113,19 +113,52 @@ export default async function BrandDetailPage({ params }) {
                 </h2>
               </div>
 
-              <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 justify-center">
+              <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 md:gap-10">
                 {brandProducts.map((product) => (
                   <div
                     key={product.id}
-                    className="block h-full group shadow-xl bg-white rounded-3xl overflow-hidden border-2 border-transparent transition-all hover:border-[#F7E326]"
+                    className="group flex flex-col bg-white rounded-[16px] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500 border border-gray-100 h-full"
                   >
-                    <div className="p-8">
-                      <h3 className="text-2xl font-bold text-brand-jet mb-4">
+                    {/* Product Image Holder */}
+                    <div className="w-full h-56 flex items-center justify-center bg-white p-10 border-b border-gray-100 relative">
+                      <img
+                        src={product.image_url || "/images/placeholder-product.png"}
+                        alt={product.title}
+                        className=" max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                      />
+
+                      {/* Floating Size Badge - Prepared for backend data */}
+                      {product.size && (
+                        <div className="absolute top-4 right-4 z-10">
+                          <div className="bg-[#00BFA5] text-white text-xs font-bold w-10 h-10 rounded-full flex items-center justify-center shadow-lg border-2 border-white/20">
+                            {product.size}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Product Content */}
+                    <div className={`p-8 flex flex-col h-full ${isAr ? 'text-right' : 'text-left'}`}>
+                      <h3 className="text-2xl font-bold text-brand-jet mb-3 group-hover:text-black transition-colors">
                         {product.title}
                       </h3>
-                      <div className="flex items-center text-brand-yellow font-bold gap-2">
-                        <i className="ri-checkbox-circle-line"></i>
-                        {isAr ? "متوفر الآن" : "Available Now"}
+
+                      {/* Description - Slot for future backend data */}
+                      {product.description ? (
+                        <p className="text-brand-charcoal/70 text-sm md:text-base leading-relaxed mb-6 line-clamp-2">
+                          {product.description}
+                        </p>
+                      ) : (
+                        <p className="text-brand-charcoal/40 text-sm  mb-6">
+                          {isAr ? "وصف المنتج سيتوفر قريباً..." : "Product description coming soon..."}
+                        </p>
+                      )}
+
+                      {/* Size Info - Slot for future backend data */}
+                      <div className="mt-auto">
+                        <p className="text-sm font-semibold text-brand-charcoal/60 uppercase tracking-widest">
+                          {isAr ? "الحجم:" : "Size:"} <span className="text-brand-charcoal">{product.size || "N/A"}</span>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -138,7 +171,8 @@ export default async function BrandDetailPage({ params }) {
 
       {/* CTA Section */}
       <GlobalCTA
-        title={isAr ? `مهتم بمنتجات ${title}؟` : `Interested in ${title} Products?`}
+        title={isAr ? `مهتم بمنتجات` : `Interested in`}
+        yellowtext={isAr ? title + "؟" : title + " Products?"}
         subtitle={isAr
           ? `كن شريكاً لنا لجلب مجموعة ${title} المميزة لعملائك.`
           : `Partner with us to bring ${title}'s premium range to your customers.`}

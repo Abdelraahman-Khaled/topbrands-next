@@ -4,6 +4,7 @@ import ScrollReveal from "../components/ScrollReveal";
 import StaggerContainer from "../components/StaggerContainer";
 import StaggerItem from "../components/StaggerItem";
 import { getPageData } from "@/services/home.service";
+import Counter from "../components/Counter";
 import MarketMap from "./components/MarketMap";
 
 export default async function MarketCoveragePage({ params }) {
@@ -71,19 +72,19 @@ export default async function MarketCoveragePage({ params }) {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       {heroData && (
-        <HeroSection 
-           subtitle={heroSubtitle}
-           title={heroTitle}
-           yellowText={heroYellowText}
-           description1={heroDesc1}
-           description2={heroDesc2}
-           img={heroData.image_url}
+        <HeroSection
+          subtitle={heroSubtitle}
+          title={heroTitle}
+          yellowText={heroYellowText}
+          description1={heroDesc1}
+          description2={heroDesc2}
+          img={heroData.image_url}
         />
       )}
 
       {/* Coverage Map & Areas Section */}
-      <MarketMap 
-        mapData={mapData} 
+      <MarketMap
+        mapData={mapData}
         areas={areas}
         locale={locale}
       />
@@ -92,11 +93,11 @@ export default async function MarketCoveragePage({ params }) {
       <ScrollReveal delay={0.2}>
         <section className="py-16 md:py-24 lg:py-32 bg-linear-to-b from-white to-brand-paleblue/30 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-            <div className="text-center mb-12 md:mb-16 lg:mb-20">
-              <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-black mb-4 md:mb-6">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 md:mb-6">
                 {channelsData?.["Element 1"]?.value}
               </h2>
-              <p className="text-base md:text-xl text-brand-charcoal max-w-3xl mx-auto font-medium leading-relaxed">
+              <p className="text-base md:text-lg text-brand-charcoal max-w-3xl mx-auto font-medium leading-relaxed">
                 {channelsData?.["Element 2"]?.value}
               </p>
             </div>
@@ -133,13 +134,17 @@ export default async function MarketCoveragePage({ params }) {
 
       {/* Capabilities Section */}
       <ScrollReveal delay={0.1}>
-        <section className="py-16 md:py-24 lg:py-32 bg-white overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-            <div className="text-center mb-12 md:mb-16 lg:mb-20">
-              <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-black mb-4 md:mb-6">
+        <section className="py-16 md:py-24 lg:py-32 bg-white overflow-hidden relative">
+          {/* Background Decorative Blurs */}
+          <div className="absolute top-0 left-0 w-72 h-72 bg-brand-yellow/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-yellow/15 rounded-full blur-[120px] translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+          
+          <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 md:mb-6">
                 {capabilitiesData?.["Element 1"]?.value}
               </h2>
-              <p className="text-base md:text-xl text-brand-charcoal max-w-3xl mx-auto font-medium leading-relaxed">
+              <p className="text-base md:text-lg text-brand-charcoal max-w-3xl mx-auto font-medium leading-relaxed">
                 {capabilitiesData?.["Element 2"]?.value}
               </p>
             </div>
@@ -156,8 +161,12 @@ export default async function MarketCoveragePage({ params }) {
                       <p className="text-sm text-brand-charcoal font-medium mb-2 uppercase tracking-widest">
                         {capability.val0}
                       </p>
-                      <p className="text-4xl font-bold text-black mb-2">
-                        {capability.val1}
+                      <p className={`${!isNaN(parseFloat(capability.val1?.replace(/[^0-9.]/g, ""))) ? "text-3xl" : "text-xl"} font-bold text-black mb-2`}>
+                        {!isNaN(parseFloat(capability.val1?.replace(/[^0-9.]/g, ""))) ? (
+                          <Counter value={capability.val1} />
+                        ) : (
+                          capability.val1
+                        )}
                       </p>
                       <p className="text-sm text-brand-charcoal">
                         {capability.val2}
@@ -177,10 +186,10 @@ export default async function MarketCoveragePage({ params }) {
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
             <div className="grid lg:grid-cols-2 gap-10 md:gap-16 lg:gap-20 items-center">
               <div className={`space-y-6 md:space-y-8 ${isAr ? 'text-right' : 'text-left'}`}>
-                 <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-black leading-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
                   {logisticsData["Text Element 1"]?.value}
                 </h2>
-                <p className="text-lg md:text-xl text-brand-charcoal leading-relaxed font-medium">
+                <p className="text-base md:text-lg text-brand-charcoal leading-relaxed font-medium">
                   {logisticsData["Text Element 2"]?.value}
                 </p>
 
@@ -214,8 +223,8 @@ export default async function MarketCoveragePage({ params }) {
       {/* CTA Section */}
       {ctaData && (
         <GlobalCTA
-           data={ctaData}
-           btnLink="/become-a-partner"
+          data={ctaData}
+          btnLink="/become-a-partner"
         />
       )}
     </div>

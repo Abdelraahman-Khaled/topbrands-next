@@ -3,6 +3,8 @@ import GlobalCTA from "../components/GlobalCTA";
 import Subscribe from "../components/Subscribe";
 import BlogFilterGrid from "./components/BlogFilterGrid";
 import { getPageData } from "@/services/home.service";
+import enCommon from "../i18n/local/en/common.js";
+import arCommon from "../i18n/local/ar/common.js";
 
 export default async function BlogPage({ params }) {
   const { locale } = await params;
@@ -56,6 +58,7 @@ export default async function BlogPage({ params }) {
       <BlogFilterGrid 
         blogs={blogs} 
         locale={locale} 
+        translations={locale === 'ar' ? arCommon : enCommon}
       />
 
       {/* Newsletter Subscription / CTA */}

@@ -36,6 +36,11 @@ const CoreValues = ({ data }) => {
             title: data["Element 11"]?.value,
             description: data["Element 12"]?.value,
         },
+        {
+            icon: "ri-lightbulb-line",
+            title: data["Element 13"]?.value,
+            description: data["Element 14"]?.value,
+        },
     ].filter(v => v.title); // Only show if title exists
 
     return (
@@ -75,4 +80,4 @@ const CoreValues = ({ data }) => {
     )
 }
 
-export default CoreValues;
+export default CoreValues;

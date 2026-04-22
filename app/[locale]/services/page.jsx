@@ -34,6 +34,7 @@ export default async function ServicesPage({ params }) {
     marketCov: findSection("market-cov"),
     merchVis: findSection("merch-vis"),
     importTrade: findSection("import-trade"),
+    marketIntelligence: findSection("market_intelligence"),
   };
 
   return (

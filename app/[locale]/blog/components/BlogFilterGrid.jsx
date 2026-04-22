@@ -20,7 +20,7 @@ const ALL_CATEGORIES = [
 
 import { motion, AnimatePresence } from "framer-motion";
 
-const BlogFilterGrid = ({ blogs, locale, translations }) => {
+const BlogFilterGrid = ({ blogs, locale, translations = {} }) => {
     const [selectedCategory, setSelectedCategory] = useState("all");
     const isAr = locale === 'ar';
 
@@ -54,7 +54,7 @@ const BlogFilterGrid = ({ blogs, locale, translations }) => {
                                         : "bg-white text-[#4B4F54] hover:bg-[#F7E326]/20 border-2 border-[#DEE3EB] hover:border-[#F7E326]"
                                         }`}
                                 >
-                                    {category === 'all' ? (isAr ? "الكل" : "All") : category.replace(/_/g, ' ')}
+                                    {translations[category] || category.replace(/_/g, ' ')}
                                 </button>
                             ))}
                         </div>
@@ -94,7 +94,7 @@ const BlogFilterGrid = ({ blogs, locale, translations }) => {
                                         <div className="absolute top-6 left-6 rtl:left-auto rtl:right-6">
                                             <span className="bg-[#F7E326] text-[#000000] px-6 py-2 rounded-full text-sm font-bold flex items-center gap-2">
                                                 <i className="ri-star-fill"></i>
-                                                {featuredPost.category.replace(/_/g, ' ')}
+                                                {translations[featuredPost.category] || featuredPost.category.replace(/_/g, ' ')}
                                             </span>
                                         </div>
                                     </div>
@@ -128,7 +128,7 @@ const BlogFilterGrid = ({ blogs, locale, translations }) => {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="mb-8 md:mb-12">
                         <h2 className="text-2xl md:text-3xl font-bold text-[#000000]">
-                            {selectedCategory === "all" ? (isAr ? "أحدث المقالات" : "Latest Articles") : `${selectedCategory.replace(/_/g, ' ')}`}
+                            {selectedCategory === "all" ? (isAr ? "أحدث المقالات" : "Latest Articles") : (translations[selectedCategory] || selectedCategory.replace(/_/g, ' '))}
                         </h2>
                     </div>
 
@@ -174,7 +174,7 @@ const BlogFilterGrid = ({ blogs, locale, translations }) => {
                                                     />
                                                     <div className="absolute top-4 left-4 rtl:left-auto rtl:right-4">
                                                         <span className="bg-[#F7E326] text-[#000000] px-4 py-2 rounded-full text-sm font-bold shadow-lg">
-                                                            {post.category.replace(/_/g, ' ')}
+                                                            {translations[post.category] || post.category.replace(/_/g, ' ')}
                                                         </span>
                                                     </div>
                                                 </div>

@@ -3,6 +3,7 @@ import StaggerContainer from "../../components/StaggerContainer";
 import StaggerItem from "../../components/StaggerItem";
 import AnimatedCard from "../../components/AnimatedCard";
 import HeroSection from "../../components/HeroSection";
+import Counter from "../../components/Counter";
 import GlobalCTA from "../../components/GlobalCTA";
 import { getPageData } from "@/services/home.service";
 
@@ -55,7 +56,13 @@ export default async function DistributionPage({ params }) {
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                             {stats.map((stat, index) => (
                                 <div key={index} className="text-center">
-                                    <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-jet mb-1 md:mb-2">{stat.value}</div>
+                                    <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-jet mb-1 md:mb-2">
+                                        {!isNaN(parseFloat(stat.value?.replace(/[^0-9.]/g, ""))) ? (
+                                            <Counter value={stat.value} />
+                                        ) : (
+                                            stat.value
+                                        )}
+                                    </div>
                                     <div className="text-xs md:text-base text-brand-charcoal font-bold tracking-wider">{stat.label}</div>
                                 </div>
                             ))}

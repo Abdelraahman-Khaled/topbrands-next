@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion"; // Added
 import HeroSection from "../components/HeroSection";
@@ -7,9 +7,37 @@ import ScrollReveal from "../components/ScrollReveal";
 import StaggerContainer from "../components/StaggerContainer";
 import StaggerItem from "../components/StaggerItem";
 import AnimatedCard from "../components/AnimatedCard";
+import { getPageData } from "@/services/home.service";
+import { useCompany } from "../components/CompanyProvider";
 
 export default function ContactPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { companyData } = useCompany();
+  const [pageData, setPageData] = useState(null);
+
+  useEffect(() => {
+    async function fetchPage() {
+      const res = await getPageData("contact_page", i18n.language);
+      if (res) {
+        setPageData(res);
+      }
+    }
+    fetchPage();
+  }, [i18n.language]);
+
+  const isAr = i18n.language === 'ar';
+  
+  // Find sections
+  const heroSection = pageData?.find(s => s.hero)?.hero;
+  
+  // Hero mapping
+  const heroImg = heroSection?.image_url || "/images/contact/hero-img.webp";
+  const heroTitle = heroSection?.["Text Element 2"]?.value || t("contact_us_title");
+  const heroYellowTitle = (isAr ? heroSection?.settings?.["2"]?.value : heroSection?.settings?.["0"]?.value) || t("growing_together");
+  const heroSubtitle = heroSection?.["Text Element 1"]?.value || t("contact_nav");
+  const heroDesc1 = heroSection?.["Text Element 3"]?.value || t("contact_hero_desc_1");
+  const heroYellowText = (isAr ? heroSection?.settings?.["3"]?.value : heroSection?.settings?.["1"]?.value) || t("contact_hero_desc_2");
+  const heroDesc2 = heroSection?.["Text Element 4"]?.value || t("contact_hero_desc_3");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -63,13 +91,13 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       <HeroSection
-        img="/images/contact/hero-img.webp"
-        title={t("contact_us_title")}
-        yellowTitle={t("growing_together")}
-        subtitle={t("contact_nav")}
-        description1={t("contact_hero_desc_1")}
-        yellowText={t("contact_hero_desc_2")}
-        description2={t("contact_hero_desc_3")}
+        img={heroImg}
+        title={heroTitle}
+        yellowTitle={heroYellowTitle}
+        subtitle={heroSubtitle}
+        description1={heroDesc1}
+        yellowText={heroYellowText}
+        description2={heroDesc2}
       />
 
       <ScrollReveal delay={0.1}>
@@ -83,7 +111,9 @@ export default function ContactPage() {
                     <i className="ri-phone-line text-3xl text-white"></i>
                   </div>
                   <h3 className="text-2xl font-bold text-black mb-3">{t("contact_phone")}</h3>
-                  <a href="tel:+963116022" className="text-lg text-brand-charcoal" dir="ltr">+963 11 6022</a>
+                  <a href={`tel:${(companyData?.phone_number_1 || "+963116022").replace(/\s/g, "")}`} className="text-lg text-brand-charcoal" dir="ltr">
+                    {companyData?.phone_number_1 || "+963 11 6022"}
+                  </a>
                 </AnimatedCard>
               </StaggerItem>
 
@@ -94,18 +124,24 @@ export default function ContactPage() {
                     <i className="ri-mail-line text-3xl text-black"></i>
                   </div>
                   <h3 className="text-2xl font-bold text-black mb-3">{t("email_us")}</h3>
-                  <a href="mailto:info@topbrands-sy.com" className="text-lg text-brand-charcoal break-all">info@topbrands-sy.com</a>
+                  <a href={`mailto:${companyData?.email || "info@topbrands-sy.com"}`} className="text-lg text-brand-charcoal break-all">
+                    {companyData?.email || "info@topbrands-sy.com"}
+                  </a>
                 </AnimatedCard>
               </StaggerItem>
 
               {/* Location Card */}
               <StaggerItem>
                 <AnimatedCard className="bg-brand-paleblue rounded-3xl p-10 h-full">
-                  <div className="w-16 h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6">
-                    <i className="ri-map-pin-line text-3xl text-white"></i>
-                  </div>
-                  <h3 className="text-2xl font-bold text-black mb-3">{t("contact_location")}</h3>
-                  <p className="text-lg text-brand-charcoal">{t("contact_damascus_syria")}</p>
+                  <a href={companyData?.google_maps_url || "#"} target="_blank" rel="noopener noreferrer" className="block h-full">
+                    <div className="w-16 h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6">
+                      <i className="ri-map-pin-line text-3xl text-white"></i>
+                    </div>
+                    <h3 className="text-2xl font-bold text-black mb-3">{t("contact_location")}</h3>
+                    <p className="text-lg text-brand-charcoal">
+                      {(isAr ? companyData?.address_ar : companyData?.address_en) || t("contact_damascus_syria")}
+                    </p>
+                  </a>
                 </AnimatedCard>
               </StaggerItem>
             </StaggerContainer>
