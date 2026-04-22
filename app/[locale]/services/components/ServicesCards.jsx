@@ -83,7 +83,8 @@ const ServicesGrid = ({ data }) => {
                     ))
                 )}
             </svg>
-
+ 
+ 
             {/* ── Dot grid (bottom-left) ── */}
             <svg className="absolute bottom-8 left-8 opacity-20 pointer-events-none" width="160" height="160" viewBox="0 0 160 160">
                 {Array.from({ length: 6 }).map((_, row) =>
