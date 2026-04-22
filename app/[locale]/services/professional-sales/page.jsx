@@ -55,6 +55,7 @@ export default async function SalesMerchandisingPage({ params }) {
         { title: list["Element 9"]?.value, desc: list["Element 10"]?.value },
     ].filter(i => i.title) : [];
 
+
     // Expert Team Features
     const expertFeatures = expertTeam ? [
         { t: expertTeam["Text Element 3"]?.value, d: expertTeam["Text Element 4"]?.value, icon: UserCheck },
@@ -142,10 +143,10 @@ export default async function SalesMerchandisingPage({ params }) {
                         </StaggerContainer>
                     </div>
                     <ScrollReveal delay={0.2} className="group overflow-hidden rounded-3xl">
-                        <img 
-                            src={expertTeam?.image_url || "/images/professional-sales/sales team.webp"} 
-                            className="w-full h-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-[1.03]" 
-                            alt="Sales Team" 
+                        <img
+                            src={expertTeam?.image_url || "/images/professional-sales/sales team.webp"}
+                            className="w-full h-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-[1.03]"
+                            alt="Sales Team"
                         />
                     </ScrollReveal>
                 </div>
@@ -185,7 +186,7 @@ export default async function SalesMerchandisingPage({ params }) {
             </section>
 
             {/* 6. CTA */}
-            <GlobalCTA 
+            <GlobalCTA
                 data={cta}
                 contact={true}
             />
