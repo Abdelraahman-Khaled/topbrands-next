@@ -1,14 +1,22 @@
 'use client'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import HeroSection from '../components/HeroSection';
 import { useTranslation } from 'react-i18next';
 import ScrollReveal from '../components/ScrollReveal';
 import StaggerContainer from '../components/StaggerContainer';
 import StaggerItem from '../components/StaggerItem';
 import AnimatedCard from '../components/AnimatedCard';
+import { getPageData } from '@/services/home.service';
+import { useCompany } from '../components/CompanyProvider';
+
+const BENEFIT_ICONS = ['ri-map-pin-line', 'ri-team-line', 'ri-line-chart-line', 'ri-shield-check-line'];
 
 export default function BecomePartnerPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { companyData } = useCompany();
+  const isAr = i18n.language === 'ar';
+
+  const [pageData, setPageData] = useState(null);
   const [formData, setFormData] = useState({
     companyName: '',
     contactPerson: '',
@@ -18,23 +26,60 @@ export default function BecomePartnerPage() {
     productCategory: '',
     message: ''
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('idle');
 
-  // Updated to use translation keys
+  useEffect(() => {
+    async function fetchPage() {
+      const res = await getPageData('became_partner', i18n.language);
+      if (res) setPageData(res);
+    }
+    fetchPage();
+  }, [i18n.language]);
+
+  const findSection = (key) => pageData?.find(s => s[key])?.[key];
+
+  const heroData = findSection('hero');
+  const benefitsData = findSection('benefits');
+  const partnershipData = findSection('partnership');
+  const contactUsData = findSection('contact_us');
+
+  // Benefits section
+  const benefitsTitle = benefitsData?.['Element 1']?.value || t('benefits_title');
+  const benefitsSubtitle = benefitsData?.['Element 2']?.value || t('benefits_subtitle');
   const benefits = [
-    { icon: 'ri-map-pin-line', id: 1 },
-    { icon: 'ri-team-line', id: 2 },
-    { icon: 'ri-line-chart-line', id: 3 },
-    { icon: 'ri-shield-check-line', id: 4 }
+    {
+      icon: BENEFIT_ICONS[0],
+      title: benefitsData?.['Element 3']?.value || t('benefit1_title'),
+      desc: benefitsData?.['Element 4']?.value || t('benefit1_desc'),
+    },
+    {
+      icon: BENEFIT_ICONS[1],
+      title: benefitsData?.['Element 5']?.value || t('benefit2_title'),
+      desc: benefitsData?.['Element 6']?.value || t('benefit2_desc'),
+    },
+    {
+      icon: BENEFIT_ICONS[2],
+      title: benefitsData?.['Element 7']?.value || t('benefit3_title'),
+      desc: benefitsData?.['Element 8']?.value || t('benefit3_desc'),
+    },
+    {
+      icon: BENEFIT_ICONS[3],
+      title: benefitsData?.['Element 9']?.value || t('benefit4_title'),
+      desc: benefitsData?.['Element 10']?.value || t('benefit4_desc'),
+    },
   ];
 
+  // Partnership form section
+  const formTitle = partnershipData?.['Element 1']?.value || t('form_title');
+  const formSubtitle = partnershipData?.['Element 2']?.value || t('form_subtitle');
+  const submitBtnLabel = partnershipData?.['Element 3']?.value || t('btn_submit');
+
+  // Contact us section
+  const directContactTitle = contactUsData?.['Element 1']?.value || t('direct_contact_title');
+
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -44,9 +89,7 @@ export default function BecomePartnerPage() {
 
     try {
       const formBody = new URLSearchParams();
-      Object.entries(formData).forEach(([key, value]) => {
-        formBody.append(key, value);
-      });
+      Object.entries(formData).forEach(([key, value]) => formBody.append(key, value));
 
       const response = await fetch('https://readdy.ai/api/form/d5v1oipr44f5krorl02g', {
         method: 'POST',
@@ -56,14 +99,11 @@ export default function BecomePartnerPage() {
 
       if (response.ok) {
         setSubmitStatus('success');
-        setFormData({
-          companyName: '', contactPerson: '', email: '',
-          phone: '', brandName: '', productCategory: '', message: ''
-        });
+        setFormData({ companyName: '', contactPerson: '', email: '', phone: '', brandName: '', productCategory: '', message: '' });
       } else {
         setSubmitStatus('error');
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -73,23 +113,27 @@ export default function BecomePartnerPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <HeroSection
-        img="/images/become a partner banner.webp"
-        title={t('expand_brand')}
-        yellowTitle={t('presence_syria')}
-        subtitle={t('partnership_nav')}
-        description1={t('growing_supports_partner')}
-        description2={t('national_become_partner')}
-        yellowText={t('strategic_market_entry_partner')}
-      />
+      {heroData ? (
+        <HeroSection data={heroData} />
+      ) : (
+        <HeroSection
+          img="/images/become a partner banner.webp"
+          title={t('expand_brand')}
+          yellowTitle={t('presence_syria')}
+          subtitle={t('partnership_nav')}
+          description1={t('growing_supports_partner')}
+          description2={t('national_become_partner')}
+          yellowText={t('strategic_market_entry_partner')}
+        />
+      )}
 
       {/* Partnership Benefits */}
       <ScrollReveal delay={0.1}>
         <section className="py-20 lg:py-28 bg-white">
           <div className="max-w-7xl mx-auto px-8 lg:px-16">
             <div className="text-center mb-16">
-              <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-4">{t('benefits_title')}</h2>
-              <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">{t('benefits_subtitle')}</p>
+              <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-4">{benefitsTitle}</h2>
+              <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">{benefitsSubtitle}</p>
             </div>
 
             <StaggerContainer className="grid md:grid-cols-2 gap-8">
@@ -99,8 +143,8 @@ export default function BecomePartnerPage() {
                     <div className={`w-16 h-16 flex items-center justify-center ${index % 2 === 0 ? 'bg-brand-yellow text-black' : 'bg-brand-charcoal text-white'} rounded-2xl mb-6 transition-transform duration-300`}>
                       <i className={`${benefit.icon} text-3xl`}></i>
                     </div>
-                    <h3 className="text-3xl font-bold text-brand-jet mb-4">{t(`benefit${benefit.id}_title`)}</h3>
-                    <p className="text-base text-brand-charcoal leading-relaxed">{t(`benefit${benefit.id}_desc`)}</p>
+                    <h3 className="text-3xl font-bold text-brand-jet mb-4">{benefit.title}</h3>
+                    <p className="text-base text-brand-charcoal leading-relaxed">{benefit.desc}</p>
                   </AnimatedCard>
                 </StaggerItem>
               ))}
@@ -113,8 +157,8 @@ export default function BecomePartnerPage() {
       <section className="py-20 lg:py-28 bg-brand-paleblue">
         <div className="max-w-5xl mx-auto px-8 lg:px-16">
           <div className="text-center mb-16">
-            <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-4">{t('form_title')}</h2>
-            <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">{t('form_subtitle')}</p>
+            <h2 className="text-5xl lg:text-6xl font-bold text-brand-jet mb-4">{formTitle}</h2>
+            <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">{formSubtitle}</p>
           </div>
 
           <div className="bg-white rounded-3xl p-10 lg:p-12 shadow-2xl">
@@ -211,15 +255,14 @@ export default function BecomePartnerPage() {
                   className={`mask-btn mask-btn--yellow-black !rounded-xl w-full transition-opacity ${isSubmitting ? 'opacity-50 pointer-events-none' : ''}`}
                 >
                   <span className="mask-btn__label">
-                    {isSubmitting ? t('btn_submitting') : t('btn_submit')}
+                    {isSubmitting ? t('btn_submitting') : submitBtnLabel}
                   </span>
                   <span className="mask-btn__fill">
-                    {isSubmitting ? t('btn_submitting') : t('btn_submit')}
+                    {isSubmitting ? t('btn_submitting') : submitBtnLabel}
                   </span>
                 </button>
               </form>
             </ScrollReveal>
-
           </div>
         </div>
       </section>
@@ -228,7 +271,7 @@ export default function BecomePartnerPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-8 lg:px-16">
           <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-4">{t('direct_contact_title')}</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold text-brand-jet mb-4">{directContactTitle}</h2>
           </div>
 
           <StaggerContainer className="grid md:grid-cols-3 gap-8">
@@ -238,7 +281,7 @@ export default function BecomePartnerPage() {
                 <i className="ri-mail-line text-3xl text-black"></i>
               </div>
               <h3 className="text-xl font-bold text-brand-jet mb-2">{t('contact_email')}</h3>
-              <p className="text-base text-brand-charcoal">info@topbrands-sy.com</p>
+              <p className="text-base text-brand-charcoal">{companyData?.email || 'info@topbrands-sy.com'}</p>
             </StaggerItem>
             <StaggerItem className="group text-center relative p-6 cursor-pointer">
               <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="16" fill="none" stroke="#f7e326" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
@@ -246,7 +289,7 @@ export default function BecomePartnerPage() {
                 <i className="ri-phone-line text-3xl text-white"></i>
               </div>
               <h3 className="text-xl font-bold text-brand-jet mb-2">{t('contact_phone')}</h3>
-              <p className="text-base text-brand-charcoal">+963 11 6022</p>
+              <p className="text-base text-brand-charcoal" dir="ltr">{companyData?.phone_number_1 || '+963 11 6022'}</p>
             </StaggerItem>
             <StaggerItem className="group text-center relative p-6 cursor-pointer">
               <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="16" fill="none" stroke="#f7e326" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
@@ -254,7 +297,9 @@ export default function BecomePartnerPage() {
                 <i className="ri-map-pin-line text-3xl text-black"></i>
               </div>
               <h3 className="text-xl font-bold text-brand-jet mb-2">{t('contact_location')}</h3>
-              <p className="text-base text-brand-charcoal">{t('city_syria')}</p>
+              <p className="text-base text-brand-charcoal">
+                {(isAr ? companyData?.address_ar : companyData?.address_en) || t('city_syria')}
+              </p>
             </StaggerItem>
           </StaggerContainer>
         </div>
