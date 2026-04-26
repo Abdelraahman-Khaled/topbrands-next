@@ -64,15 +64,10 @@ export default function ContactPage() {
     setSubmitStatus("idle");
 
     try {
-      const formBody = new URLSearchParams();
-      Object.entries(formData).forEach(([key, value]) => {
-        formBody.append(key, value);
-      });
-
-      const response = await fetch("https://readdy.ai/api/form/d5v1ot5r44f5krorl03g", {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: formBody.toString(),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
@@ -167,7 +162,7 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white text-black"
                       placeholder={t("your_full_name")}
                     />
                   </div>
@@ -179,7 +174,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white text-black"
                       placeholder={t("your_email")}
                     />
                   </div>
@@ -193,7 +188,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white text-black"
                       placeholder={t("your_phone_placeholder")}
                     />
                   </div>
@@ -204,7 +199,7 @@ export default function ContactPage() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white text-black"
                       placeholder={t("your_company")}
                     />
                   </div>
@@ -234,7 +229,7 @@ export default function ContactPage() {
                     required
                     rows={5}
                     maxLength={500}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-white text-black resize-none"
                     placeholder={t("message_placeholder")}
                   ></textarea>
                   <p className="text-xs text-right mt-1">{formData.message.length}/500</p>

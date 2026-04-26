@@ -1,8 +1,52 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import LocalizedLink from './LocalizedLink';
+
+function NewsletterForm({ t }) {
+    const [email, setEmail] = useState('');
+    const [status, setStatus] = useState('idle');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('submitting');
+        try {
+            const res = await fetch('/api/newsletter', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email }),
+            });
+            setStatus(res.ok ? 'success' : 'error');
+            if (res.ok) setEmail('');
+        } catch {
+            setStatus('error');
+        }
+    };
+
+    return (
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-2xl">
+            <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={t("newsletter_placeholder")}
+                className="w-full flex-1 bg-white/5 border border-white/20 rounded-lg px-6 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#F7E326]/50 transition-colors"
+            />
+            <button
+                type="submit"
+                disabled={status === 'submitting'}
+                className="mask-btn mask-btn--yellow-white rounded-lg! w-full sm:w-auto"
+            >
+                <span className="mask-btn__label">{status === 'submitting' ? '...' : t("newsletter_btn")}</span>
+                <span className="mask-btn__fill">{status === 'submitting' ? '...' : t("newsletter_btn")}</span>
+            </button>
+            {status === 'success' && <p className="text-green-400 text-sm w-full">{t("thank_you_msg")}</p>}
+            {status === 'error' && <p className="text-red-400 text-sm w-full">{t("error_msg")}</p>}
+        </form>
+    );
+}
 
 const Subscribe = ({ title, becomePartner = false, mail = false }) => {
     const { t } = useTranslation();
@@ -71,23 +115,7 @@ const Subscribe = ({ title, becomePartner = false, mail = false }) => {
                             </LocalizedLink>
                         </div>
                         :
-                        <form
-                            onSubmit={(e) => e.preventDefault()}
-                            className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-2xl"
-                        >
-                            <input
-                                type="email"
-                                placeholder={t("newsletter_placeholder")}
-                                className="w-full flex-1 bg-white/5 border border-white/20 rounded-lg px-6 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#F7E326]/50 transition-colors"
-                            />
-                            <button
-                                type="submit"
-                                className="mask-btn mask-btn--yellow-white !rounded-lg w-full sm:w-auto"
-                            >
-                                <span className="mask-btn__label">{t("newsletter_btn")}</span>
-                                <span className="mask-btn__fill">{t("newsletter_btn")}</span>
-                            </button>
-                        </form>
+                        <NewsletterForm t={t} />
                 }
 
 

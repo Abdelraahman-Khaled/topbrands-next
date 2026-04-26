@@ -30,15 +30,10 @@ const ContactForm = () => {
         setSubmitStatus("idle");
 
         try {
-            const formBody = new URLSearchParams();
-            Object.entries(formData).forEach(([key, value]) => {
-                formBody.append(key, value);
-            });
-
-            const response = await fetch(process.env.NEXT_PUBLIC_FORM_ENDPOINT || "https://readdy.ai/api/form/d5v1ot5r44f5krorl03g", {
+            const response = await fetch("/api/contact", {
                 method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: formBody.toString(),
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
             });
 
             if (response.ok) {

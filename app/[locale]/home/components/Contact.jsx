@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "../../components/ScrollReveal";
 import StaggerContainer from "../../components/StaggerContainer";
@@ -6,6 +7,34 @@ import StaggerItem from "../../components/StaggerItem";
 
 export default function Contact({ data }) {
   const { t, i18n } = useTranslation();
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", company: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState("idle");
+
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, subject: "Home Page Contact" }),
+      });
+      if (res.ok) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   if (!data) return null;
 
@@ -108,13 +137,13 @@ export default function Contact({ data }) {
                 </p>
               </div>
 
-              <form className="grid md:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-white font-bold mb-2">
                     {t("name_required")}
                   </label>
                   <input
-                    type="text"
+                    type="text" name="name" value={formData.name} onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg bg-white/10 border-2 border-white/20 text-white placeholder-gray-400 focus:border-[#F7E326] focus:bg-white/20 outline-none transition-all font-medium"
                     placeholder={data["Form Name Placeholder"]?.value || t("your_name_placeholder")}
@@ -126,7 +155,7 @@ export default function Contact({ data }) {
                     {t("email_required")}
                   </label>
                   <input
-                    type="email"
+                    type="email" name="email" value={formData.email} onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg bg-white/10 border-2 border-white/20 text-white placeholder-gray-400 focus:border-[#F7E326] focus:bg-white/20 outline-none transition-all font-medium"
                     placeholder={data["Form Email Placeholder"]?.value || t("your_email_placeholder")}
@@ -138,7 +167,7 @@ export default function Contact({ data }) {
                     {t("phone_number")}
                   </label>
                   <input
-                    type="tel"
+                    type="tel" name="phone" value={formData.phone} onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg bg-white/10 border-2 border-white/20 text-white placeholder-gray-400 focus:border-[#F7E326] focus:bg-white/20 outline-none transition-all font-medium"
                     placeholder={data["Form Phone Placeholder"]?.value || "+963 XX XXX XXXX"}
                   />
@@ -149,7 +178,7 @@ export default function Contact({ data }) {
                     {t("company_name")}
                   </label>
                   <input
-                    type="text"
+                    type="text" name="company" value={formData.company} onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg bg-white/10 border-2 border-white/20 text-white placeholder-gray-400 focus:border-[#F7E326] focus:bg-white/20 outline-none transition-all font-medium"
                     placeholder={data["Form Company Placeholder"]?.value || t("your_company_placeholder")}
                   />
@@ -160,24 +189,36 @@ export default function Contact({ data }) {
                     {t("message_required")}
                   </label>
                   <textarea
-                    required
-                    rows={5}
+                    name="message" value={formData.message} onChange={handleChange}
+                    required rows={5}
                     className="w-full px-4 py-3 rounded-lg bg-white/10 border-2 border-white/20 text-white placeholder-gray-400 focus:border-[#F7E326] focus:bg-white/20 outline-none transition-all resize-none font-medium"
                     placeholder={data["Form Message Placeholder"]?.value || t("tell_us_distribution_placeholder")}
                   ></textarea>
                 </div>
 
+                {submitStatus === "success" && (
+                  <div className="md:col-span-2 p-4 bg-green-900/40 border border-green-500 rounded-lg text-green-300 text-sm text-center">
+                    {t("thank_you_msg")}
+                  </div>
+                )}
+                {submitStatus === "error" && (
+                  <div className="md:col-span-2 p-4 bg-red-900/40 border border-red-500 rounded-lg text-red-300 text-sm text-center">
+                    {t("error_msg")}
+                  </div>
+                )}
+
                 <div className="md:col-span-2 text-center">
                   <button
                     type="submit"
-                    className="mask-btn mask-btn--yellow-white"
+                    disabled={isSubmitting}
+                    className={`mask-btn mask-btn--yellow-white transition-opacity ${isSubmitting ? "opacity-50 pointer-events-none" : ""}`}
                   >
                     <span className="mask-btn__label">
-                      {submitLabel}
+                      {isSubmitting ? t("btn_submitting") : submitLabel}
                       <i className="ri-send-plane-fill rtl:-rotate-90 mx-2"></i>
                     </span>
                     <span className="mask-btn__fill" tabIndex={-1} aria-hidden="true">
-                      {submitLabel}
+                      {isSubmitting ? t("btn_submitting") : submitLabel}
                       <i className="ri-send-plane-fill rtl:-rotate-90 mx-2"></i>
                     </span>
                   </button>

@@ -88,13 +88,10 @@ export default function BecomePartnerPage() {
     setSubmitStatus('idle');
 
     try {
-      const formBody = new URLSearchParams();
-      Object.entries(formData).forEach(([key, value]) => formBody.append(key, value));
-
-      const response = await fetch('https://readdy.ai/api/form/d5v1oipr44f5krorl02g', {
+      const response = await fetch('/api/partner', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: formBody.toString()
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
       });
 
       if (response.ok) {
@@ -169,7 +166,7 @@ export default function BecomePartnerPage() {
                     <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_company')}</label>
                     <input
                       type="text" name="companyName" value={formData.companyName} onChange={handleChange} required
-                      className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
+                      className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
                       placeholder={t('placeholder_company')}
                     />
                   </div>
@@ -177,7 +174,7 @@ export default function BecomePartnerPage() {
                     <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_contact')}</label>
                     <input
                       type="text" name="contactPerson" value={formData.contactPerson} onChange={handleChange} required
-                      className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
+                      className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
                       placeholder={t('placeholder_contact')}
                     />
                   </div>
@@ -188,7 +185,7 @@ export default function BecomePartnerPage() {
                     <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_email')}</label>
                     <input
                       type="email" name="email" value={formData.email} onChange={handleChange} required
-                      className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
+                      className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
                       placeholder={t('placeholder_email')}
                     />
                   </div>
@@ -196,7 +193,7 @@ export default function BecomePartnerPage() {
                     <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_phone')}</label>
                     <input
                       type="tel" name="phone" value={formData.phone} onChange={handleChange} required
-                      className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
+                      className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
                       placeholder={t('placeholder_phone')}
                     />
                   </div>
@@ -207,7 +204,7 @@ export default function BecomePartnerPage() {
                     <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_brand')}</label>
                     <input
                       type="text" name="brandName" value={formData.brandName} onChange={handleChange} required
-                      className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
+                      className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
                       placeholder={t('placeholder_brand')}
                     />
                   </div>
@@ -231,7 +228,7 @@ export default function BecomePartnerPage() {
                   <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_message')}</label>
                   <textarea
                     name="message" value={formData.message} onChange={handleChange} rows={5} maxLength={500}
-                    className="w-full px-4 py-3 text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none resize-none"
+                    className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none resize-none"
                     placeholder={t('placeholder_message')}
                   ></textarea>
                   <p className="text-xs text-brand-charcoal mt-2">{formData.message.length}/500</p>
