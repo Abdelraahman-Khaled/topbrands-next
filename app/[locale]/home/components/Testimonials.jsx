@@ -80,7 +80,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:transform hover:-translate-y-2 cursor-pointer border-2 border-transparent hover:border-[#F7E326]"
+              className="group card-hover bg-white rounded-2xl p-8 shadow-md cursor-pointer border-2 border-transparent"
               onClick={() => setActiveIndex(index)}
             >
               <div className="flex items-start gap-6 mb-6">

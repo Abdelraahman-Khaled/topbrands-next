@@ -94,8 +94,8 @@ export default async function LogisticsPage({ params }) {
                     <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                         {features.map((feature, index) => (
                             <StaggerItem key={index}>
-                                <div className="h-full bg-brand-paleblue rounded-[32px] p-8 md:p-10 transition-all duration-500 border border-transparent hover:border-brand-yellow group flex flex-col">
-                                    <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6 group-hover:rotate-6 transition-all duration-300">
+                                <div className="group card-hover h-full bg-brand-paleblue rounded-[32px] p-8 md:p-10 border-s-3 border-gray-200 hover:border-brand-yellow transition-colors duration-500 ease-in-out flex flex-col">
+                                    <div className="icon-hover w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6">
                                         <i className={`${feature.icon} text-2xl md:text-3xl text-brand-yellow`}></i>
                                     </div>
                                     <h3 className="text-xl md:text-2xl font-bold text-brand-jet mb-3 md:mb-4">{feature.title}</h3>
@@ -131,8 +131,9 @@ export default async function LogisticsPage({ params }) {
 
                             <StaggerContainer className="space-y-4">
                                 {warehousePoints.map((text, i) => (
-                                    <StaggerItem key={i} className="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm hover:shadow-md hover:-translate-x-1 rtl:hover:translate-x-1 transition-all duration-300 group">
-                                        <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-brand-yellow rounded-xl flex-shrink-0 group-hover:rotate-12 transition-transform">
+                                    <StaggerItem key={i} className="group flex items-center gap-4 p-4 rounded-2xl relative cursor-pointer">
+                                        <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="12" fill="none" stroke="black" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
+                                        <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-brand-yellow rounded-xl flex-shrink-0">
                                             <i className="ri-checkbox-circle-line text-xl md:text-2xl text-brand-jet"></i>
                                         </div>
                                         <span className="text-base md:text-lg text-brand-jet font-bold">{text}</span>
@@ -160,9 +161,9 @@ export default async function LogisticsPage({ params }) {
 
                             <StaggerContainer className="grid grid-cols-2 gap-4 md:gap-6">
                                 {fleetItems.map((item, i) => (
-                                    <StaggerItem key={i} className="bg-brand-paleblue p-6 rounded-[24px] text-center border border-transparent hover:bg-white hover:shadow-lg transition-all duration-500 group">
-                                        <i className={`${item.icon} text-3xl md:text-4xl text-brand-jet mb-3 block transition-transform `}></i>
-                                        <h4 className="text-base md:text-lg font-bold text-brand-jet group-hover:text-brand-charcoal transition-colors">{item.title}</h4>
+                                    <StaggerItem key={i} className="group card-hover bg-brand-paleblue p-6 rounded-[24px]  border-s-3 border-gray-200 hover:border-brand-yellow transition-colors duration-500 ease-in-out text-center">
+                                        <i className={`${item.icon} text-3xl md:text-4xl text-brand-jet mb-3 block`}></i>
+                                        <h4 className="text-base md:text-lg font-bold text-brand-jet">{item.title}</h4>
                                         <p className="text-xs md:text-sm text-brand-charcoal font-medium">{item.desc}</p>
                                     </StaggerItem>
                                 ))}

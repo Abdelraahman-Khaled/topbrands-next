@@ -69,24 +69,22 @@ export default function WhyChooseUs({ data }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
           {services.map((service, index) => (
             <AnimatedCard
               key={index}
-              className="group relative rounded-2xl pr-0 sm:pr-8 rtl:sm:pr-0 rtl:sm:pl-8 h-full transition-all duration-500
-               sm:after:content-[''] sm:after:absolute sm:after:right-0 rtl:sm:after:right-auto rtl:sm:after:left-0 sm:after:top-1/3 sm:after:-translate-y-1/2 
-               sm:after:w-[1px] sm:after:h-[40%] sm:after:bg-[#4B4F54]/20 sm:last:after:hidden
-               hover:shadow-[0_20px_50px_rgba(247,227,38,0.1)] p-4 sm:p-0"
+              className="group card-hover relative rounded-2xl p-3 sm:p-4 sm:pr-10 rtl:sm:pr-4 rtl:sm:pl-10 h-full border border-transparent
+               sm:after:content-[''] sm:after:absolute sm:after:right-0 rtl:sm:after:right-auto rtl:sm:after:left-0 sm:after:top-1/3 sm:after:-translate-y-1/2
+               sm:after:w-[1px] sm:after:h-[40%] sm:after:bg-[#4B4F54]/20 sm:last:after:hidden"
             >
-              <div className={`w-14 h-14 flex items-center justify-center rounded-xl mb-6 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-sm group-hover:shadow-md ${service.iconBg}`}>
-                <div className="transition-transform duration-500 group-hover:scale-110">
-                  {service.icon}
-                </div>
+              <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="12" fill="none" stroke="#F7E326" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
+              <div className={`icon-hover w-14 h-14 flex items-center justify-center rounded-xl mb-6 shadow-sm ${service.iconBg}`}>
+                {service.icon}
               </div>
-              <h3 className="text-[20px] font-bold text-black mb-4 transition-colors duration-300 group-hover:text-brand-charcoal">
+              <h3 className="text-[20px] font-bold text-black mb-4">
                 {service.title}
               </h3>
-              <p className="text-base text-[#4B4F54] leading-relaxed mb-6 transition-colors duration-300 group-hover:text-black">
+              <p className="text-base text-[#4B4F54] leading-relaxed mb-6">
                 {service.desc}
               </p>
             </AnimatedCard>

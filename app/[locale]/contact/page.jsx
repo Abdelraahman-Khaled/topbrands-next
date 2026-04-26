@@ -26,10 +26,10 @@ export default function ContactPage() {
   }, [i18n.language]);
 
   const isAr = i18n.language === 'ar';
-  
+
   // Find sections
   const heroSection = pageData?.find(s => s.hero)?.hero;
-  
+
   // Hero mapping
   const heroImg = heroSection?.image_url || "/images/contact/hero-img.webp";
   const heroTitle = heroSection?.["Text Element 2"]?.value || t("contact_us_title");
@@ -106,7 +106,9 @@ export default function ContactPage() {
             <StaggerContainer className="grid md:grid-cols-3 gap-8 mb-20">
               {/* Phone Card */}
               <StaggerItem>
-                <AnimatedCard className="bg-brand-paleblue rounded-3xl p-10 h-full">
+
+                <AnimatedCard className="group bg-brand-paleblue rounded-3xl p-10 h-full relative">
+                  <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="24" fill="none" stroke="black" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
                   <div className="w-16 h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6">
                     <i className="ri-phone-line text-3xl text-white"></i>
                   </div>
@@ -119,7 +121,8 @@ export default function ContactPage() {
 
               {/* Email Card */}
               <StaggerItem>
-                <AnimatedCard className="bg-brand-paleblue rounded-3xl p-10 h-full">
+                <AnimatedCard className="group bg-brand-paleblue rounded-3xl p-10 h-full relative">
+                  <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="24" fill="none" stroke="black" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
                   <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-6">
                     <i className="ri-mail-line text-3xl text-black"></i>
                   </div>
@@ -132,7 +135,8 @@ export default function ContactPage() {
 
               {/* Location Card */}
               <StaggerItem>
-                <AnimatedCard className="bg-brand-paleblue rounded-3xl p-10 h-full">
+                <AnimatedCard className="group bg-brand-paleblue rounded-3xl p-10 h-full relative">
+                  <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="24" fill="none" stroke="black" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
                   <a href={companyData?.google_maps_url || "#"} target="_blank" rel="noopener noreferrer" className="block h-full">
                     <div className="w-16 h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6">
                       <i className="ri-map-pin-line text-3xl text-white"></i>

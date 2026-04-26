@@ -173,7 +173,7 @@ export default function Navbar() {
                   <div className="flex items-center gap-1 cursor-pointer py-2">
                     <LocalizedLink
                       href={link.href}
-                      className={`relative text-base font-semibold text-white hover:text-brand-yellow tracking-wide transition-colors whitespace-nowrap group`}
+                      className={`relative text-base font-semibold text-white hover:text-brand-yellow tracking-wide transition-colors whitespace-nowrap group ag-hover-effect inline-block`}
                     >
                       {t(link.key)}
                       <motion.span
@@ -207,7 +207,7 @@ export default function Navbar() {
                 ) : (
                   <LocalizedLink
                     href={link.href}
-                    className={`relative text-base font-semibold text-white hover:text-brand-yellow tracking-wide transition-colors whitespace-nowrap cursor-pointer group`}
+                    className={`relative text-base font-semibold text-white hover:text-brand-yellow tracking-wide transition-colors whitespace-nowrap cursor-pointer group ag-hover-effect inline-block`}
                   >
                     {t(link.key)}
                     <motion.span

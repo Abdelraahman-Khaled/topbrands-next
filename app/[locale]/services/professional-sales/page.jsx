@@ -16,8 +16,8 @@ const MerchCard = ({ title, description, id }) => {
     ];
     return (
         <StaggerItem className="h-full">
-            <div className="bg-[#DEE3EB] p-8 md:p-10 rounded-[32px] flex flex-col gap-5 h-full shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group border border-transparent hover:border-brand-yellow">
-                <div className="bg-brand-yellow w-14 h-14 flex items-center justify-center rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+            <div className="group card-hover bg-[#DEE3EB] p-8 md:p-10 rounded-[32px] flex flex-col gap-5 h-full shadow-sm border-s-3 border-gray-200 hover:border-brand-yellow transition-all duration-500 ease-in-out">
+                <div className="icon-hover bg-brand-yellow w-14 h-14 flex items-center justify-center rounded-2xl">
                     <img src={icons[id % 4]} alt="icon" className="w-8 h-8 object-contain" />
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold text-black">{title}</h3>
@@ -130,8 +130,9 @@ export default async function SalesMerchandisingPage({ params }) {
                         </ScrollReveal>
                         <StaggerContainer className="space-y-6 md:space-y-8">
                             {expertFeatures.map((item, idx) => (
-                                <StaggerItem key={idx} className="flex gap-4 md:gap-5 items-start group">
-                                    <div className="bg-brand-yellow p-3 rounded-xl group-hover:rotate-12 transition-transform duration-300">
+                                <StaggerItem key={idx} className="flex gap-4 md:gap-5 items-start group relative p-4 cursor-pointer">
+                                    <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="12" fill="none" stroke="black" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
+                                    <div className="bg-brand-yellow p-3 rounded-xl transition-transform duration-300">
                                         <item.icon size={24} className="text-black" />
                                     </div>
                                     <div>
@@ -145,7 +146,7 @@ export default async function SalesMerchandisingPage({ params }) {
                     <ScrollReveal delay={0.2} className="group overflow-hidden rounded-3xl">
                         <img
                             src={expertTeam?.image_url || "/images/professional-sales/sales team.webp"}
-                            className="w-full h-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-[1.03]"
+                            className="w-full h-full object-cover shadow-2xl transition-transform "
                             alt="Sales Team"
                         />
                     </ScrollReveal>
@@ -158,7 +159,7 @@ export default async function SalesMerchandisingPage({ params }) {
                     <ScrollReveal className="order-2 lg:order-1 group overflow-hidden rounded-[2.5rem]">
                         <img
                             src={results?.image_url || "/images/professional-sales/results.webp"}
-                            className="w-full object-cover shadow-2xl transition-transform duration-700 group-hover:scale-[1.03]"
+                            className="w-full object-cover shadow-2xl transition-transform "
                             alt="Retail Shelf"
                         />
                     </ScrollReveal>
@@ -174,7 +175,7 @@ export default async function SalesMerchandisingPage({ params }) {
                         <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                             {stats.map((stat, i) => (
                                 <StaggerItem key={i}>
-                                    <div className="bg-brand-paleblue p-6 md:p-8 rounded-[32px] text-center border border-transparent hover:border-brand-yellow hover:shadow-lg transition-all duration-300">
+                                    <div className="card-hover bg-brand-paleblue p-6 md:p-8 rounded-[32px] text-center border-s-2 border-gray-200 hover:border-brand-yellow transition-all duration-500 ease-in-out">
                                         <h3 className="text-3xl md:text-4xl font-black text-brand-jet mb-1">{stat.v}</h3>
                                         <p className="text-xs md:text-sm text-brand-charcoal font-bold uppercase tracking-wider">{stat.l}</p>
                                     </div>

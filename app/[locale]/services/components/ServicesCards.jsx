@@ -22,9 +22,9 @@ const ServiceCard = ({ icon: Icon, data, isYellow }) => {
 
     return (
         <ScrollReveal>
-            <StaggerItem className="flex flex-col gap-5 p-8 md:p-12 rounded-3xl border-2 border-gray-200 bg-white h-full transition-all hover:border-[#F7E326] hover:shadow-xl">
+            <StaggerItem className="group card-hover flex flex-col gap-5 p-8 md:p-12 rounded-3xl border-s-2  border-gray-200 hover:border-brand-yellow bg-white h-full hover:shadow-lg transition-all duration-500 ease-in-out">
                 {/* Icon with dynamic background */}
-                <div className={`w-16 h-16 flex items-center justify-center rounded-2xl shadow-sm ${isYellow ? 'bg-[#F7E326] text-black' : 'bg-[#4B4B4B] text-white'}`}>
+                <div className={`icon-hover w-16 h-16 flex items-center justify-center rounded-2xl shadow-sm ${isYellow ? 'bg-[#F7E326] text-black' : 'bg-[#4B4B4B] text-white'}`}>
                     <Icon size={30} strokeWidth={2.5} />
                 </div>
 
@@ -69,7 +69,7 @@ const ServicesGrid = ({ data }) => {
     ];
 
     return (
-        <section className="relative w-full bg-[#DEE3EB] py-20 lg:py-28 px-6 overflow-hidden">
+        <section className="relative w-full py-20 lg:py-28 px-6 overflow-hidden" style={{ background: "rgba(247, 227, 38, 0.08)" }}>
 
             {/* ── Decorative blobs ── */}
             <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-yellow/20 rounded-full blur-[100px] pointer-events-none" />
@@ -83,8 +83,8 @@ const ServicesGrid = ({ data }) => {
                     ))
                 )}
             </svg>
- 
- 
+
+
             {/* ── Dot grid (bottom-left) ── */}
             <svg className="absolute bottom-8 left-8 opacity-20 pointer-events-none" width="160" height="160" viewBox="0 0 160 160">
                 {Array.from({ length: 6 }).map((_, row) =>

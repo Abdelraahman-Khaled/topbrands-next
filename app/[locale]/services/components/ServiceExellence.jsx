@@ -7,18 +7,18 @@ import StaggerItem from '../../components/StaggerItem';
 
 const FeatureCard = ({ icon: Icon, title, description, isYellow }) => {
     return (
-        <StaggerItem className={` cursor-pointer group rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] transition-all duration-500 h-full ${isYellow ? 'bg-white hover:bg-[#F7E326]' : 'bg-white hover:bg-brand-jet'}`}>
+        <StaggerItem className={`group cursor-pointer rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] h-full bg-white border-s-2 border-gray-200 transition-all duration-500 ease-in-out ${isYellow ? 'hover:bg-brand-yellow hover:border-brand-yellow' : 'hover:bg-brand-jet'}`}>
             {/* Icon Container */}
-            <div className={`w-20 h-20 flex items-center justify-center rounded-2xl mb-6 transition-all duration-500 ${isYellow ? 'bg-[#F7E326] text-black group-hover:bg-brand-jet group-hover:text-[#F7E326]' : 'bg-brand-charcoal text-white group-hover:bg-[#F7E326] group-hover:text-brand-jet'}`}>
+            <div className={`w-20 h-20 flex items-center justify-center rounded-2xl mb-6 transition-colors duration-500 ${isYellow ? 'bg-[#F7E326] text-black group-hover:bg-black group-hover:text-brand-yellow' : 'bg-brand-charcoal text-white group-hover:bg-brand-yellow group-hover:text-brand-jet'}`}>
                 <Icon size={28} strokeWidth={2} />
             </div>
 
             {/* Text Content */}
-            <h4 className={`text-2xl font-bold mb-3 tracking-tight transition-colors duration-500 ${isYellow ? 'text-black group-hover:text-black' : 'text-black group-hover:text-white'}`}>
+            <h4 className={`text-2xl font-bold mb-3 tracking-tight text-black transition-colors duration-500 ${isYellow ? "group-hover:text-black" : "group-hover:text-white"} `}>
                 {title}
             </h4>
 
-            <p className={`text-base leading-relaxed max-w-[200px] transition-colors duration-500 ${isYellow ? 'text-brand-charcoal group-hover:text-black/70' : 'text-brand-charcoal group-hover:text-gray-300'}`}>
+            <p className={`text-base leading-relaxed max-w-[200px] text-brand-charcoal transition-colors duration-500 ${isYellow ? "group-hover:text-black" : "group-hover:text-white"} `}>
                 {description}
             </p>
         </StaggerItem>

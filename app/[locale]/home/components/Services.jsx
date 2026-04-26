@@ -109,9 +109,9 @@ export default function Services({ data, cta }) {
           {servicesList.map((service, index) => (
             <StaggerItem key={index}>
               <AnimatedCard
-                className="bg-white border-2 border-[#DEE3EB] p-8 rounded-2xl hover:border-[#F7E326] transition-all group h-full block"
+                className="group bg-white border-s-4  border-gray-200 hover:border-brand-yellow p-8 rounded-2xl h-full block hover:shadow-lg transition-all duration-500 ease-in-out"
               >
-                <div className={`w-14 h-14 flex items-center justify-center rounded-xl mb-6 ${service.iconBg}`}>
+                <div className={`icon-hover w-14 h-14 flex items-center justify-center rounded-xl mb-6 ${service.iconBg}`}>
                   {service.icon}
                 </div>
                 <h3 className="text-[24px] font-bold text-black mb-4">

@@ -87,8 +87,8 @@ export default async function DistributionPage({ params }) {
                         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                             {features.map((feature, index) => (
                                 <StaggerItem key={index}>
-                                    <AnimatedCard className="h-full bg-brand-paleblue rounded-[32px] p-8 md:p-10 border border-transparent hover:border-brand-yellow group">
-                                        <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                                    <AnimatedCard className="group card-hover h-full bg-brand-paleblue rounded-[32px] p-8 md:p-10 border-s-3 border-gray-200 hover:border-brand-yellow transition-colors duration-500 ease-in-out">
+                                        <div className="icon-hover w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-6">
                                             <i className={`${feature.icon} text-2xl md:text-3xl text-brand-jet`}></i>
                                         </div>
                                         <h3 className="text-xl md:text-2xl font-bold text-brand-jet mb-3 md:mb-4">{feature.title}</h3>
@@ -115,7 +115,8 @@ export default async function DistributionPage({ params }) {
 
                             <StaggerContainer className="space-y-6">
                                 {steps.map((step, i) => (
-                                    <StaggerItem key={i} className="flex items-start gap-4">
+                                    <StaggerItem key={i} className="group flex items-start gap-4 relative p-3 cursor-pointer">
+                                        <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="12" fill="none" stroke="black" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
                                         <div className="w-10 h-10 flex items-center justify-center bg-brand-yellow rounded-full text-brand-jet font-bold flex-shrink-0">
                                             {i + 1}
                                         </div>

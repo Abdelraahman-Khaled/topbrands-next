@@ -63,6 +63,17 @@ textarea::placeholder {
   color: gray;
 }
 
+/* card hover left-to-right fill */
+.hover-fill-ltr {
+  background-image: linear-gradient(to right, #f7e326 50%, #ffffff 50%);
+  background-size: 200% 100%;
+  background-position: right center;
+  transition: background-position 0.4s ease;
+}
+.hover-fill-ltr:hover {
+  background-position: left center;
+}
+
 /* animation  */
 
 /* ════════════════════════════════════════════════════════════════════
@@ -81,10 +92,14 @@ textarea::placeholder {
   border: none;
   min-width: 200px;
   height: 56px;
-  transition: all 0.3s ease, background-color 0s linear 0.7s;
+  transition:
+    all 0.3s ease,
+    background-color 0s linear 0.7s;
 }
 .mask-btn:hover {
-  transition: all 0.3s ease, background-color 0s linear 0s;
+  transition:
+    all 0.3s ease,
+    background-color 0s linear 0s;
 }
 
 /* ── THEMES ── */
@@ -287,11 +302,99 @@ textarea::placeholder {
   }
 }
 
-img {
-  transition: scale 0.5s ease-in-out;
-  will-change: scale; /* Hint to the browser for smoother animation */
+/* ═══════════════════════════════════════════════════════════════════
+   Antigravity Unified Hover System (.ag-hover-effect)
+   ─────────────────────────────────────────────────────────────────── */
+
+.ag-hover-effect {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-img:hover {
-  scale: 1.05;
+@media (hover: hover) {
+  .ag-hover-effect:hover {
+    transform: translateY(-6px) scale(1.01) !important;
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+    z-index: 10;
+  }
+
+  /* If applied to a white-ish card, add the yellow border accent */
+  .ag-hover-effect.bg-white:hover,
+  .ag-hover-effect.bg-brand-paleblue:hover {
+    border-color: #f7e326 !important;
+  }
+
+  /* If applied to a dark card or in a dark section, add a subtle glow */
+  .bg-black .ag-hover-effect:hover,
+  .ag-hover-effect.bg-black:hover {
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.4),
+      0 0 20px rgba(247, 227, 38, 0.1) !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+  }
+}
+
+
+
+/* Icon container inside a card — cleaner transition */
+.icon-hover {
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+@media (hover: hover) {
+  .group:hover .icon-hover {
+    transform: none;
+  }
+}
+
+/* Border trace animation — 4 sides clockwise starting from bottom */
+@keyframes trace-h {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes trace-v {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.trace-border-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.trace-border-rect {
+  transition: stroke-dashoffset 0.8s ease-in-out;
+}
+
+@media (hover: hover) {
+  .group:hover .trace-border-rect {
+    stroke-dashoffset: 0 !important;
+  }
+}
+
+/* Images — unified timing */
+@media (hover: hover) {
+  img {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .group:hover img:not(.no-zoom) {
+    transform: scale(1.03);
+  }
 }

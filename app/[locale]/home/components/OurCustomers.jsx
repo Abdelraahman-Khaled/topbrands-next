@@ -142,7 +142,7 @@ export default function OurCustomers() {
               .map((customer, index) => (
                 <StaggerItem
                   key={index}
-                  className="group bg-white rounded-2xl p-8 shadow-lg transition-all hover:-translate-y-2 "
+                  className="group card-hover bg-white rounded-2xl p-8 shadow-md border border-transparent"
                 >
                   <div className="w-full h-32 flex items-center justify-center mb-4  rounded-xl overflow-hidden">
                     <img
@@ -181,7 +181,7 @@ export default function OurCustomers() {
           {stats.map((stat) => (
             <StaggerItem
               key={stat.id}
-              className="bg-white rounded-[16px] p-6 sm:p-10 flex flex-col items-center justify-center shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] transition-shadow duration-300 border border-gray-50"
+              className="card-hover bg-white rounded-[16px] p-6 sm:p-10 flex flex-col items-center justify-center shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-50"
             >
               {/* Icon Container */}
               <div

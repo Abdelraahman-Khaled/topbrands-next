@@ -46,7 +46,7 @@ const AboutCertifications = () => {
                     {certifications.map((cert, index) => (
                         <StaggerItem
                             key={index}
-                            className="bg-white rounded-2xl p-5 md:p-6 text-center hover:shadow-xl transition-all duration-300"
+                            className="group card-hover bg-white rounded-2xl p-5 md:p-6 text-center border border-transparent"
                         >
                             <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-xl mb-4 mx-auto">
                                 <i className={`${cert.icon} text-3xl text-brand-jet`}></i>

@@ -31,7 +31,7 @@ export default function ProductsBrands({ data, brands = [] }) {
                 <LocalizedLink
                   key={brand.id || index}
                   href={`/brands/${brand.id}`}
-                  className={`w-[calc(50%-1.5rem)] md:w-[calc(33.33%-3rem)] lg:w-[calc(20%-3rem)] aspect-[4/3] flex items-center justify-center transition-transform hover:-translate-y-2 duration-300 group relative ${brand.is_highlighted ? "before:absolute before:inset-0 before:bg-[#F7E326]/5 before:rounded-3xl before:blur-2xl" : ""}`}
+                  className={`card-hover w-[calc(50%-1.5rem)] md:w-[calc(33.33%-3rem)] lg:w-[calc(20%-3rem)] aspect-[4/3] flex items-center justify-center group relative rounded-2xl border border-transparent ${brand.is_highlighted ? "before:absolute before:inset-0 before:bg-[#F7E326]/5 before:rounded-3xl before:blur-2xl" : ""}`}
                 >
                   {brand.is_highlighted && (
                     <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 z-10 w-6 h-6 bg-[#F7E326] rounded-full flex items-center justify-center text-[10px] text-black shadow-sm ring-4 ring-white">
@@ -41,7 +41,7 @@ export default function ProductsBrands({ data, brands = [] }) {
                   <img
                     src={brand.image_url}
                     alt={brand.title || brand.alt_text}
-                    className="max-w-[110px] sm:max-w-[130px] md:max-w-full max-h-full object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.05)] group-hover:drop-shadow-[0_8px_16px_rgba(0,0,0,0.1)] transition-all duration-300"
+                    className="max-w-[110px] sm:max-w-[130px] md:max-w-full max-h-full object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.05)] group-hover:drop-shadow-[0_8px_16px_rgba(0,0,0,0.1)] transition-[filter] duration-300"
                   />
                 </LocalizedLink>
               ))}

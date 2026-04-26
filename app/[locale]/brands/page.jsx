@@ -64,7 +64,7 @@ export default async function BrandsPage({ params }) {
               <StaggerItem key={brand.id}>
                 <LocalizedLink
                   href={`/brands/${brand.id}`}
-                  className="block h-full group bg-white rounded-3xl overflow-hidden border-2 border-transparent transition-all hover:border-[#F7E326] hover:shadow-2xl shadow-sm cursor-pointer"
+                  className="block h-full group card-hover bg-white rounded-3xl overflow-hidden border-2 border-transparent shadow-sm cursor-pointer"
                 >
                   <div className="flex flex-col h-full">
                     {/* Brand Logo Container */}
@@ -72,7 +72,7 @@ export default async function BrandsPage({ params }) {
                       <img
                         src={brand.image_url}
                         alt={brand.alt_text || brand.title}
-                        className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                        className="max-w-full max-h-full object-contain"
                       />
                       {brand.is_highlighted && (
                         <div className="absolute top-4 right-4 z-10">

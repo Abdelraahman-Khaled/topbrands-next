@@ -107,8 +107,8 @@ export default async function MarketCoveragePage({ params }) {
                 const channelIcons = ["ri-store-2-line", "ri-shopping-cart-2-line", "ri-store-3-line"];
                 return (
                   <StaggerItem key={index}>
-                    <div className={`bg-white rounded-[32px] p-6 md:p-8 lg:p-12 hover:shadow-2xl transition-all duration-300 border-l-4 rtl:border-l-0 rtl:border-r-4 border-brand-charcoal h-full flex flex-col ${isAr ? 'text-right' : 'text-left'}`}>
-                      <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6 md:mb-8">
+                    <div className={`group card-hover bg-white rounded-[32px] p-6 md:p-8 lg:p-12 border-s-3 border-gray-200 hover:border-brand-yellow transition-colors duration-500 ease-in-out h-full flex flex-col ${isAr ? 'text-right' : 'text-left'}`}>
+                      <div className="icon-hover w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6 md:mb-8">
                         <i className={`${channelIcons[index % channelIcons.length]} text-3xl md:text-4xl text-white`}></i>
                       </div>
                       <h3 className="text-2xl md:text-3xl font-bold text-black mb-4">
@@ -136,9 +136,9 @@ export default async function MarketCoveragePage({ params }) {
       <ScrollReveal delay={0.1}>
         <section className="py-16 md:py-24 lg:py-32 bg-white overflow-hidden relative">
           {/* Background Decorative Blurs */}
-          <div className="absolute top-0 left-0 w-72 h-72 bg-brand-yellow/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-yellow/15 rounded-full blur-[120px] translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
-          
+          <div className="absolute top-0 left-0 w-72 h-72 bg-brand-yellow/10 rounded-full blur-[100px]  pointer-events-none"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-yellow/15 rounded-full blur-[120px]  pointer-events-none"></div>
+
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4 md:mb-6">
@@ -154,21 +154,21 @@ export default async function MarketCoveragePage({ params }) {
                 const capabilityIcons = ["ri-truck-line", "ri-building-line", "ri-team-line", "ri-map-pin-line"];
                 return (
                   <StaggerItem key={index}>
-                    <div className="bg-brand-paleblue rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-brand-charcoal h-full flex flex-col justify-center">
-                      <div className={`w-16 h-16 flex items-center justify-center ${index % 2 === 0 ? "bg-brand-charcoal" : "bg-brand-yellow text-black"} rounded-xl mb-6 mx-auto`}>
-                        <i className={`${capabilityIcons[index % capabilityIcons.length]} text-3xl`}></i>
+                    <div className={`group card-hover rounded-2xl p-8 text-center border border-transparent h-full flex flex-col justify-center transition-colors duration-500 ease-in-out ${index % 2 === 0 ? "bg-brand-paleblue hover:bg-brand-jet" : "bg-brand-paleblue hover:bg-brand-yellow"}`}>
+                      <div className={`icon-hover w-16 h-16 flex items-center justify-center rounded-xl mb-6 mx-auto transition-colors duration-500 ${index % 2 === 0 ? "bg-brand-charcoal group-hover:bg-brand-yellow" : "bg-brand-yellow group-hover:bg-brand-jet"}`}>
+                        <i className={`${capabilityIcons[index % capabilityIcons.length]} text-3xl transition-colors duration-500 ${index % 2 === 0 ? "text-brand-yellow group-hover:text-brand-jet" : "text-black group-hover:text-brand-yellow"}`}></i>
                       </div>
-                      <p className="text-sm text-brand-charcoal font-medium mb-2 uppercase tracking-widest">
+                      <p className={`text-sm font-medium mb-2 uppercase tracking-widest transition-colors duration-500 ${index % 2 === 0 ? "text-brand-charcoal group-hover:text-white/70" : "text-brand-charcoal group-hover:text-brand-jet"}`}>
                         {capability.val0}
                       </p>
-                      <p className={`${!isNaN(parseFloat(capability.val1?.replace(/[^0-9.]/g, ""))) ? "text-3xl" : "text-xl"} font-bold text-black mb-2`}>
+                      <p className={`${!isNaN(parseFloat(capability.val1?.replace(/[^0-9.]/g, ""))) ? "text-3xl" : "text-xl"} font-bold mb-2 transition-colors duration-500 ${index % 2 === 0 ? "text-black group-hover:text-white" : "text-black group-hover:text-brand-jet"}`}>
                         {!isNaN(parseFloat(capability.val1?.replace(/[^0-9.]/g, ""))) ? (
                           <Counter value={capability.val1} />
                         ) : (
                           capability.val1
                         )}
                       </p>
-                      <p className="text-sm text-brand-charcoal">
+                      <p className={`text-sm transition-colors duration-500 ${index % 2 === 0 ? "text-brand-charcoal group-hover:text-white/60" : "text-brand-charcoal group-hover:text-brand-jet"}`}>
                         {capability.val2}
                       </p>
                     </div>
@@ -195,7 +195,8 @@ export default async function MarketCoveragePage({ params }) {
 
                 <StaggerContainer className="space-y-4">
                   {logisticsPoints.map((point, idx) => (
-                    <StaggerItem key={idx} className={`flex items-start space-x-4 rtl:space-x-reverse ${isAr ? 'flex-row-reverse' : ''}`}>
+                    <StaggerItem key={idx} className={`group flex items-start space-x-4 rtl:space-x-reverse relative p-4 cursor-pointer ${isAr ? 'flex-row-reverse' : ''}`}>
+                      <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="12" fill="none" stroke="black" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
                       <div className="w-8 h-8 flex items-center justify-center bg-brand-yellow rounded-lg mt-1 shrink-0">
                         <i className="ri-check-line text-black"></i>
                       </div>

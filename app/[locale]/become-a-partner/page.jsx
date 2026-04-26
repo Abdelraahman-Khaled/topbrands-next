@@ -95,7 +95,7 @@ export default function BecomePartnerPage() {
             <StaggerContainer className="grid md:grid-cols-2 gap-8">
               {benefits.map((benefit, index) => (
                 <StaggerItem key={index}>
-                  <AnimatedCard className="bg-brand-paleblue rounded-3xl p-10 h-full border-2 border-transparent">
+                  <AnimatedCard className="bg-brand-paleblue border-gray-200 border-s-3 hover:border-brand-yellow rounded-3xl p-10 h-full transition duration-500 ease-in-out">
                     <div className={`w-16 h-16 flex items-center justify-center ${index % 2 === 0 ? 'bg-brand-yellow text-black' : 'bg-brand-charcoal text-white'} rounded-2xl mb-6 transition-transform duration-300`}>
                       <i className={`${benefit.icon} text-3xl`}></i>
                     </div>
@@ -232,21 +232,24 @@ export default function BecomePartnerPage() {
           </div>
 
           <StaggerContainer className="grid md:grid-cols-3 gap-8">
-            <StaggerItem className="text-center">
+            <StaggerItem className="group text-center relative p-6 cursor-pointer">
+              <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="16" fill="none" stroke="#f7e326" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
               <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-4 mx-auto">
                 <i className="ri-mail-line text-3xl text-black"></i>
               </div>
               <h3 className="text-xl font-bold text-brand-jet mb-2">{t('contact_email')}</h3>
               <p className="text-base text-brand-charcoal">info@topbrands-sy.com</p>
             </StaggerItem>
-            <StaggerItem className="text-center">
+            <StaggerItem className="group text-center relative p-6 cursor-pointer">
+              <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="16" fill="none" stroke="#f7e326" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
               <div className="w-16 h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-4 mx-auto">
                 <i className="ri-phone-line text-3xl text-white"></i>
               </div>
               <h3 className="text-xl font-bold text-brand-jet mb-2">{t('contact_phone')}</h3>
               <p className="text-base text-brand-charcoal">+963 11 6022</p>
             </StaggerItem>
-            <StaggerItem className="text-center">
+            <StaggerItem className="group text-center relative p-6 cursor-pointer">
+              <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="16" fill="none" stroke="#f7e326" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
               <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-4 mx-auto">
                 <i className="ri-map-pin-line text-3xl text-black"></i>
               </div>

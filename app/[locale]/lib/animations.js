@@ -27,24 +27,20 @@ export const headlineRevealVariants = {
   },
 };
 
-// 3. Interactive Element States (Magnetic & Spring)
+// 3. Interactive Element States (Clean & Unified)
 export const hoverCardVariants = {
-  scale: 1.01,
-  y: -8,
-  filter: "brightness(1.05)",
   transition: {
-    type: "spring",
-    stiffness: 300,
-    damping: 20,
+    duration: 0.4,
+    ease: [0.4, 0, 0.2, 1],
   },
 };
 
 export const tapButtonVariants = {
-  scale: 0.94,
+  scale: 0.97,
   transition: {
     type: "spring",
     stiffness: 500,
-    damping: 25,
+    damping: 30,
   },
 };
 

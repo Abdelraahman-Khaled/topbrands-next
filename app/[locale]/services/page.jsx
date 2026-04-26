@@ -50,9 +50,9 @@ export default async function ServicesPage({ params }) {
 
       {/* Global CTA Section */}
       {ctaData && (
-        <GlobalCTA 
-          data={ctaData} 
-          contact={true} 
+        <GlobalCTA
+          data={ctaData}
+          contact={true}
         />
       )}
     </div>

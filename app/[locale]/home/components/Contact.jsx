@@ -73,10 +73,11 @@ export default function Contact({ data }) {
             <StaggerItem
               key={index}
               href={info.link}
-              className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-[#4B4F54] cursor-pointer block"
+              className="group card-hover bg-white p-8 rounded-2xl shadow-md border-2 border-transparent cursor-pointer block relative"
             >
+              <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="16" fill="none" stroke="#F7E326" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
               <div
-                className={`w-16 h-16 flex items-center justify-center ${info.iconBg} rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg mx-auto`}
+                className={`icon-hover w-16 h-16 flex items-center justify-center ${info.iconBg} rounded-xl mb-6 shadow-lg mx-auto`}
               >
                 <i className={`${info.icon} ${info.title === (data["Email Label"]?.value || t("email")) ? "text-[#000000]" : "text-white"} text-3xl`}></i>
               </div>

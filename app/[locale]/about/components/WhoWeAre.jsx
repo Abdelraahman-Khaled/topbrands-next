@@ -60,7 +60,7 @@ const WhoWeAre = ({ data }) => {
                                     {coverageLabel}
                                 </p>
                                 <p className="text-2xl font-bold text-brand-jet transition-colors duration-500 group-hover:text-brand-jet">
-                                    <Counter value={coverageValue} />
+                                    {coverageValue}
                                 </p>
                             </div>
                         </div>

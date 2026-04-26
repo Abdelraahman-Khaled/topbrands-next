@@ -117,14 +117,14 @@ export default async function BrandDetailPage({ params }) {
                 {brandProducts.map((product) => (
                   <div
                     key={product.id}
-                    className="group flex flex-col bg-white rounded-[16px] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500 border border-gray-100 h-full"
+                    className="group card-hover flex flex-col bg-white rounded-[16px] overflow-hidden shadow-sm border border-gray-100 h-full"
                   >
                     {/* Product Image Holder */}
                     <div className="w-full h-56 flex items-center justify-center bg-white p-10 border-b border-gray-100 relative">
                       <img
                         src={product.image_url || "/images/placeholder-product.png"}
                         alt={product.title}
-                        className=" max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                        className="max-w-full max-h-full object-contain"
                       />
 
                       {/* Floating Size Badge - Prepared for backend data */}

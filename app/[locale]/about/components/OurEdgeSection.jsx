@@ -57,11 +57,11 @@ const OurEdgeSection = ({ data }) => {
 
                 <StaggerContainer className="grid md:grid-cols-2 gap-8">
                     {edges.map((edge, index) => (
-                        <StaggerItem 
+                        <StaggerItem
                             key={index}
-                            className={`bg-white rounded-2xl p-6 md:p-8 border-l-4 border-transparent hover:border-${edge.color} rtl:border-l-0 rtl:border-r-4 rtl:hover:border-${edge.color} transition-all duration-300 group shadow-sm hover:shadow-xl`}
+                            className="group card-hover bg-white rounded-2xl p-6 md:p-8 border-s-3 border-gray-200 hover:border-brand-yellow hover:shadow-lg transition-all duration-500 ease-in-out shadow-sm"
                         >
-                            <div className={`w-14 h-14 flex items-center justify-center bg-${edge.color} rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                            <div className={`icon-hover w-14 h-14 flex items-center justify-center bg-${edge.color} rounded-xl mb-6`}>
                                 <i className={`${edge.icon} text-2xl text-${edge.iconColor}`}></i>
                             </div>
                             <h3 className="text-2xl font-bold text-brand-jet mb-4">

@@ -274,7 +274,6 @@ const MarketMap = ({ mapData, areas, locale }) => {
           {/* ── Leaflet Map + Overlay ── */}
           <div className="sticky top-24">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
@@ -309,19 +308,16 @@ const MarketMap = ({ mapData, areas, locale }) => {
               {areas.map((area, index) => (
                 <StaggerItem key={index}>
                   <motion.div
-                    whileHover={{ x: isAr ? -10 : 10 }}
                     onMouseEnter={() => setHoveredCity(index)}
                     onMouseLeave={() => setHoveredCity(null)}
-                    className={`rounded-2xl p-5 transition-all duration-300 border-2 cursor-pointer ${
+                    className={`rounded-2xl p-5 transition-colors duration-300 border-2 cursor-pointer ${
                       hoveredCity === index
-                        ? 'bg-brand-charcoal border-brand-charcoal shadow-2xl'
+                        ? 'bg-brand-charcoal border-brand-charcoal'
                         : 'bg-brand-paleblue/40 border-transparent hover:border-brand-yellow/60'
                     }`}
                   >
                     <div className={`flex items-center gap-4 ${isAr ? 'flex-row-reverse' : ''}`}>
-                      <div className={`w-12 h-12 flex items-center justify-center rounded-xl shrink-0 transition-all duration-300 ${
-                        hoveredCity === index ? 'bg-brand-yellow scale-110 rotate-6' : 'bg-brand-yellow'
-                      }`}>
+                      <div className="w-12 h-12 flex items-center justify-center rounded-xl shrink-0 bg-brand-yellow">
                         <i className={`${icons[index % icons.length]} text-xl text-black`}></i>
                       </div>
                       <div className="flex-1">
@@ -334,7 +330,6 @@ const MarketMap = ({ mapData, areas, locale }) => {
                       </div>
                       <div className={`flex items-center gap-2 shrink-0 ${isAr ? 'flex-row-reverse' : ''}`}>
                         <motion.div
-                          animate={{ scale: [1, 1.4, 1] }}
                           transition={{ repeat: Infinity, duration: 1.5 }}
                           className="w-2.5 h-2.5 bg-green-500 rounded-full shadow-[0_0_8px_rgba(34,197,94,0.7)]"
                         />

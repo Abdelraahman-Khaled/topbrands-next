@@ -82,14 +82,14 @@ const BlogFilterGrid = ({ blogs, locale, translations = {} }) => {
                             </div>
                             <LocalizedLink
                                 href={`/blog/${featuredPost.id}`}
-                                className="block bg-gradient-to-br from-[#000000] to-[#1a1a1a] rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 cursor-pointer group"
+                                className="group card-hover-dark block bg-gradient-to-br from-[#000000] to-[#1a1a1a] rounded-3xl overflow-hidden shadow-2xl cursor-pointer border border-white/5"
                             >
                                 <div className="grid md:grid-cols-2 gap-0">
                                     <div className="relative h-64 sm:h-80 md:h-auto overflow-hidden">
                                         <img
                                             src={featuredPost.photo}
                                             alt={featuredPost.title}
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                            className="w-full h-full object-cover  transition-transform duration-500"
                                         />
                                         <div className="absolute top-6 left-6 rtl:left-auto rtl:right-6">
                                             <span className="bg-[#F7E326] text-[#000000] px-6 py-2 rounded-full text-sm font-bold flex items-center gap-2">
@@ -164,13 +164,13 @@ const BlogFilterGrid = ({ blogs, locale, translations = {} }) => {
                                         >
                                             <LocalizedLink
                                                 href={`/blog/${post.id}`}
-                                                className="h-full bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group border-2 border-transparent hover:border-[#F7E326] block"
+                                                className="group card-hover h-full bg-white rounded-2xl overflow-hidden shadow-md cursor-pointer border-2 border-transparent block"
                                             >
                                                 <div className="relative h-56 overflow-hidden">
                                                     <img
                                                         src={post.photo}
                                                         alt={post.title}
-                                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                        className="w-full h-full object-cover"
                                                     />
                                                     <div className="absolute top-4 left-4 rtl:left-auto rtl:right-4">
                                                         <span className="bg-[#F7E326] text-[#000000] px-4 py-2 rounded-full text-sm font-bold shadow-lg">

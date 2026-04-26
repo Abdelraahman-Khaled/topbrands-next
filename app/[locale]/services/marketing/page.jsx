@@ -96,8 +96,8 @@ export default async function MarketingPage({ params }) {
                     <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                         {serviceCards.map((service, index) => (
                             <StaggerItem key={index}>
-                                <AnimatedCard className="h-full bg-brand-paleblue rounded-[32px] p-8 md:p-10 border border-transparent hover:border-brand-yellow group block transition-all duration-300">
-                                    <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <AnimatedCard className="group card-hover h-full bg-brand-paleblue rounded-[32px] p-8 md:p-10 border-s-3 border-gray-200 hover:border-brand-yellow transition-colors duration-500 ease-in-out block">
+                                    <div className="icon-hover w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-6">
                                         <i className={`${service.icon} text-2xl md:text-3xl text-brand-jet`}></i>
                                     </div>
                                     <h3 className="text-xl md:text-2xl font-bold text-brand-jet mb-3 md:mb-4">{service.title}</h3>
@@ -165,12 +165,12 @@ export default async function MarketingPage({ params }) {
 
                     <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                         {steps.map((step) => (
-                            <StaggerItem key={step.id} className="text-center group bg-brand-paleblue p-8 rounded-[32px] hover:bg-brand-yellow transition-all duration-500">
-                                <div className="w-16 h-16 flex items-center justify-center bg-brand-jet text-brand-yellow rounded-full mx-auto mb-6 transition-transform">
+                            <StaggerItem key={step.id} className="text-center group card-hover bg-brand-paleblue hover:bg-brand-yellow p-8 rounded-[32px] border border-transparent transition-colors duration-500 ease-in-out">
+                                <div className="w-16 h-16 flex items-center justify-center bg-brand-jet  text-brand-yellow  rounded-full mx-auto mb-6 transition-colors duration-500">
                                     <span className="text-2xl font-bold">{step.id}</span>
                                 </div>
                                 <h3 className="text-xl font-bold text-brand-jet mb-3">{step.title}</h3>
-                                <p className="text-sm text-brand-charcoal font-medium leading-relaxed">{step.desc}</p>
+                                <p className="text-sm text-brand-charcoal group-hover:text-brand-jet font-medium leading-relaxed transition-colors duration-500">{step.desc}</p>
                             </StaggerItem>
                         ))}
                     </StaggerContainer>

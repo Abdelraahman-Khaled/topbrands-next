@@ -47,13 +47,13 @@ const Ledaership = () => {
                     {leadership.map((leader, index) => (
                         <StaggerItem
                             key={index}
-                            className="group bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
+                            className="group card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-transparent"
                         >
                             <div className="relative h-64 md:h-80 overflow-hidden">
                                 <img
                                     src={leader.image}
                                     alt={leader.name}
-                                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-all duration-300"
+                                    className="w-full h-full object-cover object-top"
                                 />
                             </div>
                             <div className="p-5 md:p-6">
