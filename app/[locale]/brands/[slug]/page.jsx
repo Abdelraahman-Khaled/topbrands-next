@@ -130,7 +130,7 @@ export default async function BrandDetailPage({ params }) {
                       {/* Floating Size Badge - Prepared for backend data */}
                       {product.size && (
                         <div className="absolute top-4 right-4 z-10">
-                          <div className="bg-[#00BFA5] text-white text-xs font-bold w-10 h-10 rounded-full flex items-center justify-center shadow-lg border-2 border-white/20">
+                          <div className="bg-brand-yellow text-brand-jet text-xs font-bold w-10 h-10 rounded-full flex items-center justify-center shadow-lg border-2 border-white/20">
                             {product.size}
                           </div>
                         </div>
