@@ -1,11 +1,5 @@
 const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-/**
- * Fetches page data from the external API.
- * @param {string} page - The page slug (e.g., 'home')
- * @param {string} locale - The current locale (e.g., 'ar' or 'en')
- * @returns {Promise<Object>} The page data
- */
 export async function getPageData(page, locale) {
   console.log("locale", locale);
 
@@ -17,7 +11,7 @@ export async function getPageData(page, locale) {
         locale,
         "Content-Type": "application/json",
       },
-      cache: "no-store", // Always fetch fresh — instant dashboard updates
+      cache: "no-store",
     });
 
     if (!res.ok) {
@@ -33,12 +27,6 @@ export async function getPageData(page, locale) {
   }
 }
 
-/**
- * Fetches specific brand details and its products.
- * @param {string|number} id - The brand ID
- * @param {string} locale - The current locale
- * @returns {Promise<Object>} The brand data
- */
 export async function getBrandProducts(id, locale) {
   try {
     const res = await fetch(`${BASE_URL}/web_site/show_brand_products/${id}`, {
@@ -65,11 +53,6 @@ export async function getBrandProducts(id, locale) {
   }
 }
 
-/**
- * Fetches all FAQs from the external API.
- * @param {string} locale - The current locale
- * @returns {Promise<Array>} List of FAQs
- */
 export async function getFaqs(locale) {
   try {
     const res = await fetch(`${BASE_URL}/web_site/get_all_faqs`, {
@@ -90,11 +73,33 @@ export async function getFaqs(locale) {
   }
 }
 
-/**
- * Fetches company contact data from the external API.
- * @param {string} locale - The current locale
- * @returns {Promise<Object>} Company data
- */
+export async function getBlogs(locale, page = 1, items = 20) {
+  try {
+    const res = await fetch(
+      `${BASE_URL}/web_site/get_all_blogs?page=${page}&items=${items}`,
+      {
+        method: "GET",
+        headers: {
+          locale,
+          "Content-Type": "application/json",
+        },
+        cache: "no-store",
+      },
+    );
+
+    if (!res.ok) {
+      console.error(`Failed to fetch blogs: ${res.statusText}`);
+      return { pagination: null, data: [] };
+    }
+
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching blogs:", error);
+    return { pagination: null, data: [] };
+  }
+}
+
 export async function getCompanyData(locale) {
   try {
     const res = await fetch(`${BASE_URL}/web_site/get_company_data`, {

@@ -1,4 +1,4 @@
-import { getPageData } from "@/services/home.service";
+import { getBlogs } from "@/services/home.service";
 import LocalizedLink from "../../components/LocalizedLink";
 import Subscribe from "../../components/Subscribe";
 import SocialShare from "../components/SocialShare";
@@ -8,9 +8,10 @@ export default async function BlogDetailPage({ params }) {
   const { slug, locale } = await params;
   const isAr = locale === 'ar';
 
-  // Fetch data to find specific blog
-  const data = await getPageData("blogs", locale);
-  const blog = data?.blogs?.find(b => b.id.toString() === slug);
+  const blogsResponse = await getBlogs(locale, 1, 100);
+  const blog = (blogsResponse?.data ?? []).find(
+    (b) => b.slug === slug || b.id.toString() === slug,
+  );
 
   if (!blog) {
     return (
