@@ -16,7 +16,7 @@ export async function POST(request) {
 
     await transporter.sendMail({
       from: `"Top Brands Website" <${process.env.SMTP_USER}>`,
-      to: process.env.SMTP_USER,
+      to: 'info@topbrands-sy.com',
       replyTo: email,
       subject: `Contact Form: ${subject} — from ${name}`,
       html: `

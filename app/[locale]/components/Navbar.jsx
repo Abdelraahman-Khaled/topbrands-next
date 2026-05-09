@@ -91,9 +91,7 @@ export default function Navbar() {
     },
     { key: "brands", href: "/brands" },
     // { key: "products", href: "/products" },
-    { key: "coverage", href: "/market-coverage" },
-    { key: "blog", href: "/blog" },
-    { key: "contact", href: "/contact" }
+    { key: "coverage", href: "/market-coverage" }
   ];
 
   const menuVariants = {

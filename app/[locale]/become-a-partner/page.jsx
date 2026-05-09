@@ -97,6 +97,10 @@ export default function BecomePartnerPage() {
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ companyName: '', contactPerson: '', email: '', phone: '', brandName: '', productCategory: '', message: '' });
+        if (typeof window !== 'undefined') {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'partner-thank-you' });
+        }
       } else {
         setSubmitStatus('error');
       }
@@ -160,105 +164,111 @@ export default function BecomePartnerPage() {
 
           <div className="bg-white rounded-3xl p-10 lg:p-12 shadow-2xl">
             <ScrollReveal delay={0.2}>
-              <form onSubmit={handleSubmit} id="partnership-form">
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_company')}</label>
-                    <input
-                      type="text" name="companyName" value={formData.companyName} onChange={handleChange} required
-                      className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
-                      placeholder={t('placeholder_company')}
-                    />
+              {submitStatus === 'success' ? (
+                <div className="flex flex-col items-center justify-center py-16 text-center">
+                  <div className="w-20 h-20 flex items-center justify-center bg-brand-yellow rounded-full mb-6">
+                    <i className="ri-check-line text-4xl text-black"></i>
                   </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_contact')}</label>
-                    <input
-                      type="text" name="contactPerson" value={formData.contactPerson} onChange={handleChange} required
-                      className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
-                      placeholder={t('placeholder_contact')}
-                    />
-                  </div>
+                  <h3 className="text-3xl font-bold text-black mb-3">{t('thank_you_msg') || 'Thank you for reaching out!'}</h3>
+                  <p className="text-lg text-brand-charcoal max-w-md">
+                    {t('thank_you_desc') || "We've received your message and will get back to you at info@topbrands-sy.com shortly."}
+                  </p>
                 </div>
-
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_email')}</label>
-                    <input
-                      type="email" name="email" value={formData.email} onChange={handleChange} required
-                      className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
-                      placeholder={t('placeholder_email')}
-                    />
+              ) : (
+                <form onSubmit={handleSubmit} id="partnership-form">
+                  <div className="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_company')}</label>
+                      <input
+                        type="text" name="companyName" value={formData.companyName} onChange={handleChange} required
+                        className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
+                        placeholder={t('placeholder_company')}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_contact')}</label>
+                      <input
+                        type="text" name="contactPerson" value={formData.contactPerson} onChange={handleChange} required
+                        className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
+                        placeholder={t('placeholder_contact')}
+                      />
+                    </div>
                   </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_phone')}</label>
-                    <input
-                      type="tel" name="phone" value={formData.phone} onChange={handleChange} required
-                      className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
-                      placeholder={t('placeholder_phone')}
-                    />
-                  </div>
-                </div>
 
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_brand')}</label>
-                    <input
-                      type="text" name="brandName" value={formData.brandName} onChange={handleChange} required
-                      className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
-                      placeholder={t('placeholder_brand')}
-                    />
+                  <div className="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_email')}</label>
+                      <input
+                        type="email" name="email" value={formData.email} onChange={handleChange} required
+                        className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
+                        placeholder={t('placeholder_email')}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_phone')}</label>
+                      <input
+                        type="tel" name="phone" value={formData.phone} onChange={handleChange} required
+                        className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
+                        placeholder={t('placeholder_phone')}
+                      />
+                    </div>
                   </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_category')}</label>
-                    <select
-                      name="productCategory" value={formData.productCategory} onChange={handleChange} required
-                      className="w-full text-black px-4 py-3 text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
-                    >
-                      <option value="">{t('select_category')}</option>
-                      <option value="Food & Beverages">Food & Beverages</option>
-                      <option value="Snacks & Confectionery">Snacks & Confectionery</option>
-                      <option value="Dairy Products">Dairy Products</option>
-                      <option value="Non-Food FMCG">Non-Food FMCG</option>
-                      <option value="Other">Other</option>
-                    </select>
+
+                  <div className="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_brand')}</label>
+                      <input
+                        type="text" name="brandName" value={formData.brandName} onChange={handleChange} required
+                        className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
+                        placeholder={t('placeholder_brand')}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_category')}</label>
+                      <select
+                        name="productCategory" value={formData.productCategory} onChange={handleChange} required
+                        className="w-full text-black px-4 py-3 text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none"
+                      >
+                        <option value="">{t('select_category')}</option>
+                        <option value="Food & Beverages">Food & Beverages</option>
+                        <option value="Snacks & Confectionery">Snacks & Confectionery</option>
+                        <option value="Dairy Products">Dairy Products</option>
+                        <option value="Non-Food FMCG">Non-Food FMCG</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
                   </div>
-                </div>
 
-                <div className="mb-6">
-                  <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_message')}</label>
-                  <textarea
-                    name="message" value={formData.message} onChange={handleChange} rows={5} maxLength={500}
-                    className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none resize-none"
-                    placeholder={t('placeholder_message')}
-                  ></textarea>
-                  <p className="text-xs text-brand-charcoal mt-2">{formData.message.length}/500</p>
-                </div>
-
-                {submitStatus === 'success' && (
-                  <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl text-green-800 text-sm">
-                    <i className="ri-check-line mr-2"></i>{t('msg_success')}
+                  <div className="mb-6">
+                    <label className="block text-sm font-semibold text-brand-charcoal mb-2">{t('label_message')}</label>
+                    <textarea
+                      name="message" value={formData.message} onChange={handleChange} rows={5} maxLength={500}
+                      className="w-full px-4 py-3 text-sm bg-white text-black border border-gray-300 rounded-xl focus:ring-2 focus:ring-gray-200 focus:outline-none resize-none"
+                      placeholder={t('placeholder_message')}
+                    ></textarea>
+                    <p className="text-xs text-brand-charcoal mt-2">{formData.message.length}/500</p>
                   </div>
-                )}
 
-                {submitStatus === 'error' && (
-                  <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl text-red-800 text-sm">
-                    <i className="ri-error-warning-line mr-2"></i>{t('msg_error')}
-                  </div>
-                )}
+                  {submitStatus === 'error' && (
+                    <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl text-red-800 text-sm">
+                      <i className="ri-error-warning-line mr-2"></i>{t('msg_error')}
+                    </div>
+                  )}
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`mask-btn mask-btn--yellow-black !rounded-xl w-full transition-opacity ${isSubmitting ? 'opacity-50 pointer-events-none' : ''}`}
-                >
-                  <span className="mask-btn__label">
-                    {isSubmitting ? t('btn_submitting') : submitBtnLabel}
-                  </span>
-                  <span className="mask-btn__fill">
-                    {isSubmitting ? t('btn_submitting') : submitBtnLabel}
-                  </span>
-                </button>
-              </form>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`mask-btn mask-btn--yellow-black !rounded-xl w-full transition-opacity ${isSubmitting ? 'opacity-50 pointer-events-none' : ''}`}
+                  >
+                    <span className="mask-btn__label">
+                      {isSubmitting ? t('btn_submitting') : submitBtnLabel}
+                    </span>
+                    <span className="mask-btn__fill">
+                      {isSubmitting ? t('btn_submitting') : submitBtnLabel}
+                    </span>
+                  </button>
+                </form>
+              )}
             </ScrollReveal>
           </div>
         </div>
@@ -272,31 +282,37 @@ export default function BecomePartnerPage() {
           </div>
 
           <StaggerContainer className="grid md:grid-cols-3 gap-8">
-            <StaggerItem className="group text-center relative p-6 cursor-pointer">
+            <StaggerItem className="group text-center relative p-6">
               <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="16" fill="none" stroke="#f7e326" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
-              <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-4 mx-auto">
-                <i className="ri-mail-line text-3xl text-black"></i>
-              </div>
-              <h3 className="text-xl font-bold text-brand-jet mb-2">{t('contact_email')}</h3>
-              <p className="text-base text-brand-charcoal">{companyData?.email || 'info@topbrands-sy.com'}</p>
+              <a href={`mailto:${companyData?.email || 'info@topbrands-sy.com'}`} className="flex flex-col items-center" style={{textDecoration:'none',color:'inherit'}}>
+                <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-4 mx-auto">
+                  <i className="ri-mail-line text-3xl text-black"></i>
+                </div>
+                <h3 className="text-xl font-bold text-brand-jet mb-2">{t('contact_email')}</h3>
+                <p className="text-base text-brand-charcoal">{companyData?.email || 'info@topbrands-sy.com'}</p>
+              </a>
             </StaggerItem>
-            <StaggerItem className="group text-center relative p-6 cursor-pointer">
+            <StaggerItem className="group text-center relative p-6">
               <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="16" fill="none" stroke="#f7e326" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
-              <div className="w-16 h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-4 mx-auto">
-                <i className="ri-phone-line text-3xl text-white"></i>
-              </div>
-              <h3 className="text-xl font-bold text-brand-jet mb-2">{t('contact_phone')}</h3>
-              <p className="text-base text-brand-charcoal" dir="ltr">{companyData?.phone_number_1 || '+963 11 6022'}</p>
+              <a href={`tel:${(companyData?.phone_number_1 || '+963116022').replace(/\s/g, '')}`} className="flex flex-col items-center" style={{textDecoration:'none',color:'inherit'}}>
+                <div className="w-16 h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-4 mx-auto">
+                  <i className="ri-phone-line text-3xl text-white"></i>
+                </div>
+                <h3 className="text-xl font-bold text-brand-jet mb-2">{t('contact_phone')}</h3>
+                <p className="text-base text-brand-charcoal" dir="ltr">{companyData?.phone_number_1 || '+963 11 6022'}</p>
+              </a>
             </StaggerItem>
-            <StaggerItem className="group text-center relative p-6 cursor-pointer">
+            <StaggerItem className="group text-center relative p-6">
               <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="16" fill="none" stroke="#f7e326" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
-              <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-4 mx-auto">
-                <i className="ri-map-pin-line text-3xl text-black"></i>
-              </div>
-              <h3 className="text-xl font-bold text-brand-jet mb-2">{t('contact_location')}</h3>
-              <p className="text-base text-brand-charcoal">
-                {(isAr ? companyData?.address_ar : companyData?.address_en) || t('city_syria')}
-              </p>
+              <a href={companyData?.google_maps_url || 'https://www.google.com/maps?q=33.6193071287417,36.489023297392414'} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center" style={{textDecoration:'none',color:'inherit'}}>
+                <div className="w-16 h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-4 mx-auto">
+                  <i className="ri-map-pin-line text-3xl text-black"></i>
+                </div>
+                <h3 className="text-xl font-bold text-brand-jet mb-2">{t('contact_location')}</h3>
+                <p className="text-base text-brand-charcoal">
+                  {(isAr ? companyData?.address_ar : companyData?.address_en) || t('city_syria')}
+                </p>
+              </a>
             </StaggerItem>
           </StaggerContainer>
         </div>

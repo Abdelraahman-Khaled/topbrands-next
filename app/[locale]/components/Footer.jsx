@@ -11,9 +11,9 @@ export default function Footer() {
   const { companyData } = useCompany();
 
   const socialLinks = [
-    { icon: "ri-linkedin-fill", href: companyData?.linkedin_url || "#" },
-    { icon: "ri-facebook-fill", href: companyData?.facebook_url || "#" },
-    { icon: "ri-instagram-line", href: companyData?.instagram_url || "#" },
+    { icon: "ri-linkedin-fill", href: companyData?.linkedin_url || "https://www.linkedin.com/company/topbrands-sy/" },
+    { icon: "ri-facebook-fill", href: companyData?.facebook_url || "https://www.facebook.com/topbrandssy" },
+    { icon: "ri-instagram-line", href: companyData?.instagram_url || "https://www.instagram.com/topbrands.sy/" },
     { icon: "ri-twitter-x-fill", href: companyData?.twitter_url || "#" },
     { icon: "ri-whatsapp-line", href: `https://wa.me/${companyData?.whatsapp_number?.replace(/\s/g, "")}` }
   ];
@@ -63,6 +63,11 @@ export default function Footer() {
               <li>
                 <LocalizedLink href="/contact" className="text-sm hover:text-black transition-colors cursor-pointer">
                   {t("contact_us")}
+                </LocalizedLink>
+              </li>
+              <li>
+                <LocalizedLink href="/blog" className="text-sm hover:text-black transition-colors cursor-pointer">
+                  {t("blog")}
                 </LocalizedLink>
               </li>
             </ul>
