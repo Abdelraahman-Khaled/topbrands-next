@@ -711,6 +711,7 @@ export default {
   message_placeholder: "أخبرنا عن استفسارك (بحد أقصى 500 حرف)",
   characters: "حرف",
   thank_you_msg: "شكراً لك! سنرد عليك خلال 24 ساعة.",
+  thank_you_desc: "لقد استلمنا رسالتك وسنتواصل معك قريباً.",
   error_msg: "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
   sending: "جاري الإرسال...",
   contact_send_message_btn: "إرسال الرسالة",

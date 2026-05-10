@@ -749,6 +749,7 @@ export default {
   message_placeholder: "Tell us about your inquiry (max 500 characters)",
   characters: "characters",
   thank_you_msg: "Thank you! We'll get back to you within 24 hours.",
+  thank_you_desc: "We've received your message and will get back to you shortly.",
   error_msg: "Something went wrong. Please try again.",
   sending: "Sending...",
   contact_send_message_btn: "Send Message",

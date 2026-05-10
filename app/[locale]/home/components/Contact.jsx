@@ -17,11 +17,14 @@ export default function Contact({ data }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const captchaToken = recaptchaRef.current?.getValue();
+    if (!captchaToken) {
+      setSubmitStatus("captcha");
+      return;
+    }
     setIsSubmitting(true);
     setSubmitStatus("idle");
     try {
-      const captchaToken = await recaptchaRef.current?.executeAsync();
-      recaptchaRef.current?.reset();
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -30,6 +33,7 @@ export default function Contact({ data }) {
       if (res.ok) {
         setSubmitStatus("success");
         setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+        recaptchaRef.current?.reset();
       } else {
         setSubmitStatus("error");
       }
@@ -223,6 +227,19 @@ export default function Contact({ data }) {
                   </div>
                 )}
 
+                <div className="md:col-span-2">
+                  <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+                    hl={isAr ? 'ar' : 'en'}
+                  />
+                  {submitStatus === "captcha" && (
+                    <p className="text-red-400 text-sm mt-2">
+                      {t("captcha_required") || "Please complete the reCAPTCHA verification."}
+                    </p>
+                  )}
+                </div>
+
                 <div className="md:col-span-2 text-center">
                   <button
                     type="submit"
@@ -240,11 +257,6 @@ export default function Contact({ data }) {
                   </button>
                 </div>
               </form>
-              <ReCAPTCHA
-                ref={recaptchaRef}
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
-                size="invisible"
-              />
             </div>
           </div>
         </ScrollReveal>

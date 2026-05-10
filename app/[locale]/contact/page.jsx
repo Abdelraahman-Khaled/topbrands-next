@@ -187,7 +187,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-3xl font-bold text-black mb-3">{t("thank_you_msg") || "Thank you for reaching out!"}</h3>
                   <p className="text-lg text-brand-charcoal max-w-md">
-                    {t("thank_you_desc") || "We've received your message and will get back to you at info@topbrands-sy.com shortly."}
+                    {t("thank_you_desc") || "We've received your message and will get back to you shortly."}
                   </p>
                 </motion.div>
               ) : (
