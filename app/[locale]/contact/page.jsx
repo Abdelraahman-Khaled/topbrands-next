@@ -288,7 +288,7 @@ export default function ContactPage() {
                   <div className="mb-6">
                     <ReCAPTCHA
                       ref={recaptchaRef}
-                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
                       hl={isAr ? "ar" : "en"}
                     />
                     {submitStatus === "captcha" && (
