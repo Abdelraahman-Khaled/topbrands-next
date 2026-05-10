@@ -181,7 +181,7 @@ export default {
   privacy_s9_title: "9. اتصل بنا",
   privacy_s9_desc:
     "إذا كانت لديك أسئلة أو مخاوف بشأن سياسة الخصوصية هذه أو ممارسات البيانات لدينا، يرجى الاتصال بنا:",
-  privacy_company_name: "B2B Distribution",
+  privacy_company_name: "Top brands",
   privacy_location: "دمشق، سوريا",
   terms_conditions: "الشروط والأحكام",
   agreement_title: "1. الموافقة على الشروط",
@@ -242,7 +242,7 @@ export default {
   contact_desc: "للاستفسارات حول هذه الشروط والأحكام، يرجى الاتصال بـ:",
   company_name: "B2B Distribution",
   company_email: "legal@b2bdistribution.sy",
-  company_phone: "+963 11 123 4567",
+  company_phone: "+963 11 6022",
   company_address: "دمشق، سوريا",
   quality_products: "منتجات عالية الجودة",
   reliable_distribution: "توزيع موثوق",

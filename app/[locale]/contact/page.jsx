@@ -1,5 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion"; // Added
 import HeroSection from "../components/HeroSection";
@@ -49,6 +50,7 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("idle");
+  const recaptchaRef = useRef(null);
 
   // Fixed: Added 'e' parameter
   const handleChange = (e) => {
@@ -60,6 +62,11 @@ export default function ContactPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const captchaToken = recaptchaRef.current?.getValue();
+    if (!captchaToken) {
+      setSubmitStatus("captcha");
+      return;
+    }
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
@@ -67,12 +74,13 @@ export default function ContactPage() {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, captchaToken }),
       });
 
       if (response.ok) {
         setSubmitStatus("success");
         setFormData({ name: "", email: "", phone: "", company: "", subject: "", message: "" });
+        recaptchaRef.current?.reset();
         if (typeof window !== "undefined") {
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({ event: "thank-you" });
@@ -276,6 +284,19 @@ export default function ContactPage() {
                       {t("error_msg") || "Something went wrong. Please try again."}
                     </div>
                   )}
+
+                  <div className="mb-6">
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                      hl={isAr ? "ar" : "en"}
+                    />
+                    {submitStatus === "captcha" && (
+                      <p className="text-red-600 text-sm mt-2">
+                        {t("captcha_required") || "Please complete the reCAPTCHA verification."}
+                      </p>
+                    )}
+                  </div>
 
                   <button
                     type="submit"

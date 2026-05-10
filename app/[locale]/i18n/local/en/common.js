@@ -188,7 +188,7 @@ export default {
   privacy_s9_title: "9. Contact Us",
   privacy_s9_desc:
     "If you have questions or concerns about this Privacy Policy or our data practices, please contact us:",
-  privacy_company_name: "B2B Distribution",
+  privacy_company_name: "Top brands",
   privacy_location: "Damascus, Syria",
   terms_conditions: "Terms & Conditions",
   terms_conditions: "Terms & Conditions",
@@ -254,7 +254,7 @@ export default {
     "For questions about these Terms and Conditions, please contact:",
   company_name: "B2B Distribution",
   company_email: "legal@b2bdistribution.sy",
-  company_phone: "+963 11 123 4567",
+  company_phone: "+963 11 6022",
   company_address: "Damascus, Syria",
   last_updated: "Last Updated: March 2025",
   cookie_policy: "Cookie Policy",
@@ -1247,7 +1247,7 @@ export default {
     "Top Brands Syria operates on a foundational legacy of over 30 years in the Syrian market. This deep-rooted experience provides us with robust financial stability, extensive market intelligence, and a proven track record that ensures reliable distribution and growth for our partners.",
   faq_q15: "How can I contact customer support?",
   faq_a15:
-    "Our customer support team is available via phone at +963 11 123 4567 or email at info@b2bdistribution.sy. We respond to all inquiries within 24 hours during business days.",
+    "Our customer support team is available via phone at +963 11 6022 or email at info@topbrands-sy.com. We respond to all inquiries within 24 hours during business days.",
   // Brands Detail Page
   back_to_brands: "Back to Brands",
   brand_not_found: "Brand Not Found",

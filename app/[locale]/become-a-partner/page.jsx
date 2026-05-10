@@ -1,5 +1,6 @@
 'use client'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import HeroSection from '../components/HeroSection';
 import { useTranslation } from 'react-i18next';
 import ScrollReveal from '../components/ScrollReveal';
@@ -28,6 +29,7 @@ export default function BecomePartnerPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('idle');
+  const recaptchaRef = useRef(null);
 
   useEffect(() => {
     async function fetchPage() {
@@ -84,6 +86,11 @@ export default function BecomePartnerPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const captchaToken = recaptchaRef.current?.getValue();
+    if (!captchaToken) {
+      setSubmitStatus('captcha');
+      return;
+    }
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
@@ -91,12 +98,13 @@ export default function BecomePartnerPage() {
       const response = await fetch('/api/partner', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({ ...formData, captchaToken })
       });
 
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ companyName: '', contactPerson: '', email: '', phone: '', brandName: '', productCategory: '', message: '' });
+        recaptchaRef.current?.reset();
         if (typeof window !== 'undefined') {
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({ event: 'partner-thank-you' });
@@ -254,6 +262,19 @@ export default function BecomePartnerPage() {
                       <i className="ri-error-warning-line mr-2"></i>{t('msg_error')}
                     </div>
                   )}
+
+                  <div className="mb-6">
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+                      hl={isAr ? 'ar' : 'en'}
+                    />
+                    {submitStatus === 'captcha' && (
+                      <p className="text-red-600 text-sm mt-2">
+                        {t('captcha_required') || 'Please complete the reCAPTCHA verification.'}
+                      </p>
+                    )}
+                  </div>
 
                   <button
                     type="submit"

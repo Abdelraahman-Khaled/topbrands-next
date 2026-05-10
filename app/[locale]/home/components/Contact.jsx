@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import ReCAPTCHA from "react-google-recaptcha";
 import ScrollReveal from "../../components/ScrollReveal";
 import StaggerContainer from "../../components/StaggerContainer";
 import StaggerItem from "../../components/StaggerItem";
@@ -10,6 +11,7 @@ export default function Contact({ data }) {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", company: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("idle");
+  const recaptchaRef = useRef(null);
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -18,10 +20,12 @@ export default function Contact({ data }) {
     setIsSubmitting(true);
     setSubmitStatus("idle");
     try {
+      const captchaToken = await recaptchaRef.current?.executeAsync();
+      recaptchaRef.current?.reset();
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, subject: "Home Page Contact" }),
+        body: JSON.stringify({ ...formData, subject: "Home Page Contact", captchaToken }),
       });
       if (res.ok) {
         setSubmitStatus("success");
@@ -45,26 +49,36 @@ export default function Contact({ data }) {
   const headerTitle = data["Contact Element 2"]?.value;
   const headerDesc = data["Contact Element 3"]?.value;
 
+  const DEFAULT_PHONE = "+963 11 6022";
+  const DEFAULT_EMAIL = "info@topbrands-sy.com";
+  const DEFAULT_MAPS  = "https://www.google.com/maps?q=33.6193071287417,36.489023297392414";
+
+  const phone = data["Phone Value"]?.value || DEFAULT_PHONE;
+  const email = data["Email Value"]?.value || DEFAULT_EMAIL;
+  const mapsUrl = data["Maps URL"]?.value || DEFAULT_MAPS;
+
   const contactInfo = [
     {
       icon: "ri-phone-line",
       title: data["Phone Label"]?.value || t("phone"),
-      details: data["Phone Value"]?.value || "+963 11 123 4567",
-      link: `tel:${(data["Phone Value"]?.value || "").replace(/\s/g, "")}`,
+      details: phone,
+      link: `tel:${phone.replace(/\s/g, "")}`,
       iconBg: "bg-gradient-to-br from-[#4B4F54] to-[#4B4F54]",
     },
     {
       icon: "ri-mail-line",
       title: data["Email Label"]?.value || t("email"),
-      details: data["Email Value"]?.value || "info@topbrandssyria.com",
-      link: `mailto:${data["Email Value"]?.value}`,
+      details: email,
+      link: `mailto:${email}`,
       iconBg: "bg-gradient-to-br from-[#F7E326] to-[#E5D324]",
     },
     {
       icon: "ri-map-pin-line",
       title: data["Location Label"]?.value || t("location"),
       details: data["Location Value"]?.value || t("damascus_syria"),
-      link: "#",
+      link: mapsUrl,
+      target: "_blank",
+      rel: "noopener noreferrer",
       iconBg: "bg-gradient-to-br from-[#4B4F54] to-[#4B4F54]",
     },
   ];
@@ -102,6 +116,8 @@ export default function Contact({ data }) {
             <StaggerItem
               key={index}
               href={info.link}
+              target={info.target}
+              rel={info.rel}
               className="group card-hover bg-white p-8 rounded-2xl shadow-md border-2 border-transparent cursor-pointer block relative"
             >
               <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="16" fill="none" stroke="#F7E326" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
@@ -113,7 +129,7 @@ export default function Contact({ data }) {
               <h3 className="text-xl font-bold text-[#000000] mb-2 text-center">
                 {info.title}
               </h3>
-              <p className="text-[#4B4F54] font-bold text-center">
+              <p className="text-[#4B4F54] font-bold text-center" dir={info.icon === "ri-phone-line" ? "ltr" : undefined}>
                 {info.details}
               </p>
             </StaggerItem>
@@ -224,6 +240,11 @@ export default function Contact({ data }) {
                   </button>
                 </div>
               </form>
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+                size="invisible"
+              />
             </div>
           </div>
         </ScrollReveal>

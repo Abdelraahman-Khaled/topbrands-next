@@ -2,6 +2,7 @@
 import { useTranslation } from "react-i18next";
 import WhiteHero from "../components/WhiteHero";
 import ScrollReveal from "../components/ScrollReveal";
+import ContactInfoBox from "../components/ContactInfoBox";
 
 export default function TermsConditions() {
   const { t } = useTranslation();
@@ -85,23 +86,7 @@ export default function TermsConditions() {
                 <p className="text-[#4B4F54] font-medium leading-relaxed text-sm md:text-base">
                   {t('contact_desc')}
                 </p>
-                <div className="bg-[#DEE3EB] p-6 md:p-8 rounded-2xl border border-gray-200 space-y-4">
-                  <p className="text-black font-bold text-lg md:text-xl">{t('company_name')}</p>
-                  <div className="space-y-3">
-                    <p className="text-brand-charcoal font-medium flex items-center gap-3 text-sm md:text-base flex-wrap">
-                      <i className="ri-mail-line text-black text-xl shrink-0"></i>
-                      {t('company_email')}
-                    </p>
-                    <p className="text-brand-charcoal font-medium flex items-center gap-3 text-sm md:text-base flex-wrap">
-                      <i className="ri-phone-line text-black text-xl shrink-0"></i>
-                      {t('company_phone')}
-                    </p>
-                    <p className="text-brand-charcoal font-medium flex items-center gap-3 text-sm md:text-base flex-wrap">
-                      <i className="ri-map-pin-line text-black text-xl shrink-0"></i>
-                      {t('company_address')}
-                    </p>
-                  </div>
-                </div>
+                <ContactInfoBox />
               </div>
             </ScrollReveal>
 

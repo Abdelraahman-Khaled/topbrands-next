@@ -66,7 +66,7 @@ export async function getFaqs(locale) {
 
     if (!res.ok) return [];
     const data = await res.json();
-    return data;
+    return Array.isArray(data) ? data : (data?.data ?? []);
   } catch (error) {
     console.error("Error fetching FAQs:", error);
     return [];

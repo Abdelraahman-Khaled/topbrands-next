@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import { verifyRecaptcha } from '../_verifyRecaptcha';
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -12,7 +13,12 @@ const transporter = nodemailer.createTransport({
 
 export async function POST(request) {
   try {
-    const { companyName, contactPerson, email, phone, brandName, productCategory, message } = await request.json();
+    const { companyName, contactPerson, email, phone, brandName, productCategory, message, captchaToken } = await request.json();
+
+    const captchaOk = await verifyRecaptcha(captchaToken);
+    if (!captchaOk) {
+      return Response.json({ ok: false, error: 'captcha' }, { status: 400 });
+    }
 
     await transporter.sendMail({
       from: `"Top Brands Website" <${process.env.SMTP_USER}>`,

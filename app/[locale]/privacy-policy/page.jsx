@@ -2,6 +2,7 @@
 import WhiteHero from "../components/WhiteHero";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "../components/ScrollReveal";
+import ContactInfoBox from "../components/ContactInfoBox";
 
 export default function PrivacyPolicy() {
   const { t } = useTranslation();
@@ -144,25 +145,7 @@ export default function PrivacyPolicy() {
                 <p className="text-[#4B4F54] font-medium text-sm md:text-base">
                   {t('privacy_s9_desc')}
                 </p>
-                <div className="bg-[#DEE3EB] p-6 md:p-8 rounded-2xl border border-gray-200 space-y-4 md:space-y-5">
-                  <p className="text-black font-bold text-lg md:text-xl">
-                    {t('privacy_company_name')}
-                  </p>
-                  <div className="space-y-3">
-                    <p className="flex items-center gap-3 text-gray-700 font-semibold text-sm md:text-base flex-wrap">
-                      <i className="ri-mail-line text-black text-xl shrink-0"></i>
-                      privacy@b2bdistribution.sy
-                    </p>
-                    <p className="flex items-center gap-3 text-gray-700 font-semibold text-sm md:text-base flex-wrap">
-                      <i className="ri-phone-line text-black text-xl shrink-0"></i>
-                      +963 11 123 4567
-                    </p>
-                    <p className="flex items-center gap-3 text-gray-700 font-semibold text-sm md:text-base flex-wrap">
-                      <i className="ri-map-pin-line text-black text-xl shrink-0"></i>
-                      {t('privacy_location')}
-                    </p>
-                  </div>
-                </div>
+                <ContactInfoBox />
               </div>
             </ScrollReveal>
 
