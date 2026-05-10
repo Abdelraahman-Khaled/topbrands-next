@@ -1,5 +1,6 @@
 "use client"
 import React from 'react';
+import { Rocket } from 'lucide-react';
 import ScrollReveal from '../../components/ScrollReveal';
 
 const GrowthDirection = ({ data }) => {
@@ -17,7 +18,7 @@ const GrowthDirection = ({ data }) => {
             <div className="relative max-w-7xl mx-auto px-8 ">
                 <ScrollReveal className="max-w-4xl mx-auto text-center">
                     <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-brand-yellow rounded-2xl mb-8 mx-auto">
-                        <i className="ri-rocket-line text-3xl md:text-4xl text-brand-jet"></i>
+                        <Rocket size={36} strokeWidth={1.5} className="text-brand-jet" />
                     </div>
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-jet mb-8">
                         {title}

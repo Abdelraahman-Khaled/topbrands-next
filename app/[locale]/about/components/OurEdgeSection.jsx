@@ -1,5 +1,6 @@
 "use client"
 import React from 'react';
+import { Route, Database, Users, TrendingUp } from 'lucide-react';
 import ScrollReveal from '../../components/ScrollReveal';
 import StaggerContainer from '../../components/StaggerContainer';
 import StaggerItem from '../../components/StaggerItem';
@@ -12,32 +13,28 @@ const OurEdgeSection = ({ data }) => {
 
     const edges = [
         {
-            icon: "ri-route-line",
+            icon: <Route size={26} strokeWidth={1.5} className="text-black" />,
             title: data["Element 3"]?.value,
             description: data["Element 4"]?.value,
-            color: "brand-yellow",
-            iconColor: "black"
+            iconBg: "bg-brand-yellow",
         },
         {
-            icon: "ri-database-2-line",
+            icon: <Database size={26} strokeWidth={1.5} className="text-white" />,
             title: data["Element 5"]?.value,
             description: data["Element 6"]?.value,
-            color: "brand-charcoal",
-            iconColor: "white"
+            iconBg: "bg-brand-charcoal",
         },
         {
-            icon: "ri-team-line",
+            icon: <Users size={26} strokeWidth={1.5} className="text-white" />,
             title: data["Element 7"]?.value,
             description: data["Element 8"]?.value,
-            color: "brand-charcoal",
-            iconColor: "white"
+            iconBg: "bg-brand-charcoal",
         },
         {
-            icon: "ri-line-chart-line",
+            icon: <TrendingUp size={26} strokeWidth={1.5} className="text-black" />,
             title: data["Element 9"]?.value,
             description: data["Element 10"]?.value,
-            color: "brand-yellow",
-            iconColor: "black"
+            iconBg: "bg-brand-yellow",
         }
     ].filter(e => e.title);
 
@@ -61,8 +58,8 @@ const OurEdgeSection = ({ data }) => {
                             key={index}
                             className="group card-hover bg-white rounded-2xl p-6 md:p-8 border-s-3 border-gray-200 hover:border-brand-yellow hover:shadow-lg transition-all duration-500 ease-in-out shadow-sm"
                         >
-                            <div className={`icon-hover w-14 h-14 flex items-center justify-center bg-${edge.color} rounded-xl mb-6`}>
-                                <i className={`${edge.icon} text-2xl text-${edge.iconColor}`}></i>
+                            <div className={`icon-hover w-14 h-14 flex items-center justify-center ${edge.iconBg} rounded-xl mb-6`}>
+                                {edge.icon}
                             </div>
                             <h3 className="text-2xl font-bold text-brand-jet mb-4">
                                 {edge.title}
@@ -79,4 +76,3 @@ const OurEdgeSection = ({ data }) => {
 }
 
 export default OurEdgeSection;
-

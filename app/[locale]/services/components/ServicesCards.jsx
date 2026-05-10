@@ -25,7 +25,7 @@ const ServiceCard = ({ icon: Icon, data, isYellow }) => {
             <StaggerItem className="group card-hover flex flex-col gap-5 p-8 md:p-12 rounded-3xl border-s-2  border-gray-200 hover:border-brand-yellow bg-white h-full hover:shadow-lg transition-all duration-500 ease-in-out">
                 {/* Icon with dynamic background */}
                 <div className={`icon-hover w-16 h-16 flex items-center justify-center rounded-2xl shadow-sm ${isYellow ? 'bg-[#F7E326] text-black' : 'bg-[#4B4B4B] text-white'}`}>
-                    <Icon size={30} strokeWidth={2.5} />
+                    <Icon size={28} strokeWidth={1.5} />
                 </div>
 
                 <div className="space-y-3">

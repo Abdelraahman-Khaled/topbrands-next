@@ -133,7 +133,7 @@ export default async function SalesMerchandisingPage({ params }) {
                                 <StaggerItem key={idx} className="flex gap-4 md:gap-5 items-start group relative p-4 cursor-pointer">
                                     <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="12" fill="none" stroke="black" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
                                     <div className="bg-brand-yellow p-3 rounded-xl transition-transform duration-300">
-                                        <item.icon size={24} className="text-black" />
+                                        <item.icon size={24} strokeWidth={1.5} className="text-black" />
                                     </div>
                                     <div>
                                         <h4 className="text-lg md:text-xl font-bold text-black">{item.t}</h4>

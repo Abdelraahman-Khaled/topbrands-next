@@ -10,7 +10,7 @@ const FeatureCard = ({ icon: Icon, title, description, isYellow }) => {
         <StaggerItem className={`group cursor-pointer rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] h-full bg-white border-s-2 border-gray-200 transition-all duration-500 ease-in-out ${isYellow ? 'hover:bg-brand-yellow hover:border-brand-yellow' : 'hover:bg-brand-jet'}`}>
             {/* Icon Container */}
             <div className={`w-20 h-20 flex items-center justify-center rounded-2xl mb-6 transition-colors duration-500 ${isYellow ? 'bg-[#F7E326] text-black group-hover:bg-black group-hover:text-brand-yellow' : 'bg-brand-charcoal text-white group-hover:bg-brand-yellow group-hover:text-brand-jet'}`}>
-                <Icon size={28} strokeWidth={2} />
+                <Icon size={28} strokeWidth={1.5} />
             </div>
 
             {/* Text Content */}

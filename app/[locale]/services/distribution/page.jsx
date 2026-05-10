@@ -5,6 +5,7 @@ import AnimatedCard from "../../components/AnimatedCard";
 import HeroSection from "../../components/HeroSection";
 import Counter from "../../components/Counter";
 import GlobalCTA from "../../components/GlobalCTA";
+import { Store, Building2, Archive, MapPin, CheckCircle } from "lucide-react";
 import { getPageData } from "@/services/home.service";
 
 export default async function DistributionPage({ params }) {
@@ -27,11 +28,12 @@ export default async function DistributionPage({ params }) {
         { value: statsData["Element 7"]?.value, label: statsData["Element 8"]?.value }
     ].filter(s => s.value) : [];
 
+    const channelIcons = [Store, Building2, Archive, MapPin];
     const features = channels ? [
-        { icon: 'ri-store-3-line', title: channels['Element 3']?.value, description: channels['Element 4']?.value },
-        { icon: 'ri-building-2-line', title: channels['Element 5']?.value, description: channels['Element 6']?.value },
-        { icon: 'ri-archive-line', title: channels['Element 7']?.value, description: channels['Element 8']?.value },
-        { icon: 'ri-map-pin-line', title: channels['Element 9']?.value, description: channels['Element 10']?.value }
+        { icon: channelIcons[0], title: channels['Element 3']?.value, description: channels['Element 4']?.value },
+        { icon: channelIcons[1], title: channels['Element 5']?.value, description: channels['Element 6']?.value },
+        { icon: channelIcons[2], title: channels['Element 7']?.value, description: channels['Element 8']?.value },
+        { icon: channelIcons[3], title: channels['Element 9']?.value, description: channels['Element 10']?.value }
     ].filter(f => f.title) : [];
 
     const steps = howWeDist ? [
@@ -89,7 +91,7 @@ export default async function DistributionPage({ params }) {
                                 <StaggerItem key={index}>
                                     <AnimatedCard className="group card-hover h-full bg-brand-paleblue rounded-[32px] p-8 md:p-10 border-s-3 border-gray-200 hover:border-brand-yellow transition-colors duration-500 ease-in-out">
                                         <div className="icon-hover w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-brand-yellow rounded-2xl mb-6">
-                                            <i className={`${feature.icon} text-2xl md:text-3xl text-brand-jet`}></i>
+                                            <feature.icon size={28} strokeWidth={1.5} className="text-brand-jet" />
                                         </div>
                                         <h3 className="text-xl md:text-2xl font-bold text-brand-jet mb-3 md:mb-4">{feature.title}</h3>
                                         <p className="text-sm md:text-base text-brand-charcoal leading-relaxed font-medium">{feature.description}</p>
@@ -117,7 +119,7 @@ export default async function DistributionPage({ params }) {
                                 {steps.map((step, i) => (
                                     <StaggerItem key={i} className="group flex items-start gap-4 relative p-3 cursor-pointer">
                                         <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="12" fill="none" stroke="black" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
-                                        <div className="w-10 h-10 flex items-center justify-center bg-brand-yellow rounded-full text-brand-jet font-bold flex-shrink-0">
+                                        <div className="w-10 h-10 flex items-center justify-center bg-brand-yellow rounded-full text-brand-jet font-bold shrink-0">
                                             {i + 1}
                                         </div>
                                         <div>
@@ -136,7 +138,7 @@ export default async function DistributionPage({ params }) {
                             <img
                                 src={howWeDist?.image_url || "/images/national-distribution/distribute.webp"}
                                 alt="Distribution Process"
-                                className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover object-center transition-transform duration-500 hover:scale-[1.03]"
+                                className="w-full h-75 sm:h-100 md:h-125 object-cover object-center transition-transform duration-500 hover:scale-[1.03]"
                             />
                         </div>
                     </div>

@@ -40,37 +40,37 @@ export default function WhyPartener({ data, cta }) {
     {
       title: data["Text Element 4"]?.value,
       desc: data["Text Element 5"]?.value,
-      icon: <Clock className="w-6 h-6 text-white" />,
+      icon: <Clock size={24} strokeWidth={1.5} className="text-white" />,
       iconBg: "bg-[#4B4F54]",
     },
     {
       title: data["Text Element 6"]?.value,
       desc: data["Text Element 7"]?.value,
-      icon: <MapPin className="w-6 h-6 text-black" />,
+      icon: <MapPin size={24} strokeWidth={1.5} className="text-black" />,
       iconBg: "bg-[#F7E326]",
     },
     {
       title: data["Text Element 8"]?.value,
       desc: data["Text Element 9"]?.value,
-      icon: <Users className="w-6 h-6 text-white" />,
+      icon: <Users size={24} strokeWidth={1.5} className="text-white" />,
       iconBg: "bg-[#4B4F54]",
     },
     {
       title: data["Text Element 10"]?.value,
       desc: data["Text Element 11"]?.value,
-      icon: <ShieldCheck className="w-6 h-6 text-black" />,
+      icon: <ShieldCheck size={24} strokeWidth={1.5} className="text-black" />,
       iconBg: "bg-[#F7E326]",
     },
     {
       title: data["Text Element 12"]?.value,
       desc: data["Text Element 13"]?.value,
-      icon: <BarChart3 className="w-6 h-6 text-white" />,
+      icon: <BarChart3 size={24} strokeWidth={1.5} className="text-white" />,
       iconBg: "bg-[#4B4F54]",
     },
     {
       title: data["Text Element 14"]?.value,
       desc: data["Text Element 15"]?.value,
-      icon: <Headphones className="w-6 h-6 text-black" />,
+      icon: <Headphones size={24} strokeWidth={1.5} className="text-black" />,
       iconBg: "bg-[#F7E326]",
     },
   ].filter(f => f.title);
@@ -107,10 +107,15 @@ export default function WhyPartener({ data, cta }) {
               {features.map((item, index) => (
                 <StaggerItem
                   key={index}
-                  className="group p-6 sm:p-10 rounded-[24px] sm:rounded-[32px] transition-all duration-300 flex flex-col items-start
+                  className="group p-6 sm:p-10 rounded-3xl transition-all duration-300 flex flex-col items-start
                          border border-white/5 hover:border-white/10
-                         bg-white/[0.03] backdrop-blur-lg hover:bg-white/[0.05]"
+                         bg-white/[0.03] backdrop-blur-lg hover:bg-white/[0.05] relative overflow-hidden"
                 >
+                  {/* Decorative number */}
+                  <span className="absolute top-4 inset-e-5 text-5xl font-black text-white/5 select-none leading-none">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
                   <div className={`w-14 h-14 ${item.iconBg} rounded-2xl flex items-center justify-center mb-8 shadow-lg`}>
                     {item.icon}
                   </div>

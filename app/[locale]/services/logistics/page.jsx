@@ -3,6 +3,7 @@ import GlobalCTA from "../../components/GlobalCTA";
 import ScrollReveal from "../../components/ScrollReveal";
 import StaggerContainer from "../../components/StaggerContainer";
 import StaggerItem from "../../components/StaggerItem";
+import { Truck, Layers, Clock, ShieldCheck, FileText, Headphones, Building2, Thermometer, Route, BarChart2, CheckCircle, Car, Bike } from "lucide-react";
 import { getPageData } from "@/services/home.service";
 
 export default async function LogisticsPage({ params }) {
@@ -19,27 +20,30 @@ export default async function LogisticsPage({ params }) {
     const fleet = findSection("fleet");
     const cta = findSection("cta");
 
+    const capabilityIcons = [Truck, Layers, Clock, ShieldCheck, FileText, Headphones];
     const capabilities = bar ? [
-        { icon: 'ri-truck-line', label: bar['Element 1']?.value },
-        { icon: 'ri-stack-line', label: bar['Element 2']?.value },
-        { icon: 'ri-time-line', label: bar['Element 3']?.value },
-        { icon: 'ri-shield-check-line', label: bar['Element 4']?.value },
-        { icon: 'ri-file-list-3-line', label: bar['Element 5']?.value },
-        { icon: 'ri-customer-service-line', label: bar['Element 6']?.value }
+        { Icon: capabilityIcons[0], label: bar['Element 1']?.value },
+        { Icon: capabilityIcons[1], label: bar['Element 2']?.value },
+        { Icon: capabilityIcons[2], label: bar['Element 3']?.value },
+        { Icon: capabilityIcons[3], label: bar['Element 4']?.value },
+        { Icon: capabilityIcons[4], label: bar['Element 5']?.value },
+        { Icon: capabilityIcons[5], label: bar['Element 6']?.value }
     ].filter(c => c.label) : [];
 
+    const featureIcons = [Building2, Thermometer, Route, BarChart2];
     const features = solutions ? [
-        { icon: 'ri-building-4-line', title: solutions['Element 3']?.value, description: solutions['Element 4']?.value },
-        { icon: 'ri-temp-cold-line', title: solutions['Element 5']?.value, description: solutions['Element 6']?.value },
-        { icon: 'ri-route-line', title: solutions['Element 7']?.value, description: solutions['Element 8']?.value },
-        { icon: 'ri-bar-chart-box-line', title: solutions['Element 9']?.value, description: solutions['Element 10']?.value }
+        { Icon: featureIcons[0], title: solutions['Element 3']?.value, description: solutions['Element 4']?.value },
+        { Icon: featureIcons[1], title: solutions['Element 5']?.value, description: solutions['Element 6']?.value },
+        { Icon: featureIcons[2], title: solutions['Element 7']?.value, description: solutions['Element 8']?.value },
+        { Icon: featureIcons[3], title: solutions['Element 9']?.value, description: solutions['Element 10']?.value }
     ].filter(f => f.title) : [];
 
+    const fleetIcons = [Truck, Car, Thermometer, Bike];
     const fleetItems = fleet ? [
-        { icon: 'ri-truck-line', title: fleet['Text Element 3']?.value, desc: fleet['Text Element 4']?.value },
-        { icon: 'ri-car-line', title: fleet['Text Element 5']?.value, desc: fleet['Text Element 6']?.value },
-        { icon: 'ri-temp-cold-line', title: fleet['Text Element 7']?.value, desc: fleet['Text Element 8']?.value },
-        { icon: 'ri-motorbike-line', title: fleet['Text Element 9']?.value, desc: fleet['Text Element 10']?.value }
+        { Icon: fleetIcons[0], title: fleet['Text Element 3']?.value, desc: fleet['Text Element 4']?.value },
+        { Icon: fleetIcons[1], title: fleet['Text Element 5']?.value, desc: fleet['Text Element 6']?.value },
+        { Icon: fleetIcons[2], title: fleet['Text Element 7']?.value, desc: fleet['Text Element 8']?.value },
+        { Icon: fleetIcons[3], title: fleet['Text Element 9']?.value, desc: fleet['Text Element 10']?.value }
     ].filter(f => f.title) : [];
 
     const warehousePoints = warehouse ? [
@@ -65,7 +69,7 @@ export default async function LogisticsPage({ params }) {
                             {capabilities.map((cap, index) => (
                                 <div key={index} className="flex flex-col items-center text-center group">
                                     <div className="w-14 h-14 flex items-center justify-center bg-brand-jet rounded-2xl mb-3 shadow-lg group-hover:-translate-y-1 transition-all duration-300">
-                                        <i className={`${cap.icon} text-2xl text-brand-yellow`}></i>
+                                        <cap.Icon size={24} strokeWidth={1.5} className="text-brand-yellow" />
                                     </div>
                                     <span className="text-xs md:text-sm font-bold text-brand-jet uppercase tracking-wider group-hover:text-brand-charcoal transition-colors">
                                         {cap.label}
@@ -94,9 +98,9 @@ export default async function LogisticsPage({ params }) {
                     <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                         {features.map((feature, index) => (
                             <StaggerItem key={index}>
-                                <div className="group card-hover h-full bg-brand-paleblue rounded-[32px] p-8 md:p-10 border-s-3 border-gray-200 hover:border-brand-yellow transition-colors duration-500 ease-in-out flex flex-col">
+                                <div className="group card-hover h-full bg-brand-paleblue rounded-4xl p-8 md:p-10 border-s-3 border-gray-200 hover:border-brand-yellow transition-colors duration-500 ease-in-out flex flex-col">
                                     <div className="icon-hover w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-brand-charcoal rounded-2xl mb-6">
-                                        <i className={`${feature.icon} text-2xl md:text-3xl text-brand-yellow`}></i>
+                                        <feature.Icon size={28} strokeWidth={1.5} className="text-brand-yellow" />
                                     </div>
                                     <h3 className="text-xl md:text-2xl font-bold text-brand-jet mb-3 md:mb-4">{feature.title}</h3>
                                     <p className="text-sm md:text-base text-brand-charcoal leading-relaxed font-medium">{feature.description}</p>
@@ -111,11 +115,11 @@ export default async function LogisticsPage({ params }) {
             <section className="py-16 lg:py-24 bg-brand-paleblue">
                 <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                        <ScrollReveal className="relative order-2 lg:order-1 group overflow-hidden rounded-[32px]">
+                        <ScrollReveal className="relative order-2 lg:order-1 group overflow-hidden rounded-4xl">
                             <img
                                 src={warehouse?.image_url || "/images/logistics/warehouse.webp"}
                                 alt="Warehouse Operations"
-                                className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover object-center shadow-2xl transition-transform duration-700 group-hover:scale-[1.03]"
+                                className="w-full h-75 sm:h-100 md:h-125 object-cover object-center shadow-2xl transition-transform duration-700 group-hover:scale-[1.03]"
                             />
                         </ScrollReveal>
 
@@ -133,8 +137,8 @@ export default async function LogisticsPage({ params }) {
                                 {warehousePoints.map((text, i) => (
                                     <StaggerItem key={i} className="group flex items-center gap-4 p-4 rounded-2xl relative cursor-pointer">
                                         <svg className="trace-border-svg"><rect className="trace-border-rect" x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" rx="12" fill="none" stroke="black" strokeWidth="2" strokeDasharray="2000" strokeDashoffset="2000" /></svg>
-                                        <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-brand-yellow rounded-xl flex-shrink-0">
-                                            <i className="ri-checkbox-circle-line text-xl md:text-2xl text-brand-jet"></i>
+                                        <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-brand-yellow rounded-xl shrink-0">
+                                            <CheckCircle size={22} strokeWidth={1.5} className="text-brand-jet" />
                                         </div>
                                         <span className="text-base md:text-lg text-brand-jet font-bold">{text}</span>
                                     </StaggerItem>
@@ -161,8 +165,8 @@ export default async function LogisticsPage({ params }) {
 
                             <StaggerContainer className="grid grid-cols-2 gap-4 md:gap-6">
                                 {fleetItems.map((item, i) => (
-                                    <StaggerItem key={i} className="group card-hover bg-brand-paleblue p-6 rounded-[24px]  border-s-3 border-gray-200 hover:border-brand-yellow transition-colors duration-500 ease-in-out text-center">
-                                        <i className={`${item.icon} text-3xl md:text-4xl text-brand-jet mb-3 block`}></i>
+                                    <StaggerItem key={i} className="group card-hover bg-brand-paleblue p-6 rounded-3xl border-s-3 border-gray-200 hover:border-brand-yellow transition-colors duration-500 ease-in-out text-center">
+                                        <item.Icon size={36} strokeWidth={1.5} className="text-brand-jet mb-3 mx-auto" />
                                         <h4 className="text-base md:text-lg font-bold text-brand-jet">{item.title}</h4>
                                         <p className="text-xs md:text-sm text-brand-charcoal font-medium">{item.desc}</p>
                                     </StaggerItem>
@@ -170,11 +174,11 @@ export default async function LogisticsPage({ params }) {
                             </StaggerContainer>
                         </div>
 
-                        <ScrollReveal className="relative group overflow-hidden rounded-[32px] shadow-2xl" delay={0.2}>
+                        <ScrollReveal className="relative group overflow-hidden rounded-4xl shadow-2xl" delay={0.2}>
                             <img
                                 src={fleet?.image_url || "/images/logistics/fleet.webp"}
                                 alt="Fleet Management"
-                                className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                                className="w-full h-75 sm:h-100 md:h-125 object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
                             />
                         </ScrollReveal>
                     </div>

@@ -1,5 +1,6 @@
 "use client"
 import React from 'react';
+import { Building2, MapPin } from 'lucide-react';
 import ScrollReveal from '../../components/ScrollReveal';
 import Counter from '../../components/Counter';
 
@@ -18,7 +19,7 @@ const WhoWeAre = ({ data }) => {
         <section className="py-12 md:py-20 bg-white">
             <ScrollReveal className="max-w-7xl mx-auto px-8 ">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
-                    <div className="group relative h-[350px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl cursor-pointer">
+                    <div className="group relative h-87.5 md:h-150 rounded-3xl overflow-hidden shadow-2xl cursor-pointer">
                         <img
                             src={imageUrl || "/images/about/about section in about page.webp"}
                             alt={desc1 || "About Us"}
@@ -42,7 +43,7 @@ const WhoWeAre = ({ data }) => {
                         <div className="grid md:grid-cols-2 grid-cols-1 gap-6 pt-8">
                             <div className="group bg-brand-yellow rounded-2xl p-6 transition-all duration-500 hover:bg-brand-jet cursor-pointer hover:shadow-xl hover:-translate-y-1">
                                 <div className="w-12 h-12 flex items-center justify-center bg-brand-jet rounded-xl mb-4 transition-all duration-500 group-hover:bg-brand-yellow">
-                                    <i className="ri-building-line text-2xl text-brand-yellow transition-colors duration-500 group-hover:text-brand-jet"></i>
+                                    <Building2 size={24} strokeWidth={1.5} className="text-brand-yellow transition-colors duration-500 group-hover:text-brand-jet" />
                                 </div>
                                 <p className="text-sm text-brand-charcoal font-bold mb-1 transition-colors duration-500 group-hover:text-gray-300">
                                     {heritageLabel}
@@ -54,7 +55,7 @@ const WhoWeAre = ({ data }) => {
 
                             <div className="group bg-brand-paleblue rounded-2xl p-6 transition-all duration-500 hover:bg-brand-yellow cursor-pointer hover:shadow-xl hover:-translate-y-1">
                                 <div className="w-12 h-12 flex items-center justify-center bg-brand-charcoal rounded-xl mb-4 transition-all duration-500 group-hover:bg-brand-jet">
-                                    <i className="ri-map-pin-line text-2xl text-brand-yellow transition-colors duration-500 group-hover:text-brand-yellow"></i>
+                                    <MapPin size={24} strokeWidth={1.5} className="text-brand-yellow transition-colors duration-500 group-hover:text-brand-yellow" />
                                 </div>
                                 <p className="text-sm text-brand-charcoal font-bold mb-1 transition-colors duration-500 group-hover:text-brand-charcoal">
                                     {coverageLabel}
