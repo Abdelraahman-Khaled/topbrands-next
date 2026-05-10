@@ -7,7 +7,6 @@ export default function ProductsBrands({ data, brands = [] }) {
   const { t } = useTranslation();
 
   if (!data) return null;
-  console.log(data);
 
   const title = data["Intro Text"]?.value || data["Title"]?.value;
   const buttonLabel = data["btn Text"]?.value || t("see_all_brands") || "See All Brands";
