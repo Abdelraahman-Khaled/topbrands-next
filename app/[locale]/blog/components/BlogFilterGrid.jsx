@@ -1,9 +1,19 @@
 "use client"
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useCallback } from 'react';
 import LocalizedLink from "../../components/LocalizedLink";
 import StaggerContainer from "../../components/StaggerContainer";
 import StaggerItem from "../../components/StaggerItem";
 import ScrollReveal from "../../components/ScrollReveal";
+
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+async function fetchBlogs(locale, page) {
+  const res = await fetch(`${BASE_URL}/web_site/get_all_blogs?page=${page}&items=20`, {
+    headers: { locale, "Content-Type": "application/json" },
+  });
+  if (!res.ok) return null;
+  return res.json();
+}
 
 const ALL_CATEGORIES = [
     "all",
@@ -20,9 +30,25 @@ const ALL_CATEGORIES = [
 
 import { motion, AnimatePresence } from "framer-motion";
 
-const BlogFilterGrid = ({ blogs, locale, translations = {} }) => {
+const BlogFilterGrid = ({ blogs: initialBlogs, initialPagination, locale, translations = {} }) => {
+    const [blogs, setBlogs] = useState(initialBlogs);
+    const [pagination, setPagination] = useState(initialPagination);
+    const [loadingPage, setLoadingPage] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState("all");
+    const gridRef = useRef(null);
     const isAr = locale === 'ar';
+
+    const goToPage = useCallback(async (page) => {
+        if (loadingPage) return;
+        setLoadingPage(true);
+        gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        const data = await fetchBlogs(locale, page);
+        if (data?.data) {
+            setBlogs(data.data);
+            setPagination(data.pagination);
+        }
+        setLoadingPage(false);
+    }, [loadingPage, locale]);
 
     const filteredPosts = useMemo(() => {
         return selectedCategory === "all"
@@ -50,7 +76,7 @@ const BlogFilterGrid = ({ blogs, locale, translations = {} }) => {
                                     key={category}
                                     onClick={() => setSelectedCategory(category)}
                                     className={`px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold transition-all whitespace-nowrap cursor-pointer capitalize ${selectedCategory === category
-                                        ? "bg-gradient-to-r from-[#F7E326] to-[#E5D324] text-[#000000] shadow-lg transform scale-105"
+                                        ? "bg-gradient-to-r from-[#F7E326] to-[#E5D324] text-brand-jet shadow-lg transform scale-105"
                                         : "bg-white text-[#4B4F54] hover:bg-[#F7E326]/20 border-2 border-[#DEE3EB] hover:border-[#F7E326]"
                                         }`}
                                 >
@@ -75,7 +101,7 @@ const BlogFilterGrid = ({ blogs, locale, translations = {} }) => {
                     >
                         <div className="max-w-7xl mx-auto px-6">
                             <div className="mb-8">
-                                <h2 className="text-3xl font-bold text-[#000000] flex items-center gap-3">
+                                <h2 className="text-3xl font-bold text-brand-jet flex items-center gap-3">
                                     <i className="ri-fire-fill text-brand-yellow text-4xl"></i>
                                     {isAr ? "المقالات المميزة" : "Featured Article"}
                                 </h2>
@@ -92,7 +118,7 @@ const BlogFilterGrid = ({ blogs, locale, translations = {} }) => {
                                             className="w-full h-full object-cover  transition-transform duration-500"
                                         />
                                         <div className="absolute top-6 left-6 rtl:left-auto rtl:right-6">
-                                            <span className="bg-[#F7E326] text-[#000000] px-6 py-2 rounded-full text-sm font-bold flex items-center gap-2">
+                                            <span className="bg-[#F7E326] text-brand-jet px-6 py-2 rounded-full text-sm font-bold flex items-center gap-2">
                                                 <i className="ri-star-fill"></i>
                                                 {translations[featuredPost.category] || featuredPost.category.replace(/_/g, ' ')}
                                             </span>
@@ -124,15 +150,18 @@ const BlogFilterGrid = ({ blogs, locale, translations = {} }) => {
             </AnimatePresence>
 
             {/* Blog Posts Grid */}
-            <section className="py-12 md:py-20 bg-linear-to-br from-white via-[#DEE3EB]/30 to-white overflow-hidden">
+            <section
+                ref={gridRef}
+                className="py-12 md:py-20 bg-linear-to-br from-white via-[#DEE3EB]/30 to-white overflow-hidden scroll-mt-24"
+            >
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="mb-8 md:mb-12">
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#000000]">
+                        <h2 className="text-2xl md:text-3xl font-bold text-brand-jet">
                             {selectedCategory === "all" ? (isAr ? "أحدث المقالات" : "Latest Articles") : (translations[selectedCategory] || selectedCategory.replace(/_/g, ' '))}
                         </h2>
                     </div>
 
-                    <div className="relative">
+                    <div className={`relative transition-opacity duration-300 ${loadingPage ? "opacity-40 pointer-events-none" : "opacity-100"}`}>
                         <AnimatePresence mode="popLayout" initial={false}>
                             {restPosts.length === 0 && selectedCategory !== "all" ? (
                                 <motion.div
@@ -173,13 +202,13 @@ const BlogFilterGrid = ({ blogs, locale, translations = {} }) => {
                                                         className="w-full h-full object-cover"
                                                     />
                                                     <div className="absolute top-4 left-4 rtl:left-auto rtl:right-4">
-                                                        <span className="bg-[#F7E326] text-[#000000] px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                                                        <span className="bg-[#F7E326] text-brand-jet px-4 py-2 rounded-full text-sm font-bold shadow-lg">
                                                             {translations[post.category] || post.category.replace(/_/g, ' ')}
                                                         </span>
                                                     </div>
                                                 </div>
                                                 <div className="p-6">
-                                                    <h3 className="text-xl font-bold text-[#000000] mb-3 group-hover:text-black transition-colors line-clamp-2">
+                                                    <h3 className="text-xl font-bold text-brand-jet mb-3 group-hover:text-black transition-colors line-clamp-2">
                                                         {post.title}
                                                     </h3>
                                                     <p className="text-[#4B4F54] mb-4 font-medium leading-relaxed line-clamp-3">
@@ -199,6 +228,51 @@ const BlogFilterGrid = ({ blogs, locale, translations = {} }) => {
                             )}
                         </AnimatePresence>
                     </div>
+
+                    {/* Pagination */}
+                    {pagination && pagination.total_pages > 1 && (
+                        <div className="flex items-center justify-center gap-2 mt-16">
+                            {pagination.prev_page ? (
+                                <button
+                                    onClick={() => goToPage(pagination.current_page - 1)}
+                                    className="flex items-center justify-center w-10 h-10 rounded-xl font-bold transition-all bg-white text-brand-jet hover:bg-[#F7E326] hover:text-black shadow-sm border border-[#DEE3EB]"
+                                >
+                                    <i className="ri-arrow-left-s-line rtl:rotate-180"></i>
+                                </button>
+                            ) : (
+                                <span className="flex items-center justify-center w-10 h-10 rounded-xl font-bold bg-[#DEE3EB]/40 text-gray-400 cursor-not-allowed">
+                                    <i className="ri-arrow-left-s-line rtl:rotate-180"></i>
+                                </span>
+                            )}
+
+                            {Array.from({ length: pagination.total_pages }, (_, i) => i + 1).map((p) => (
+                                <button
+                                    key={p}
+                                    onClick={() => goToPage(p)}
+                                    className={`flex items-center justify-center w-10 h-10 rounded-xl font-bold transition-all shadow-sm ${
+                                        p === pagination.current_page
+                                            ? "bg-[#F7E326] text-black shadow-md"
+                                            : "bg-white text-brand-jet hover:bg-[#F7E326] hover:text-black border border-[#DEE3EB]"
+                                    }`}
+                                >
+                                    {p}
+                                </button>
+                            ))}
+
+                            {pagination.next_page ? (
+                                <button
+                                    onClick={() => goToPage(pagination.current_page + 1)}
+                                    className="flex items-center justify-center w-10 h-10 rounded-xl font-bold transition-all bg-white text-brand-jet hover:bg-[#F7E326] hover:text-black shadow-sm border border-[#DEE3EB]"
+                                >
+                                    <i className="ri-arrow-right-s-line rtl:rotate-180"></i>
+                                </button>
+                            ) : (
+                                <span className="flex items-center justify-center w-10 h-10 rounded-xl font-bold bg-[#DEE3EB]/40 text-gray-400 cursor-not-allowed">
+                                    <i className="ri-arrow-right-s-line rtl:rotate-180"></i>
+                                </span>
+                            )}
+                        </div>
+                    )}
                 </div>
             </section>
         </>

@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 pb-8 border-b border-[#D1D5DB]">
             <LocalizedLink href="/" className="mb-4 md:mb-0 cursor-pointer">
               <img
-                src="/images/footer.webp"
+                src="/images/logo.webp"
                 alt="Top Brands Syria"
                 className="h-10 w-auto"
               />

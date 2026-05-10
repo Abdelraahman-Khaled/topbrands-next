@@ -91,6 +91,7 @@ export default function Navbar() {
     },
     { key: "brands", href: "/brands" },
     // { key: "products", href: "/products" },
+    { key: "gallery", href: "/gallery" },
     { key: "coverage", href: "/market-coverage" }
   ];
 

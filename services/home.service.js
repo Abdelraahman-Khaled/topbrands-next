@@ -1,11 +1,11 @@
 const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-export async function getPageData(page, locale) {
+export async function getPageData(page, locale, pageNum = 1) {
   console.log("locale", locale);
 
   try {
     console.log(`Fetching ${page} data with locale: ${locale}`);
-    const res = await fetch(`${BASE_URL}/web_site/get_page?page=${page}`, {
+    const res = await fetch(`${BASE_URL}/web_site/get_page?page=${page}&current_page=${pageNum}`, {
       method: "GET",
       headers: {
         locale,

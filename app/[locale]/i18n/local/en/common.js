@@ -5,6 +5,7 @@ export default {
   services: "Services",
   brands: "Brands",
   coverage: "Market Coverage",
+  gallery: "Gallery",
   blog: "Blog",
   contact: "Contact Us",
   products: "Products",

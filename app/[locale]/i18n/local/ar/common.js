@@ -5,6 +5,7 @@ export default {
   services: "خدماتنا",
   brands: "العلامات التجارية",
   coverage: "تغطية السوق",
+  gallery: "المعرض",
   blog: "المدونة",
   contact: "اتصل بنا",
   products: "المنتجات",

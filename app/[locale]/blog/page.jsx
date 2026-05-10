@@ -8,6 +8,7 @@ export default async function BlogPage({ params }) {
   const { locale } = await params;
   const blogsResponse = await getBlogs(locale, 1, 20);
   const blogs = blogsResponse?.data ?? [];
+  const pagination = blogsResponse?.pagination ?? null;
 
   return (
     <div className="min-h-screen bg-white">
@@ -17,9 +18,10 @@ export default async function BlogPage({ params }) {
       </section>
 
       {/* Interactive Blog Grid with Filtering */}
-      <BlogFilterGrid 
-        blogs={blogs} 
-        locale={locale} 
+      <BlogFilterGrid
+        blogs={blogs}
+        initialPagination={pagination}
+        locale={locale}
         translations={locale === 'ar' ? arCommon : enCommon}
       />
 
